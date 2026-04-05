@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
 import { talkiatry } from './talkiatry';
 import { jenny } from '../../data/jenny';
 import LLCaseStudy from '../../components/ll/LLCaseStudy';
@@ -538,6 +539,7 @@ export default function TalkiatryPageV2() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

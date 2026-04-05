@@ -225,21 +225,11 @@ export default function LLCaseStudy({ project, index }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               {screens.map((screen, i) => (
                 <div key={i}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                    <div style={{
-                      width: '24px', height: '24px', borderRadius: '50%',
-                      backgroundColor: 'var(--accent)', color: 'var(--accent-fg)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 'var(--type-small)', fontWeight: 'var(--weight-bold)', flexShrink: 0,
-                    }}>
-                      {i + 1}
-                    </div>
-                    {screen.caption && (
-                      <p style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                        {screen.caption}
-                      </p>
-                    )}
-                  </div>
+                  {screen.caption && (
+                    <p style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)', lineHeight: 'var(--leading-body)', margin: '0 0 8px' }}>
+                      {screen.caption}
+                    </p>
+                  )}
                   <div style={{ border: '1px solid var(--border)', borderRadius: '10px', overflow: 'hidden', backgroundColor: 'var(--bg)' }}>
                     <img src={screen.src} alt={screen.alt || ''} loading="lazy"
                       style={{ width: '100%', display: 'block' }} />
