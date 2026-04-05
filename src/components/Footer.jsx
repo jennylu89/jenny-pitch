@@ -65,7 +65,7 @@ export default function Footer() {
           }} />
 
           <span style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)' }}>
-            Available for fractional + contract work.
+            Available for new opportunities.
           </span>
         </div>
 

@@ -163,8 +163,6 @@ export default function LLCaseStudy({ project, index }) {
                 <div key={i} style={{
                   width: '240px',
                   flexShrink: 0,
-                  borderRadius: '12px',
-                  overflow: 'hidden',
                   scrollSnapAlign: 'start',
                   display: 'flex',
                   flexDirection: 'column',
@@ -176,7 +174,7 @@ export default function LLCaseStudy({ project, index }) {
                   {screen.caption && (
                     <p style={{
                       color: 'rgba(245,244,242,0.65)', fontSize: 'var(--type-small)',
-                      lineHeight: 'var(--leading-h5)', padding: '8px 0 0', margin: 0,
+                      lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0,
                     }}>
                       {screen.caption}
                     </p>
