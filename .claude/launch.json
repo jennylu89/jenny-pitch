@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pitch-app",
+      "runtimeExecutable": "/opt/homebrew/bin/npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/jenny/Documents/Claude/jenny/pitch-app",
+      "port": 5173
+    }
+  ]
+}
