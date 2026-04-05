@@ -45,9 +45,9 @@ export const talkiatry = {
       requirement: "Serve as both a hands-on designer and team leader — contributing directly to design work while setting vision and direction",
       title: "Promoted from designer to Sr. Manager. Never stopped designing.",
       story: [
-        "At Giant Eagle, I was promoted to Sr. Manager leading a team of 5 designers distributed across the US and India — visual design, product design, design systems, and accessibility. But I never became a meetings-only manager.",
+        "At Giant Eagle, I was promoted to Sr. Manager leading a team of 5+ designers distributed across the US and India — visual design, product design, design systems, and accessibility. But I never became a meetings-only manager.",
         "I ran my own research. I owned the myPerks loyalty redesign end-to-end — from the 4M-member usability study through shipped product. I directed Scan Pay & Go across mobile, web, and in-store devices. I established WCAG standards adopted org-wide. All while managing the team.",
-        "Your JD describes a 'high-impact, player-coach role.' That's not aspirational for me — it's how I've operated for the last decade.",
+        "Your JD describes a 'high-impact, player-coach role.' That's how I've operated for the last decade.",
       ],
       metrics: [
         { value: "384%", label: "Spend per member lift" },
@@ -65,9 +65,9 @@ export const talkiatry = {
       requirement: "Own end-to-end design for patient booking flows, patient portal, provider software, and internal operations tools",
       title: "I've designed for patients and the systems that serve them. At the same time.",
       story: [
-        "At Highmark Health, I designed and built UI components for member-facing insurance products — plan selection flows, claims status, and benefits navigation for millions of members. Healthcare UX is different: you're designing under HIPAA constraints, for users in stressful moments, where a confusing flow means someone doesn't get care.",
+        "At Highmark Health, I designed and built UI components for member-facing insurance products serving millions of members. Healthcare UX is different: you're designing under HIPAA constraints, for users in stressful moments, where a confusing interface means someone doesn't get care.",
         "At Arena Labs, I designed Strive — a performance app for surgeons, ER nurses, and trauma teams. Patient-facing: daily check-ins, biometric-driven recommendations, shift-aware states. Provider-facing: coaching dashboards, progress tracking, intervention scheduling. Both surfaces, one design system, one designer.",
-        "Talkiatry's dual-stakeholder challenge — patients seeking care and clinicians avoiding burnout — is familiar. Telepsychiatry adds another layer: the booking flow IS the first clinical touchpoint. If a patient feels confused or judged during intake, they won't show up. That's not a conversion problem — it's a care problem.",
+        "Designing for two stakeholders with competing needs — patients seeking care and clinicians managing workload — is familiar territory. I've navigated it across healthcare, fintech (where users and compliance pull in opposite directions), and consumer (where business goals and user needs diverge).",
       ],
       metrics: [
         { value: "3", label: "Time-aware patient states" },
@@ -102,7 +102,7 @@ export const talkiatry = {
       story: [
         "At Roadrunner, I built a 50+ component Figma system with tokens, reusable components, and documentation — alongside the product, not as a separate workstream. Every new feature used existing patterns from day one.",
         "At Arena Labs, design was scattered across Figma docs, Notion, Storybook, and PDFs. I built a Design Hub — one React app that replaced all four. Stakeholders tap prototypes. Engineers inspect tokens. Research lives next to the decisions it shaped.",
-        "Your JD calls for 'consistency and scalability across all products' — patient booking, patient portal, provider software, internal tools. That's exactly the multi-surface system challenge I've solved three times over.",
+        "Your JD calls for 'consistency and scalability across all products' — patient booking, patient portal, provider software, internal tools. That's the same multi-surface challenge I solved at Roadrunner and Arena Labs.",
       ],
       metrics: [
         { value: "50+", label: "Reusable components" },
@@ -120,8 +120,8 @@ export const talkiatry = {
         "For a design team, this means: research synthesis in hours instead of days, interactive prototypes instead of static mocks, design-to-code with no handoff gap. I'd bring that workflow to Talkiatry's team — not as a novelty, but as the default way of working.",
       ],
       metrics: [
-        { value: "React", label: "Ships production code" },
-        { value: "AI-native", label: "Design workflow" },
+        { value: "405", label: "Leads generated (one command)" },
+        { value: "1", label: "URL for full design hub" },
       ],
     },
   ],

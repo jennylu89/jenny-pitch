@@ -411,7 +411,7 @@ export const jenny = {
       quote:
         "Jenny doesn't just make things look good. She builds systems — evidence-backed personas, clearly documented UX decisions, and coded components.",
       name: "Jaythan Elam",
-      title: "", // TODO: add title from LinkedIn
+      title: "Founder",
       avatar: null, // TODO: add LinkedIn avatar
     },
     {

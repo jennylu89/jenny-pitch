@@ -3,7 +3,7 @@ export const everant = {
   role: "Product Designer (Contract)",
 
   // Hero one-liner
-  oneLiner: "10 years shipping products from research through code — specializing in 0→1 builds, design systems, and making complex workflows feel effortless.",
+  oneLiner: "10 years shipping products from research through code — specializing in 0→1 builds, design systems, and enterprise internal tools.",
 
   // Summary section — mapped to what surfaced in the conversation
   summaryHeading: "Everything you described in our conversation maps to something I've already shipped.",
@@ -18,7 +18,7 @@ export const everant = {
     },
     {
       ask: "0→1 — nothing's built yet, need a designer who can start from scratch",
-      proof: "First UX hire at Giant Eagle. Built the practice, the system, and the product simultaneously. Did it again at Roadrunner and Arena Labs. Blank canvas is where I work best.",
+      proof: "First UX hire at Giant Eagle. Sole designer at Arena Labs. Built the practice, the system, and the product simultaneously. Blank canvas is where I work best.",
     },
     {
       ask: "Design systems — tokens, components, patterns from the ground up",
@@ -47,7 +47,7 @@ export const everant = {
       ],
       metrics: [
         { value: "384%", label: "Spend per member (Giant Eagle)" },
-        { value: "4M", label: "Members who trusted the redesign" },
+        { value: "4M", label: "Members impacted" },
       ],
       testimonial: {
         quote: "Jenny pioneered a design system library that gave our web pages a unified look and feel. She is a force multiplier and could be an asset to any organization.",
@@ -76,12 +76,12 @@ export const everant = {
       requirement: "Early stage — nothing's built yet, need a designer who can build from scratch",
       title: "First designer. No playbook. Built the practice and the product at the same time.",
       story: [
-        "At Giant Eagle, I was the first UX hire. There was no design practice, no system, no research process. I built all three while shipping the product. The myPerks loyalty redesign, the Scan Pay & Go experience across mobile, web, and in-store devices — all while establishing the team's first design system and WCAG standards.",
+        "At Giant Eagle, I was the first UX hire at the company. There was no design practice, no system, no research process. I built all three while shipping the product. The myPerks loyalty redesign, the Scan Pay & Go experience across mobile, web, and in-store devices — all while establishing the team's first design system and WCAG standards.",
         "At Roadrunner, I was hired to fix one billing page. Before I touched a screen, I ran a 142-person usability study. The data expanded the scope to a full platform overhaul. Just me and engineering — no design team, no playbook.",
-        "Everant is at the same stage. Nothing's built. You need someone who can go from blank canvas to shipped product — research, design, system, and code. That's the only mode I've ever worked in.",
+        "Everant is at the same stage. Nothing's built. You need someone who can go from blank canvas to shipped product — research, design, system, and code. First designer at Giant Eagle, sole designer at Arena Labs. That's the mode I work best in.",
       ],
       metrics: [
-        { value: "3×", label: "First designer at company" },
+        { value: "2×", label: "First designer at company" },
         { value: "142", label: "Person usability study (solo)" },
       ],
       testimonial: {
@@ -122,7 +122,7 @@ export const everant = {
       testimonial: {
         quote: "Jenny doesn't just make things look good. She builds systems — evidence-backed personas, clearly documented UX decisions, and coded components.",
         name: "Jaythan Elam",
-        title: "",
+        title: "Founder",
       },
     },
   ],
@@ -151,5 +151,5 @@ export const everant = {
   },
 
   close:
-    "I've spent my career building products from scratch in complex, high-stakes spaces — and making them feel effortless. Everant is exactly that challenge. Let's build it.",
+    "First designer at Giant Eagle. Sole designer at Arena Labs. Research through code. Design systems that scale. I'm ready to build Everant's from scratch.",
 };
