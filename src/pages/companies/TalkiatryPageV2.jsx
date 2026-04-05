@@ -411,19 +411,12 @@ export default function TalkiatryPageV2() {
       </section>
 
       {/* ═══ HOW I WORK ═══ */}
-      <section style={{
-        backgroundColor: 'var(--dark-bg)',
-        padding: 'var(--space-96) 0',
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
-        <NoiseOverlay />
+      <section style={{ padding: 'var(--space-96) 0' }}>
         <div className="section-pad" style={{
           maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)',
-          position: 'relative', zIndex: 1,
         }}>
           <Eyebrow>
-            <span style={{ color: 'var(--dark-text-muted)' }}>How I work</span>
+            <span style={{ color: 'var(--muted)' }}>How I work</span>
           </Eyebrow>
           <h2 style={{
             fontFamily: 'var(--font-sans)',
@@ -431,14 +424,14 @@ export default function TalkiatryPageV2() {
             fontWeight: 'var(--weight-medium)',
             lineHeight: 'var(--leading-h2)',
             letterSpacing: 'var(--tracking-h2)',
-            color: 'var(--dark-text)',
+            color: 'var(--text)',
             margin: '0 0 var(--space-18)',
           }}>
             {talkiatry.howIWork.heading}
           </h2>
           <p style={{
             fontSize: 'var(--type-body)',
-            color: 'var(--dark-text-muted)',
+            color: 'var(--muted)',
             lineHeight: 'var(--leading-body)',
             margin: '0 0 var(--space-48)',
             maxWidth: '520px',
@@ -451,26 +444,25 @@ export default function TalkiatryPageV2() {
           }}>
             {talkiatry.howIWork.tiles.filter(t => t.heading).map((tile, i) => (
               <div key={i} style={{
-                backgroundColor: 'rgba(255,255,255,0.06)',
-                border: '1px solid var(--dark-border)',
-                borderRadius: 'var(--radius-card)',
+                backgroundColor: 'var(--surface)',
+                borderRadius: 'var(--radius)',
                 padding: 'var(--space-24)',
                 display: 'flex', flexDirection: 'column', gap: 'var(--space-12)',
               }}>
                 <h3 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: 'var(--type-h5)',
+                  fontSize: 'var(--type-h4)',
                   fontWeight: 'var(--weight-medium)',
-                  lineHeight: 'var(--leading-h5)',
-                  letterSpacing: 'var(--tracking-h5)',
-                  color: 'var(--dark-text)',
+                  lineHeight: 'var(--leading-h4)',
+                  letterSpacing: 'var(--tracking-h4)',
+                  color: 'var(--text)',
                   margin: 0,
                 }}>
                   {tile.heading}
                 </h3>
                 <p style={{
                   fontSize: 'var(--type-body)',
-                  color: 'var(--dark-text-muted)',
+                  color: 'var(--muted)',
                   lineHeight: 'var(--leading-body)',
                   margin: 0,
                 }}>

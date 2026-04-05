@@ -3,7 +3,7 @@ export const jenny = {
   title: "Product Design Partner",
   tagline: "Senior design thinking.\nHands on the work.\nNo management layer in between.",
   summary:
-    "First UX hire at Giant Eagle. Built the practice, the system, and the product — simultaneously, no playbook. Now fractional: I embed with early-stage startups, own the full design loop from research to code, and connect every decision to business outcomes.",
+    "First UX hire at Giant Eagle. Built the practice, the system, and the product — simultaneously, no playbook. I embed with teams, own the full design loop from research to code, and connect every decision to business outcomes.",
   contact: {
     email: "jennylu98@gmail.com",
     linkedin: "linkedin.com/in/jennylu89",
@@ -105,7 +105,7 @@ export const jenny = {
       id: "megprime",
       company: "MegPrime Pay",
       title: "Crypto Rent Rewards App",
-      role: "Lead Product Designer (Contract)",
+      role: "Lead Product Designer",
       tags: ["Fintech", "Crypto", "Compliance UX", "Mobile"],
       headline:
         "Designed rent payments with crypto rewards for mainstream users, not crypto natives.",
@@ -210,7 +210,7 @@ export const jenny = {
       id: "arenalabs",
       company: "Arena Labs",
       title: "Strive — Healthcare Performance App",
-      role: "UX Consultant (Jointley)",
+      role: "UX Designer",
       tags: ["Healthcare", "Mobile", "B2B SaaS", "Design System"],
       headline:
         "Redesigning the Arena Strive homepage from a feature library to a personalized performance system.",
@@ -240,7 +240,7 @@ export const jenny = {
       id: "designhub",
       company: "Arena Labs / Jointley",
       title: "Strive Design Hub",
-      role: "Designer + Builder (Contract)",
+      role: "Designer + Builder",
       tags: ["Vibe Coding", "React", "Design System", "AI"],
       headline:
         "Built the tool that replaced Figma docs, Notion wikis, Storybook, and PDF specs with one URL.",
