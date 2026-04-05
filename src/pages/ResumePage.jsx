@@ -459,7 +459,7 @@ export default function ResumePage() {
             People love working with Jenny
           </h2>
           {/* Floating heart */}
-          <div style={{
+          <div className="floating-heart" style={{
             position: 'absolute', right: '-20px', top: '-24px',
             transform: 'rotate(4deg)',
             backgroundColor: 'var(--glass-bg)',
