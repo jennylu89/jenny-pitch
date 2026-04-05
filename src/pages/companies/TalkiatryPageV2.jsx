@@ -519,7 +519,7 @@ export default function TalkiatryPageV2() {
               Book a call →
             </a>
             <a
-              href="/resume"
+              href="/resume?from=talkiatry"
               style={{
                 color: 'var(--text)',
                 fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',

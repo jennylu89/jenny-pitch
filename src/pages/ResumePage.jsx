@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Badge from '../components/Badge';
 import { jenny } from '../data/jenny';
@@ -180,6 +181,11 @@ function TimelineEntry({ exp, isLast, index }) {
 }
 
 export default function ResumePage() {
+  const [searchParams] = useSearchParams();
+  const from = searchParams.get('from');
+  const projectsHref = from ? `/${from}` : '/';
+  const projectsLabel = from ? `Back to ${from.charAt(0).toUpperCase() + from.slice(1)} pitch →` : 'View projects →';
+
   const headerRef = useRef(null);
   const timelineRef = useRef(null);
   const [headerVisible, setHeaderVisible] = useState(false);
@@ -767,7 +773,7 @@ export default function ResumePage() {
         </p>
         <div className="resume-cta-buttons" style={{ display: 'flex', gap: 'var(--space-18)', alignItems: 'center' }}>
           <a
-            href="/"
+            href={projectsHref}
             style={{
               backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-fg)',
               fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
@@ -776,7 +782,7 @@ export default function ResumePage() {
               textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px',
             }}
           >
-            View projects →
+            {projectsLabel}
           </a>
           <a
             href="https://cal.com/jennylu98/30"
