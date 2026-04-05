@@ -94,11 +94,11 @@ export const jenny = {
           "The brief was a single billing page. I ran a 142-person study first. Reps were bouncing between four apps per invoice. 28 clicks. 15% of bills were carbon copies re-entered from scratch every month. The platform crashed 3–7 times a week. That's not a UI problem.",
           "Brought it to leadership as a choice, not a problem. They chose the overhaul. Four workstreams: automate the repetitive, fix the nav, standardize the patterns, build a component library that outlasts the project. 50+ components. Just engineering and me.",
         ],
-        screens: [],
-        placeholders: [
-          "Before & After: Dashboard — 4-app fragmented workflow vs. unified platform",
-          "Before & After: Bill Entry — 28 clicks down to 3",
+        screens: [
+          { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow — before", caption: "Before — 28 clicks across 4 fragmented tools per invoice" },
+          { src: "/roadrunner-flow2.png", alt: "Roadrunner billing flow — after", caption: "After — unified billing in 3 clicks, one platform" },
         ],
+        screensType: 'flow',
       },
     },
     {
@@ -129,7 +129,7 @@ export const jenny = {
           { src: "/megprime-screen-2.png", alt: "MegPrime rent details", caption: "Rent Details — live earnings preview at every step" },
           { src: "/megprime-screen-3.png", alt: "MegPrime setup rent", caption: "Setup Rent — two clear paths, no banking jargon" },
         ],
-        screensLayout: 'row',
+        screensType: 'app',
       },
     },
     {
@@ -233,7 +233,7 @@ export const jenny = {
           { src: "/arena-screen-2.png", alt: "Arena Strive mid-shift state", caption: "1:15pm · Mid-shift — HR elevated at 94bpm, 8-min Physiologic Sigh surfaced automatically" },
           { src: "/arena-screen-3.png", alt: "Arena Strive post-shift state", caption: "11:30pm · Post-shift — Daily Reflection at the exact moment a clinician would answer it" },
         ],
-        screensLayout: 'row',
+        screensType: 'app',
       },
     },
     {

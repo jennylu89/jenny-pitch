@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import Nav from '../../components/Nav';
 import { talkiatry } from './talkiatry';
 import { jenny } from '../../data/jenny';
+import LLCaseStudy from '../../components/ll/LLCaseStudy';
 
 /* ── Noise overlay SVG (shared) ── */
 const NOISE_SVG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`;
@@ -235,7 +236,7 @@ export default function TalkiatryPageV2() {
         }}>
           <div style={{
             display: 'flex', flexDirection: 'column', alignItems: 'center',
-            gap: 'var(--space-36)',
+            gap: 'var(--space-24)',
             opacity: headerVisible ? 1 : 0,
             filter: headerVisible ? 'blur(0px)' : 'blur(12px)',
             transition: 'opacity 0.7s ease, filter 0.7s ease',
@@ -266,43 +267,26 @@ export default function TalkiatryPageV2() {
               {jenny.name}
             </h1>
 
-            {/* Summary — mirrors JD language back */}
+            {/* One-liner */}
             <p style={{
               fontFamily: 'var(--font-sans)',
               fontSize: 'var(--type-lead)',
               fontWeight: 'var(--weight-medium)',
               lineHeight: 'var(--leading-body)',
-              color: 'var(--text)',
+              color: 'var(--muted)',
               margin: 0,
               textAlign: 'center',
               maxWidth: '600px',
             }}>
-              {talkiatry.summary}
+              {talkiatry.oneLiner}
             </p>
 
-            {/* Tags */}
-            <div style={{ display: 'flex', gap: 'var(--space-6)', flexWrap: 'wrap', justifyContent: 'center' }}>
-              {talkiatry.tags.map(tag => (
-                <span key={tag} style={{
-                  fontSize: 'var(--type-small)',
-                  fontFamily: 'var(--font-badge)',
-                  fontWeight: 'var(--weight-medium)',
-                  letterSpacing: 'var(--tracking-badge)',
-                  textTransform: 'uppercase',
-                  color: 'var(--muted)',
-                  backgroundColor: 'rgba(255,255,255,0.4)',
-                  borderRadius: 'var(--radius-widget)',
-                  padding: 'var(--space-3) var(--space-12)',
-                }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            {/* CTAs */}
-            <div style={{ display: 'flex', gap: 'var(--space-18)', alignItems: 'center' }}>
+            {/* CTA */}
+            <div style={{ marginTop: 'var(--space-12)' }}>
               <a
-                href="/resume"
+                href="https://cal.com/jennylu98/30"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-fg)',
                   fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
@@ -311,84 +295,119 @@ export default function TalkiatryPageV2() {
                   textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px',
                 }}
               >
-                View resume →
-              </a>
-              <a
-                href={`mailto:${jenny.contact.email}`}
-                style={{
-                  color: 'var(--text)',
-                  fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
-                  textDecoration: 'none',
-                  border: '1px solid var(--border)',
-                  padding: '0 var(--btn-x-padding)', height: 'var(--btn-height)',
-                  borderRadius: 'var(--btn-radius)',
-                  display: 'inline-flex', alignItems: 'center',
-                }}
-              >
-                Get in touch
+                Book a call →
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ═══ TOC ═══ */}
-      <section style={{ padding: 'var(--space-80) 0' }}>
+      {/* ═══ SUMMARY — JD MATCH ═══ */}
+      <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
           <Eyebrow>
-            <span style={{ color: 'var(--muted)' }}>What's inside</span>
+            <span style={{ color: 'var(--muted)' }}>Why me</span>
           </Eyebrow>
-          <div className="talkiatry-toc-grid" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)',
-            gap: 'var(--space-12)',
+          <h2 style={{
+            fontFamily: 'var(--font-sans)',
+            fontSize: 'var(--type-h2)',
+            fontWeight: 'var(--weight-medium)',
+            lineHeight: 'var(--leading-h2)',
+            letterSpacing: 'var(--tracking-h2)',
+            color: 'var(--text)',
+            margin: '0 0 var(--space-48)',
+            maxWidth: '680px',
           }}>
-            {talkiatry.sections.map((s, i) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                style={{
-                  backgroundColor: 'var(--glass-bg)',
-                  border: '1px solid var(--glass-stroke)',
-                  borderRadius: 'var(--radius-card)',
-                  boxShadow: 'var(--shadow-glass)',
-                  backdropFilter: 'blur(var(--glass-blur))',
-                  padding: 'var(--space-24)',
-                  textDecoration: 'none',
-                  display: 'flex', flexDirection: 'column', gap: 'var(--space-12)',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = 'var(--shadow-widget)'; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow-glass)'; }}
-              >
-                <span style={{
-                  fontSize: 'var(--type-small)',
-                  fontFamily: 'var(--font-badge)',
-                  fontWeight: 'var(--weight-medium)',
-                  letterSpacing: 'var(--tracking-badge)',
-                  color: 'var(--accent)',
-                }}>
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span style={{
-                  fontSize: 'var(--type-body)',
-                  fontWeight: 'var(--weight-medium)',
-                  color: 'var(--text)',
-                  lineHeight: 'var(--leading-body)',
-                }}>
-                  {s.tocLabel}
-                </span>
-              </a>
+            {talkiatry.summaryHeading}
+          </h2>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-12)' }}>
+            {talkiatry.summaryRows.map((row, i) => (
+              <div key={i} className="talkiatry-summary-row" style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1.4fr',
+                gap: 'var(--space-24)',
+                backgroundColor: 'var(--glass-bg)',
+                border: '1px solid var(--glass-stroke)',
+                borderRadius: 'var(--radius-card)',
+                padding: 'var(--space-24)',
+              }}>
+                <div>
+                  <span style={{
+                    fontSize: 'var(--type-small)',
+                    fontFamily: 'var(--font-badge)',
+                    fontWeight: 'var(--weight-medium)',
+                    letterSpacing: 'var(--tracking-badge)',
+                    textTransform: 'uppercase',
+                    color: 'var(--accent)',
+                    display: 'block',
+                    marginBottom: 'var(--space-6)',
+                  }}>
+                    Your ask
+                  </span>
+                  <span style={{
+                    fontSize: 'var(--type-body)',
+                    fontWeight: 'var(--weight-medium)',
+                    color: 'var(--text)',
+                    lineHeight: 'var(--leading-body)',
+                  }}>
+                    {row.ask}
+                  </span>
+                </div>
+                <div>
+                  <span style={{
+                    fontSize: 'var(--type-small)',
+                    fontFamily: 'var(--font-badge)',
+                    fontWeight: 'var(--weight-medium)',
+                    letterSpacing: 'var(--tracking-badge)',
+                    textTransform: 'uppercase',
+                    color: 'var(--accent)',
+                    display: 'block',
+                    marginBottom: 'var(--space-6)',
+                  }}>
+                    Why I qualify
+                  </span>
+                  <span style={{
+                    fontSize: 'var(--type-body)',
+                    color: 'var(--muted)',
+                    lineHeight: 'var(--leading-body)',
+                  }}>
+                    {row.proof}
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ CASE STUDY SECTIONS ═══ */}
-      {talkiatry.sections.map((section, i) => (
-        <div key={section.id} id={section.id}>
-          <CaseStudySection section={section} index={i} />
+      {/* ═══ SELECTED PROJECTS ═══ */}
+      <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
+        <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
+          <Eyebrow>
+            <span style={{ color: 'var(--muted)' }}>Selected work</span>
+          </Eyebrow>
+          <h2 style={{
+            fontFamily: 'var(--font-sans)',
+            fontSize: 'var(--type-h2)',
+            fontWeight: 'var(--weight-medium)',
+            lineHeight: 'var(--leading-h2)',
+            letterSpacing: 'var(--tracking-h2)',
+            color: 'var(--text)',
+            margin: '0 0 var(--space-48)',
+            maxWidth: '680px',
+          }}>
+            Full case studies. Every decision explained.
+          </h2>
+          <div>
+            {jenny.selectedProjects
+              .filter(p => ['roadrunner', 'megprime', 'arenalabs'].includes(p.id))
+              .map((project, i) => (
+                <LLCaseStudy key={project.id} project={project} index={i} />
+              ))}
+          </div>
         </div>
-      ))}
+      </section>
 
       {/* ═══ HOW I WORK ═══ */}
       <section style={{
@@ -503,7 +522,7 @@ export default function TalkiatryPageV2() {
               Book a call →
             </a>
             <a
-              href="/"
+              href="/resume"
               style={{
                 color: 'var(--text)',
                 fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
@@ -514,7 +533,7 @@ export default function TalkiatryPageV2() {
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
               }}
             >
-              View projects
+              View resume
             </a>
           </div>
         </div>

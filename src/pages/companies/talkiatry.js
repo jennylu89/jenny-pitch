@@ -2,12 +2,41 @@ export const talkiatry = {
   name: "Talkiatry",
   role: "Senior Design Manager, Product Design",
 
-  // Summary that mirrors their JD language back
-  summary: "You're looking for a player-coach who can lead a design team, own end-to-end design across patient and provider surfaces, and articulate tradeoffs to clinical and ops stakeholders. Here's how I've done exactly that.",
+  // Hero one-liner
+  oneLiner: "Player-coach with 10 years shipping products in healthcare, fintech, and consumer — from research through code.",
 
-  subtitle: "10+ years as a player-coach — leading design teams while shipping healthcare, fintech, and consumer products that move real metrics.",
-
-  tags: ["Player-Coach", "Healthcare UX", "Design Systems", "Stakeholder Alignment", "AI-Accelerated", "Figma + React"],
+  // Summary section — JD requirements mapped to proof
+  summaryHeading: "Every requirement in your JD maps to something I've already shipped.",
+  summaryRows: [
+    {
+      ask: "Player-coach — hands-on design + team leadership",
+      proof: "Promoted to Sr. Manager at Giant Eagle leading a distributed team across US + India. Never stopped designing — owned myPerks end-to-end while managing the team.",
+    },
+    {
+      ask: "Patient & provider surfaces — booking flows, portals, provider tools, internal ops",
+      proof: "Designed both sides at Highmark Health (regulated member products) and Arena Labs (patient-facing + provider-facing healthtech).",
+    },
+    {
+      ask: "Articulate tradeoffs — explain design choices, influence cross-functional stakeholders",
+      proof: "Hired to fix one billing page at Roadrunner. Ran a 142-person study, presented options with data, got the yes on a full platform overhaul.",
+    },
+    {
+      ask: "Design systems in Figma — consistency and scalability across all products",
+      proof: "Built design systems at every company — 50+ component Figma library at Roadrunner, consolidated 4 deliverable systems into one at Arena Labs.",
+    },
+    {
+      ask: "AI to accelerate design — improve the design and development process",
+      proof: "Built this portfolio and a lead-gen pipeline with Claude Code. AI isn't a side interest — it's how I prototype, synthesize research, and ship.",
+    },
+    {
+      ask: "7+ years product design",
+      proof: "10+ years across healthcare, fintech, consumer, and B2B SaaS.",
+    },
+    {
+      ask: "2+ years people management",
+      proof: "4+ years managing designers — hired, mentored, and grew a distributed team at Giant Eagle.",
+    },
+  ],
 
   sections: [
     {

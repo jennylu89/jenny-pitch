@@ -5,7 +5,7 @@ export default function LLCaseStudy({ project, index }) {
   const screens = caseStudy.screens || [];
   const hasScreens = screens.length > 0;
 
-  const screensType = caseStudy.screensType || (caseStudy.screensLayout === 'row' ? 'app' : null);
+  const screensType = caseStudy.screensType || null;
   const isApp       = screensType === 'app';
   const isDashboard = screensType === 'dashboard';
   const isFlow      = screensType === 'flow';
