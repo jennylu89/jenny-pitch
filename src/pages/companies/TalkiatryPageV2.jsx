@@ -444,9 +444,13 @@ export default function TalkiatryPageV2() {
           }}>
             {talkiatry.howIWork.tiles.filter(t => t.heading).map((tile, i) => (
               <div key={i} style={{
-                backgroundColor: 'var(--surface)',
+                backgroundColor: 'var(--glass-bg)',
+                backdropFilter: 'blur(var(--glass-blur))',
+                WebkitBackdropFilter: 'blur(var(--glass-blur))',
+                border: '1px solid var(--glass-stroke)',
                 borderRadius: 'var(--radius)',
-                padding: 'var(--space-24)',
+                boxShadow: 'var(--shadow-glass)',
+                padding: '32px',
                 display: 'flex', flexDirection: 'column', gap: 'var(--space-12)',
               }}>
                 <h3 style={{
