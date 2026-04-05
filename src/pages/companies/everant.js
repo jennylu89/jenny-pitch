@@ -30,7 +30,7 @@ export const everant = {
     },
     {
       ask: "AI-native workflow — using AI to accelerate design and development",
-      proof: "Built this portfolio and a 405-lead gen pipeline with Claude Code. AI isn't a side tool — it's how I prototype, research, and ship.",
+      proof: "Built this portfolio, a 405-lead gen pipeline, and a full design hub with Claude Code. Research synthesis, prototyping, and shipping — all AI-accelerated.",
     },
   ],
 
@@ -62,11 +62,11 @@ export const everant = {
       title: "The 5-million-record problem isn't a notification. It's a conversation.",
       story: [
         "You described an agent updating 5 million records and running into edge cases — no address, no town, just a country. The instinct is to prompt the user every time. But that's the Claude permissions problem — approving things every 2 seconds until you stop paying attention.",
-        "At Arena Labs, clinicians needed the right intervention at the right moment during 12-hour shifts. Not a menu of options — one recommendation, contextually chosen, based on biometrics and time of day. Pre-shift, mid-shift, post-shift. The app reads where you are and tells you what to do next.",
-        "For Everant's agents, the same principle applies: batch the decisions, surface what matters, let the agent handle what it can. Show the user a summary of choices made and choices that need them — not a stream of interruptions.",
+        "At Arena Labs, I solved a version of this: clinicians during 12-hour shifts needed the right intervention at the right moment. Not a menu — one recommendation, contextually chosen, based on biometrics and time of day. The principle transfers: don't interrupt, surface what matters when it matters.",
+        "For Everant specifically, I'd approach the agent UX in three layers. First: a decision queue — batch the edge cases the agent can't resolve and let the user triage them in one session, not one-by-one as they arise. Second: a confidence threshold — the agent handles high-confidence actions automatically and only escalates ambiguous ones, with a clear audit trail of what it decided and why. Third: a job dashboard that shows progress, decisions made, and decisions pending — so the user can check in on their terms, not on the agent's schedule.",
       ],
       metrics: [
-        { value: "3", label: "Time-aware states (Arena)" },
+        { value: "3", label: "Proposed UX layers" },
         { value: "28→3", label: "Clicks per task (Roadrunner)" },
       ],
     },
@@ -97,23 +97,23 @@ export const everant = {
       title: "The Design Hub I showed you replaced Figma, Notion, Storybook, and PDF specs with one URL.",
       story: [
         "You saw the Arena Labs project in our call — the design system, the token architecture, the component patterns, the research docs all in one place. That wasn't a nice-to-have. As the sole designer on limited hours, I couldn't afford four separate systems.",
-        "So I built one. React + Vite, one URL. Clickable prototype with a dev mode token inspector. Full design system across 3 token tiers. 8 research docs, 97 usability issues tracked. ~15K lines of code. Engineers inspect tokens. Stakeholders tap prototypes. Research lives next to the decisions it shaped.",
+        "So I built one. React + Vite, one URL. Clickable prototype with a dev mode token inspector. Full design system across 3 token tiers. 8 research docs, 97 usability issues tracked with localStorage. Engineers inspect tokens. Stakeholders tap prototypes. Research lives next to the decisions it shaped.",
         "For Everant, I'd build the same foundation — a design system that scales with the product, not a Figma file that gets out of date the day after handoff.",
       ],
       metrics: [
         { value: "4→1", label: "Systems consolidated" },
-        { value: "~15K", label: "Lines of React" },
+        { value: "97", label: "Usability issues tracked" },
       ],
     },
     {
       id: "crm-b2b",
       tocLabel: "CRM & B2B SaaS",
-      requirement: "Salesforce-adjacent product — enterprise internal tools, complex workflows",
+      requirement: "Salesforce-adjacent product — integrate AI into existing CRM tools, not replace them",
       title: "Roadrunner was the same problem: enterprise ops teams stuck in fragmented tools.",
       story: [
         "At Roadrunner, billing reps bounced between 4 apps per invoice. 28 clicks per bill. 15% of bills were carbon copies re-entered from scratch every month. The platform crashed 3–7 times a week. That's not a UI problem — that's a workflow architecture problem.",
         "I ran the study, got the overhaul approved, and led four workstreams: automate the repetitive, fix the navigation, standardize the patterns, build a component library. 50+ reusable components. Just engineering and me.",
-        "Everant's CRM integration faces the same challenge — enterprise users have existing workflows baked into muscle memory. The AI layer needs to feel like a natural extension, not a new tool to learn. That's what I did at Roadrunner — same users, same jobs, fewer steps.",
+        "Everant's approach — integrating AI into existing Salesforce and NetSuite workflows rather than asking users to migrate — is the right call. That means designing within someone else's UI paradigm. The AI layer has to feel native to the CRM, not like a bolted-on sidebar. At Roadrunner, I did exactly this: same users, same core jobs, but fewer steps and a system that worked with their muscle memory instead of against it.",
       ],
       metrics: [
         { value: "40%", label: "Fewer manual errors" },

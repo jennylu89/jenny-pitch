@@ -45,7 +45,7 @@ export const talkiatry = {
       requirement: "Serve as both a hands-on designer and team leader — contributing directly to design work while setting vision and direction",
       title: "Promoted from designer to Sr. Manager. Never stopped designing.",
       story: [
-        "At Giant Eagle, I was promoted to Sr. Manager leading a distributed design team across the USA and India. I mentored designers across visual design, product design, design systems, and accessibility. But I never became a meetings-only manager.",
+        "At Giant Eagle, I was promoted to Sr. Manager leading a team of 5 designers distributed across the US and India — visual design, product design, design systems, and accessibility. But I never became a meetings-only manager.",
         "I ran my own research. I owned the myPerks loyalty redesign end-to-end — from the 4M-member usability study through shipped product. I directed Scan Pay & Go across mobile, web, and in-store devices. I established WCAG standards adopted org-wide. All while managing the team.",
         "Your JD describes a 'high-impact, player-coach role.' That's not aspirational for me — it's how I've operated for the last decade.",
       ],
@@ -65,13 +65,13 @@ export const talkiatry = {
       requirement: "Own end-to-end design for patient booking flows, patient portal, provider software, and internal operations tools",
       title: "I've designed for patients and the systems that serve them. At the same time.",
       story: [
-        "At Highmark Health, I bridged design and front-end development for regulated healthcare applications — member-facing products serving millions. I learned how healthcare UX works: insurance constraints, clinical workflows, compliance requirements that can't be simplified away.",
-        "At Arena Labs, I led end-to-end design for a Series A healthtech — user research, validation, UX design, prototyping, and product launch. Built the complete design system, onboarding flow, and daily check-in experience. Both patient-facing and provider-facing surfaces.",
-        "Talkiatry's challenge — designing for patients seeking care AND clinicians avoiding burnout — is exactly this dual-stakeholder problem. I've done it across healthcare, fintech (where users and compliance teams have opposing needs), and consumer (where business goals and user needs pull in different directions).",
+        "At Highmark Health, I designed and built UI components for member-facing insurance products — plan selection flows, claims status, and benefits navigation for millions of members. Healthcare UX is different: you're designing under HIPAA constraints, for users in stressful moments, where a confusing flow means someone doesn't get care.",
+        "At Arena Labs, I designed Strive — a performance app for surgeons, ER nurses, and trauma teams. Patient-facing: daily check-ins, biometric-driven recommendations, shift-aware states. Provider-facing: coaching dashboards, progress tracking, intervention scheduling. Both surfaces, one design system, one designer.",
+        "Talkiatry's dual-stakeholder challenge — patients seeking care and clinicians avoiding burnout — is familiar. Telepsychiatry adds another layer: the booking flow IS the first clinical touchpoint. If a patient feels confused or judged during intake, they won't show up. That's not a conversion problem — it's a care problem.",
       ],
       metrics: [
-        { value: "2", label: "Healthcare companies" },
-        { value: "Millions", label: "Users served" },
+        { value: "3", label: "Time-aware patient states" },
+        { value: "2", label: "Stakeholder surfaces (patient + provider)" },
       ],
     },
     {
@@ -82,7 +82,7 @@ export const talkiatry = {
       story: [
         "At Roadrunner, the brief was a single billing page. Before I touched a screen, I ran a 142-person usability study. Reps were bouncing between four apps per invoice. 28 clicks per bill. 15% of bills were carbon copies re-entered from scratch every month.",
         "I brought it to leadership as a choice, not a problem. Here's the single page fix — fast, low risk. Here's the full overhaul — slower, but eliminates the root cause. Here's the data behind each. They chose the overhaul.",
-        "Your JD says you want someone who can 'explain design choices and any tradeoffs considered.' I don't just present work — I present options with evidence, so stakeholders make informed decisions. That's how design earns its seat at the table.",
+        "Your JD says you want someone who can 'explain design choices and any tradeoffs considered.' I don't just present work — I present options with evidence so stakeholders can make informed decisions.",
       ],
       metrics: [
         { value: "28→3", label: "Clicks per bill" },
@@ -117,7 +117,7 @@ export const talkiatry = {
       story: [
         "This portfolio site is a React + Vite app I built with Claude Code. Not a template — a data-driven system where every case study, metric, and testimonial comes from a single source of truth. I prototype in code because the prototype is the product.",
         "I also built a lead-generation pipeline that scrapes YC, Reddit, and Hacker News for buying signals — scores 405 leads, drafts personalized outreach, and runs the full pipeline in one command. AI as infrastructure, not novelty.",
-        "Your JD calls for 'interest in and excitement for using AI to improve and accelerate product design.' I'd bring that into how the design team works — faster prototyping, tighter research synthesis, less time in handoff, more time in decisions that matter.",
+        "For a design team, this means: research synthesis in hours instead of days, interactive prototypes instead of static mocks, design-to-code with no handoff gap. I'd bring that workflow to Talkiatry's team — not as a novelty, but as the default way of working.",
       ],
       metrics: [
         { value: "React", label: "Ships production code" },
@@ -144,11 +144,11 @@ export const talkiatry = {
       },
       {
         heading: "Articulate the tradeoffs",
-        body: "I present options with evidence — not just the answer I like. Stakeholders make informed decisions. That's how design earns its seat.",
+        body: "I present options with evidence — not just the answer I like. Stakeholders make informed decisions because they see the data behind each path.",
       },
     ],
   },
 
   close:
-    "I've spent my career making complex, high-stakes systems feel effortless — for the people using them and the teams building them. I'd love to bring that to Talkiatry. Let's talk.",
+    "Patient-facing and provider-facing. Research and shipped product. Hands-on design and team leadership. I'd love to bring all of it to Talkiatry.",
 };
