@@ -4,6 +4,7 @@ import Footer from '../../components/Footer';
 import { talkiatry } from './talkiatry';
 import { jenny } from '../../data/jenny';
 import LLCaseStudy from '../../components/ll/LLCaseStudy';
+import LLHowIWork from '../../components/ll/LLHowIWork';
 
 /* ── Noise overlay SVG (shared) ── */
 const NOISE_SVG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`;
@@ -411,72 +412,7 @@ export default function TalkiatryPageV2() {
       </section>
 
       {/* ═══ HOW I WORK ═══ */}
-      <section style={{ padding: 'var(--space-96) 0' }}>
-        <div className="section-pad" style={{
-          maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)',
-        }}>
-          <Eyebrow>
-            <span style={{ color: 'var(--muted)' }}>How I work</span>
-          </Eyebrow>
-          <h2 style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: 'var(--type-h2)',
-            fontWeight: 'var(--weight-medium)',
-            lineHeight: 'var(--leading-h2)',
-            letterSpacing: 'var(--tracking-h2)',
-            color: 'var(--text)',
-            margin: '0 0 var(--space-18)',
-          }}>
-            {talkiatry.howIWork.heading}
-          </h2>
-          <p style={{
-            fontSize: 'var(--type-body)',
-            color: 'var(--muted)',
-            lineHeight: 'var(--leading-body)',
-            margin: '0 0 var(--space-48)',
-            maxWidth: '520px',
-          }}>
-            {talkiatry.howIWork.subheading}
-          </p>
-          <div className="talkiatry-how-grid" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: 'var(--space-12)',
-          }}>
-            {talkiatry.howIWork.tiles.filter(t => t.heading).map((tile, i) => (
-              <div key={i} style={{
-                backgroundColor: 'var(--glass-bg)',
-                backdropFilter: 'blur(var(--glass-blur))',
-                WebkitBackdropFilter: 'blur(var(--glass-blur))',
-                border: '1px solid var(--glass-stroke)',
-                borderRadius: 'var(--radius)',
-                boxShadow: 'var(--shadow-glass)',
-                padding: '32px',
-                display: 'flex', flexDirection: 'column', gap: 'var(--space-12)',
-              }}>
-                <h3 style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: 'var(--type-h4)',
-                  fontWeight: 'var(--weight-medium)',
-                  lineHeight: 'var(--leading-h4)',
-                  letterSpacing: 'var(--tracking-h4)',
-                  color: 'var(--text)',
-                  margin: 0,
-                }}>
-                  {tile.heading}
-                </h3>
-                <p style={{
-                  fontSize: 'var(--type-body)',
-                  color: 'var(--muted)',
-                  lineHeight: 'var(--leading-body)',
-                  margin: 0,
-                }}>
-                  {tile.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <LLHowIWork howIWork={talkiatry.howIWork} />
 
       {/* ═══ CLOSE CTA ═══ */}
       <div style={{

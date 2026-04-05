@@ -5,6 +5,7 @@ import LLWhyMe from '../../components/ll/LLWhyMe';
 import LLBento from '../../components/ll/LLBento';
 import ContactSection from '../../components/ContactSection';
 import LLSplitSection from '../../components/ll/LLSplitSection';
+import LLHowIWork from '../../components/ll/LLHowIWork';
 
 export default function LoveLetterPage({ company }) {
   const sections = company.sections || [];
@@ -25,6 +26,7 @@ export default function LoveLetterPage({ company }) {
           />
         ))}
 
+        {company.howIWork && <LLHowIWork howIWork={company.howIWork} />}
         <ContactSection />
       </main>
       <Footer />
