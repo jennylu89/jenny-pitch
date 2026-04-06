@@ -125,8 +125,8 @@ export const jenny = {
         ],
         screens: [
           { src: "/megprime-screen-1.png", alt: "MegPrime reward calculator", caption: "Value calculator — shows what you'd earn vs. your bank before any signup" },
-          { src: "/megprime-screen-2.png", alt: "MegPrime rent details", caption: "Rent Details — live earnings preview at every step" },
-          { src: "/megprime-screen-3.png", alt: "MegPrime setup rent", caption: "Setup Rent — two clear paths, no banking jargon" },
+          { src: "/megprime-screen-2.png", alt: "MegPrime setup rent", caption: "Setup Rent — check how you pay rent today, set up in minutes" },
+          { src: "/megprime-screen-3.png", alt: "MegPrime how it works", caption: "How It Works — educates users on rent payments with USDC rewards" },
         ],
         screensType: 'app',
       },

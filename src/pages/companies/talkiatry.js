@@ -3,10 +3,10 @@ export const talkiatry = {
   role: "Senior Design Manager, Product Design",
 
   // Hero one-liner
-  oneLiner: "Player-coach with 10 years shipping products in healthcare, fintech, and consumer — from research through code.",
+  oneLiner: "Player-coach with 10 years in healthcare, fintech, and consumer — I research, design, and ship.",
 
   // Summary section — JD requirements mapped to proof
-  summaryHeading: "Every requirement in your JD maps to something I've already shipped.",
+  summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
       ask: "Player-coach — hands-on design + team leadership",
@@ -47,7 +47,6 @@ export const talkiatry = {
       story: [
         "At Giant Eagle, I was promoted to Sr. Manager leading a team of 5+ designers distributed across the US and India — visual design, product design, design systems, and accessibility. But I never became a meetings-only manager.",
         "I ran my own research. I owned the myPerks loyalty redesign end-to-end — from the 4M-member usability study through shipped product. I directed Scan Pay & Go across mobile, web, and in-store devices. I established WCAG standards adopted org-wide. All while managing the team.",
-        "Your JD describes a 'high-impact, player-coach role.' That's how I've operated for the last decade.",
       ],
       metrics: [
         { value: "384%", label: "Spend per member lift" },
@@ -63,11 +62,11 @@ export const talkiatry = {
       id: "patient-provider",
       tocLabel: "Patient & Provider Design",
       requirement: "Own end-to-end design for patient booking flows, patient portal, provider software, and internal operations tools",
-      title: "I've designed for patients and the systems that serve them. At the same time.",
+      title: "Designed for patients and the systems behind them.",
       story: [
-        "At Highmark Health, I designed and built UI components for member-facing insurance products serving millions of members. Healthcare UX is different: you're designing under HIPAA constraints, for users in stressful moments, where a confusing interface means someone doesn't get care.",
+        "At Highmark Health, I designed and built UI components for member-facing insurance products serving millions of members. Healthcare UX is different: you're designing under HIPAA constraints, for users in stressful moments, where a confusing interface means someone gives up on getting care.",
         "At Arena Labs, I designed Strive — a performance app for surgeons, ER nurses, and trauma teams. Patient-facing: daily check-ins, biometric-driven recommendations, shift-aware states. Provider-facing: coaching dashboards, progress tracking, intervention scheduling. Both surfaces, one design system, one designer.",
-        "Designing for two stakeholders with competing needs — patients seeking care and clinicians managing workload — is familiar territory. I've navigated it across healthcare, fintech (where users and compliance pull in opposite directions), and consumer (where business goals and user needs diverge).",
+        "Designing for two stakeholders with competing needs is familiar. Patients seeking care. Clinicians managing workload. I've navigated this across healthcare, fintech, and consumer.",
       ],
       metrics: [
         { value: "3", label: "Time-aware patient states" },
@@ -82,7 +81,6 @@ export const talkiatry = {
       story: [
         "At Roadrunner, the brief was a single billing page. I started with research — usability study, stakeholder interviews, competitor benchmarking against Bill.com and Stripe. What I found went beyond one page: 4 applications, 28+ clicks per bill, 75% of bills identical to the previous month yet entered from scratch. The platform went down 1–2 times per week.",
         "I mapped the full workflow and brought it to leadership as a choice. Here's the single page fix — fast, low risk. Here's the full overhaul — slower, but eliminates the root cause. Here's the data behind each. They chose the overhaul.",
-        "Your JD says you want someone who can 'explain design choices and any tradeoffs considered.' I don't just present work — I present options with evidence so stakeholders can make informed decisions.",
       ],
       metrics: [
         { value: "28→3", label: "Clicks per bill" },
@@ -102,7 +100,6 @@ export const talkiatry = {
       story: [
         "At Roadrunner, I built a 50+ component Figma system with tokens, reusable components, and documentation — alongside the product, not as a separate workstream. Every new feature used existing patterns from day one.",
         "At Arena Labs, design was scattered across Figma docs, Notion, Storybook, and PDFs. I built a Design Hub — one React app that replaced all four. Stakeholders tap prototypes. Engineers inspect tokens. Research lives next to the decisions it shaped.",
-        "Your JD calls for 'consistency and scalability across all products' — patient booking, patient portal, provider software, internal tools. That's the same multi-surface challenge I solved at Roadrunner and Arena Labs.",
       ],
       metrics: [
         { value: "50+", label: "Reusable components" },
@@ -113,10 +110,10 @@ export const talkiatry = {
       id: "ai-design",
       tocLabel: "AI-Accelerated Design",
       requirement: "Leverage AI to improve and accelerate product design and development — shape new ways of working across the design team",
-      title: "AI isn't a tool I use. It's how I work.",
+      title: "I ship with AI. Here's what that looks like.",
       story: [
-        "This portfolio site is a React + Vite app I built with Claude Code. Not a template — a data-driven system where every case study, metric, and testimonial comes from a single source of truth. I prototype in code because the prototype is the product.",
-        "I also built a lead-generation pipeline that scrapes YC, Reddit, and Hacker News for buying signals — scores 405 leads, drafts personalized outreach, and runs the full pipeline in one command. AI as infrastructure, not novelty.",
+        "This portfolio is a React + Vite app I built with Claude Code — not a template, a working product. Every case study pulls from one data file.",
+        "I also built a lead-generation pipeline that scrapes YC, Reddit, and Hacker News for buying signals — scores 405 leads, drafts personalized outreach, and runs the full pipeline in one command.",
         "For a design team, this means: research synthesis in hours instead of days, interactive prototypes instead of static mocks, design-to-code with no handoff gap. I'd bring that workflow to Talkiatry's team — not as a novelty, but as the default way of working.",
       ],
       metrics: [
@@ -128,7 +125,7 @@ export const talkiatry = {
 
   howIWork: {
     heading: "Research first. Then I build.",
-    subheading: "Every decision traces back to a user need, a constraint, or a metric worth moving. No Figma until I know the problem.",
+    subheading: "Every decision traces back to a user need, a constraint, or a metric worth moving.",
     tiles: [
       {
         heading: "Start with evidence",
@@ -150,5 +147,5 @@ export const talkiatry = {
   },
 
   close:
-    "Patient-facing and provider-facing. Research and shipped product. Hands-on design and team leadership. I'd love to bring all of it to Talkiatry.",
+    "I'd love to talk about what I can bring to Talkiatry.",
 };

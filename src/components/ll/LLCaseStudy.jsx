@@ -1,4 +1,58 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
+
+function ScrollStrip({ children, bg = 'var(--text)' }) {
+  const scrollRef = useRef(null);
+  const [canScroll, setCanScroll] = useState(false);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const hasOverflow = el.scrollWidth > el.clientWidth + 4;
+    setCanScroll(hasOverflow);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, [checkScroll]);
+
+  return (
+    <div style={{ position: 'relative', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div
+        ref={scrollRef}
+        onScroll={checkScroll}
+        style={{
+          backgroundColor: bg,
+          overflowX: 'auto',
+          scrollSnapType: 'x mandatory',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
+        {children}
+      </div>
+      {/* Right fade + scroll hint */}
+      {canScroll && !atEnd && (
+        <div style={{
+          position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px',
+          background: 'linear-gradient(to right, transparent, #272727)',
+          pointerEvents: 'none',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <div style={{
+            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px',
+          }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(245,244,242,0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function LLCaseStudy({ project, index }) {
   const { caseStudy } = project;
@@ -144,15 +198,7 @@ export default function LLCaseStudy({ project, index }) {
 
         {/* ── App screenshots: horizontal scroll strip ── */}
         {isApp && hasScreens && (
-          <div style={{
-            backgroundColor: 'var(--text)',
-            borderTop: '1px solid rgba(255,255,255,0.06)',
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            WebkitOverflowScrolling: 'touch',
-            msOverflowStyle: 'none',
-            scrollbarWidth: 'none',
-          }}>
+          <ScrollStrip>
             <div style={{
               display: 'flex',
               justifyContent: 'center',
@@ -169,14 +215,14 @@ export default function LLCaseStudy({ project, index }) {
                   display: 'flex',
                   flexDirection: 'column',
                 }}>
-                  <div style={{ height: '420px', overflow: 'hidden', borderRadius: '12px' }}>
+                  <div style={{ height: '450px', overflow: 'hidden', borderRadius: '12px' }}>
                     <img src={screen.src} alt={screen.alt || project.title} loading="lazy"
                       style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
                   </div>
                   {screen.caption && (
                     <p style={{
                       color: 'rgba(245,244,242,0.65)', fontSize: 'var(--type-small)',
-                      lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0,
+                      lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0, textAlign: 'center',
                     }}>
                       {screen.caption}
                     </p>
@@ -184,7 +230,7 @@ export default function LLCaseStudy({ project, index }) {
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollStrip>
         )}
 
         {/* ── Dashboard: wide web frame ── */}
@@ -226,7 +272,7 @@ export default function LLCaseStudy({ project, index }) {
               {screens.map((screen, i) => (
                 <div key={i}>
                   {screen.caption && (
-                    <p style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)', lineHeight: 'var(--leading-body)', margin: '0 0 8px' }}>
+                    <p style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)', lineHeight: 'var(--leading-body)', margin: '0 0 8px', textAlign: 'center' }}>
                       {screen.caption}
                     </p>
                   )}
@@ -242,17 +288,10 @@ export default function LLCaseStudy({ project, index }) {
 
         {/* ── Before → After: before screen + arrow + after screens ── */}
         {isBeforeAfter && hasScreens && beforeScreen && (
-          <div style={{
-            backgroundColor: 'var(--text)',
-            borderTop: '1px solid rgba(255,255,255,0.06)',
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            WebkitOverflowScrolling: 'touch',
-            msOverflowStyle: 'none',
-            scrollbarWidth: 'none',
-          }}>
+          <ScrollStrip>
             <div style={{
               display: 'flex',
+              justifyContent: 'center',
               alignItems: 'flex-start',
               gap: '0',
               padding: '40px',
@@ -260,14 +299,14 @@ export default function LLCaseStudy({ project, index }) {
             }}>
               {/* Before screen */}
               <div style={{ width: '240px', flexShrink: 0, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ height: '420px', overflow: 'hidden', borderRadius: '12px', backgroundColor: 'rgba(0,0,0,0.3)' }}>
+                <div style={{ height: '450px', overflow: 'hidden', borderRadius: '12px' }}>
                   <img src={beforeScreen.src} alt={beforeScreen.alt || 'Before'} loading="lazy"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
                 </div>
                 {beforeScreen.caption && (
                   <p style={{
                     color: 'rgba(245,244,242,0.65)', fontSize: 'var(--type-small)',
-                    lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0,
+                    lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0, textAlign: 'center',
                   }}>
                     {beforeScreen.caption}
                   </p>
@@ -277,7 +316,7 @@ export default function LLCaseStudy({ project, index }) {
               {/* Arrow */}
               <div style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                height: '420px', padding: '0 24px', flexShrink: 0,
+                height: '450px', padding: '0 24px', flexShrink: 0,
               }}>
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(245,244,242,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
@@ -291,14 +330,14 @@ export default function LLCaseStudy({ project, index }) {
                   marginLeft: i > 0 ? '16px' : '0',
                   display: 'flex', flexDirection: 'column',
                 }}>
-                  <div style={{ height: '420px', overflow: 'hidden', borderRadius: '12px' }}>
+                  <div style={{ height: '450px', overflow: 'hidden', borderRadius: '12px' }}>
                     <img src={screen.src} alt={screen.alt || project.title} loading="lazy"
                       style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
                   </div>
                   {screen.caption && (
                     <p style={{
                       color: 'rgba(245,244,242,0.65)', fontSize: 'var(--type-small)',
-                      lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0,
+                      lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0, textAlign: 'center',
                     }}>
                       {screen.caption}
                     </p>
@@ -306,7 +345,7 @@ export default function LLCaseStudy({ project, index }) {
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollStrip>
         )}
 
       </div>
