@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const stats = [
   { value: '384%', label: 'Spend per member lift', source: 'Giant Eagle · myPerks loyalty redesign' },
@@ -10,27 +10,59 @@ const companies = ['Giant Eagle', 'Roadrunner', 'Arena Labs', 'MegPrime'];
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const sectionRef = useRef(null);
-
-  const handleMouseMove = useCallback((e) => {
-    const rect = sectionRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setMouse({ x, y });
-  }, []);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80);
     return () => clearTimeout(t);
   }, []);
 
+  // Mouse-reactive blobs via CSS custom properties + rAF lerp
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const target = { x: 0, y: 0 };
+    const current = { x: 0, y: 0 };
+    let rafId;
+
+    const handleMouseMove = (e) => {
+      const rect = el.getBoundingClientRect();
+      target.x = (e.clientX - rect.left) / rect.width - 0.5;
+      target.y = (e.clientY - rect.top) / rect.height - 0.5;
+    };
+
+    const handleMouseLeave = () => {
+      target.x = 0;
+      target.y = 0;
+    };
+
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    const tick = () => {
+      current.x = lerp(current.x, target.x, 0.06);
+      current.y = lerp(current.y, target.y, 0.06);
+      el.style.setProperty('--mx', current.x);
+      el.style.setProperty('--my', current.y);
+      rafId = requestAnimationFrame(tick);
+    };
+
+    el.addEventListener('mousemove', handleMouseMove);
+    el.addEventListener('mouseleave', handleMouseLeave);
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      el.removeEventListener('mousemove', handleMouseMove);
+      el.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      onMouseMove={handleMouseMove}
       style={{
+        '--mx': 0, '--my': 0,
         background: 'var(--bg)',
         paddingTop: 'calc(56px + 80px)',
         paddingBottom: '80px',
@@ -38,33 +70,33 @@ export default function Hero() {
         position: 'relative',
       }}
     >
-      {/* Animated blobs — mouse reactive */}
-      <div className="hero-blob" style={{
+      {/* Animated blobs — mouse reactive via CSS custom properties */}
+      <div style={{
         position: 'absolute', zIndex: 0, pointerEvents: 'none',
         width: '600px', height: '600px', top: '-100px', left: '-50px',
         borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(139,120,255,0.5) 0%, rgba(139,120,255,0) 70%)',
         filter: 'blur(40px)',
-        transform: `translate(${mouse.x * 50}px, ${mouse.y * 40}px)`,
-        transition: 'transform 0.15s ease-out',
+        transform: 'translate(calc(var(--mx) * 80px), calc(var(--my) * 60px))',
+        willChange: 'transform',
       }} />
-      <div className="hero-blob" style={{
+      <div style={{
         position: 'absolute', zIndex: 0, pointerEvents: 'none',
         width: '500px', height: '500px', top: '0px', right: '-100px',
         borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(200,180,255,0.4) 0%, rgba(200,180,255,0) 70%)',
         filter: 'blur(40px)',
-        transform: `translate(${mouse.x * -35}px, ${mouse.y * 25}px)`,
-        transition: 'transform 0.15s ease-out',
+        transform: 'translate(calc(var(--mx) * -50px), calc(var(--my) * 40px))',
+        willChange: 'transform',
       }} />
-      <div className="hero-blob" style={{
+      <div style={{
         position: 'absolute', zIndex: 0, pointerEvents: 'none',
         width: '400px', height: '400px', bottom: '50px', left: '35%',
         borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(100,80,255,0.35) 0%, rgba(100,80,255,0) 70%)',
         filter: 'blur(40px)',
-        transform: `translate(${mouse.x * 20}px, ${mouse.y * -30}px)`,
-        transition: 'transform 0.15s ease-out',
+        transform: 'translate(calc(var(--mx) * 30px), calc(var(--my) * -50px))',
+        willChange: 'transform',
       }} />
       {/* Noise overlay */}
       <div style={{
