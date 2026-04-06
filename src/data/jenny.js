@@ -226,6 +226,7 @@ export const jenny = {
           "Arena Strive is a B2B2C healthcare app — sold to hospitals, used by surgeons, ER nurses, and trauma teams. The problem wasn't one thing. Usability was poor (97 issues logged). The sales cycle was slow because hospitals couldn't see ROI. Users weren't sticking because the app felt generic, not personal.",
           "The design process was the bottleneck. One designer, limited hours, and the traditional Figma → handoff pipeline couldn't keep up. I built an AI-powered prototyping workflow with Claude Code — functional React prototypes instead of static mocks. What used to take weeks took days.",
           "With the speed unlocked, I redesigned the homepage around three time-aware states — pre-shift, mid-shift, post-shift — each surfacing one recommendation based on Whoop biometric data. A surgeon at 6:47am gets focus priming. At 1:15pm with elevated heart rate, a 90-second reset. At 11:30pm, one question: how did today feel?",
+          "Currently exploring the B2B2C layer: a hospital-facing dashboard that surfaces team engagement data — proving ROI to the buyer before the contract closes. On the clinician side, gamification to drive daily usage. The hypothesis: if the hospital can see their team improving, the sales cycle shortens.",
         ],
         beforeScreen: { src: "/arena-screen-before.png", alt: "Arena Strive V1 — feature library", caption: "Before — V1 feature library" },
         screens: [
