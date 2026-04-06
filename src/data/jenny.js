@@ -113,15 +113,13 @@ export const jenny = {
       outcome:
         "Hid the entire USDC layer. Users see rent payment and rewards — not token mechanics.",
       metrics: [
-        { value: "20→5", label: "KYC screens" },
         { value: "2", label: "Payment paths proposed" },
       ],
       caseStudy: {
         insight: "Users don't need to know what USDC is. They need to pay rent and earn rewards.",
         story: [
           "MegPrime wanted mainstream renters earning 10% back on rent — not crypto enthusiasts. USDC, KYC, SEC disclosures, and state-by-state licensing underneath. The design challenge wasn't managing that complexity. It was making it disappear.",
-          "Led with a value calculator — before signup, before KYC, before any commitment. Showed exactly what you'd earn vs. your bank this month, this year, over 5 years. The USDC conversion happens in the background. Users see rent payment and a growing balance.",
-          "KYC is where fintech products bleed users. Worked with legal to find every screen we could cut. 20+ screens down to 5. Zip code first — not just UX, but a legal gate that removes ineligible users before you collect a single data point.",
+          "Led with a value calculator — before signup, before any commitment. Showed exactly what you'd earn vs. your bank this month, this year, over 5 years. The USDC conversion happens in the background. Users see rent payment and a growing balance.",
         ],
         screens: [
           { src: "/megprime-screen-1.png", alt: "MegPrime reward calculator", caption: "Value calculator — shows what you'd earn vs. your bank before any signup" },

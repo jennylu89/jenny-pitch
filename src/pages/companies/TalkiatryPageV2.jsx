@@ -276,11 +276,12 @@ export default function TalkiatryPageV2() {
             {/* Role */}
             <p style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'var(--type-lead)',
-              fontWeight: 'var(--weight-normal)',
-              lineHeight: 'var(--leading-body)',
-              color: 'var(--muted)',
-              margin: '-8px 0 0',
+              fontSize: 'var(--type-h4)',
+              fontWeight: 'var(--weight-medium)',
+              lineHeight: 'var(--leading-h4)',
+              letterSpacing: 'var(--tracking-h4)',
+              color: 'var(--text)',
+              margin: 0,
               textAlign: 'center',
             }}>
               {talkiatry.role}
@@ -289,13 +290,13 @@ export default function TalkiatryPageV2() {
             {/* One-liner */}
             <p style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'var(--type-body)',
-              fontWeight: 'var(--weight-normal)',
+              fontSize: 'var(--type-lead)',
+              fontWeight: 'var(--weight-medium)',
               lineHeight: 'var(--leading-body)',
               color: 'var(--muted)',
-              margin: 'var(--space-12) 0 0',
+              margin: 0,
               textAlign: 'center',
-              maxWidth: '500px',
+              maxWidth: '600px',
             }}>
               {talkiatry.oneLiner}
             </p>
