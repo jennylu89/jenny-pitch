@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 
 const stats = [
   { value: '384%', label: 'Spend per member lift', source: 'Giant Eagle · myPerks loyalty redesign' },
@@ -10,6 +10,16 @@ const companies = ['Giant Eagle', 'Roadrunner', 'Arena Labs', 'MegPrime'];
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef(null);
+
+  const handleMouseMove = useCallback((e) => {
+    const rect = sectionRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setMouse({ x, y });
+  }, []);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80);
@@ -17,38 +27,44 @@ export default function Hero() {
   }, []);
 
   return (
-    <section style={{
-      background: 'var(--bg)',
-      paddingTop: 'calc(56px + 80px)',
-      paddingBottom: '80px',
-      overflow: 'hidden',
-      position: 'relative',
-    }}>
-      {/* Animated gradient mesh */}
-      <div style={{
-        position: 'absolute', inset: 0, zIndex: 0,
-        background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
-      }} />
-      <div className="hero-blob hero-blob-1" style={{
+    <section
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      style={{
+        background: 'var(--bg)',
+        paddingTop: 'calc(56px + 80px)',
+        paddingBottom: '80px',
+        overflow: 'hidden',
+        position: 'relative',
+      }}
+    >
+      {/* Animated blobs — mouse reactive */}
+      <div className="hero-blob" style={{
         position: 'absolute', zIndex: 0, pointerEvents: 'none',
-        width: '600px', height: '600px', top: '-150px', left: '-100px',
+        width: '600px', height: '600px', top: '-100px', left: '-50px',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(139,120,255,0.25) 0%, transparent 70%)',
-        filter: 'blur(80px)',
+        background: 'radial-gradient(circle, rgba(139,120,255,0.5) 0%, rgba(139,120,255,0) 70%)',
+        filter: 'blur(40px)',
+        transform: `translate(${mouse.x * 50}px, ${mouse.y * 40}px)`,
+        transition: 'transform 0.15s ease-out',
       }} />
-      <div className="hero-blob hero-blob-2" style={{
+      <div className="hero-blob" style={{
         position: 'absolute', zIndex: 0, pointerEvents: 'none',
-        width: '500px', height: '500px', top: '-50px', right: '-150px',
+        width: '500px', height: '500px', top: '0px', right: '-100px',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(180,160,255,0.2) 0%, transparent 70%)',
-        filter: 'blur(80px)',
+        background: 'radial-gradient(circle, rgba(200,180,255,0.4) 0%, rgba(200,180,255,0) 70%)',
+        filter: 'blur(40px)',
+        transform: `translate(${mouse.x * -35}px, ${mouse.y * 25}px)`,
+        transition: 'transform 0.15s ease-out',
       }} />
-      <div className="hero-blob hero-blob-3" style={{
+      <div className="hero-blob" style={{
         position: 'absolute', zIndex: 0, pointerEvents: 'none',
-        width: '400px', height: '400px', bottom: '50px', left: '30%',
+        width: '400px', height: '400px', bottom: '50px', left: '35%',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(120,100,255,0.15) 0%, transparent 70%)',
-        filter: 'blur(80px)',
+        background: 'radial-gradient(circle, rgba(100,80,255,0.35) 0%, rgba(100,80,255,0) 70%)',
+        filter: 'blur(40px)',
+        transform: `translate(${mouse.x * 20}px, ${mouse.y * -30}px)`,
+        transition: 'transform 0.15s ease-out',
       }} />
       {/* Noise overlay */}
       <div style={{
