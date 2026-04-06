@@ -18,12 +18,38 @@ export default function Hero() {
 
   return (
     <section style={{
-      background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
+      background: 'var(--bg)',
       paddingTop: 'calc(56px + 80px)',
       paddingBottom: '80px',
       overflow: 'hidden',
       position: 'relative',
     }}>
+      {/* Animated gradient mesh */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 0,
+        background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
+      }} />
+      <div className="hero-blob hero-blob-1" style={{
+        position: 'absolute', zIndex: 0, pointerEvents: 'none',
+        width: '600px', height: '600px', top: '-150px', left: '-100px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(139,120,255,0.25) 0%, transparent 70%)',
+        filter: 'blur(80px)',
+      }} />
+      <div className="hero-blob hero-blob-2" style={{
+        position: 'absolute', zIndex: 0, pointerEvents: 'none',
+        width: '500px', height: '500px', top: '-50px', right: '-150px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(180,160,255,0.2) 0%, transparent 70%)',
+        filter: 'blur(80px)',
+      }} />
+      <div className="hero-blob hero-blob-3" style={{
+        position: 'absolute', zIndex: 0, pointerEvents: 'none',
+        width: '400px', height: '400px', bottom: '50px', left: '30%',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(120,100,255,0.15) 0%, transparent 70%)',
+        filter: 'blur(80px)',
+      }} />
       {/* Noise overlay */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 0,
