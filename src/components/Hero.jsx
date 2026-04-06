@@ -62,8 +62,8 @@ export default function Hero() {
       {/* GSAP spotlight — follows mouse */}
       <div ref={spotlightRef} style={{
         position: 'absolute', zIndex: 0, pointerEvents: 'none',
-        width: '600px', height: '600px',
-        marginLeft: '-300px', marginTop: '-300px',
+        width: '900px', height: '900px',
+        marginLeft: '-450px', marginTop: '-450px',
         borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(139,120,255,0.2) 0%, rgba(139,120,255,0.08) 30%, transparent 65%)',
         filter: 'blur(20px)',

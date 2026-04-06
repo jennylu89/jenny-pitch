@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { jenny } from '../data/jenny';
 import LLCaseStudy from './ll/LLCaseStudy';
+import TextReveal from './TextReveal';
 
 export default function Projects({ projects }) {
   const displayProjects = projects || jenny.selectedProjects;
@@ -45,18 +46,20 @@ export default function Projects({ projects }) {
           }}>
             Selected work
           </span>
-          <h2 style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: 'var(--type-h2)',
-            fontWeight: 'var(--weight-black)',
-            lineHeight: 'var(--leading-tight)',
-            letterSpacing: 'var(--tracking-tight)',
-            color: 'var(--text)',
-            margin: '0 0 12px',
-            maxWidth: '560px',
-          }}>
-            Full case studies. Every decision explained.
-          </h2>
+          <TextReveal>
+            <h2 style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--type-h2)',
+              fontWeight: 'var(--weight-black)',
+              lineHeight: 'var(--leading-tight)',
+              letterSpacing: 'var(--tracking-tight)',
+              color: 'var(--text)',
+              margin: '0 0 12px',
+              maxWidth: '560px',
+            }}>
+              Full case studies. Every decision explained.
+            </h2>
+          </TextReveal>
           <p style={{ color: 'var(--muted)', fontSize: 'var(--type-small)' }}>
             {displayProjects.length} projects
           </p>

@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import TextReveal from './TextReveal';
 
 const steps = [
   {
@@ -109,18 +110,20 @@ export default function ProcessSection() {
           }}>
             How I work
           </span>
-          <h2 style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: 'var(--type-h2)',
-            fontWeight: 'var(--weight-black)',
-            lineHeight: 'var(--leading-tight)',
-            letterSpacing: 'var(--tracking-tight)',
-            color: 'var(--text)',
-            margin: 0,
-            maxWidth: '480px',
-          }}>
-            Research first. Then I build.
-          </h2>
+          <TextReveal>
+            <h2 style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--type-h2)',
+              fontWeight: 'var(--weight-black)',
+              lineHeight: 'var(--leading-tight)',
+              letterSpacing: 'var(--tracking-tight)',
+              color: 'var(--text)',
+              margin: 0,
+              maxWidth: '480px',
+            }}>
+              Research first. Then I build.
+            </h2>
+          </TextReveal>
         </div>
 
         {/* Horizontal timeline */}

@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { jenny } from '../data/jenny';
+import TextReveal from './TextReveal';
 
 export default function Testimonials({ testimonials }) {
   const items = testimonials || jenny.testimonials;
@@ -48,27 +49,20 @@ export default function Testimonials({ testimonials }) {
           }}>
             What people say
           </span>
-          <h2 style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: 'var(--type-h2)',
-            fontWeight: 'var(--weight-medium)',
-            lineHeight: 'var(--leading-h2)',
-            letterSpacing: 'var(--tracking-h2)',
-            color: 'var(--text)',
-            margin: 0,
-            maxWidth: '480px',
-          }}>
-            People I've worked with{' '}
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              width: '1.1em', height: '1.1em', borderRadius: '50%',
-              backgroundColor: 'var(--surface)',
-              boxShadow: 'var(--shadow-glass)',
-              verticalAlign: 'middle', position: 'relative', top: '-0.05em',
+          <TextReveal>
+            <h2 style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--type-h2)',
+              fontWeight: 'var(--weight-medium)',
+              lineHeight: 'var(--leading-h2)',
+              letterSpacing: 'var(--tracking-h2)',
+              color: 'var(--text)',
+              margin: 0,
+              maxWidth: '480px',
             }}>
-              <img src="/emoji-heart.svg" alt="❤️" style={{ width: '0.55em', height: '0.55em' }} />
-            </span>
-          </h2>
+              People I've worked with
+            </h2>
+          </TextReveal>
         </div>
 
         {/* Cards */}

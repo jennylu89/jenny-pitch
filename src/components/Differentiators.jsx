@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { jenny } from '../data/jenny';
+import TextReveal from './TextReveal';
 
 export default function Differentiators({ differentiators }) {
   const items = differentiators || jenny.differentiators;
@@ -56,20 +57,22 @@ export default function Differentiators({ differentiators }) {
           }}>
             {isJdMode ? 'Your requirements. My proof.' : 'Why I\'m different'}
           </span>
-          <h2 style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: 'var(--type-h2)',
-            fontWeight: 'var(--weight-black)',
-            lineHeight: 'var(--leading-tight)',
-            letterSpacing: 'var(--tracking-tight)',
-            color: 'var(--text)',
-            margin: 0,
-            maxWidth: '560px',
-          }}>
-            {isJdMode
-              ? 'Every line from the job description, answered.'
-              : 'Five things that set me apart.'}
-          </h2>
+          <TextReveal>
+            <h2 style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--type-h2)',
+              fontWeight: 'var(--weight-black)',
+              lineHeight: 'var(--leading-tight)',
+              letterSpacing: 'var(--tracking-tight)',
+              color: 'var(--text)',
+              margin: 0,
+              maxWidth: '560px',
+            }}>
+              {isJdMode
+                ? 'Every line from the job description, answered.'
+                : 'Five things that set me apart.'}
+            </h2>
+          </TextReveal>
         </div>
 
         {/* Card grid */}
