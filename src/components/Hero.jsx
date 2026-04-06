@@ -65,7 +65,7 @@ export default function Hero() {
         width: '600px', height: '600px',
         marginLeft: '-300px', marginTop: '-300px',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(139,120,255,0.45) 0%, rgba(139,120,255,0.15) 30%, transparent 65%)',
+        background: 'radial-gradient(circle, rgba(139,120,255,0.2) 0%, rgba(139,120,255,0.08) 30%, transparent 65%)',
         filter: 'blur(20px)',
         opacity: 0,
         transition: 'opacity 0.4s ease',
