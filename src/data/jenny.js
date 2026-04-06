@@ -212,26 +212,26 @@ export const jenny = {
       role: "UX Designer",
       tags: ["Healthcare", "Mobile", "B2B SaaS", "Design System"],
       headline:
-        "Redesigning the Arena Strive homepage from a feature library to a personalized performance system.",
+        "Performance app for front-line workers. Redesigned the homepage from a feature library to a personalized system.",
       outcome:
         "The app knows where you are, what you're doing, and what you need next.",
       metrics: [
         { value: "3", label: "Time-aware homepage states" },
         { value: "WHOOP", label: "Biometric integration" },
-        { value: "Beta", label: "Internal launch Mar 2026" },
-        { value: "$30/mo", label: "New SaaS model (was $1K/person)" },
+        { value: "4", label: "Personalization data layers" },
       ],
       caseStudy: {
-        insight: "Customization means the user has to decide. Personalization means they don't.",
+        insight: "The homepage was a feature library. The user did the thinking. Clinicians are overwhelmed — the app should think for them.",
         story: [
-          "Arena Labs was moving from a $1,000/person coaching program to a $30/month SaaS. Same clinicians — surgeons, ER nurses, trauma teams. Completely different relationship with the app. The V1 was a feature library. For someone 4 hours into a surgical shift, that's the wrong ask.",
-          "Redesigned around three time-aware states: pre-shift, mid-shift, post-shift. One recommendation per state, chosen based on biometrics. Not a menu. The app reads where you are and tells you what to do next.",
+          "Arena Strive had the right features — biometrics, coaching, daily protocols, reflection — but the homepage asked clinicians to figure out what to do next. For surgeons and nurses already running on empty, that cognitive load was a conversion killer.",
+          "The difference between an app people open and one they abandon isn't features — it's whether the app feels like it knows you. Customization puts the burden on the user. Personalization removes it.",
+          "Redesigned the homepage around three time-aware states — pre-shift, mid-shift, post-shift — each surfacing a recommendation based on biometric data from Whoop. A surgeon at 6:47am needs to prime focus. At 1:15pm with heart rate at 94bpm, a 90-second reset. At 11:30pm after a 12-hour shift, one question: how did today feel?",
         ],
         beforeScreen: { src: "/arena-screen-before.png", alt: "Arena Strive V1 — feature library", caption: "Before — V1 feature library" },
         screens: [
-          { src: "/arena-screen-1.png", alt: "Arena Strive pre-shift state", caption: "6:47am · Pre-shift" },
-          { src: "/arena-screen-2.png", alt: "Arena Strive mid-shift state", caption: "1:15pm · Mid-shift" },
-          { src: "/arena-screen-3.png", alt: "Arena Strive post-shift state", caption: "11:30pm · Post-shift" },
+          { src: "/arena-screen-1.png", alt: "Arena Strive pre-shift state", caption: "6:47am · Pre-shift · Surgeon · Hospital" },
+          { src: "/arena-screen-2.png", alt: "Arena Strive mid-shift state", caption: "1:15pm · Mid-shift · 8 min break · Hospital" },
+          { src: "/arena-screen-3.png", alt: "Arena Strive post-shift state", caption: "11:30pm · Post-shift · Just got home" },
         ],
         screensType: 'before-after',
       },
