@@ -179,31 +179,6 @@ export const jenny = {
       },
     },
     {
-      id: "leadgen",
-      company: "Side Project",
-      title: "Freelance Designer Job Finder",
-      role: "Builder (solo)",
-      tags: ["Vibe Coding", "AI", "Automation", "Lead Gen"],
-      headline:
-        "Built a tool to find startups that need a designer before they know they need one.",
-      outcome:
-        "Scraped 4 sources, scored 405 leads, drafted personalized outreach — in one command.",
-      metrics: [
-        { value: "4", label: "Sources (YC, Reddit, HN, LinkedIn)" },
-        { value: "405", label: "Leads generated" },
-        { value: "7.8", label: "Avg lead score" },
-        { value: "1 cmd", label: "Full pipeline" },
-      ],
-      caseStudy: {
-        insight: "The tool doesn't find jobs. It finds the moment.",
-        story: [
-          "By the time a job posting exists, the decision is made. Job boards find you at the wrong moment — after, when you're one of 200 applicants.",
-          "Built a pipeline that scrapes YC, Reddit, and HN for buying signals — 'need designer,' 'roast my site,' 'just launched.' Scores each lead. Drafts outreach based on what they actually said. One command.",
-        ],
-        screens: [],
-      },
-    },
-    {
       id: "arenalabs",
       company: "Arena Labs",
       title: "Strive — Healthcare Performance App",
