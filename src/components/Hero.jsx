@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 const stats = [
   { value: '384%', label: 'Spend per member lift', source: 'Giant Eagle · myPerks loyalty redesign' },
@@ -10,99 +10,20 @@ const companies = ['Giant Eagle', 'Roadrunner', 'Arena Labs', 'MegPrime'];
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
-  const sectionRef = useRef(null);
-  const blob1Ref = useRef(null);
-  const blob2Ref = useRef(null);
-  const blob3Ref = useRef(null);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80);
     return () => clearTimeout(t);
   }, []);
 
-  // Mouse-reactive blobs — direct DOM manipulation + rAF lerp
-  useEffect(() => {
-    const el = sectionRef.current;
-    const b1 = blob1Ref.current;
-    const b2 = blob2Ref.current;
-    const b3 = blob3Ref.current;
-    if (!el || !b1 || !b2 || !b3) return;
-
-    const target = { x: 0, y: 0 };
-    const current = { x: 0, y: 0 };
-    let rafId;
-
-    const handleMouseMove = (e) => {
-      const rect = el.getBoundingClientRect();
-      target.x = (e.clientX - rect.left) / rect.width - 0.5;
-      target.y = (e.clientY - rect.top) / rect.height - 0.5;
-    };
-
-    const handleMouseLeave = () => {
-      target.x = 0;
-      target.y = 0;
-    };
-
-    const lerp = (a, b, t) => a + (b - a) * t;
-
-    const tick = () => {
-      current.x = lerp(current.x, target.x, 0.06);
-      current.y = lerp(current.y, target.y, 0.06);
-
-      b1.style.transform = `translate(${current.x * 80}px, ${current.y * 60}px)`;
-      b2.style.transform = `translate(${current.x * -50}px, ${current.y * 40}px)`;
-      b3.style.transform = `translate(${current.x * 30}px, ${current.y * -50}px)`;
-
-      rafId = requestAnimationFrame(tick);
-    };
-
-    el.addEventListener('mousemove', handleMouseMove);
-    el.addEventListener('mouseleave', handleMouseLeave);
-    rafId = requestAnimationFrame(tick);
-
-    return () => {
-      el.removeEventListener('mousemove', handleMouseMove);
-      el.removeEventListener('mouseleave', handleMouseLeave);
-      cancelAnimationFrame(rafId);
-    };
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      style={{
-        background: 'var(--bg)',
-        paddingTop: 'calc(56px + 80px)',
-        paddingBottom: '80px',
-        overflow: 'hidden',
-        position: 'relative',
-      }}
-    >
-      {/* Animated blobs — mouse reactive via direct DOM refs */}
-      <div ref={blob1Ref} style={{
-        position: 'absolute', zIndex: 0, pointerEvents: 'none',
-        width: '600px', height: '600px', top: '-100px', left: '-50px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(139,120,255,0.5) 0%, rgba(139,120,255,0) 70%)',
-        filter: 'blur(40px)',
-        willChange: 'transform',
-      }} />
-      <div ref={blob2Ref} style={{
-        position: 'absolute', zIndex: 0, pointerEvents: 'none',
-        width: '500px', height: '500px', top: '0px', right: '-100px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(200,180,255,0.4) 0%, rgba(200,180,255,0) 70%)',
-        filter: 'blur(40px)',
-        willChange: 'transform',
-      }} />
-      <div ref={blob3Ref} style={{
-        position: 'absolute', zIndex: 0, pointerEvents: 'none',
-        width: '400px', height: '400px', bottom: '50px', left: '35%',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(100,80,255,0.35) 0%, rgba(100,80,255,0) 70%)',
-        filter: 'blur(40px)',
-        willChange: 'transform',
-      }} />
+    <section style={{
+      background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
+      paddingTop: 'calc(56px + 80px)',
+      paddingBottom: '80px',
+      overflow: 'hidden',
+      position: 'relative',
+    }}>
       {/* Noise overlay */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 0,
