@@ -22,7 +22,7 @@ export default function LLHowIWork({ howIWork }) {
           marginBottom: 'var(--space-24)',
           color: 'var(--muted)',
         }}>
-          How I work
+          {howIWork.eyebrow || 'How I work'}
         </span>
         <h2 style={{
           fontFamily: 'var(--font-sans)',
@@ -35,7 +35,7 @@ export default function LLHowIWork({ howIWork }) {
         }}>
           {howIWork.heading}
         </h2>
-        <p style={{
+        {howIWork.subheading && <p style={{
           fontSize: 'var(--type-body)',
           color: 'var(--muted)',
           lineHeight: 'var(--leading-body)',
@@ -43,7 +43,7 @@ export default function LLHowIWork({ howIWork }) {
           maxWidth: '520px',
         }}>
           {howIWork.subheading}
-        </p>
+        </p>}
         <div className="talkiatry-how-grid" style={{
           display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
           gap: 'var(--space-12)',

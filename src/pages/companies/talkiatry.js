@@ -3,7 +3,7 @@ export const talkiatry = {
   role: "Senior Design Manager, Product Design",
 
   // Hero one-liner
-  oneLiner: "Player-coach with 10 years in healthcare, fintech, and consumer — I research, design, and ship.",
+  oneLiner: "10 years in healthcare, fintech, and consumer. I research, design, and ship.",
 
   // Summary section — JD requirements mapped to proof
   summaryHeading: "What you need. What I've done.",
@@ -124,8 +124,9 @@ export const talkiatry = {
   ],
 
   howIWork: {
-    heading: "What I bring.",
-    subheading: "The things that don't fit in a case study.",
+    eyebrow: "What I bring",
+    heading: "Beyond the case studies.",
+    subheading: "",
     tiles: [
       {
         heading: "0→1 experience",
