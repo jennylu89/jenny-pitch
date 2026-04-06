@@ -243,20 +243,19 @@ export const jenny = {
       role: "Designer + Builder",
       tags: ["Vibe Coding", "React", "Design System", "AI"],
       headline:
-        "Built the tool that replaced Figma docs, Notion wikis, Storybook, and PDF specs with one URL.",
+        "Arena needed to move fast with one designer on limited hours. Four separate systems were slowing everything down.",
       outcome:
-        "Stakeholders tap prototypes. Engineers inspect tokens. Research lives next to the decisions it shaped.",
+        "One URL replaced Figma docs, Notion wikis, Storybook, and PDF specs.",
       metrics: [
-        { value: "~15K", label: "Lines of React" },
+        { value: "4→1", label: "Systems consolidated" },
         { value: "97", label: "Usability issues tracked" },
-        { value: "4", label: "Deliverable systems replaced" },
         { value: "1", label: "URL for everything" },
       ],
       caseStudy: {
-        insight: "When everything lives together, the conversation changes from 'where is that?' to 'what do we build next?'",
+        insight: "The problem wasn't designing — it was the overhead around it. Four systems, limited hours, one designer.",
         story: [
-          "Design consultants waste hours on deliverables nobody reads. Research in Notion. Prototypes in Figma. System in Storybook. Specs in a PDF already out of date. I was billing limited hours as the sole designer on Arena Labs — I couldn't afford four systems.",
-          "So I built one. React + Vite + TypeScript, one URL. Clickable prototype with Dev mode (token inspector, Tailwind mapping, copy-paste code). Full design system across 3 token tiers. 8 research docs, 97 usability issues tracked with localStorage. ~15K lines. Three Git remotes.",
+          "Arena needed to move fast. But design was scattered — research in Notion, prototypes in Figma, system in Storybook, specs in PDFs already out of date. As the sole designer on limited hours, I was spending more time managing deliverables than designing.",
+          "So I built one tool. React + Vite, one URL. Clickable prototype with dev mode for token inspection. Full design system across 3 token tiers. 8 research docs, 97 usability issues tracked. Stakeholders tap prototypes. Engineers inspect tokens. Research lives next to the decisions it shaped.",
         ],
         screens: [],
         placeholders: [
