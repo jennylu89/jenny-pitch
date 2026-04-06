@@ -91,7 +91,6 @@ export default function Nav({ from } = {}) {
             }}
             className="nav-cta btn-hover"
           >
-            <img src="/jenny-avatar.jpg" alt="" style={{ width: '18px', height: '18px', borderRadius: '50%', objectFit: 'cover' }} />
             Schedule a call
           </a>
         </div>

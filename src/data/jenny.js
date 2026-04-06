@@ -212,20 +212,20 @@ export const jenny = {
       role: "UX Designer",
       tags: ["Healthcare", "Mobile", "B2B SaaS", "Design System"],
       headline:
-        "Performance app for front-line workers. Redesigned the homepage from a feature library to a personalized system.",
+        "Healthcare app with 97 usability issues, a slow sales cycle, and a design process that couldn't keep up. Built an AI prototyping workflow to move 10x faster.",
       outcome:
-        "The app knows where you are, what you're doing, and what you need next.",
+        "Identified 97 usability issues. Rebuilt the design process with AI. Redesigned the homepage from a feature library to a personalized system.",
       metrics: [
+        { value: "97", label: "Usability issues identified" },
         { value: "3", label: "Time-aware homepage states" },
-        { value: "WHOOP", label: "Biometric integration" },
-        { value: "4", label: "Personalization data layers" },
+        { value: "10×", label: "Faster design iteration" },
       ],
       caseStudy: {
-        insight: "The homepage was a feature library. The user did the thinking. Clinicians are overwhelmed — the app should think for them.",
+        insight: "The app had bad usability, the sales cycle was slow, and users weren't seeing value. The design process was too slow to fix any of it.",
         story: [
-          "Arena Strive had the right features — biometrics, coaching, daily protocols, reflection — but the homepage asked clinicians to figure out what to do next. For surgeons and nurses already running on empty, that cognitive load was a conversion killer.",
-          "The difference between an app people open and one they abandon isn't features — it's whether the app feels like it knows you. Customization puts the burden on the user. Personalization removes it.",
-          "Redesigned the homepage around three time-aware states — pre-shift, mid-shift, post-shift — each surfacing a recommendation based on biometric data from Whoop. A surgeon at 6:47am needs to prime focus. At 1:15pm with heart rate at 94bpm, a 90-second reset. At 11:30pm after a 12-hour shift, one question: how did today feel?",
+          "Arena Strive is a B2B2C healthcare app — sold to hospitals, used by surgeons, ER nurses, and trauma teams. The problem wasn't one thing. Usability was poor (97 issues logged). The sales cycle was slow because hospitals couldn't see ROI. Users weren't sticking because the app felt generic, not personal.",
+          "The design process was the bottleneck. One designer, limited hours, and the traditional Figma → handoff pipeline couldn't keep up. I built an AI-powered prototyping workflow with Claude Code — functional React prototypes instead of static mocks. What used to take weeks took days.",
+          "With the speed unlocked, I redesigned the homepage around three time-aware states — pre-shift, mid-shift, post-shift — each surfacing one recommendation based on Whoop biometric data. A surgeon at 6:47am gets focus priming. At 1:15pm with elevated heart rate, a 90-second reset. At 11:30pm, one question: how did today feel?",
         ],
         beforeScreen: { src: "/arena-screen-before.png", alt: "Arena Strive V1 — feature library", caption: "Before — V1 feature library" },
         screens: [

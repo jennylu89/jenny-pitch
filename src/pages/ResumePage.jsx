@@ -334,23 +334,6 @@ export default function ResumePage() {
               }}>
                 🎨
               </div>
-              <div className="floating-badge" style={{
-                position: 'absolute', left: '-36px', bottom: '-16px',
-                transform: 'rotate(-4deg)',
-                backgroundColor: 'var(--glass-bg)',
-                border: '1px solid var(--glass-stroke)',
-                borderRadius: 'var(--glass-radius)',
-                boxShadow: 'var(--shadow-glass)',
-                backdropFilter: 'blur(var(--glass-blur))',
-                WebkitBackdropFilter: 'blur(var(--glass-blur))',
-                width: 'var(--icon-circle-size)', height: 'var(--icon-circle-size)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                padding: '6px 12px',
-                fontSize: '36px',
-                zIndex: 1,
-              }}>
-                🍒
-              </div>
             </div>
           </div>
         </div>
