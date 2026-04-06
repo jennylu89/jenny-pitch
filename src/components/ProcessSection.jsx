@@ -4,7 +4,7 @@ const steps = [
   {
     number: '01',
     title: 'Research first',
-    body: "No Figma until I know the problem. Studies, interviews, analytics — every decision traces to evidence.",
+    body: "Studies, interviews, analytics — every decision traces to evidence.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="7"/>
@@ -27,7 +27,7 @@ const steps = [
   {
     number: '03',
     title: 'Design in code',
-    body: 'I prototype in React because the prototype is the product. Faster iteration, real interactions, no handoff gap.',
+    body: 'I prototype in React — faster iteration, real interactions, no handoff gap.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6"/>
@@ -38,7 +38,7 @@ const steps = [
   {
     number: '04',
     title: 'Ship and measure',
-    body: 'Every project ends with metrics. Decisions tied to conversion, retention, or revenue — outcomes over output.',
+    body: 'Every project ends with metrics. Decisions tied to conversion, retention, or revenue.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>

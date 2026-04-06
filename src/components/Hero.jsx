@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 const stats = [
-  { value: '384%', label: 'Spend per member lift', source: 'Giant Eagle · Promoted from Lead to Sr. Manager' },
-  { value: '142', label: 'Person usability study', source: 'Roadrunner · Sole designer, no PM layer' },
-  { value: '50+', label: 'Component design system', source: 'Built from scratch across 3 companies' },
+  { value: '384%', label: 'Spend per member lift', source: 'Giant Eagle · myPerks loyalty redesign' },
+  { value: '142', label: 'Person usability study', source: 'Roadrunner · Billing platform overhaul' },
+  { value: '50+', label: 'Component design system', source: 'Roadrunner + Arena Labs' },
 ];
 
 const companies = ['Giant Eagle', 'Roadrunner', 'Arena Labs', 'MegPrime'];
@@ -55,19 +55,7 @@ export default function Hero() {
               fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
               textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
             }}>
-              Product Design Partner
-            </span>
-            <span style={{ width: '1px', height: '14px', backgroundColor: 'var(--border)' }} />
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: '6px',
-              fontSize: 'var(--type-small)',
-              fontFamily: 'var(--font-badge)',
-              fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
-              textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
-              color: 'var(--text)',
-            }}>
-              <span style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: '#22c55e', flexShrink: 0 }} />
-              Open to full-time
+              Freelance Product Designer
             </span>
           </div>
 
@@ -89,7 +77,7 @@ export default function Hero() {
             color: 'var(--muted)', fontSize: 'var(--type-lead)',
             lineHeight: 'var(--leading-body)', margin: 0, maxWidth: '480px',
           }}>
-            I embed with early-stage teams, run my own studies, own the design system, and ship production React — so ideas become outcomes faster.
+            I embed with early-stage teams, run my own studies, own the design system, and ship production React.
           </p>
 
           {/* CTA */}

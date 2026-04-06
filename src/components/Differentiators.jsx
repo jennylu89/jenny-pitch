@@ -68,7 +68,7 @@ export default function Differentiators({ differentiators }) {
           }}>
             {isJdMode
               ? 'Every line from the job description, answered.'
-              : 'Five things that separate this from a standard senior hire.'}
+              : 'Five things that set me apart.'}
           </h2>
         </div>
 

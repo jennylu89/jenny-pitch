@@ -58,7 +58,7 @@ export default function Testimonials({ testimonials }) {
             margin: 0,
             maxWidth: '480px',
           }}>
-            People love working with Jenny{' '}
+            People I've worked with{' '}
             <span style={{
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
               width: '1.1em', height: '1.1em', borderRadius: '50%',

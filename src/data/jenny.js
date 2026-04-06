@@ -1,9 +1,9 @@
 export const jenny = {
   name: "Jenny Lu",
-  title: "Product Design Partner",
+  title: "Freelance Product Designer",
   tagline: "Senior design thinking.\nHands on the work.\nNo management layer in between.",
   summary:
-    "First UX hire at Giant Eagle. Built the practice, the system, and the product — simultaneously, no playbook. I embed with teams, own the full design loop from research to code, and connect every decision to business outcomes.",
+    "First UX hire at Giant Eagle. Built the practice, the system, and the product — simultaneously, no playbook. I embed with teams and own the full loop from research to code.",
   contact: {
     email: "jennylu98@gmail.com",
     linkedin: "linkedin.com/in/jennylu89",
@@ -15,35 +15,35 @@ export const jenny = {
       number: "01",
       title: "0→1 experience",
       description:
-        "First designer at multiple companies. Built the practice, the system, and the product simultaneously — blank canvas to shipped, no playbook.",
+        "First designer at Giant Eagle, sole designer at Arena Labs. Blank canvas to shipped product, no playbook.",
     },
     {
       id: "research-ship",
       number: "02",
       title: "Research → design → ship",
       description:
-        "Research, design, and ship — one person, no handoff gaps. Runs her own studies, owns the design system, ships production code.",
+        "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
     },
     {
       id: "business-first",
       number: "03",
       title: "Business-first design",
       description:
-        "Every design decision tied to conversion, retention, or revenue. Outcomes first, always.",
+        "Every design decision tied to conversion, retention, or revenue.",
     },
     {
       id: "vibe-coding",
       number: "04",
       title: "Vibe coding",
       description:
-        "Builds production React with Claude Code. Design and implementation in the same hands — no dev handoff.",
+        "I build production React with Claude Code. Design and implementation in the same hands.",
     },
     {
       id: "fintech-compliance",
       number: "05",
       title: "Fintech + compliance UX",
       description:
-        "KYC flows, crypto disclosures, regulated payment products. Complex compliance that can't kill conversion.",
+        "KYC flows, crypto disclosures, regulated payment products. Making compliance invisible to the user.",
     },
   ],
   selectedProjects: [
