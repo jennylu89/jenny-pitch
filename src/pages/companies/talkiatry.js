@@ -22,7 +22,7 @@ export const talkiatry = {
     },
     {
       ask: "Design systems in Figma — consistency and scalability across all products",
-      proof: "Built design systems at every company — 50+ component Figma library at Roadrunner, consolidated 4 deliverable systems into one at Arena Labs.",
+      proof: "50+ component Figma library at Roadrunner, consolidated 4 deliverable systems into one React-based Design Hub at Arena Labs.",
     },
     {
       ask: "AI to accelerate design — improve the design and development process",
@@ -98,7 +98,7 @@ export const talkiatry = {
       id: "design-systems",
       tocLabel: "Design Systems at Scale",
       requirement: "Establish and maintain design systems in Figma for consistency and scalability across all products",
-      title: "I've built design systems at every company I've worked at. Not as a side project — as the foundation.",
+      title: "Every project gets a design system. Not as a side project — as the foundation.",
       story: [
         "At Roadrunner, I built a 50+ component Figma system with tokens, reusable components, and documentation — alongside the product, not as a separate workstream. Every new feature used existing patterns from day one.",
         "At Arena Labs, design was scattered across Figma docs, Notion, Storybook, and PDFs. I built a Design Hub — one React app that replaced all four. Stakeholders tap prototypes. Engineers inspect tokens. Research lives next to the decisions it shaped.",

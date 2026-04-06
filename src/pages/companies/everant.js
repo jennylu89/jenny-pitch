@@ -22,7 +22,7 @@ export const everant = {
     },
     {
       ask: "Design systems — tokens, components, patterns from the ground up",
-      proof: "Built design systems at every company — 50+ component library at Roadrunner, consolidated 4 deliverable systems into 1 React-based Design Hub at Arena Labs.",
+      proof: "50+ component library at Roadrunner, consolidated 4 deliverable systems into 1 React-based Design Hub at Arena Labs.",
     },
     {
       ask: "CRM / B2B SaaS — Salesforce-adjacent, internal tools",
