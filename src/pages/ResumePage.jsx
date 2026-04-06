@@ -374,7 +374,7 @@ export default function ResumePage() {
             letterSpacing: 'var(--tracking-h2)',
             color: 'var(--dark-text)',
             margin: '0 0 48px',
-            maxWidth: '800px',
+            maxWidth: '650px',
           }}>
             Where the work made an impact.
           </p>
@@ -517,7 +517,7 @@ export default function ResumePage() {
           letterSpacing: 'var(--tracking-h2)',
           color: 'var(--text)',
           margin: '0 auto 48px',
-          maxWidth: '800px',
+          maxWidth: '650px',
           textAlign: 'center',
         }}>
           The skills, tools, and background behind the work.

@@ -32,7 +32,7 @@ export default function LLHowIWork({ howIWork }) {
           lineHeight: 'var(--leading-h2)',
           letterSpacing: 'var(--tracking-h2)',
           color: 'var(--text)',
-          margin: '0 0 var(--space-18)',
+          margin: '0 0 var(--space-48)',
           textAlign: 'center',
         }}>
           {howIWork.heading}
