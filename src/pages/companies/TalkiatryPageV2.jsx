@@ -89,7 +89,7 @@ function MetricCard({ metric, dark }) {
 
 function CaseStudySection({ section, index }) {
   const [ref, visible] = useFadeIn(0.1);
-  const dark = index % 2 === 1;
+  const dark = index % 2 === 0;
 
   return (
     <section
@@ -146,10 +146,9 @@ function CaseStudySection({ section, index }) {
         {/* Story */}
         <div style={{
           display: 'flex', flexDirection: 'column', gap: 'var(--space-18)',
-          marginBottom: 'var(--space-48)',
           maxWidth: '640px',
           margin: '0 auto var(--space-48)',
-          textAlign: 'center',
+          textAlign: 'left',
         }}>
           {section.story.map((p, i) => (
             <p key={i} style={{
@@ -277,12 +276,11 @@ export default function TalkiatryPageV2() {
             {/* Role */}
             <p style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'var(--type-h4)',
-              fontWeight: 'var(--weight-medium)',
-              lineHeight: 'var(--leading-h4)',
-              letterSpacing: 'var(--tracking-h4)',
-              color: 'var(--text)',
-              margin: 0,
+              fontSize: 'var(--type-lead)',
+              fontWeight: 'var(--weight-normal)',
+              lineHeight: 'var(--leading-body)',
+              color: 'var(--muted)',
+              margin: '-8px 0 0',
               textAlign: 'center',
             }}>
               {talkiatry.role}
@@ -291,13 +289,13 @@ export default function TalkiatryPageV2() {
             {/* One-liner */}
             <p style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'var(--type-lead)',
-              fontWeight: 'var(--weight-medium)',
+              fontSize: 'var(--type-body)',
+              fontWeight: 'var(--weight-normal)',
               lineHeight: 'var(--leading-body)',
               color: 'var(--muted)',
-              margin: 0,
+              margin: 'var(--space-12) 0 0',
               textAlign: 'center',
-              maxWidth: '600px',
+              maxWidth: '500px',
             }}>
               {talkiatry.oneLiner}
             </p>
@@ -406,7 +404,7 @@ export default function TalkiatryPageV2() {
       </section>
 
       {/* ═══ SELECTED PROJECTS ═══ */}
-      <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
+      <section style={{ padding: 'var(--space-96) 0 var(--space-80)', borderTop: '1px solid var(--border)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
           <Eyebrow>
             <span style={{ color: 'var(--muted)', textAlign: 'center', display: 'block' }}>Selected work</span>
@@ -445,7 +443,7 @@ export default function TalkiatryPageV2() {
         <NoiseOverlay light />
         <div className="section-pad" style={{
           maxWidth: '1000px', margin: '0 auto',
-          padding: 'var(--space-80) var(--space-48)',
+          padding: 'var(--space-96) var(--space-48)',
           display: 'flex', flexDirection: 'column', alignItems: 'center',
           gap: 'var(--space-12)',
           position: 'relative', zIndex: 1,
