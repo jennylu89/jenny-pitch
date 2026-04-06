@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { jenny } from '../data/jenny';
 
-export default function Nav() {
+export default function Nav({ from } = {}) {
+  const homeHref = from ? `/${from}` : '/';
+  const resumeHref = from ? `/resume?from=${from}` : '/resume';
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ export default function Nav() {
       className="nav-bar fixed left-0 right-0 z-50 nav-position-top"
     >
       <div className="nav-container max-w-5xl mx-auto flex items-center justify-between">
-        <a href="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-6)', textDecoration: 'none' }}>
+        <a href={homeHref} className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-6)', textDecoration: 'none' }}>
           <img
             src="/jenny-avatar.jpg"
             alt="Jenny Lu"
@@ -43,7 +45,7 @@ export default function Nav() {
         </a>
         <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-24)' }}>
           <a
-            href="/"
+            href={homeHref}
             style={{
               color: 'var(--text)',
               fontSize: 'var(--type-body)',
@@ -57,7 +59,7 @@ export default function Nav() {
             Projects
           </a>
           <a
-            href="/resume"
+            href={resumeHref}
             style={{
               color: 'var(--text)',
               fontSize: 'var(--type-body)',
@@ -71,7 +73,9 @@ export default function Nav() {
             Resume
           </a>
           <a
-            href={`mailto:${jenny.contact.email}`}
+            href="https://cal.com/jennylu98/30"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               backgroundColor: 'var(--btn-primary-bg)',
               color: 'var(--btn-primary-fg)',
@@ -85,10 +89,10 @@ export default function Nav() {
               gap: 'var(--space-6)',
               height: '32px',
             }}
-            className="nav-cta hover:opacity-90 transition-opacity duration-150"
+            className="nav-cta btn-hover"
           >
-            <svg className="nav-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M22 7l-10 7L2 7" /></svg>
-            Get in touch
+            <img src="/jenny-avatar.jpg" alt="" style={{ width: '18px', height: '18px', borderRadius: '50%', objectFit: 'cover' }} />
+            Schedule a call
           </a>
         </div>
       </div>

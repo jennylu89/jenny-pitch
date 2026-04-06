@@ -222,7 +222,7 @@ export default function TalkiatryPageV2() {
 
   return (
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
-      <Nav />
+      <Nav from="talkiatry" />
 
       {/* ═══ HERO ═══ */}
       <div style={{

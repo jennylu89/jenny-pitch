@@ -198,7 +198,7 @@ export default function ResumePage() {
 
   return (
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
-      <Nav />
+      <Nav from={from} />
 
       {/* === HERO === */}
       <div style={{

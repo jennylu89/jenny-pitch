@@ -7,12 +7,12 @@ import ContactSection from '../../components/ContactSection';
 import LLSplitSection from '../../components/ll/LLSplitSection';
 import LLHowIWork from '../../components/ll/LLHowIWork';
 
-export default function LoveLetterPage({ company }) {
+export default function LoveLetterPage({ company, slug }) {
   const sections = company.sections || [];
 
   return (
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
-      <Nav />
+      <Nav from={slug} />
       <main>
         <LLHero company={company} />
         <LLWhyMe company={company} />
