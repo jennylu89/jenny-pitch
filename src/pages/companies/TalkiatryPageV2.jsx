@@ -111,7 +111,7 @@ function CaseStudySection({ section, index }) {
       }}>
         {/* Eyebrow */}
         <Eyebrow>
-          <span style={{ color: dark ? 'var(--dark-text-muted)' : 'var(--muted)' }}>
+          <span style={{ color: dark ? 'var(--dark-text-muted)' : 'var(--muted)', textAlign: 'center', display: 'block' }}>
             {String(index + 1).padStart(2, '0')} · {section.tocLabel}
           </span>
         </Eyebrow>
@@ -121,8 +121,9 @@ function CaseStudySection({ section, index }) {
           fontSize: 'var(--type-body)',
           color: dark ? 'var(--dark-text-muted)' : 'var(--muted)',
           lineHeight: 'var(--leading-body)',
-          margin: '0 0 var(--space-18)',
+          margin: '0 auto var(--space-18)',
           maxWidth: '600px',
+          textAlign: 'center',
         }}>
           {section.requirement}
         </p>
@@ -135,8 +136,9 @@ function CaseStudySection({ section, index }) {
           lineHeight: 'var(--leading-h2)',
           letterSpacing: 'var(--tracking-h2)',
           color: dark ? 'var(--dark-text)' : 'var(--text)',
-          margin: '0 0 var(--space-36)',
+          margin: '0 auto var(--space-36)',
           maxWidth: '680px',
+          textAlign: 'center',
         }}>
           {section.title}
         </h2>
@@ -146,6 +148,8 @@ function CaseStudySection({ section, index }) {
           display: 'flex', flexDirection: 'column', gap: 'var(--space-18)',
           marginBottom: 'var(--space-48)',
           maxWidth: '640px',
+          margin: '0 auto var(--space-48)',
+          textAlign: 'center',
         }}>
           {section.story.map((p, i) => (
             <p key={i} style={{
@@ -166,6 +170,7 @@ function CaseStudySection({ section, index }) {
             gap: 'var(--space-12)',
             marginBottom: section.testimonial ? 'var(--space-48)' : 0,
             maxWidth: '480px',
+            marginLeft: 'auto', marginRight: 'auto',
           }}>
             {section.metrics.map((m, i) => (
               <MetricCard key={i} metric={m} dark={dark} />
@@ -179,6 +184,7 @@ function CaseStudySection({ section, index }) {
             borderLeft: `3px solid ${dark ? 'var(--accent-strong)' : 'var(--accent)'}`,
             paddingLeft: 'var(--space-24)',
             maxWidth: '540px',
+            marginLeft: 'auto', marginRight: 'auto',
           }}>
             <p style={{
               fontFamily: 'var(--font-sans)',
@@ -323,7 +329,7 @@ export default function TalkiatryPageV2() {
       <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
           <Eyebrow>
-            <span style={{ color: 'var(--muted)' }}>Why me</span>
+            <span style={{ color: 'var(--muted)', textAlign: 'center', display: 'block' }}>Why me</span>
           </Eyebrow>
           <h2 style={{
             fontFamily: 'var(--font-sans)',
@@ -332,8 +338,9 @@ export default function TalkiatryPageV2() {
             lineHeight: 'var(--leading-h2)',
             letterSpacing: 'var(--tracking-h2)',
             color: 'var(--text)',
-            margin: '0 0 var(--space-48)',
+            margin: '0 auto var(--space-48)',
             maxWidth: '680px',
+            textAlign: 'center',
           }}>
             {talkiatry.summaryHeading}
           </h2>
@@ -402,7 +409,7 @@ export default function TalkiatryPageV2() {
       <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
           <Eyebrow>
-            <span style={{ color: 'var(--muted)' }}>Selected work</span>
+            <span style={{ color: 'var(--muted)', textAlign: 'center', display: 'block' }}>Selected work</span>
           </Eyebrow>
           <h2 style={{
             fontFamily: 'var(--font-sans)',
@@ -411,10 +418,11 @@ export default function TalkiatryPageV2() {
             lineHeight: 'var(--leading-h2)',
             letterSpacing: 'var(--tracking-h2)',
             color: 'var(--text)',
-            margin: '0 0 var(--space-48)',
+            margin: '0 auto var(--space-48)',
             maxWidth: '680px',
+            textAlign: 'center',
           }}>
-            Full case studies. Every decision explained.
+            Recent projects.
           </h2>
           <div>
             {jenny.selectedProjects

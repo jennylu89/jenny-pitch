@@ -262,7 +262,7 @@ export default function ResumePage() {
                 textAlign: 'center',
                 maxWidth: '521px',
               }}>
-                Player-coach who leads design teams, runs her own research, and ships production code. Healthcare, fintech, and consumer — from 0→1 to 4M-member platforms.
+                Design leader who stays hands-on. Research, design systems, and production code across healthcare, fintech, and consumer.
               </p>
             </div>
 
