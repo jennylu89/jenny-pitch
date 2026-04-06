@@ -111,8 +111,8 @@ export const everant = {
       requirement: "Salesforce-adjacent product — integrate AI into existing CRM tools, not replace them",
       title: "Roadrunner was the same problem: enterprise ops teams stuck in fragmented tools.",
       story: [
-        "At Roadrunner, billing reps bounced between 4 apps per invoice. 28 clicks per bill. 15% of bills were carbon copies re-entered from scratch every month. The platform crashed 3–7 times a week. That's not a UI problem — that's a workflow architecture problem.",
-        "I ran the study, got the overhaul approved, and led four workstreams: automate the repetitive, fix the navigation, standardize the patterns, build a component library. 50+ reusable components. Just engineering and me.",
+        "At Roadrunner, billing reps bounced between 4 apps per invoice. 28+ clicks per bill. 75% of bills were identical to the previous month — yet every one was entered from scratch. The platform went down 1–2 times per week. That's not a UI problem — that's a workflow architecture problem.",
+        "I started with research — usability study, stakeholder interviews, competitor benchmarking against Bill.com and Stripe. Then mapped the full workflow and pitched leadership on a 4-workstream overhaul: automate billing from contract terms, redesign navigation, standardize patterns, and build a 50+ component library alongside engineering.",
         "Everant's approach — integrating AI into existing Salesforce and NetSuite workflows rather than asking users to migrate — is the right call. That means designing within someone else's UI paradigm. The AI layer has to feel native to the CRM, not like a bolted-on sidebar. At Roadrunner, I did exactly this: same users, same core jobs, but fewer steps and a system that worked with their muscle memory instead of against it.",
       ],
       metrics: [

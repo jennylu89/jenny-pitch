@@ -80,8 +80,8 @@ export const talkiatry = {
       requirement: "Speak to the impact of designs, explain design choices and tradeoffs — influence stakeholders across disciplines",
       title: "Hired to fix one billing page. Made the case for a full platform overhaul. Got the yes.",
       story: [
-        "At Roadrunner, the brief was a single billing page. Before I touched a screen, I ran a 142-person usability study. Reps were bouncing between four apps per invoice. 28 clicks per bill. 15% of bills were carbon copies re-entered from scratch every month.",
-        "I brought it to leadership as a choice, not a problem. Here's the single page fix — fast, low risk. Here's the full overhaul — slower, but eliminates the root cause. Here's the data behind each. They chose the overhaul.",
+        "At Roadrunner, the brief was a single billing page. I started with research — usability study, stakeholder interviews, competitor benchmarking against Bill.com and Stripe. What I found went beyond one page: 4 applications, 28+ clicks per bill, 75% of bills identical to the previous month yet entered from scratch. The platform went down 1–2 times per week.",
+        "I mapped the full workflow and brought it to leadership as a choice. Here's the single page fix — fast, low risk. Here's the full overhaul — slower, but eliminates the root cause. Here's the data behind each. They chose the overhaul.",
         "Your JD says you want someone who can 'explain design choices and any tradeoffs considered.' I don't just present work — I present options with evidence so stakeholders can make informed decisions.",
       ],
       metrics: [

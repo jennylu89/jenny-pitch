@@ -79,20 +79,21 @@ export const jenny = {
       role: "Sr. Product Design Manager",
       tags: ["B2B SaaS", "Internal Tools", "Design System", "Operations"],
       headline:
-        "Hired to fix one billing page. Made the case for a full platform overhaul. Got the yes.",
+        "Tasked to improve one billing page. Audited the full workflow. Pitched leadership on a platform overhaul — and got the green light.",
       outcome:
-        "Ran a 142-person usability study (score: 61). Used data to expand scope. Changed everything.",
+        "1 billing page → 4-workstream platform overhaul.",
       metrics: [
-        { value: "40%", label: "Fewer manual errors" },
         { value: "28→3", label: "Clicks per bill" },
-        { value: "6→1min", label: "Per entry" },
+        { value: "~6→1", label: "Minutes per bill entry" },
         { value: "50+", label: "Reusable components" },
+        { value: "3×", label: "Faster to build every page after" },
       ],
       caseStudy: {
-        insight: "The data didn't just inform the design. It expanded the scope.",
+        insight: "74.6% used the platform daily — only 32.2% knew it well.",
         story: [
-          "The brief was a single billing page. I ran a 142-person study first. Reps were bouncing between four apps per invoice. 28 clicks. 15% of bills were carbon copies re-entered from scratch every month. The platform crashed 3–7 times a week. That's not a UI problem.",
-          "Brought it to leadership as a choice, not a problem. They chose the overhaul. Four workstreams: automate the repetitive, fix the nav, standardize the patterns, build a component library that outlasts the project. 50+ components. Just engineering and me.",
+          "I started with research, not design. Platform-wide usability study. Stakeholder interviews. Competitor benchmarking against Bill.com and Stripe. End-to-end process mapping across every department that touched billing.",
+          "What I found went beyond one page. A single bill required jumping between four applications and 28+ clicks of manual re-entry. 75% of those bills were identical to the previous month — yet every one was entered from scratch. The platform went down 1–2 times per week, and the people who relied on it most understood it least. This wasn't a billing page problem. It was a system problem.",
+          "I mapped the full workflow and brought it to leadership. Four workstreams: automate billing by pre-populating from contract terms and previous cycles, redesign navigation around user workflows, standardize patterns with plain-language UI, and build a 50+ component library alongside engineering.",
         ],
         screens: [
           { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow — before", caption: "Before — 28 clicks across 4 fragmented tools per invoice" },
