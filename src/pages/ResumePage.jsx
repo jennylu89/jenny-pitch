@@ -362,7 +362,7 @@ export default function ResumePage() {
             fontFamily: 'var(--font-badge)',
             fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
             textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
-            display: 'block', marginBottom: 'var(--space-24)',
+            display: 'block', marginBottom: 'var(--space-24)', textAlign: 'center',
           }}>
             Experience
           </span>
@@ -373,8 +373,9 @@ export default function ResumePage() {
             lineHeight: 'var(--leading-h2)',
             letterSpacing: 'var(--tracking-h2)',
             color: 'var(--dark-text)',
-            margin: '0 0 48px',
+            margin: '0 auto 48px',
             maxWidth: '480px',
+            textAlign: 'center',
           }}>
             Where the work made an impact.
           </p>
@@ -416,11 +417,11 @@ export default function ResumePage() {
           fontFamily: 'var(--font-badge)',
           fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
           textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
-          display: 'block', marginBottom: 'var(--space-24)',
+          display: 'block', marginBottom: 'var(--space-24)', textAlign: 'center',
         }}>
           What people say
         </span>
-        <div style={{ position: 'relative', marginBottom: '24px', maxWidth: '520px' }}>
+        <div style={{ position: 'relative', marginBottom: '24px', maxWidth: '520px', margin: '0 auto 24px' }}>
           <h2 style={{
             fontFamily: 'var(--font-sans)',
             fontSize: 'var(--type-h1)',
@@ -429,6 +430,7 @@ export default function ResumePage() {
             letterSpacing: 'var(--tracking-h1)',
             color: 'var(--text)',
             margin: 0,
+            textAlign: 'center',
           }}>
             People love working with Jenny
           </h2>
@@ -522,7 +524,7 @@ export default function ResumePage() {
           fontFamily: 'var(--font-badge)',
           fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
           textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
-          display: 'block', marginBottom: 'var(--space-24)',
+          display: 'block', marginBottom: 'var(--space-24)', textAlign: 'center',
         }}>
           Education & Skills
         </span>
@@ -533,8 +535,9 @@ export default function ResumePage() {
           lineHeight: 'var(--leading-h2)',
           letterSpacing: 'var(--tracking-h2)',
           color: 'var(--text)',
-          margin: '0 0 48px',
+          margin: '0 auto 48px',
           maxWidth: '480px',
+          textAlign: 'center',
         }}>
           The skills, tools, and background behind the work.
         </p>
