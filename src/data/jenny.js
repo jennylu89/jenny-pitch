@@ -113,10 +113,8 @@ export const jenny = {
       outcome:
         "Hid the entire USDC layer. Users see rent payment and rewards — not token mechanics.",
       metrics: [
-        { value: "SEC ✓", label: "Non-Action Letter" },
         { value: "20→5", label: "KYC screens" },
-        { value: "48", label: "States available" },
-        { value: "10%", label: "Rewards on rent" },
+        { value: "2", label: "Payment paths proposed" },
       ],
       caseStudy: {
         insight: "Users don't need to know what USDC is. They need to pay rent and earn rewards.",
@@ -229,12 +227,13 @@ export const jenny = {
           "Arena Labs was moving from a $1,000/person coaching program to a $30/month SaaS. Same clinicians — surgeons, ER nurses, trauma teams. Completely different relationship with the app. The V1 was a feature library. For someone 4 hours into a surgical shift, that's the wrong ask.",
           "Redesigned around three time-aware states: pre-shift, mid-shift, post-shift. One recommendation per state, chosen based on biometrics. Not a menu. The app reads where you are and tells you what to do next.",
         ],
+        beforeScreen: { src: "/arena-screen-before.png", alt: "Arena Strive V1 — feature library", caption: "Before — V1 feature library" },
         screens: [
-          { src: "/arena-screen-1.png", alt: "Arena Strive pre-shift state", caption: "6:47am · Pre-shift — Box Breathing recommended based on HRV before first case" },
-          { src: "/arena-screen-2.png", alt: "Arena Strive mid-shift state", caption: "1:15pm · Mid-shift — HR elevated at 94bpm, 8-min Physiologic Sigh surfaced automatically" },
-          { src: "/arena-screen-3.png", alt: "Arena Strive post-shift state", caption: "11:30pm · Post-shift — Daily Reflection at the exact moment a clinician would answer it" },
+          { src: "/arena-screen-1.png", alt: "Arena Strive pre-shift state", caption: "6:47am · Pre-shift" },
+          { src: "/arena-screen-2.png", alt: "Arena Strive mid-shift state", caption: "1:15pm · Mid-shift" },
+          { src: "/arena-screen-3.png", alt: "Arena Strive post-shift state", caption: "11:30pm · Post-shift" },
         ],
-        screensType: 'app',
+        screensType: 'before-after',
       },
     },
     {

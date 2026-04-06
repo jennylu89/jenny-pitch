@@ -6,10 +6,12 @@ export default function LLCaseStudy({ project, index }) {
   const hasScreens = screens.length > 0;
 
   const screensType = caseStudy.screensType || null;
-  const isApp       = screensType === 'app';
-  const isDashboard = screensType === 'dashboard';
-  const isFlow      = screensType === 'flow';
-  const isFull      = screensType === 'full';
+  const isApp          = screensType === 'app';
+  const isDashboard    = screensType === 'dashboard';
+  const isFlow         = screensType === 'flow';
+  const isFull         = screensType === 'full';
+  const isBeforeAfter  = screensType === 'before-after';
+  const beforeScreen   = caseStudy.beforeScreen || null;
 
   const cardRef = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -238,6 +240,74 @@ export default function LLCaseStudy({ project, index }) {
           </div>
         )}
 
+        {/* ── Before → After: before screen + arrow + after screens ── */}
+        {isBeforeAfter && hasScreens && beforeScreen && (
+          <div style={{
+            backgroundColor: 'var(--text)',
+            borderTop: '1px solid rgba(255,255,255,0.06)',
+            overflowX: 'auto',
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: '0',
+              padding: '40px',
+              minWidth: 'max-content',
+            }}>
+              {/* Before screen */}
+              <div style={{ width: '240px', flexShrink: 0, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ height: '420px', overflow: 'hidden', borderRadius: '12px', backgroundColor: 'rgba(0,0,0,0.3)' }}>
+                  <img src={beforeScreen.src} alt={beforeScreen.alt || 'Before'} loading="lazy"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+                </div>
+                {beforeScreen.caption && (
+                  <p style={{
+                    color: 'rgba(245,244,242,0.65)', fontSize: 'var(--type-small)',
+                    lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0,
+                  }}>
+                    {beforeScreen.caption}
+                  </p>
+                )}
+              </div>
+
+              {/* Arrow */}
+              <div style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                height: '420px', padding: '0 24px', flexShrink: 0,
+              }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(245,244,242,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+
+              {/* After screens */}
+              {screens.map((screen, i) => (
+                <div key={i} style={{
+                  width: '240px', flexShrink: 0,
+                  marginLeft: i > 0 ? '16px' : '0',
+                  display: 'flex', flexDirection: 'column',
+                }}>
+                  <div style={{ height: '420px', overflow: 'hidden', borderRadius: '12px' }}>
+                    <img src={screen.src} alt={screen.alt || project.title} loading="lazy"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+                  </div>
+                  {screen.caption && (
+                    <p style={{
+                      color: 'rgba(245,244,242,0.65)', fontSize: 'var(--type-small)',
+                      lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0,
+                    }}>
+                      {screen.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
       </div>
     </article>
