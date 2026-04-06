@@ -252,7 +252,7 @@ export default function TalkiatryPageV2() {
               textTransform: 'uppercase',
               color: 'var(--muted)',
             }}>
-              Application — {talkiatry.role}
+              Jenny Lu × {talkiatry.name}
             </div>
 
             {/* Name */}
