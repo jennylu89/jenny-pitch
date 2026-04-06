@@ -21,6 +21,7 @@ export default function LLHowIWork({ howIWork }) {
           display: 'block',
           marginBottom: 'var(--space-24)',
           color: 'var(--muted)',
+          textAlign: 'center',
         }}>
           {howIWork.eyebrow || 'How I work'}
         </span>
@@ -32,6 +33,7 @@ export default function LLHowIWork({ howIWork }) {
           letterSpacing: 'var(--tracking-h2)',
           color: 'var(--text)',
           margin: '0 0 var(--space-18)',
+          textAlign: 'center',
         }}>
           {howIWork.heading}
         </h2>

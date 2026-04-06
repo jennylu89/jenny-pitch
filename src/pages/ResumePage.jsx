@@ -362,7 +362,7 @@ export default function ResumePage() {
             fontFamily: 'var(--font-badge)',
             fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
             textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
-            display: 'block', marginBottom: 'var(--space-24)', textAlign: 'center',
+            display: 'block', marginBottom: 'var(--space-24)',
           }}>
             Experience
           </span>
@@ -373,9 +373,8 @@ export default function ResumePage() {
             lineHeight: 'var(--leading-h2)',
             letterSpacing: 'var(--tracking-h2)',
             color: 'var(--dark-text)',
-            margin: '0 auto 48px',
-            maxWidth: '480px',
-            textAlign: 'center',
+            margin: '0 0 48px',
+            maxWidth: '800px',
           }}>
             Where the work made an impact.
           </p>
@@ -421,7 +420,7 @@ export default function ResumePage() {
         }}>
           What people say
         </span>
-        <div style={{ position: 'relative', marginBottom: '24px', maxWidth: '520px', margin: '0 auto 24px' }}>
+        <div style={{ position: 'relative', marginBottom: '24px', maxWidth: '700px', margin: '0 auto 24px' }}>
           <h2 style={{
             fontFamily: 'var(--font-sans)',
             fontSize: 'var(--type-h1)',
@@ -434,24 +433,6 @@ export default function ResumePage() {
           }}>
             People love working with Jenny
           </h2>
-          {/* Floating heart */}
-          <div className="floating-heart" style={{
-            position: 'absolute', right: '-20px', top: '-24px',
-            transform: 'rotate(4deg)',
-            backgroundColor: 'var(--glass-bg)',
-            border: '1px solid #FFFFFF',
-            borderRadius: '54px',
-            boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-            backdropFilter: 'blur(3px)',
-            WebkitBackdropFilter: 'blur(3px)',
-            width: '72px', height: '72px',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            padding: '6px 12px',
-            fontSize: '36px',
-            zIndex: 1,
-          }}>
-            ❤️
-          </div>
         </div>
         <div style={{ marginBottom: '48px' }} />
         <div className="resume-testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
@@ -536,7 +517,7 @@ export default function ResumePage() {
           letterSpacing: 'var(--tracking-h2)',
           color: 'var(--text)',
           margin: '0 auto 48px',
-          maxWidth: '480px',
+          maxWidth: '800px',
           textAlign: 'center',
         }}>
           The skills, tools, and background behind the work.

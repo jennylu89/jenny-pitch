@@ -43,7 +43,7 @@ export const talkiatry = {
       id: "player-coach",
       tocLabel: "Player-Coach Leadership",
       requirement: "Serve as both a hands-on designer and team leader — contributing directly to design work while setting vision and direction",
-      title: "Promoted from designer to Sr. Manager. Still hands-on.",
+      title: "Promoted from designer to Sr. Manager — still hands-on",
       story: [
         "At Giant Eagle, I was promoted to Sr. Manager leading a team of 5+ designers distributed across the US and India — visual design, product design, design systems, and accessibility.",
         "Owned the myPerks loyalty redesign end-to-end — ran the usability study across 4M members, shipped the product. Directed Scan Pay & Go across mobile, web, and in-store. Established WCAG standards adopted org-wide. All while managing the team.",
@@ -62,7 +62,7 @@ export const talkiatry = {
       id: "patient-provider",
       tocLabel: "Patient & Provider Design",
       requirement: "Own end-to-end design for patient booking flows, patient portal, provider software, and internal operations tools",
-      title: "Designed for patients and the systems behind them.",
+      title: "Designed for patients and the systems behind them",
       story: [
         "At Highmark Health, I designed and built UI components for member-facing insurance products. Healthcare UX has its own rules — HIPAA constraints, users in stressful moments, and interfaces where confusion means someone gives up on getting care.",
         "At Arena Labs, I designed Strive — a performance app for surgeons, ER nurses, and trauma teams. I owned both sides: patient-facing check-ins and biometric recommendations, plus provider-facing coaching dashboards and progress tracking. One design system across both.",
@@ -77,7 +77,7 @@ export const talkiatry = {
       id: "tradeoffs",
       tocLabel: "Articulating Tradeoffs",
       requirement: "Speak to the impact of designs, explain design choices and tradeoffs — influence stakeholders across disciplines",
-      title: "Hired to fix one billing page. Made the case for a full platform overhaul. Got the yes.",
+      title: "Hired to fix one billing page — made the case for a full platform overhaul",
       story: [
         "At Roadrunner, the brief was a single billing page. I started with research — usability study, stakeholder interviews, competitor benchmarking against Bill.com and Stripe. What I found went beyond one page: 4 applications, 28+ clicks per bill, 75% of bills identical to the previous month yet entered from scratch. The platform went down 1–2 times per week.",
         "I mapped the full workflow and brought two options to leadership. Option A: fix the one page — fast, low risk. Option B: full overhaul — slower, but eliminates the root cause. I showed the data behind each. They chose the overhaul.",
@@ -96,7 +96,7 @@ export const talkiatry = {
       id: "design-systems",
       tocLabel: "Design Systems at Scale",
       requirement: "Establish and maintain design systems in Figma for consistency and scalability across all products",
-      title: "I build the system alongside the product — not after.",
+      title: "I build the system alongside the product — not after",
       story: [
         "At Roadrunner, I built a 50+ component Figma system with tokens, reusable components, and documentation — alongside the product, not as a separate workstream. Every new feature used existing patterns from day one.",
         "At Arena Labs, design was scattered across Figma docs, Notion, Storybook, and PDFs. I built a Design Hub — one React app that replaced all four. Stakeholders tap prototypes. Engineers inspect tokens. Research sits next to the design decisions it informed.",
@@ -110,7 +110,7 @@ export const talkiatry = {
       id: "ai-design",
       tocLabel: "AI-Accelerated Design",
       requirement: "Leverage AI to improve and accelerate product design and development — shape new ways of working across the design team",
-      title: "I ship with AI.",
+      title: "I ship with AI",
       story: [
         "This portfolio is a React app I built with Claude Code — not a template, a working product.",
         "I also built a lead-generation pipeline that scrapes YC, Reddit, and Hacker News for buying signals — scores 405 leads, drafts personalized outreach, and runs the full pipeline in one command.",
@@ -124,7 +124,7 @@ export const talkiatry = {
 
   howIWork: {
     eyebrow: "What I bring",
-    heading: "Beyond the case studies.",
+    heading: "Beyond the case studies",
     subheading: "",
     tiles: [
       {

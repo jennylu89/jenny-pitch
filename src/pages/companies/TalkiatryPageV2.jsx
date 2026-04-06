@@ -137,7 +137,7 @@ function CaseStudySection({ section, index }) {
           letterSpacing: 'var(--tracking-h2)',
           color: dark ? 'var(--dark-text)' : 'var(--text)',
           margin: '0 auto var(--space-36)',
-          maxWidth: '680px',
+          maxWidth: '800px',
           textAlign: 'center',
         }}>
           {section.title}
@@ -339,7 +339,7 @@ export default function TalkiatryPageV2() {
             letterSpacing: 'var(--tracking-h2)',
             color: 'var(--text)',
             margin: '0 auto var(--space-48)',
-            maxWidth: '680px',
+            maxWidth: '800px',
             textAlign: 'center',
           }}>
             {talkiatry.summaryHeading}
@@ -419,10 +419,10 @@ export default function TalkiatryPageV2() {
             letterSpacing: 'var(--tracking-h2)',
             color: 'var(--text)',
             margin: '0 auto var(--space-48)',
-            maxWidth: '680px',
+            maxWidth: '800px',
             textAlign: 'center',
           }}>
-            Recent projects.
+            Recent projects
           </h2>
           <div>
             {jenny.selectedProjects
