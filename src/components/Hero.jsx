@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import gsap from 'gsap';
 
 const stats = [
   { value: '384%', label: 'Spend per member lift', source: 'Giant Eagle · myPerks loyalty redesign' },
@@ -10,20 +11,93 @@ const companies = ['Giant Eagle', 'Roadrunner', 'Arena Labs', 'MegPrime'];
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const blob1Ref = useRef(null);
+  const blob2Ref = useRef(null);
+  const blob3Ref = useRef(null);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80);
     return () => clearTimeout(t);
   }, []);
 
+  // GSAP mouse-reactive blobs
+  useEffect(() => {
+    const el = sectionRef.current;
+    const b1 = blob1Ref.current;
+    const b2 = blob2Ref.current;
+    const b3 = blob3Ref.current;
+    if (!el || !b1 || !b2 || !b3) return;
+
+    // GSAP quickTo creates optimized tweens for frequent updates
+    const b1X = gsap.quickTo(b1, 'x', { duration: 1.2, ease: 'power3.out' });
+    const b1Y = gsap.quickTo(b1, 'y', { duration: 1.2, ease: 'power3.out' });
+    const b2X = gsap.quickTo(b2, 'x', { duration: 1.6, ease: 'power3.out' });
+    const b2Y = gsap.quickTo(b2, 'y', { duration: 1.6, ease: 'power3.out' });
+    const b3X = gsap.quickTo(b3, 'x', { duration: 2.0, ease: 'power3.out' });
+    const b3Y = gsap.quickTo(b3, 'y', { duration: 2.0, ease: 'power3.out' });
+
+    const handleMouseMove = (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      b1X(x * 120); b1Y(y * 80);
+      b2X(x * -80); b2Y(y * 60);
+      b3X(x * 50);  b3Y(y * -70);
+    };
+
+    const handleMouseLeave = () => {
+      b1X(0); b1Y(0);
+      b2X(0); b2Y(0);
+      b3X(0); b3Y(0);
+    };
+
+    el.addEventListener('mousemove', handleMouseMove);
+    el.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      el.removeEventListener('mousemove', handleMouseMove);
+      el.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+
   return (
-    <section style={{
-      background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
-      paddingTop: 'calc(56px + 80px)',
-      paddingBottom: '80px',
-      overflow: 'hidden',
-      position: 'relative',
-    }}>
+    <section
+      ref={sectionRef}
+      style={{
+        background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
+        paddingTop: 'calc(56px + 80px)',
+        paddingBottom: '80px',
+        overflow: 'hidden',
+        position: 'relative',
+      }}
+    >
+      {/* GSAP mouse-reactive blobs */}
+      <div ref={blob1Ref} style={{
+        position: 'absolute', zIndex: 0, pointerEvents: 'none',
+        width: '600px', height: '600px', top: '-100px', left: '-50px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(139,120,255,0.5) 0%, rgba(139,120,255,0) 70%)',
+        filter: 'blur(40px)',
+        willChange: 'transform',
+      }} />
+      <div ref={blob2Ref} style={{
+        position: 'absolute', zIndex: 0, pointerEvents: 'none',
+        width: '500px', height: '500px', top: '0px', right: '-100px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(200,180,255,0.4) 0%, rgba(200,180,255,0) 70%)',
+        filter: 'blur(40px)',
+        willChange: 'transform',
+      }} />
+      <div ref={blob3Ref} style={{
+        position: 'absolute', zIndex: 0, pointerEvents: 'none',
+        width: '400px', height: '400px', bottom: '50px', left: '35%',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(100,80,255,0.35) 0%, rgba(100,80,255,0) 70%)',
+        filter: 'blur(40px)',
+        willChange: 'transform',
+      }} />
       {/* Noise overlay */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 0,
