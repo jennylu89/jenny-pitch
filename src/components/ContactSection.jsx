@@ -191,6 +191,7 @@ export default function ContactSection() {
       }}>
         {cards.map((card, i) => (
           <a
+            className="btn-hover"
             key={card.label}
             ref={el => { cardRefs.current[i] = el; }}
             href={card.href}
@@ -208,12 +209,8 @@ export default function ContactSection() {
               gap: '24px',
               textDecoration: 'none',
               boxShadow: 'var(--shadow-glass)',
-              transition: `opacity 0.7s ease ${i * 100}ms, transform 0.2s ease`,
               opacity: cardsVisible[i] ? 1 : 0,
-              transform: 'translateY(0)',
             }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; }}
           >
             <div style={{ color: 'var(--accent)' }}>
               {card.icon}

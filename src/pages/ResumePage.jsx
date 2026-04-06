@@ -264,21 +264,6 @@ export default function ResumePage() {
               }}>
                 Player-coach who leads design teams, runs her own research, and ships production code. Healthcare, fintech, and consumer — from 0→1 to 4M-member platforms.
               </p>
-              <a
-                href="/jenny-lu-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-fg)',
-                  borderRadius: 'var(--btn-radius)', height: 'var(--btn-height)',
-                  padding: '0 var(--space-24)',
-                  fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
-                  textDecoration: 'none',
-                }}
-              >
-                Download PDF →
-              </a>
             </div>
 
             {/* Fun fact cards */}
@@ -773,6 +758,7 @@ export default function ResumePage() {
         </p>
         <div className="resume-cta-buttons" style={{ display: 'flex', gap: 'var(--space-18)', alignItems: 'center' }}>
           <a
+            className="btn-hover"
             href={projectsHref}
             style={{
               backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-fg)',
@@ -785,6 +771,7 @@ export default function ResumePage() {
             {projectsLabel}
           </a>
           <a
+            className="btn-hover"
             href="https://cal.com/jennylu98/30"
             target="_blank"
             rel="noopener noreferrer"
@@ -798,7 +785,8 @@ export default function ResumePage() {
               display: 'inline-flex', alignItems: 'center', gap: '8px',
             }}
           >
-            Book a call
+            <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+            Schedule a call
           </a>
         </div>
       </div>

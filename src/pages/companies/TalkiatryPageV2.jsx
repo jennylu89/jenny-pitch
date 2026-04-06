@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
 import { talkiatry } from './talkiatry';
 import { jenny } from '../../data/jenny';
 import LLCaseStudy from '../../components/ll/LLCaseStudy';
@@ -269,6 +268,20 @@ export default function TalkiatryPageV2() {
               {jenny.name}
             </h1>
 
+            {/* Role */}
+            <p style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--type-h4)',
+              fontWeight: 'var(--weight-medium)',
+              lineHeight: 'var(--leading-h4)',
+              letterSpacing: 'var(--tracking-h4)',
+              color: 'var(--text)',
+              margin: 0,
+              textAlign: 'center',
+            }}>
+              {talkiatry.role}
+            </p>
+
             {/* One-liner */}
             <p style={{
               fontFamily: 'var(--font-sans)',
@@ -286,6 +299,7 @@ export default function TalkiatryPageV2() {
             {/* CTA */}
             <div style={{ marginTop: 'var(--space-12)' }}>
               <a
+                className="btn-hover"
                 href="https://cal.com/jennylu98/30"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -297,7 +311,8 @@ export default function TalkiatryPageV2() {
                   textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px',
                 }}
               >
-                Book a call →
+                <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+                Schedule a call
               </a>
             </div>
           </div>
@@ -441,6 +456,7 @@ export default function TalkiatryPageV2() {
           </p>
           <div className="resume-cta-buttons" style={{ display: 'flex', gap: 'var(--space-18)', alignItems: 'center', marginTop: 'var(--space-24)' }}>
             <a
+              className="btn-hover"
               href="https://cal.com/jennylu98/30"
               target="_blank"
               rel="noopener noreferrer"
@@ -452,9 +468,11 @@ export default function TalkiatryPageV2() {
                 textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px',
               }}
             >
-              Book a call →
+              <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+              Schedule a call
             </a>
             <a
+              className="btn-hover"
               href="/resume?from=talkiatry"
               style={{
                 color: 'var(--text)',
@@ -471,7 +489,6 @@ export default function TalkiatryPageV2() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

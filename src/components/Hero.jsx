@@ -94,6 +94,7 @@ export default function Hero() {
 
           {/* CTA */}
           <a
+            className="btn-hover"
             href="https://cal.com/jennylu98/30"
             target="_blank"
             rel="noopener noreferrer"
@@ -103,12 +104,11 @@ export default function Hero() {
               padding: '0 var(--btn-x-padding)', height: 'var(--btn-height)',
               borderRadius: 'var(--btn-radius)',
               textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px',
-              transition: 'opacity 0.15s ease', marginTop: '4px',
+              marginTop: '4px',
             }}
-            onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
-            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
-            Book a call →
+            <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+            Schedule a call
           </a>
         </div>
 

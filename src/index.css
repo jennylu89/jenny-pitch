@@ -162,6 +162,21 @@
 }
 
 /* ─────────────────────────────────────────────────────────
+   BUTTON HOVER
+   ───────────────────────────────────────────────────────── */
+.btn-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-hover:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.btn-hover:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
+}
+
+/* ─────────────────────────────────────────────────────────
    BASE
    ───────────────────────────────────────────────────────── */
 @layer base {
