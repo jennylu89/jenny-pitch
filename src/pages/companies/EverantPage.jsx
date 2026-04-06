@@ -399,11 +399,6 @@ export default function EverantPage() {
         </div>
       </section>
 
-      {/* ═══ SECTIONS ═══ */}
-      {everant.sections.map((section, i) => (
-        <CaseStudySection key={section.id} section={section} index={i} />
-      ))}
-
       {/* ═══ SELECTED PROJECTS ═══ */}
       <section style={{ padding: 'var(--space-96) 0 var(--space-80)', borderTop: '1px solid var(--border)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
