@@ -124,24 +124,24 @@ export const talkiatry = {
   ],
 
   howIWork: {
-    heading: "Research first. Then I build.",
-    subheading: "Every decision traces back to a user need, a constraint, or a metric worth moving.",
+    heading: "What I bring.",
+    subheading: "The things that don't fit in a case study.",
     tiles: [
       {
-        heading: "Start with evidence",
-        body: "Usability studies, stakeholder interviews, data analysis. The 142-person study at Roadrunner happened before I touched a single screen.",
+        heading: "0→1 experience",
+        body: "First designer at multiple companies. Built the practice, the system, and the product simultaneously — blank canvas to shipped, no playbook.",
       },
       {
-        heading: "Design for both sides",
-        body: "Patients and providers. Users and compliance. Business goals and user needs. I've navigated dual-stakeholder design across healthcare, fintech, and consumer.",
+        heading: "Research → design → ship",
+        body: "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
       },
       {
-        heading: "Ship systems, not screens",
-        body: "Every project leaves behind a component library or design system. One source of truth, not scattered decisions.",
+        heading: "Business-first design",
+        body: "Every design decision tied to conversion, retention, or revenue. Outcomes first, always.",
       },
       {
-        heading: "Articulate the tradeoffs",
-        body: "I present options with evidence — not just the answer I like. Stakeholders make informed decisions because they see the data behind each path.",
+        heading: "Vibe coding",
+        body: "I build production React with Claude Code. Design and implementation in the same hands — no dev handoff.",
       },
     ],
   },
