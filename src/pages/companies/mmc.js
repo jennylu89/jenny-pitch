@@ -1,5 +1,5 @@
 export const mmc = {
-  name: "MapMyCustomers",
+  name: "Map My Customers",
   role: "Senior Product Designer / Design Engineer",
 
   oneLiner: "Startup designer who ships code. Research, design systems, and production React — one person, no handoff.",
@@ -61,5 +61,5 @@ export const mmc = {
   },
 
   close:
-    "Sole designer at Arena Labs. Startup pace, research foundation, ships production code. Ready to do all of it at MapMyCustomers.",
+    "Sole designer at Arena Labs. Startup pace, research foundation, ships production code. Ready to do all of it at Map My Customers.",
 };
