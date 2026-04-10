@@ -262,7 +262,7 @@ export default function ResumePage() {
                 textAlign: 'center',
                 maxWidth: '521px',
               }}>
-                Design leader who stays hands-on. Research, design systems, and production code across healthcare, fintech, and consumer.
+                Research, design systems, and production code across healthcare, fintech, and consumer.
               </p>
             </div>
 
