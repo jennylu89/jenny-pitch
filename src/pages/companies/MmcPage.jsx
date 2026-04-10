@@ -248,7 +248,7 @@ export default function MmcPage() {
           }}>Recent projects</h2>
           <div>
             {jenny.selectedProjects
-              .filter(p => ['roadrunner', 'megprime', 'arenalabs', 'designhub'].includes(p.id))
+              .filter(p => ['arenalabs', 'designhub', 'roadrunner'].includes(p.id))
               .map((project, i) => <LLCaseStudy key={project.id} project={project} index={i} />)}
           </div>
         </div>

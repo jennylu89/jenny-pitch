@@ -2,13 +2,13 @@ export const mmc = {
   name: "MapMyCustomers",
   role: "Senior Product Designer / Design Engineer",
 
-  oneLiner: "10+ years designing and shipping production code. First designer at multiple companies — research, systems, and React.",
+  oneLiner: "Startup designer who ships code. Research, design systems, and production React — one person, no handoff.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
       ask: "Founding-level design seat — primary or sole designer",
-      proof: "First UX hire at Giant Eagle. Sole designer at Arena Labs. Built the practice, design system, and product at the same time.",
+      proof: "Sole designer at Arena Labs. First UX hire at Giant Eagle. Built the practice, design system, and product at the same time — startup pace, no playbook.",
     },
     {
       ask: "Design + code hybrid — write production React/CSS",
@@ -32,7 +32,7 @@ export const mmc = {
     },
     {
       ask: "8+ years product design",
-      proof: "10+ years. Giant Eagle (2013-2022), Highmark Health, Roadrunner, Arena Labs, MegPrime.",
+      proof: "10+ years. Arena Labs, MegPrime, Roadrunner (startups), Giant Eagle, Highmark Health (enterprise).",
     },
   ],
 
@@ -144,5 +144,5 @@ export const mmc = {
   },
 
   close:
-    "First designer at Giant Eagle. Sole designer at Arena Labs. I design and code — ready to do both at MapMyCustomers.",
+    "Sole designer at Arena Labs. Startup pace, research foundation, ships production code. Ready to do all of it at MapMyCustomers.",
 };
