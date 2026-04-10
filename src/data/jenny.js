@@ -244,7 +244,7 @@ export const jenny = {
     {
       id: "hema",
       company: "Hema Designs",
-      role: "Founder · Fractional Product Design Leader",
+      role: "Founder · Senior Product Designer",
       type: "Freelance",
       period: "2023–Present",
       location: "Pittsburgh, PA",
@@ -253,7 +253,7 @@ export const jenny = {
         "Implemented AI-native workflows for rapid prototyping and technical validation",
         "Clients include Arena Labs, MegPrime Pay, Teleskope, and Product Marketing Manager Career",
       ],
-      tags: ["Fractional", "0→1", "AI", "Multi-client"],
+      tags: ["0→1", "AI", "Multi-client", "Startup"],
     },
     {
       id: "jointley",
