@@ -6,6 +6,7 @@ import Projects from '../../components/Projects';
 import ContactSection from '../../components/ContactSection';
 import Footer from '../../components/Footer';
 import ProcessSection from '../../components/ProcessSection';
+import AIProjects from '../../components/AIProjects';
 import { jenny } from '../../data/jenny';
 
 export default function PitchPage() {
@@ -17,6 +18,7 @@ export default function PitchPage() {
         <Differentiators />
         <ProcessSection />
         <Testimonials />
+        <AIProjects />
         <Projects />
         <ContactSection />
       </main>
