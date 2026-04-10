@@ -378,7 +378,7 @@ export const jenny = {
       quote:
         "Hiring Jenny was my best decision of 2025. Building a digital presence is one thing, building one that CONVERTS is a whole different game.",
       name: "Harvey Lee",
-      title: "", // TODO: add title from LinkedIn
+      title: "Founder · PMMCA",
       avatar: null, // TODO: add LinkedIn avatar
     },
   ],
