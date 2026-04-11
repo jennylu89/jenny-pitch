@@ -219,7 +219,7 @@ export const jenny = {
       role: "Designer + Builder",
       tags: ["Vibe Coding", "React", "Design System", "AI"],
       headline:
-        "Arena needed to move fast with one designer on limited hours. Four separate systems were slowing everything down.",
+        "One designer, limited hours, four separate systems slowing everything down. Built an AI-powered design hub with Claude Code to replace all four.",
       outcome:
         "One URL replaced Figma docs, Notion wikis, Storybook, and PDF specs.",
       metrics: [
