@@ -54,6 +54,7 @@ export const jenny = {
       role: "Lead UX Designer → UX Manager",
       tags: ["Consumer", "Loyalty", "Omnichannel", "Research"],
       tools: ["Figma", "Qualtrics", "UserTesting", "Google Analytics"],
+      heroImage: "/myPerks-loyalty.png",
       headline:
         "The loyalty program was generous. Customers just couldn't feel it. Redesigned so 4M members could see their value without doing math.",
       outcome:

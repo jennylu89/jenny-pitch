@@ -242,6 +242,14 @@ export default function LLCaseStudy({ project, index }) {
         {/* ── Content always on top ── */}
         {contentRow}
 
+        {/* ── Hero image ── */}
+        {project.heroImage && (
+          <div style={{ borderTop: '1px solid var(--border)' }}>
+            <img src={project.heroImage} alt={project.title} loading="lazy"
+              style={{ width: '100%', display: 'block' }} />
+          </div>
+        )}
+
         {/* ── App screenshots: horizontal scroll strip ── */}
         {isApp && hasScreens && (
           <ScrollStrip>
