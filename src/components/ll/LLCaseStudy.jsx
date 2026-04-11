@@ -257,15 +257,12 @@ export default function LLCaseStudy({ project, index }) {
 
         {/* ── Hero image (scrollable for detailed images like journey maps) ── */}
         {project.heroImage && (
-          <div style={{
-            borderTop: '1px solid var(--border)',
-            overflowX: 'auto',
-            WebkitOverflowScrolling: 'touch',
-            cursor: 'grab',
-          }}>
-            <img src={project.heroImage} alt={project.title} loading="lazy"
-              style={{ minWidth: '1200px', maxWidth: '2000px', width: '200%', display: 'block' }} />
-          </div>
+          <ScrollStrip bg="var(--surface)">
+            <div style={{ padding: '40px' }}>
+              <img src={project.heroImage} alt={project.title} loading="lazy"
+                style={{ minWidth: '1200px', maxWidth: '2000px', width: '200%', display: 'block', borderRadius: '8px' }} />
+            </div>
+          </ScrollStrip>
         )}
 
         {/* ── App screenshots: horizontal scroll strip ── */}
@@ -455,21 +452,21 @@ export default function LLCaseStudy({ project, index }) {
 
         {/* ── Compare: full-width scrollable images ── */}
         {compareScreens.length > 0 && (
-          <ScrollStrip bg="var(--surface)">
+          <ScrollStrip bg="var(--text)">
             <div style={{
               display: 'flex', gap: '16px', padding: '40px',
               minWidth: 'max-content',
             }}>
               {compareScreens.map((screen, i) => (
                 <div key={i} style={{ width: '700px', flexShrink: 0 }}>
-                  <div style={{ overflow: 'hidden', borderRadius: '8px', border: '1px solid var(--border)' }}>
+                  <div style={{ overflow: 'hidden', borderRadius: '12px' }}>
                     <img src={screen.src} alt={screen.alt || ''} loading="lazy"
                       style={{ width: '100%', display: 'block' }} />
                   </div>
                   {screen.caption && (
                     <p style={{
-                      color: 'var(--muted)', fontSize: 'var(--type-caption)',
-                      lineHeight: 'var(--leading-body)', padding: '8px 0 0', margin: 0, textAlign: 'center',
+                      color: 'rgba(245,244,242,0.65)', fontSize: 'var(--type-small)',
+                      lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0, textAlign: 'center',
                     }}>
                       {screen.caption}
                     </p>
