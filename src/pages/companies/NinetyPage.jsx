@@ -122,8 +122,13 @@ export default function NinetyPage() {
             {ninety.summaryRows.map((row, i) => (
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 'var(--space-24)',
-                backgroundColor: 'var(--glass-bg)', border: '1px solid var(--glass-stroke)',
-                borderRadius: 'var(--radius-card)', padding: 'var(--space-24)',
+                backgroundColor: 'var(--glass-bg)',
+                backdropFilter: 'blur(var(--glass-blur))',
+                WebkitBackdropFilter: 'blur(var(--glass-blur))',
+                border: '1px solid var(--glass-stroke)',
+                borderRadius: 'var(--radius)',
+                boxShadow: 'var(--shadow-glass)',
+                padding: 'var(--space-24)',
               }}>
                 <div>
                   <span style={{
