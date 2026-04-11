@@ -8,7 +8,7 @@ export const ninety = {
   summaryRows: [
     {
       ask: "End-to-end design — research through production-ready comps",
-      proof: "Every project: research, wireframes, prototypes, shipped product. Roadrunner: usability study → full platform overhaul. Arena Labs: research → prototype → design hub.",
+      proof: "Every project: research, wireframes, prototypes, shipped product. I advocate for the user in every product conversation — the usability study at Roadrunner is what expanded a 1-page fix into a full overhaul.",
     },
     {
       ask: "Web + mobile web + mobile native",
@@ -19,12 +19,12 @@ export const ninety = {
       proof: "Roadrunner billing platform — 4 apps, 28 clicks per invoice. Redesigned into a unified workflow. 3 clicks. 50+ component system.",
     },
     {
-      ask: "Figma advanced + Figma MCP",
-      proof: "50+ component Figma library with tokens and prototyping at Roadrunner. Use Figma MCP + Claude Code daily to extract tokens and generate production components.",
+      ask: "Figma advanced + Figma Make + Figma MCP",
+      proof: "50+ component Figma library with tokens and prototyping at Roadrunner. Use Figma MCP + Claude Code daily. Prototype with Pencil.dev (Figma Make alternative) for rapid concept validation.",
     },
     {
       ask: "Design system contributor",
-      proof: "50+ components at Roadrunner. Consolidated 4 systems into 1 React-based Design Hub at Arena Labs. WCAG accessibility standards adopted org-wide at Giant Eagle.",
+      proof: "Contributed to and built design systems at every company. 50+ components at Roadrunner. Consolidated 4 systems into 1 React-based Design Hub at Arena Labs. WCAG standards adopted org-wide at Giant Eagle.",
     },
     {
       ask: "AI feature design — AI agent UX",
@@ -33,6 +33,10 @@ export const ninety = {
     {
       ask: "User research — evidence-based decisions",
       proof: "Qualtrics surveys, usability testing (UserTesting), mixed-method studies at Giant Eagle. Research at Roadrunner expanded scope from 1 page to full overhaul.",
+    },
+    {
+      ask: "Communicate to stakeholders — including opinionated founders",
+      proof: "At Roadrunner, brought two options with data to leadership — they chose the full overhaul. At Giant Eagle, delivered research findings to senior leadership that shaped product and business strategy.",
     },
     {
       ask: "5+ years product design",
