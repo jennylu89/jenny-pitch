@@ -54,9 +54,9 @@ export const jenny = {
       role: "Lead UX Designer → UX Manager",
       tags: ["Consumer", "Loyalty", "Omnichannel", "Research"],
       headline:
-        "Redesigned a loyalty program so 4M customers could feel the value without doing math.",
+        "The loyalty program was generous. Customers just couldn't feel it. Redesigned so 4M members could see their value without doing math.",
       outcome:
-        "Eliminated mental math. Surfaced rewards at every touchpoint. Behavior followed.",
+        "Same program, surfaced differently. Rewards visible at every touchpoint. Behavior followed.",
       metrics: [
         { value: "384%", label: "Spend per member" },
         { value: "212%", label: "Visit frequency" },
@@ -64,10 +64,11 @@ export const jenny = {
         { value: "30%", label: "Cost reduction" },
       ],
       caseStudy: {
-        insight: "Not a new program. A better argument for the one they already had.",
+        insight: "The program wasn't broken. The way it communicated value was.",
         story: [
-          "Giant Eagle's loyalty program was technically generous. Customers just couldn't feel it. They'd do the math wrong and assume it wasn't worth it — even when it was.",
-          "Redesigned around one question: what does someone need to see — and when — to feel like they're winning? Same program, surfaced differently. Rewards visible at every touchpoint. Smaller milestones before the big redemptions.",
+          "Giant Eagle's myPerks loyalty program was technically generous — but customers couldn't feel it. They'd do the math wrong and assume it wasn't worth it, even when it was. The problem wasn't the reward structure. It was perceived value.",
+          "Ran usability research across the 4M member base to understand where the disconnect happened. Customers weren't tracking their progress toward rewards. The milestones felt too far away. The math was invisible.",
+          "Redesigned around one question: what does someone need to see — and when — to feel like they're winning? Surfaced rewards at every touchpoint. Broke large redemptions into smaller visible milestones. Made the math disappear — customers see progress, not percentages.",
         ],
         screens: [],
       },
@@ -136,9 +137,9 @@ export const jenny = {
       role: "Sr. Manager, Customer Research & Experience Design",
       tags: ["Consumer Web", "Navigation", "Research", "Analytics"],
       headline:
-        "Unified two codebases into one. Redesigned nav around what customers actually came to do.",
+        "The nav mirrored the org chart, not the customer. Two codebases, every update made twice. Redesigned around what customers actually came to do.",
       outcome:
-        "Qual + quant research → competitor analysis → multiple usability rounds → shipped.",
+        "Unified two codebases into one navigation system. Restructured IA around user tasks, not internal departments.",
       metrics: [
         { value: "278%", label: "Cake ordering clicks" },
         { value: "41%", label: "Grocery clicks" },
@@ -146,10 +147,11 @@ export const jenny = {
         { value: "21%", label: "Shopping history" },
       ],
       caseStudy: {
-        insight: "One redesign. Fixed the IA and cleared the engineering debt.",
+        insight: "The navigation structure mirrored the org chart. Customers couldn't find what they came for.",
         story: [
-          "Giant Eagle's nav was built for Giant Eagle, not customers. The structure mirrored the org chart. Mobile and desktop had drifted apart — two codebases, every update made twice.",
-          "Analytics showed the gap between what the nav offered and what customers came for. Top tasks — Weekly Ad, Curbside, Cake Ordering — were buried or invisible. Rebuilt as a unified flyout from one codebase — fixed the IA and paid off years of engineering debt in the same move.",
+          "Giant Eagle's nav was built for Giant Eagle, not customers. The structure mirrored internal departments — not how people actually shop. Mobile and desktop had drifted into two separate codebases. Every update was made twice. Every inconsistency was doubled.",
+          "I started with analytics — what were customers actually clicking on? What were they searching for? The gap was clear: top tasks like Weekly Ad, Curbside, and Cake Ordering were buried or invisible. The nav surfaced what the company wanted to promote, not what customers came to do.",
+          "Ran competitor analysis and multiple rounds of usability testing. Rebuilt as a unified flyout from one codebase — restructured the information architecture around user tasks. Fixed the IA and cleared years of engineering debt in the same move.",
         ],
         screens: [],
       },

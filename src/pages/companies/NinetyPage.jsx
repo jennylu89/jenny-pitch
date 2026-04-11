@@ -164,7 +164,11 @@ export default function NinetyPage() {
           }}>Recent projects</h2>
           <div>
             {jenny.selectedProjects
-              .filter(p => ['roadrunner', 'arenalabs', 'designhub'].includes(p.id))
+              .filter(p => ['roadrunner', 'arenalabs', 'designhub', 'navigation', 'myperks'].includes(p.id))
+              .sort((a, b) => {
+                const order = ['roadrunner', 'arenalabs', 'designhub', 'navigation', 'myperks'];
+                return order.indexOf(a.id) - order.indexOf(b.id);
+              })
               .map((project, i) => <LLCaseStudy key={project.id} project={project} index={i} />)}
           </div>
         </div>
