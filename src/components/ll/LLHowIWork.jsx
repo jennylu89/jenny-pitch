@@ -61,10 +61,18 @@ export default function LLHowIWork({ howIWork }) {
               display: 'flex', flexDirection: 'column', gap: 'var(--space-12)',
             }}>
               {tile.icon && (
-                <i className={tile.icon} style={{
-                  fontSize: '20px',
-                  color: 'var(--accent)',
-                }} />
+                <div style={{
+                  width: '44px', height: '44px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, rgba(139,120,255,0.15) 0%, rgba(139,120,255,0.05) 100%)',
+                  border: '1px solid rgba(139,120,255,0.2)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <i className={tile.icon} style={{
+                    fontSize: '18px',
+                    color: 'var(--accent)',
+                  }} />
+                </div>
               )}
               <h3 style={{
                 fontFamily: 'var(--font-sans)',
