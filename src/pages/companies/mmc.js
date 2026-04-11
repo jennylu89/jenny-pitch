@@ -38,24 +38,24 @@ export const mmc = {
 
   howIWork: {
     eyebrow: "What I bring",
-    heading: "Beyond the case studies",
+    heading: "What sets me apart",
     subheading: "",
     tiles: [
       {
-        heading: "0→1 experience",
-        body: "Sole designer at Arena Labs, first designer at Giant Eagle. Built the practice, the system, and the product at the same time.",
+        heading: "Figma MCP + Claude Code",
+        body: "My daily workflow. Extract tokens from Figma, generate production React components, ship faster than traditional handoff.",
       },
       {
-        heading: "Research → design → ship",
-        body: "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
+        heading: "0→1 experience",
+        body: "Sole designer at Arena Labs, first designer at Giant Eagle. Built the practice, the system, and the product at the same time.",
       },
       {
         heading: "Mobile-first thinking",
         body: "Scan Pay & Go at Giant Eagle, Arena Strive for clinicians. Designed for users in motion — one-handed, time-pressured, no patience for friction.",
       },
       {
-        heading: "Vibe coding",
-        body: "I build production React with Claude Code. Design and implementation in the same hands.",
+        heading: "Research → design → ship",
+        body: "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
       },
     ],
   },

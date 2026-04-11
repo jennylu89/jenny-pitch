@@ -124,7 +124,7 @@ export default function Hero() {
             color: 'var(--muted)', fontSize: 'var(--type-lead)',
             lineHeight: 'var(--leading-body)', margin: 0, maxWidth: '480px',
           }}>
-            I embed with early-stage teams, run my own studies, own the design system, and ship production React.
+            AI-first design process. I run my own studies, own the design system, and ship production React with Claude Code.
           </p>
 
           {/* CTA */}

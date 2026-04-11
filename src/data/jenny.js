@@ -39,11 +39,11 @@ export const jenny = {
         "I build production React with Claude Code. Design and implementation in the same hands.",
     },
     {
-      id: "fintech-compliance",
+      id: "ai-first",
       number: "05",
-      title: "Fintech + compliance UX",
+      title: "Figma MCP + Claude Code",
       description:
-        "KYC flows, crypto disclosures, regulated payment products. Making compliance invisible to the user.",
+        "My daily workflow. Extract tokens from Figma, generate production React components, ship faster than traditional handoff.",
     },
   ],
   selectedProjects: [

@@ -4,6 +4,7 @@ import { mmc } from './mmc';
 import { jenny } from '../../data/jenny';
 import LLCaseStudy from '../../components/ll/LLCaseStudy';
 import LLHowIWork from '../../components/ll/LLHowIWork';
+import AIProjects from '../../components/AIProjects';
 
 const NOISE_SVG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`;
 
@@ -237,6 +238,12 @@ export default function MmcPage() {
         </div>
       </section>
 
+      {/* WHAT I BRING */}
+      <LLHowIWork howIWork={mmc.howIWork} />
+
+      {/* AI PROJECTS */}
+      <AIProjects />
+
       {/* SELECTED PROJECTS */}
       <section style={{ padding: 'var(--space-96) 0 var(--space-80)', borderTop: '1px solid var(--border)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
@@ -248,14 +255,15 @@ export default function MmcPage() {
           }}>Recent projects</h2>
           <div>
             {jenny.selectedProjects
-              .filter(p => ['arenalabs', 'designhub', 'roadrunner'].includes(p.id))
+              .filter(p => ['roadrunner', 'arenalabs', 'navigation', 'myperks'].includes(p.id))
+              .sort((a, b) => {
+                const order = ['roadrunner', 'arenalabs', 'navigation', 'myperks'];
+                return order.indexOf(a.id) - order.indexOf(b.id);
+              })
               .map((project, i) => <LLCaseStudy key={project.id} project={project} index={i} />)}
           </div>
         </div>
       </section>
-
-      {/* WHAT I BRING */}
-      <LLHowIWork howIWork={mmc.howIWork} />
 
       {/* CLOSE CTA */}
       <div style={{
