@@ -167,7 +167,7 @@ export const jenny = {
           { src: "/ge-nav-4.jpg", alt: "Giant Eagle navigation redesign" },
           { src: "/ge-nav-5.jpg", alt: "Giant Eagle navigation redesign" },
         ],
-        screensType: 'flow',
+        screensType: 'gallery',
       },
     },
     {

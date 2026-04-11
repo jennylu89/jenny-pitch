@@ -79,6 +79,7 @@ export default function LLCaseStudy({ project, index }) {
   const isFlow         = screensType === 'flow';
   const isFull         = screensType === 'full';
   const isBeforeAfter  = screensType === 'before-after';
+  const isGallery      = screensType === 'gallery';
   const beforeScreen   = caseStudy.beforeScreen || null;
 
   const cardRef = useRef(null);
@@ -397,6 +398,39 @@ export default function LLCaseStudy({ project, index }) {
                     <p style={{
                       color: 'rgba(245,244,242,0.65)', fontSize: 'var(--type-small)',
                       lineHeight: 'var(--leading-h5)', padding: '8px 4px 0', margin: 0, textAlign: 'center',
+                    }}>
+                      {screen.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </ScrollStrip>
+        )}
+
+        {/* ── Gallery: horizontal scroll for wide screenshots ── */}
+        {isGallery && hasScreens && (
+          <ScrollStrip>
+            <div style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: '16px',
+              padding: '40px',
+              minWidth: 'max-content',
+            }}>
+              {screens.map((screen, i) => (
+                <div key={i} style={{
+                  width: '500px', flexShrink: 0,
+                  display: 'flex', flexDirection: 'column',
+                }}>
+                  <div style={{ overflow: 'hidden', borderRadius: '8px', border: '1px solid var(--border)' }}>
+                    <img src={screen.src} alt={screen.alt || project.title} loading="lazy"
+                      style={{ width: '100%', display: 'block' }} />
+                  </div>
+                  {screen.caption && (
+                    <p style={{
+                      color: 'var(--muted)', fontSize: 'var(--type-caption)',
+                      lineHeight: 'var(--leading-body)', padding: '8px 4px 0', margin: 0, textAlign: 'center',
                     }}>
                       {screen.caption}
                     </p>
