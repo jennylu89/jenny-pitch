@@ -453,32 +453,31 @@ export default function LLCaseStudy({ project, index }) {
           </ScrollStrip>
         )}
 
-        {/* ── Compare: 2-column side by side ── */}
+        {/* ── Compare: full-width scrollable images ── */}
         {compareScreens.length > 0 && (
-          <div style={{
-            padding: '40px',
-            borderTop: '1px solid var(--border)',
-            display: 'grid',
-            gridTemplateColumns: `repeat(${compareScreens.length}, 1fr)`,
-            gap: '16px',
-          }}>
-            {compareScreens.map((screen, i) => (
-              <div key={i}>
-                <div style={{ overflow: 'hidden', borderRadius: '8px', border: '1px solid var(--border)' }}>
-                  <img src={screen.src} alt={screen.alt || ''} loading="lazy"
-                    style={{ width: '100%', display: 'block' }} />
+          <ScrollStrip bg="var(--surface)">
+            <div style={{
+              display: 'flex', gap: '16px', padding: '40px',
+              minWidth: 'max-content',
+            }}>
+              {compareScreens.map((screen, i) => (
+                <div key={i} style={{ width: '700px', flexShrink: 0 }}>
+                  <div style={{ overflow: 'hidden', borderRadius: '8px', border: '1px solid var(--border)' }}>
+                    <img src={screen.src} alt={screen.alt || ''} loading="lazy"
+                      style={{ width: '100%', display: 'block' }} />
+                  </div>
+                  {screen.caption && (
+                    <p style={{
+                      color: 'var(--muted)', fontSize: 'var(--type-caption)',
+                      lineHeight: 'var(--leading-body)', padding: '8px 0 0', margin: 0, textAlign: 'center',
+                    }}>
+                      {screen.caption}
+                    </p>
+                  )}
                 </div>
-                {screen.caption && (
-                  <p style={{
-                    color: 'var(--muted)', fontSize: 'var(--type-caption)',
-                    lineHeight: 'var(--leading-body)', padding: '8px 0 0', margin: 0, textAlign: 'center',
-                  }}>
-                    {screen.caption}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollStrip>
         )}
 
       </div>
