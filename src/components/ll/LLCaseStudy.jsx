@@ -242,11 +242,16 @@ export default function LLCaseStudy({ project, index }) {
         {/* ── Content always on top ── */}
         {contentRow}
 
-        {/* ── Hero image ── */}
+        {/* ── Hero image (scrollable for detailed images like journey maps) ── */}
         {project.heroImage && (
-          <div style={{ borderTop: '1px solid var(--border)' }}>
+          <div style={{
+            borderTop: '1px solid var(--border)',
+            overflowX: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            cursor: 'grab',
+          }}>
             <img src={project.heroImage} alt={project.title} loading="lazy"
-              style={{ width: '100%', display: 'block' }} />
+              style={{ minWidth: '1200px', maxWidth: '2000px', width: '200%', display: 'block' }} />
           </div>
         )}
 
