@@ -175,29 +175,23 @@ export default function AIProjects() {
             </div>
 
             {/* Flow steps */}
-            <div style={{
-              borderTop: '1px solid var(--border)', paddingTop: '32px',
-            }}>
-              <span style={{
-                color: 'var(--text)', fontSize: 'var(--type-small)',
-                fontFamily: 'var(--font-badge)',
-                fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
-                textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
-                marginBottom: '24px', display: 'block',
-              }}>
-                The workflow
-              </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div style={{ borderTop: '1px solid var(--border)', paddingTop: '32px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
                 {flowSteps.map((step, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div key={i} style={{
+                    display: 'flex', gap: '20px', alignItems: 'flex-start',
+                    padding: '20px 0',
+                    borderBottom: i < flowSteps.length - 1 ? '1px solid var(--border)' : 'none',
+                  }}>
                     <span style={{
                       color: 'var(--accent)', fontSize: 'var(--type-label)',
-                      fontWeight: 'var(--weight-bold)', letterSpacing: 'var(--tracking-label)',
-                      flexShrink: 0, width: '24px',
+                      fontFamily: 'var(--font-badge)',
+                      fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
+                      flexShrink: 0, width: '24px', paddingTop: '2px',
                     }}>
                       {step.num}
                     </span>
-                    <div>
+                    <div style={{ flex: 1 }}>
                       <span style={{
                         fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
                         color: 'var(--text)', display: 'block', marginBottom: '4px',
