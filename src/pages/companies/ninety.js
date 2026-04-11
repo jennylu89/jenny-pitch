@@ -16,7 +16,7 @@ export const ninety = {
     },
     {
       ask: "B2B SaaS — multi-step workflow design",
-      proof: "Roadrunner billing platform — 4 apps, 28 clicks per invoice. Redesigned into a unified workflow. 3 clicks. 50+ component system.",
+      proof: "Roadrunner billing: 4 apps → unified workflow (28 clicks → 3). Giant Eagle nav: restructured IA across two codebases into one — aligning information architecture with how users actually navigate.",
     },
     {
       ask: "Figma advanced + Figma Make + Figma MCP",
@@ -63,7 +63,7 @@ export const ninety = {
       },
       {
         heading: "Pod-ready IC",
-        body: "Managed 5+ designers at Giant Eagle while still shipping. Comfortable driving design in a pod with PMs and engineers — product thinking, not just execution.",
+        body: "Managed 5+ designers at Giant Eagle while still shipping. Just as comfortable as a co-equal IC alongside another designer — I collaborate, not just lead.",
       },
     ],
   },
