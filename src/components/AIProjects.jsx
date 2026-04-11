@@ -7,14 +7,15 @@ const toolIcons = {
   'React': '/tools/react.svg',
   'Vite': '/tools/vite.svg',
   'Figma MCP': '/tools/figma-mcp.svg',
+  'Figma': '/tools/figma.svg',
 };
 
 const flowSteps = [
-  { label: 'Research', detail: 'Surveys, interviews, usability data' },
-  { label: 'Sketch', detail: 'Rough layouts in Pencil.dev' },
-  { label: 'Build', detail: 'Claude Code generates React components' },
-  { label: 'Prototype', detail: 'Functional screens, not static mocks' },
-  { label: 'Ship', detail: 'One URL — stakeholders tap, engineers copy code' },
+  { num: '01', label: 'Start in Claude', detail: 'Clarify intent, surface edge cases, draft the approach — before touching a screen' },
+  { num: '02', label: 'Sketch in Pencil.dev', detail: 'Rough layouts and interactions, fast enough to throw away' },
+  { num: '03', label: 'Build in Claude Code', detail: 'Production React components mapped to the design system — not static mocks' },
+  { num: '04', label: 'Polish in Figma', detail: 'Systems alignment, full state coverage, production readiness' },
+  { num: '05', label: 'Ship from one URL', detail: 'Stakeholders tap through it. Engineers copy code. No handoff doc.' },
 ];
 
 export default function AIProjects() {
@@ -48,11 +49,12 @@ export default function AIProjects() {
     }}>
       <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 48px' }}>
 
-        {/* Header */}
+        {/* Header — centered */}
         <div
           ref={headerRef}
           style={{
             marginBottom: '48px',
+            textAlign: 'center',
             transition: 'opacity 0.7s ease, filter 0.7s ease',
             opacity: headerVisible ? 1 : 0,
             filter: headerVisible ? 'blur(0px)' : 'blur(12px)',
@@ -65,18 +67,18 @@ export default function AIProjects() {
             textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
             marginBottom: '24px', display: 'block',
           }}>
-            AI Projects
+            AI-first design process
           </span>
           <TextReveal>
             <h2 style={{
               fontFamily: 'var(--font-sans)',
               fontSize: 'var(--type-h2)',
-              fontWeight: 'var(--weight-black)',
-              lineHeight: 'var(--leading-tight)',
-              letterSpacing: 'var(--tracking-tight)',
+              fontWeight: 'var(--weight-medium)',
+              lineHeight: 'var(--leading-h2)',
+              letterSpacing: 'var(--tracking-h2)',
               color: 'var(--text)',
-              margin: 0,
-              maxWidth: '560px',
+              margin: '0 auto',
+              maxWidth: '650px',
             }}>
               My design process starts in an LLM
             </h2>
@@ -93,7 +95,7 @@ export default function AIProjects() {
             filter: contentVisible ? 'blur(0px)' : 'blur(12px)',
           }}
         >
-          {/* Design Hub card */}
+          {/* Main card */}
           <div style={{
             backgroundColor: 'var(--glass-bg)',
             backdropFilter: 'blur(var(--glass-blur))',
@@ -102,62 +104,58 @@ export default function AIProjects() {
             borderRadius: 'var(--radius)',
             boxShadow: 'var(--shadow-glass)',
             padding: '40px',
-            display: 'flex', flexDirection: 'column', gap: '24px',
+            display: 'flex', flexDirection: 'column', gap: '32px',
           }}>
-            <span style={{
-              color: 'var(--accent)', fontSize: 'var(--type-label)',
-              fontWeight: 'var(--weight-bold)', letterSpacing: 'var(--tracking-label)',
-            }}>
-              HOW I WORK
-            </span>
 
-            <h3 style={{
-              color: 'var(--text)',
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'var(--type-h4)',
-              fontWeight: 'var(--weight-medium)',
-              lineHeight: 'var(--leading-h4)',
-              letterSpacing: 'var(--tracking-h4)',
-              margin: 0,
-            }}>
-              LLM → code → ship. No traditional handoff pipeline.
-            </h3>
+            {/* What changed */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <h3 style={{
+                color: 'var(--text)',
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'var(--type-h4)',
+                fontWeight: 'var(--weight-medium)',
+                lineHeight: 'var(--leading-h4)',
+                letterSpacing: 'var(--tracking-h4)',
+                margin: 0,
+              }}>
+                I stopped using Figma for prototyping. Here's what I do instead.
+              </h3>
 
-            {/* Tools */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-              {['Claude Code', 'Pencil.dev', 'React', 'Vite', 'Figma MCP'].map(tool => (
-                <span key={tool} style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '4px',
-                  fontSize: '10px',
-                  fontFamily: 'var(--font-badge)',
-                  fontWeight: 'var(--weight-medium)',
-                  letterSpacing: '0.5px',
-                  textTransform: 'uppercase',
-                  color: 'var(--muted)',
-                  backgroundColor: 'var(--bg)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '4px',
-                  padding: '3px 8px',
-                  lineHeight: 1,
-                }}>
-                  {toolIcons[tool] && (
-                    <img src={toolIcons[tool]} alt="" style={{ width: '12px', height: '12px', opacity: 0.7 }} />
-                  )}
-                  {tool}
-                </span>
-              ))}
-            </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['Claude Code', 'Pencil.dev', 'Figma MCP', 'React', 'Vite', 'Figma'].map(tool => (
+                  <span key={tool} style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '4px',
+                    fontSize: '10px',
+                    fontFamily: 'var(--font-badge)',
+                    fontWeight: 'var(--weight-medium)',
+                    letterSpacing: '0.5px',
+                    textTransform: 'uppercase',
+                    color: 'var(--muted)',
+                    backgroundColor: 'var(--bg)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '4px',
+                    padding: '3px 8px',
+                    lineHeight: 1,
+                  }}>
+                    {toolIcons[tool] && (
+                      <img src={toolIcons[tool]} alt="" style={{ width: '12px', height: '12px', opacity: 0.7 }} />
+                    )}
+                    {tool}
+                  </span>
+                ))}
+              </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '640px' }}>
-              <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                Every project starts in Claude — clarifying intent, surfacing edge cases, drafting the approach. I sketch rough layouts in Pencil.dev, then Claude Code generates production React components mapped to the design system.
-              </p>
-              <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                Figma comes in for systems and polish — not for prototyping. The prototype is functional code from day one. Stakeholders tap through it on their phone. Engineers hover over components and copy code directly.
-              </p>
-              <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                This isn't a side experiment — it's how I work on every project now. What used to take weeks takes days.
-              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '640px' }}>
+                <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
+                  Every project starts in Claude — clarifying requirements, surfacing edge cases, drafting the approach before I touch a screen. I sketch in Pencil.dev, then Claude Code generates production React components mapped to the design system. The prototype is functional code from day one.
+                </p>
+                <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
+                  Figma comes in for systems and polish — not prototyping. Stakeholders tap through functional prototypes on their phone. Engineers hover over components and copy code directly. No handoff doc. No waiting.
+                </p>
+                <p style={{ color: 'var(--text)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0, fontWeight: 'var(--weight-medium)' }}>
+                  At Arena Labs, this workflow replaced four separate systems (Figma, Notion, Storybook, PDFs) with one URL. What used to take weeks takes days. I've shipped every project this way since.
+                </p>
+              </div>
             </div>
 
             {/* Video */}
@@ -176,47 +174,46 @@ export default function AIProjects() {
               />
             </div>
 
-            {/* Flow */}
+            {/* Flow steps */}
             <div style={{
-              display: 'flex', alignItems: 'flex-start', gap: '0',
-              borderTop: '1px solid var(--border)', paddingTop: '24px',
-              overflowX: 'auto',
+              borderTop: '1px solid var(--border)', paddingTop: '32px',
             }}>
-              {flowSteps.map((step, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', flex: '1 1 0', minWidth: '120px' }}>
-                  <div style={{ flex: 1 }}>
-                    <div style={{
-                      display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px',
+              <span style={{
+                color: 'var(--text)', fontSize: 'var(--type-small)',
+                fontFamily: 'var(--font-badge)',
+                fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
+                textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
+                marginBottom: '24px', display: 'block',
+              }}>
+                The workflow
+              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {flowSteps.map((step, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                    <span style={{
+                      color: 'var(--accent)', fontSize: 'var(--type-label)',
+                      fontWeight: 'var(--weight-bold)', letterSpacing: 'var(--tracking-label)',
+                      flexShrink: 0, width: '24px',
                     }}>
-                      <div style={{
-                        width: '8px', height: '8px', borderRadius: '50%',
-                        backgroundColor: 'var(--accent)',
-                        flexShrink: 0,
-                      }} />
+                      {step.num}
+                    </span>
+                    <div>
                       <span style={{
                         fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
-                        color: 'var(--text)',
+                        color: 'var(--text)', display: 'block', marginBottom: '4px',
                       }}>
                         {step.label}
                       </span>
+                      <span style={{
+                        fontSize: 'var(--type-small)', color: 'var(--muted)',
+                        lineHeight: 'var(--leading-body)',
+                      }}>
+                        {step.detail}
+                      </span>
                     </div>
-                    <p style={{
-                      fontSize: 'var(--type-small)', color: 'var(--muted)',
-                      lineHeight: 'var(--leading-body)', margin: 0, paddingLeft: '16px',
-                    }}>
-                      {step.detail}
-                    </p>
                   </div>
-                  {i < flowSteps.length - 1 && (
-                    <div style={{
-                      width: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      flexShrink: 0, paddingTop: '4px', color: 'var(--border)',
-                    }}>
-                      →
-                    </div>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
           </div>
