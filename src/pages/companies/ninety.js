@@ -8,7 +8,7 @@ export const ninety = {
   summaryRows: [
     {
       ask: "End-to-end design — research through production-ready comps",
-      proof: "Every project: research, wireframes, prototypes, shipped product. I advocate for the user in every product conversation — the usability study at Roadrunner is what expanded a 1-page fix into a full overhaul.",
+      proof: "Every project: research, wireframes, prototypes, shipped product. I stay involved through launch and iteration.",
     },
     {
       ask: "Web + mobile web + mobile native",
@@ -16,31 +16,19 @@ export const ninety = {
     },
     {
       ask: "B2B SaaS — multi-step workflow design",
-      proof: "Roadrunner billing: 4 apps → unified workflow (28 clicks → 3). Giant Eagle nav: restructured IA across two codebases into one — aligning information architecture with how users actually navigate.",
+      proof: "Roadrunner billing: 4 apps → unified workflow (28 clicks → 3). Giant Eagle nav: restructured IA across two codebases into one.",
     },
     {
-      ask: "Figma advanced + Figma Make + Figma MCP",
-      proof: "50+ component Figma library with tokens and prototyping at Roadrunner. Use Figma MCP + Claude Code daily. Prototype with Pencil.dev (Figma Make alternative) for rapid concept validation.",
+      ask: "Figma + AI tooling — Figma MCP, Claude Code, Pencil.dev",
+      proof: "50+ component Figma library at Roadrunner. Use Figma MCP + Claude Code daily. Arena Strive: 3 contextual states surfacing AI-driven recommendations.",
     },
     {
-      ask: "Design system contributor",
-      proof: "Contributed to and built design systems at every company. 50+ components at Roadrunner. Consolidated 4 systems into 1 React-based Design Hub at Arena Labs. WCAG standards adopted org-wide at Giant Eagle.",
-    },
-    {
-      ask: "AI feature design — AI agent UX",
-      proof: "Arena Strive: 3 contextual states surfacing AI-driven recommendations. Proposed decision queue + confidence threshold UX for AI agents. This portfolio built with Claude Code.",
+      ask: "Design systems",
+      proof: "50+ components at Roadrunner. Consolidated 4 systems into 1 React-based Design Hub at Arena Labs.",
     },
     {
       ask: "User research — evidence-based decisions",
-      proof: "Qualtrics surveys, usability testing (UserTesting), mixed-method studies at Giant Eagle. Research at Roadrunner expanded scope from 1 page to full overhaul.",
-    },
-    {
-      ask: "Communicate to stakeholders — including opinionated founders",
-      proof: "At Roadrunner, brought two options with data to leadership — they chose the full overhaul. At Giant Eagle, delivered research findings to senior leadership that shaped product and business strategy.",
-    },
-    {
-      ask: "5+ years product design",
-      proof: "10+ years. Arena Labs, MegPrime, Roadrunner (startups), Giant Eagle, Highmark Health (enterprise).",
+      proof: "Qualtrics, UserTesting, mixed-method studies at Giant Eagle. Led research that shaped product strategy, not just UI.",
     },
   ],
 
