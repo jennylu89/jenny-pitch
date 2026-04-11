@@ -63,10 +63,10 @@ export default function LLHowIWork({ howIWork }) {
             }}>
               <h3 style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: 'var(--type-h4)',
+                fontSize: 'var(--type-h5)',
                 fontWeight: 'var(--weight-medium)',
-                lineHeight: 'var(--leading-h4)',
-                letterSpacing: 'var(--tracking-h4)',
+                lineHeight: 'var(--leading-h5)',
+                letterSpacing: 'var(--tracking-h5)',
                 color: 'var(--text)',
                 margin: 0,
               }}>

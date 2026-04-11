@@ -46,7 +46,7 @@ export const ninety = {
 
   howIWork: {
     eyebrow: "What I bring",
-    heading: "Beyond the case studies",
+    heading: "What sets me apart",
     subheading: "",
     tiles: [
       {
