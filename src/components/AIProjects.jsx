@@ -1,6 +1,4 @@
 import { useRef, useState, useEffect } from 'react';
-import TextReveal from './TextReveal';
-
 const toolIcons = {
   'Claude Code': '/tools/claude-code.svg',
   'Pencil.dev': '/tools/pencil.svg',
@@ -69,20 +67,18 @@ export default function AIProjects() {
           }}>
             AI-first design process
           </span>
-          <TextReveal>
-            <h2 style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'var(--type-h2)',
-              fontWeight: 'var(--weight-medium)',
-              lineHeight: 'var(--leading-h2)',
-              letterSpacing: 'var(--tracking-h2)',
-              color: 'var(--text)',
-              margin: '0 auto',
-              maxWidth: '650px',
-            }}>
-              My design process starts in an LLM
-            </h2>
-          </TextReveal>
+          <h2 style={{
+            fontFamily: 'var(--font-sans)',
+            fontSize: 'var(--type-h2)',
+            fontWeight: 'var(--weight-medium)',
+            lineHeight: 'var(--leading-h2)',
+            letterSpacing: 'var(--tracking-h2)',
+            color: 'var(--text)',
+            margin: '0 auto',
+            maxWidth: '650px',
+          }}>
+            My design process starts in an LLM
+          </h2>
         </div>
 
         {/* Content */}
