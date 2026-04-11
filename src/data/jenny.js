@@ -215,9 +215,9 @@ export const jenny = {
     {
       id: "designhub",
       company: "Arena Labs / Jointley",
-      title: "Strive Design Hub",
-      role: "Designer + Builder",
-      tags: ["Vibe Coding", "React", "Design System", "AI"],
+      title: "AI-Powered Design Hub",
+      role: "Designer + Builder · Claude Code",
+      tags: ["AI", "Claude Code", "React", "Design System"],
       headline:
         "One designer, limited hours, four separate systems slowing everything down. Built an AI-powered design hub with Claude Code to replace all four.",
       outcome:
