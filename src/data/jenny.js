@@ -83,7 +83,7 @@ export const jenny = {
       tags: ["B2B SaaS", "Internal Tools", "Design System", "Operations"],
       tools: ["Figma", "UserTesting", "React", "Storybook"],
       headline:
-        "From fragmented spreadsheets to a unified platform.",
+        "Tasked to improve one billing page. Audited the full workflow. Pitched leadership on a platform overhaul — and got the green light.",
       outcome:
         "1 billing page → 4-workstream platform overhaul.",
       metrics: [
@@ -100,6 +100,8 @@ export const jenny = {
           "I mapped the full workflow and brought it to leadership. Four workstreams: automate billing by pre-populating from contract terms and previous cycles, redesign navigation around user workflows, standardize patterns with plain-language UI, and build a 50+ component library alongside engineering.",
         ],
         screens: [
+          { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow — before", caption: "Before — 28 clicks across 4 fragmented tools per invoice" },
+          { src: "/roadrunner-flow2.png", alt: "Roadrunner billing flow — after", caption: "After — unified billing in 3 clicks, one platform" },
           { src: "/RR-Before-after-dashboard.png", alt: "Roadrunner dashboard — before and after", caption: "Before & After: Dashboard" },
           { src: "/RR-Before-After-Bill-entry.png", alt: "Roadrunner bill entry — before and after", caption: "Before & After: Bill Entry" },
         ],
