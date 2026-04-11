@@ -62,16 +62,29 @@ export default function LLHowIWork({ howIWork }) {
             }}>
               {tile.icon && (
                 <div style={{
-                  width: '44px', height: '44px',
-                  borderRadius: '12px',
-                  background: 'linear-gradient(135deg, rgba(139,120,255,0.15) 0%, rgba(139,120,255,0.05) 100%)',
-                  border: '1px solid rgba(139,120,255,0.2)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: 'linear-gradient(180deg, #a89fef 0%, #cfc9f5 65%, #eae8fb 100%)',
+                  borderRadius: 'var(--radius)',
+                  padding: '5px',
+                  width: '48px',
+                  height: '48px',
+                  flexShrink: 0,
                 }}>
-                  <i className={tile.icon} style={{
-                    fontSize: '18px',
-                    color: 'var(--accent)',
-                  }} />
+                  <div style={{
+                    backdropFilter: 'blur(3px)',
+                    WebkitBackdropFilter: 'blur(3px)',
+                    background: 'rgba(255,255,255,0.75)',
+                    border: '1px solid var(--glass-stroke)',
+                    borderRadius: '8px',
+                    boxShadow: 'var(--shadow-glass)',
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#6b55e8',
+                  }}>
+                    <i className={tile.icon} style={{ fontSize: '18px' }} />
+                  </div>
                 </div>
               )}
               <h3 style={{
