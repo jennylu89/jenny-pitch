@@ -2,26 +2,19 @@ import { useRef, useState, useEffect } from 'react';
 import TextReveal from './TextReveal';
 import Badge from './Badge';
 
-const aiProjects = [
-  {
-    id: 'design-hub',
-    title: 'Design Hub',
-    description: 'One designer. Full onboarding flow, daily check-in, design system, and research — all shipped from one URL. Stakeholders tap through the prototype on their phone. Engineers hover over components and copy the code. No Figma handoff. No waiting.',
-    tools: ['Claude Code', 'React', 'Vite', 'Figma MCP', 'Pencil.dev'],
-  },
-  {
-    id: 'this-portfolio',
-    title: 'This Portfolio',
-    description: 'Personalized portfolio pages mapped to each company\'s JD — built and deployed in under an hour. Feed in a job description or interview transcript, and it generates a tailored pitch page with matched proof points.',
-    tools: ['Claude Code', 'React', 'Vite', 'Vercel'],
-  },
+const flowSteps = [
+  { label: 'Research', detail: 'Surveys, interviews, usability data' },
+  { label: 'Sketch', detail: 'Rough layouts in Pencil.dev' },
+  { label: 'Build', detail: 'Claude Code generates React components' },
+  { label: 'Prototype', detail: 'Functional screens, not static mocks' },
+  { label: 'Ship', detail: 'One URL — stakeholders tap, engineers copy code' },
 ];
 
 export default function AIProjects() {
   const headerRef = useRef(null);
-  const gridRef = useRef(null);
+  const contentRef = useRef(null);
   const [headerVisible, setHeaderVisible] = useState(false);
-  const [gridVisible, setGridVisible] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
     const makeObserver = (ref, setter) => {
@@ -35,7 +28,7 @@ export default function AIProjects() {
       return () => obs.disconnect();
     };
     const c1 = makeObserver(headerRef, setHeaderVisible);
-    const c2 = makeObserver(gridRef, setGridVisible);
+    const c2 = makeObserver(contentRef, setContentVisible);
     return () => { c1(); c2(); };
   }, []);
 
@@ -83,68 +76,108 @@ export default function AIProjects() {
           </TextReveal>
         </div>
 
-        {/* Cards — top down */}
+        {/* Content */}
         <div
-          ref={gridRef}
+          ref={contentRef}
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '12px',
+            display: 'flex', flexDirection: 'column', gap: '32px',
             transition: 'opacity 0.7s ease 0.1s, filter 0.7s ease 0.1s',
-            opacity: gridVisible ? 1 : 0,
-            filter: gridVisible ? 'blur(0px)' : 'blur(12px)',
+            opacity: contentVisible ? 1 : 0,
+            filter: contentVisible ? 'blur(0px)' : 'blur(12px)',
           }}
         >
-          {aiProjects.map((d, i) => (
-            <div
-              key={d.id}
-              style={{
-                backgroundColor: 'var(--glass-bg)',
-                backdropFilter: 'blur(var(--glass-blur))',
-                WebkitBackdropFilter: 'blur(var(--glass-blur))',
-                border: '1px solid var(--glass-stroke)',
-                borderRadius: 'var(--radius)',
-                padding: '32px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                boxShadow: 'var(--shadow-glass)',
-              }}
-            >
-              <span style={{
-                color: 'var(--accent)', fontSize: 'var(--type-label)',
-                fontWeight: 'var(--weight-bold)', letterSpacing: 'var(--tracking-label)',
-              }}>
-                {String(i + 1).padStart(2, '0')}
-              </span>
+          {/* Design Hub card */}
+          <div style={{
+            backgroundColor: 'var(--glass-bg)',
+            backdropFilter: 'blur(var(--glass-blur))',
+            WebkitBackdropFilter: 'blur(var(--glass-blur))',
+            border: '1px solid var(--glass-stroke)',
+            borderRadius: 'var(--radius)',
+            boxShadow: 'var(--shadow-glass)',
+            padding: '40px',
+            display: 'flex', flexDirection: 'column', gap: '24px',
+          }}>
+            <span style={{
+              color: 'var(--accent)', fontSize: 'var(--type-label)',
+              fontWeight: 'var(--weight-bold)', letterSpacing: 'var(--tracking-label)',
+            }}>
+              AI-POWERED DESIGN HUB
+            </span>
 
-              <h3 style={{
-                color: 'var(--text)',
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'var(--type-subhead)',
-                fontWeight: 'var(--weight-black)',
-                lineHeight: 'var(--leading-snug)',
-                letterSpacing: 'var(--tracking-snug)',
-                margin: 0,
-              }}>
-                {d.title}
-              </h3>
+            <h3 style={{
+              color: 'var(--text)',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--type-h4)',
+              fontWeight: 'var(--weight-medium)',
+              lineHeight: 'var(--leading-h4)',
+              letterSpacing: 'var(--tracking-h4)',
+              margin: 0,
+            }}>
+              One designer, limited hours. Built an AI workflow that replaced the entire traditional pipeline.
+            </h3>
 
-              <p style={{
-                color: 'var(--muted)', fontSize: 'var(--type-body)',
-                lineHeight: 'var(--leading-body)', margin: 0,
-              }}>
-                {d.description}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '640px' }}>
+              <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
+                At Arena Labs, the traditional Figma → handoff pipeline couldn't keep up. Research in Notion, prototypes in Figma, system in Storybook, specs in PDFs. Four systems, one designer, limited hours.
               </p>
-
-              {/* Tool badges */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-6)' }}>
-                {d.tools.map(tool => (
-                  <Badge key={tool} variant="outline" size="sm">{tool}</Badge>
-                ))}
-              </div>
+              <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
+                I replaced all of it with one AI-powered workflow. Sketch rough layouts in Pencil.dev, then Claude Code generates production React components mapped to the design system. Stakeholders tap through functional prototypes on their phone. Engineers hover over components and copy code directly. No Figma handoff. No waiting.
+              </p>
+              <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
+                What used to take weeks takes days. The prototype IS the product.
+              </p>
             </div>
-          ))}
+
+            {/* Flow */}
+            <div style={{
+              display: 'flex', alignItems: 'flex-start', gap: '0',
+              borderTop: '1px solid var(--border)', paddingTop: '24px',
+              overflowX: 'auto',
+            }}>
+              {flowSteps.map((step, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', flex: '1 1 0', minWidth: '120px' }}>
+                  <div style={{ flex: 1 }}>
+                    <div style={{
+                      display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px',
+                    }}>
+                      <div style={{
+                        width: '8px', height: '8px', borderRadius: '50%',
+                        backgroundColor: 'var(--accent)',
+                        flexShrink: 0,
+                      }} />
+                      <span style={{
+                        fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
+                        color: 'var(--text)',
+                      }}>
+                        {step.label}
+                      </span>
+                    </div>
+                    <p style={{
+                      fontSize: 'var(--type-small)', color: 'var(--muted)',
+                      lineHeight: 'var(--leading-body)', margin: 0, paddingLeft: '16px',
+                    }}>
+                      {step.detail}
+                    </p>
+                  </div>
+                  {i < flowSteps.length - 1 && (
+                    <div style={{
+                      width: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      flexShrink: 0, paddingTop: '4px', color: 'var(--border)',
+                    }}>
+                      →
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Tools */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-6)' }}>
+              {['Claude Code', 'Pencil.dev', 'React', 'Vite', 'Figma MCP'].map(tool => (
+                <Badge key={tool} variant="outline" size="sm">{tool}</Badge>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
