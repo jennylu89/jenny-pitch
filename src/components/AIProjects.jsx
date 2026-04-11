@@ -123,6 +123,31 @@ export default function AIProjects() {
               One designer, limited hours. Built an AI workflow that replaced the entire traditional pipeline.
             </h3>
 
+            {/* Tools */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+              {['Claude Code', 'Pencil.dev', 'React', 'Vite', 'Figma MCP'].map(tool => (
+                <span key={tool} style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  fontSize: '10px',
+                  fontFamily: 'var(--font-badge)',
+                  fontWeight: 'var(--weight-medium)',
+                  letterSpacing: '0.5px',
+                  textTransform: 'uppercase',
+                  color: 'var(--muted)',
+                  backgroundColor: 'var(--bg)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '4px',
+                  padding: '3px 8px',
+                  lineHeight: 1,
+                }}>
+                  {toolIcons[tool] && (
+                    <img src={toolIcons[tool]} alt="" style={{ width: '12px', height: '12px', opacity: 0.7 }} />
+                  )}
+                  {tool}
+                </span>
+              ))}
+            </div>
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '640px' }}>
               <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
                 At Arena Labs, the traditional Figma → handoff pipeline couldn't keep up. Research in Notion, prototypes in Figma, system in Storybook, specs in PDFs. Four systems, one designer, limited hours.
@@ -178,30 +203,6 @@ export default function AIProjects() {
               ))}
             </div>
 
-            {/* Tools */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-              {['Claude Code', 'Pencil.dev', 'React', 'Vite', 'Figma MCP'].map(tool => (
-                <span key={tool} style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '4px',
-                  fontSize: '10px',
-                  fontFamily: 'var(--font-badge)',
-                  fontWeight: 'var(--weight-medium)',
-                  letterSpacing: '0.5px',
-                  textTransform: 'uppercase',
-                  color: 'var(--muted)',
-                  backgroundColor: 'var(--bg)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '4px',
-                  padding: '3px 8px',
-                  lineHeight: 1,
-                }}>
-                  {toolIcons[tool] && (
-                    <img src={toolIcons[tool]} alt="" style={{ width: '12px', height: '12px', opacity: 0.7 }} />
-                  )}
-                  {tool}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
