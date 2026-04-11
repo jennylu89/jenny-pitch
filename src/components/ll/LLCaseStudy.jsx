@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
+import Badge from '../Badge';
 
 function ScrollStrip({ children, bg = 'var(--text)' }) {
   const scrollRef = useRef(null);
@@ -166,6 +167,15 @@ export default function LLCaseStudy({ project, index }) {
           </p>
         ))}
       </div>
+
+      {/* Tools */}
+      {project.tools && project.tools.length > 0 && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-6)' }}>
+          {project.tools.map(tool => (
+            <Badge key={tool} variant="outline" size="sm">{tool}</Badge>
+          ))}
+        </div>
+      )}
 
     </div>
   );

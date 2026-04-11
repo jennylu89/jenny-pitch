@@ -53,6 +53,7 @@ export const jenny = {
       title: "myPerks Loyalty Redesign",
       role: "Lead UX Designer → UX Manager",
       tags: ["Consumer", "Loyalty", "Omnichannel", "Research"],
+      tools: ["Figma", "Qualtrics", "UserTesting", "Google Analytics"],
       headline:
         "The loyalty program was generous. Customers just couldn't feel it. Redesigned so 4M members could see their value without doing math.",
       outcome:
@@ -79,6 +80,7 @@ export const jenny = {
       title: "Billing Platform Overhaul",
       role: "Sr. Product Design Manager",
       tags: ["B2B SaaS", "Internal Tools", "Design System", "Operations"],
+      tools: ["Figma", "UserTesting", "React", "Storybook"],
       headline:
         "Tasked to improve one billing page. Audited the full workflow. Pitched leadership on a platform overhaul — and got the green light.",
       outcome:
@@ -109,6 +111,7 @@ export const jenny = {
       title: "Crypto Rent Rewards App",
       role: "Lead Product Designer",
       tags: ["Fintech", "Crypto", "Compliance UX", "Mobile"],
+      tools: ["Figma", "Claude Code", "React"],
       headline:
         "Designed rent payments with crypto rewards for mainstream users, not crypto natives.",
       outcome:
@@ -136,6 +139,7 @@ export const jenny = {
       title: "Navigation + Homepage Redesign",
       role: "Sr. Manager, Customer Research & Experience Design",
       tags: ["Consumer Web", "Navigation", "Research", "Analytics"],
+      tools: ["Figma", "Google Analytics", "UserTesting", "Qualtrics"],
       headline:
         "The nav mirrored the org chart, not the customer. Two codebases, every update made twice. Redesigned around what customers actually came to do.",
       outcome:
@@ -162,6 +166,7 @@ export const jenny = {
       title: "Curbside Onboarding Redesign",
       role: "Lead UX Designer / Primary Researcher",
       tags: ["Research", "Accessibility", "Landing Page", "Consumer"],
+      tools: ["UserTesting", "Google Analytics"],
       headline:
         "One of Giant Eagle's first UserTesting studies. Found what the team was too close to see.",
       outcome:
@@ -186,6 +191,7 @@ export const jenny = {
       title: "Strive — Healthcare Performance App",
       role: "UX Designer",
       tags: ["Healthcare", "Mobile", "B2B SaaS", "Design System"],
+      tools: ["Claude Code", "Figma", "React", "Pencil.dev", "Whoop API"],
       headline:
         "Healthcare app with 97 usability issues, a slow sales cycle, and a design process that couldn't keep up. Built an AI prototyping workflow to move 10x faster.",
       outcome:
@@ -218,6 +224,7 @@ export const jenny = {
       title: "AI-Powered Design Hub",
       role: "Designer + Builder · Claude Code",
       tags: ["AI", "Claude Code", "React", "Design System"],
+      tools: ["Claude Code", "React", "Vite", "Figma MCP", "Pencil.dev"],
       headline:
         "One designer, limited hours, four separate systems slowing everything down. Built an AI-powered design hub with Claude Code to replace all four.",
       outcome:
