@@ -158,7 +158,14 @@ export const jenny = {
           "I started with analytics — what were customers actually clicking on? What were they searching for? The gap was clear: top tasks like Weekly Ad, Curbside, and Cake Ordering were buried or invisible. The nav surfaced what the company wanted to promote, not what customers came to do.",
           "Ran competitor analysis and multiple rounds of usability testing. Rebuilt as a unified flyout from one codebase — restructured the information architecture around user tasks. Fixed the IA and cleared years of engineering debt in the same move.",
         ],
-        screens: [],
+        screens: [
+          { src: "/ge-nav-1.jpg", alt: "Giant Eagle navigation redesign" },
+          { src: "/ge-nav-2.jpg", alt: "Giant Eagle navigation redesign" },
+          { src: "/ge-nav-3.jpg", alt: "Giant Eagle navigation redesign" },
+          { src: "/ge-nav-4.jpg", alt: "Giant Eagle navigation redesign" },
+          { src: "/ge-nav-5.jpg", alt: "Giant Eagle navigation redesign" },
+        ],
+        screensType: 'flow',
       },
     },
     {
