@@ -257,7 +257,7 @@ export default function LLCaseStudy({ project, index }) {
 
         {/* ── Hero image (scrollable for detailed images like journey maps) ── */}
         {project.heroImage && (
-          <ScrollStrip bg="var(--surface)">
+          <ScrollStrip bg="var(--text)">
             <div style={{ padding: '40px' }}>
               <img src={project.heroImage} alt={project.title} loading="lazy"
                 style={{ minWidth: '1200px', maxWidth: '2000px', width: '200%', display: 'block', borderRadius: '8px' }} />
