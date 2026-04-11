@@ -38,18 +38,22 @@ export const ninety = {
     subheading: "",
     tiles: [
       {
+        icon: "fa-solid fa-wand-magic-sparkles",
         heading: "Figma MCP + Claude Code",
         body: "Not a nice-to-have for me — it's my daily workflow. Extract tokens from Figma, generate production React components, ship faster than traditional handoff.",
       },
       {
+        icon: "fa-solid fa-arrows-spin",
         heading: "Research → design → ship",
         body: "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
       },
       {
+        icon: "fa-solid fa-universal-access",
         heading: "WCAG accessibility",
         body: "Established accessibility standards adopted org-wide at Giant Eagle. Not a checklist — built into the design process from day one.",
       },
       {
+        icon: "fa-solid fa-people-group",
         heading: "Pod-ready IC",
         body: "Managed 5+ designers at Giant Eagle while still shipping. Just as comfortable as a co-equal IC alongside another designer — I collaborate, not just lead.",
       },

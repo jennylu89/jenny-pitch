@@ -60,6 +60,12 @@ export default function LLHowIWork({ howIWork }) {
               padding: '32px',
               display: 'flex', flexDirection: 'column', gap: 'var(--space-12)',
             }}>
+              {tile.icon && (
+                <i className={tile.icon} style={{
+                  fontSize: '20px',
+                  color: 'var(--accent)',
+                }} />
+              )}
               <h3 style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: 'var(--type-h5)',
