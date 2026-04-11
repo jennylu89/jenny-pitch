@@ -154,6 +154,9 @@ export default function NinetyPage() {
       {/* WHAT I BRING */}
       <LLHowIWork howIWork={ninety.howIWork} />
 
+      {/* AI PROJECTS */}
+      <AIProjects />
+
       {/* SELECTED PROJECTS */}
       <section style={{ padding: 'var(--space-96) 0 var(--space-80)', borderTop: '1px solid var(--border)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
@@ -174,9 +177,6 @@ export default function NinetyPage() {
           </div>
         </div>
       </section>
-
-      {/* AI PROJECTS */}
-      <AIProjects />
 
       {/* CLOSE CTA */}
       <div style={{
