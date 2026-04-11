@@ -168,23 +168,25 @@ export default function LLCaseStudy({ project, index }) {
         ))}
       </div>
 
-      {/* Tools */}
-      {project.tools && project.tools.length > 0 && (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-6)' }}>
-          {project.tools.map(tool => (
-            <Badge key={tool} variant="outline" size="sm">{tool}</Badge>
-          ))}
-        </div>
-      )}
 
     </div>
   );
 
-  /* ── Content row — info stacked, metrics full-width below ── */
+  /* ── Tools ── */
+  const toolsBlock = project.tools && project.tools.length > 0 ? (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-6)' }}>
+      {project.tools.map(tool => (
+        <Badge key={tool} variant="outline" size="sm">{tool}</Badge>
+      ))}
+    </div>
+  ) : null;
+
+  /* ── Content row — info stacked, metrics full-width below, tools last ── */
   const contentRow = (
     <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
       {infoBlock}
       {metricsBlock}
+      {toolsBlock}
     </div>
   );
 
