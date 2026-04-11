@@ -209,8 +209,13 @@ export default function MmcPage() {
             {mmc.summaryRows.map((row, i) => (
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 'var(--space-24)',
-                backgroundColor: 'var(--glass-bg)', border: '1px solid var(--glass-stroke)',
-                borderRadius: 'var(--radius-card)', padding: 'var(--space-24)',
+                backgroundColor: 'var(--glass-bg)',
+                backdropFilter: 'blur(var(--glass-blur))',
+                WebkitBackdropFilter: 'blur(var(--glass-blur))',
+                border: '1px solid var(--glass-stroke)',
+                borderRadius: 'var(--radius)',
+                boxShadow: 'var(--shadow-glass)',
+                padding: 'var(--space-24)',
               }}>
                 <div>
                   <span style={{
@@ -245,7 +250,7 @@ export default function MmcPage() {
       <AIProjects />
 
       {/* SELECTED PROJECTS */}
-      <section style={{ padding: 'var(--space-96) 0 var(--space-80)', borderTop: '1px solid var(--border)' }}>
+      <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
           <Eyebrow><span style={{ color: 'var(--muted)', textAlign: 'center', display: 'block' }}>Selected work</span></Eyebrow>
           <h2 style={{
