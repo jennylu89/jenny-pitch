@@ -81,7 +81,7 @@ export const jenny = {
       title: "Billing Platform Overhaul",
       role: "Sr. Product Design Manager",
       tags: ["B2B SaaS", "Internal Tools", "Design System", "Operations"],
-      tools: ["Figma", "UserTesting", "React", "Storybook"],
+      tools: ["Figma", "Maze", "Dovetail", "React", "Storybook"],
       headline:
         "Tasked to improve one billing page. Audited the full workflow. Pitched leadership on a platform overhaul — and got the green light.",
       outcome:
