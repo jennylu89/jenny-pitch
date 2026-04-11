@@ -78,7 +78,7 @@ export default function AIProjects() {
               margin: 0,
               maxWidth: '560px',
             }}>
-              Built with AI, not just designed with it
+              My design process starts in an LLM
             </h2>
           </TextReveal>
         </div>
@@ -108,7 +108,7 @@ export default function AIProjects() {
               color: 'var(--accent)', fontSize: 'var(--type-label)',
               fontWeight: 'var(--weight-bold)', letterSpacing: 'var(--tracking-label)',
             }}>
-              AI-POWERED DESIGN HUB
+              HOW I WORK
             </span>
 
             <h3 style={{
@@ -120,7 +120,7 @@ export default function AIProjects() {
               letterSpacing: 'var(--tracking-h4)',
               margin: 0,
             }}>
-              One designer, limited hours. Built an AI workflow that replaced the entire traditional pipeline.
+              LLM → code → ship. No traditional handoff pipeline.
             </h3>
 
             {/* Tools */}
@@ -150,13 +150,13 @@ export default function AIProjects() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '640px' }}>
               <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                At Arena Labs, the traditional Figma → handoff pipeline couldn't keep up. Research in Notion, prototypes in Figma, system in Storybook, specs in PDFs. Four systems, one designer, limited hours.
+                Every project starts in Claude — clarifying intent, surfacing edge cases, drafting the approach. I sketch rough layouts in Pencil.dev, then Claude Code generates production React components mapped to the design system.
               </p>
               <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                I replaced all of it with one AI-powered workflow. Sketch rough layouts in Pencil.dev, then Claude Code generates production React components mapped to the design system. Stakeholders tap through functional prototypes on their phone. Engineers hover over components and copy code directly. No Figma handoff. No waiting.
+                Figma comes in for systems and polish — not for prototyping. The prototype is functional code from day one. Stakeholders tap through it on their phone. Engineers hover over components and copy code directly.
               </p>
               <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                What used to take weeks takes days. The prototype IS the product.
+                This isn't a side experiment — it's how I work on every project now. What used to take weeks takes days.
               </p>
             </div>
 
