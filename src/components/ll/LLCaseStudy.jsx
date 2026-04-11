@@ -1,5 +1,18 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
-import Badge from '../Badge';
+
+const toolIcons = {
+  'Figma': '/tools/figma.svg',
+  'React': '/tools/react.svg',
+  'Vite': '/tools/vite.svg',
+  'Storybook': '/tools/storybook.svg',
+  'Claude Code': '/tools/claude-code.svg',
+  'Google Analytics': '/tools/google-analytics.svg',
+  'UserTesting': '/tools/usertesting.svg',
+  'Qualtrics': '/tools/qualtrics.svg',
+  'Pencil.dev': '/tools/pencil.svg',
+  'Figma MCP': '/tools/figma-mcp.svg',
+  'Whoop API': '/tools/whoop.svg',
+};
 
 function ScrollStrip({ children, bg = 'var(--text)' }) {
   const scrollRef = useRef(null);
@@ -174,9 +187,27 @@ export default function LLCaseStudy({ project, index }) {
 
   /* ── Tools ── */
   const toolsBlock = project.tools && project.tools.length > 0 ? (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-6)' }}>
+    <div style={{
+      display: 'flex', flexWrap: 'wrap', gap: '12px',
+      borderTop: '1px solid var(--border)', paddingTop: '24px',
+    }}>
       {project.tools.map(tool => (
-        <Badge key={tool} variant="outline" size="sm">{tool}</Badge>
+        <div key={tool} style={{
+          display: 'flex', alignItems: 'center', gap: '6px',
+        }} title={tool}>
+          {toolIcons[tool] && (
+            <img src={toolIcons[tool]} alt="" style={{
+              width: '14px', height: '14px', opacity: 0.5,
+              filter: 'grayscale(100%)',
+            }} />
+          )}
+          <span style={{
+            fontSize: 'var(--type-small)', color: 'var(--muted)',
+            fontWeight: 'var(--weight-normal)',
+          }}>
+            {tool}
+          </span>
+        </div>
       ))}
     </div>
   ) : null;
