@@ -203,7 +203,7 @@ export const jenny = {
       title: "Strive — Healthcare Performance App",
       role: "UX Designer",
       tags: ["Healthcare", "Mobile", "B2B SaaS", "Design System"],
-      tools: ["Claude Code", "Figma", "React", "Pencil.dev", "Whoop API"],
+      tools: ["Claude Code", "Figma", "React", "Pencil.dev", "Whoop API", "Typeform"],
       headline:
         "Healthcare app with 97 usability issues, a slow sales cycle, and a design process that couldn't keep up. Built an AI prototyping workflow to move 10x faster.",
       outcome:
