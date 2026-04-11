@@ -161,6 +161,33 @@ export default function LLCaseStudy({ project, index }) {
         {project.title}
       </h3>
 
+      {/* Tool badges */}
+      {project.tools && project.tools.length > 0 && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+          {project.tools.map(tool => (
+            <span key={tool} style={{
+              display: 'inline-flex', alignItems: 'center', gap: '4px',
+              fontSize: '10px',
+              fontFamily: 'var(--font-badge)',
+              fontWeight: 'var(--weight-medium)',
+              letterSpacing: '0.5px',
+              textTransform: 'uppercase',
+              color: 'var(--muted)',
+              backgroundColor: 'var(--bg)',
+              border: '1px solid var(--border)',
+              borderRadius: '4px',
+              padding: '3px 8px',
+              lineHeight: 1,
+            }}>
+              {toolIcons[tool] && (
+                <img src={toolIcons[tool]} alt="" style={{ width: '12px', height: '12px', opacity: 0.7 }} />
+              )}
+              {tool}
+            </span>
+          ))}
+        </div>
+      )}
+
       {/* Headline + story — all same style, regular weight */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {project.headline && (
@@ -186,31 +213,7 @@ export default function LLCaseStudy({ project, index }) {
   );
 
   /* ── Tools ── */
-  const toolsBlock = project.tools && project.tools.length > 0 ? (
-    <div style={{
-      display: 'flex', flexWrap: 'wrap', gap: '12px',
-      borderTop: '1px solid var(--border)', paddingTop: '24px',
-    }}>
-      {project.tools.map(tool => (
-        <div key={tool} style={{
-          display: 'flex', alignItems: 'center', gap: '6px',
-        }} title={tool}>
-          {toolIcons[tool] && (
-            <img src={toolIcons[tool]} alt="" style={{
-              width: '14px', height: '14px', opacity: 0.5,
-              filter: 'grayscale(100%)',
-            }} />
-          )}
-          <span style={{
-            fontSize: 'var(--type-small)', color: 'var(--muted)',
-            fontWeight: 'var(--weight-normal)',
-          }}>
-            {tool}
-          </span>
-        </div>
-      ))}
-    </div>
-  ) : null;
+  const toolsBlock = null;
 
   /* ── Content row — info stacked, metrics full-width below, tools last ── */
   const contentRow = (
