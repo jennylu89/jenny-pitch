@@ -1,6 +1,13 @@
 import { useRef, useState, useEffect } from 'react';
 import TextReveal from './TextReveal';
-import Badge from './Badge';
+
+const toolIcons = {
+  'Claude Code': '/tools/claude-code.svg',
+  'Pencil.dev': '/tools/pencil.svg',
+  'React': '/tools/react.svg',
+  'Vite': '/tools/vite.svg',
+  'Figma MCP': '/tools/figma-mcp.svg',
+};
 
 const flowSteps = [
   { label: 'Research', detail: 'Surveys, interviews, usability data' },
@@ -172,9 +179,27 @@ export default function AIProjects() {
             </div>
 
             {/* Tools */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-6)' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
               {['Claude Code', 'Pencil.dev', 'React', 'Vite', 'Figma MCP'].map(tool => (
-                <Badge key={tool} variant="outline" size="sm">{tool}</Badge>
+                <span key={tool} style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  fontSize: '10px',
+                  fontFamily: 'var(--font-badge)',
+                  fontWeight: 'var(--weight-medium)',
+                  letterSpacing: '0.5px',
+                  textTransform: 'uppercase',
+                  color: 'var(--muted)',
+                  backgroundColor: 'var(--bg)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '4px',
+                  padding: '3px 8px',
+                  lineHeight: 1,
+                }}>
+                  {toolIcons[tool] && (
+                    <img src={toolIcons[tool]} alt="" style={{ width: '12px', height: '12px', opacity: 0.7 }} />
+                  )}
+                  {tool}
+                </span>
               ))}
             </div>
           </div>
