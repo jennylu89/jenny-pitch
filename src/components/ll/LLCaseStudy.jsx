@@ -12,6 +12,10 @@ const toolIcons = {
   'Pencil.dev': '/tools/pencil.svg',
   'Figma MCP': '/tools/figma-mcp.svg',
   'Whoop API': '/tools/whoop.svg',
+  'Maze': '/tools/maze.svg',
+  'Dovetail': '/tools/dovetail.svg',
+  'Typeform': '/tools/typeform.svg',
+  'Miro': '/tools/miro.svg',
 };
 
 function ScrollStrip({ children, bg = 'var(--text)' }) {
