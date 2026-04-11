@@ -160,6 +160,22 @@ export default function AIProjects() {
               </p>
             </div>
 
+            {/* Video */}
+            <div style={{
+              borderRadius: '8px',
+              overflow: 'hidden',
+              border: '1px solid var(--border)',
+            }}>
+              <video
+                src="/ai-hub-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: '100%', display: 'block' }}
+              />
+            </div>
+
             {/* Flow */}
             <div style={{
               display: 'flex', alignItems: 'flex-start', gap: '0',
