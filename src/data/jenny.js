@@ -102,10 +102,12 @@ export const jenny = {
         screens: [
           { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow — before", caption: "Before — 28 clicks across 4 fragmented tools per invoice" },
           { src: "/roadrunner-flow2.png", alt: "Roadrunner billing flow — after", caption: "After — unified billing in 3 clicks, one platform" },
+        ],
+        screensType: 'flow',
+        compareScreens: [
           { src: "/RR-Before-after-dashboard.png", alt: "Roadrunner dashboard — before and after", caption: "Before & After: Dashboard" },
           { src: "/RR-Before-After-Bill-entry.png", alt: "Roadrunner bill entry — before and after", caption: "Before & After: Bill Entry" },
         ],
-        screensType: 'flow',
       },
     },
     {

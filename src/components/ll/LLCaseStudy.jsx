@@ -50,15 +50,22 @@ function ScrollStrip({ children, bg = 'var(--text)' }) {
       {/* Right fade + scroll hint */}
       {canScroll && !atEnd && (
         <div style={{
-          position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px',
-          background: 'linear-gradient(to right, transparent, #272727)',
+          position: 'absolute', right: 0, top: 0, bottom: 0, width: '100px',
+          background: `linear-gradient(to right, transparent, ${bg === 'var(--text)' ? '#272727' : '#ffffff'})`,
           pointerEvents: 'none',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
           <div style={{
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px',
+            display: 'flex', alignItems: 'center', gap: '4px',
+            backgroundColor: 'var(--btn-primary-bg)',
+            color: 'var(--btn-primary-fg)',
+            borderRadius: '20px',
+            padding: '6px 12px',
+            fontSize: 'var(--type-small)',
+            fontWeight: 'var(--weight-medium)',
           }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(245,244,242,0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            Scroll
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </div>
@@ -80,6 +87,7 @@ export default function LLCaseStudy({ project, index }) {
   const isFull         = screensType === 'full';
   const isBeforeAfter  = screensType === 'before-after';
   const isGallery      = screensType === 'gallery';
+  const compareScreens = caseStudy.compareScreens || [];
   const beforeScreen   = caseStudy.beforeScreen || null;
 
   const cardRef = useRef(null);
@@ -439,6 +447,34 @@ export default function LLCaseStudy({ project, index }) {
               ))}
             </div>
           </ScrollStrip>
+        )}
+
+        {/* ── Compare: 2-column side by side ── */}
+        {compareScreens.length > 0 && (
+          <div style={{
+            padding: '40px',
+            borderTop: '1px solid var(--border)',
+            display: 'grid',
+            gridTemplateColumns: `repeat(${compareScreens.length}, 1fr)`,
+            gap: '16px',
+          }}>
+            {compareScreens.map((screen, i) => (
+              <div key={i}>
+                <div style={{ overflow: 'hidden', borderRadius: '8px', border: '1px solid var(--border)' }}>
+                  <img src={screen.src} alt={screen.alt || ''} loading="lazy"
+                    style={{ width: '100%', display: 'block' }} />
+                </div>
+                {screen.caption && (
+                  <p style={{
+                    color: 'var(--muted)', fontSize: 'var(--type-caption)',
+                    lineHeight: 'var(--leading-body)', padding: '8px 0 0', margin: 0, textAlign: 'center',
+                  }}>
+                    {screen.caption}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
         )}
 
       </div>
