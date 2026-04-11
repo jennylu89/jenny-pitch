@@ -40,7 +40,6 @@ export default function AIProjects() {
 
   return (
     <section style={{
-      borderTop: '1px solid var(--border)',
       padding: '100px 0',
       position: 'relative',
       background: 'linear-gradient(180deg, var(--bg) 0%, rgba(139,120,255,0.06) 50%, var(--bg) 100%)',

@@ -158,7 +158,7 @@ export default function NinetyPage() {
       <AIProjects />
 
       {/* SELECTED PROJECTS */}
-      <section style={{ padding: 'var(--space-96) 0 var(--space-80)', borderTop: '1px solid var(--border)' }}>
+      <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
           <Eyebrow><span style={{ color: 'var(--muted)', textAlign: 'center', display: 'block' }}>Selected work</span></Eyebrow>
           <h2 style={{

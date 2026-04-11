@@ -5,7 +5,6 @@ export default function LLHowIWork({ howIWork }) {
   return (
     <section style={{
       padding: 'var(--space-96) 0',
-      borderTop: '1px solid var(--border)',
       background: 'linear-gradient(180deg, var(--bg) 0%, rgba(139,120,255,0.06) 50%, var(--bg) 100%)',
     }}>
       <div className="section-pad" style={{
