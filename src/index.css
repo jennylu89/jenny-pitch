@@ -393,4 +393,36 @@
   .features-grid {
     grid-template-columns: 1fr !important;
   }
+
+  /* Summary rows */
+  .summary-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Metrics */
+  .talkiatry-metrics-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .case-study-metrics {
+    flex-direction: column !important;
+  }
+  .case-study-metrics > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0 !important;
+  }
+  .case-study-metrics > div:last-child {
+    border-bottom: none;
+  }
+
+  /* AI workflow steps */
+  .ai-workflow-steps {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .ai-workflow-steps > div {
+    flex-direction: row !important;
+    width: 100% !important;
+  }
 }

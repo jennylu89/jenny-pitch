@@ -16,7 +16,7 @@ export default function LLSummary({ heading, rows }) {
         </h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-12)' }}>
           {rows.map((row, i) => (
-            <div key={i} style={{
+            <div key={i} className="summary-row" style={{
               display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 'var(--space-24)',
               backgroundColor: 'var(--glass-bg)',
               backdropFilter: 'blur(var(--glass-blur))',

@@ -121,9 +121,9 @@ export default function AIProjects() {
                 }}>
                   THE WORKFLOW
                 </span>
-                <div style={{
+                <div className="ai-workflow-steps" style={{
                   display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
-                  gap: '8px',
+                  gap: '8px', flexWrap: 'wrap',
                 }}>
                   {processSteps.map((step, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', flex: '1 1 0' }}>

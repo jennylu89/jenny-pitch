@@ -139,7 +139,7 @@ export default function LLCaseStudy({ project, index }) {
 
   /* ── Metrics — plain text row, no boxes ── */
   const metricsBlock = (
-    <div style={{
+    <div className="case-study-metrics" style={{
       display: 'flex',
       gap: '0',
       borderTop: '1px solid var(--border)',
