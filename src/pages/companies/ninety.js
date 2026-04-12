@@ -1,8 +1,8 @@
 export const ninety = {
   name: "Ninety",
-  role: "Product Designer",
+  role: "AI-first product designer",
 
-  oneLiner: "AI-first product designer. 10+ years shipping across B2B SaaS, healthcare, and consumer.",
+  oneLiner: "10+ years shipping across B2B SaaS, healthcare, and consumer. Research, design systems, and production code.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [

@@ -81,12 +81,7 @@ export default function NinetyPage() {
               fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h1)', fontWeight: 'var(--weight-medium)',
               lineHeight: 'var(--leading-h1)', letterSpacing: 'var(--tracking-h1)',
               color: 'var(--text)', margin: 0, textAlign: 'center',
-            }}>{jenny.name}</h1>
-            <p style={{
-              fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h4)', fontWeight: 'var(--weight-medium)',
-              lineHeight: 'var(--leading-h4)', letterSpacing: 'var(--tracking-h4)',
-              color: 'var(--text)', margin: 0, textAlign: 'center',
-            }}>{ninety.role}</p>
+            }}>{ninety.role}</h1>
             <p style={{
               fontFamily: 'var(--font-sans)', fontSize: 'var(--type-lead)', fontWeight: 'var(--weight-medium)',
               lineHeight: 'var(--leading-body)', color: 'var(--muted)',
