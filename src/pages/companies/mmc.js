@@ -38,22 +38,22 @@ export const mmc = {
     subheading: "",
     tiles: [
       {
-        icon: "fa-solid fa-wand-magic-sparkles",
+        icon: "fa-light fa-wand-magic-sparkles",
         heading: "Figma MCP + Claude Code",
         body: "My daily workflow. Extract tokens from Figma, generate production React components, ship faster than traditional handoff.",
       },
       {
-        icon: "fa-solid fa-rocket",
+        icon: "fa-light fa-rocket",
         heading: "0→1 experience",
         body: "Sole designer at Arena Labs, first designer at Giant Eagle. Built the practice, the system, and the product at the same time.",
       },
       {
-        icon: "fa-solid fa-mobile-screen",
+        icon: "fa-light fa-mobile-screen",
         heading: "Mobile-first thinking",
         body: "Scan Pay & Go at Giant Eagle, Arena Strive for clinicians. Designed for users in motion — one-handed, time-pressured, no patience for friction.",
       },
       {
-        icon: "fa-solid fa-arrows-spin",
+        icon: "fa-light fa-arrows-spin",
         heading: "Research → design → ship",
         body: "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
       },

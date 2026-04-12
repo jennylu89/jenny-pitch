@@ -38,22 +38,22 @@ export const ninety = {
     subheading: "",
     tiles: [
       {
-        icon: "fa-solid fa-wand-magic-sparkles",
+        icon: "fa-light fa-robot",
         heading: "AI-first workflow",
         body: "Every project starts in Claude. I shipped a full design hub, onboarding flow, and design system for Arena Labs — as the sole designer on limited hours. AI made that possible.",
       },
       {
-        icon: "fa-solid fa-arrows-spin",
+        icon: "fa-light fa-arrows-spin",
         heading: "Research → design → ship",
         body: "One person, no handoff gaps. I run my own studies, build the system, and ship production code. The cycle that takes most teams a sprint takes me days.",
       },
       {
-        icon: "fa-solid fa-universal-access",
+        icon: "fa-light fa-universal-access",
         heading: "WCAG accessibility",
         body: "Established accessibility standards adopted org-wide at Giant Eagle. Not a checklist — built into the design process from day one.",
       },
       {
-        icon: "fa-solid fa-people-group",
+        icon: "fa-light fa-people-group",
         heading: "Pod-ready IC",
         body: "Worked in cross-functional pods at Giant Eagle — GetGo, Scan Pay & Go — partnering with PMs and engineers daily. Also managed 5+ designers.",
       },

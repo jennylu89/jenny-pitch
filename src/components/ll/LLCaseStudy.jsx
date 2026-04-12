@@ -33,8 +33,21 @@ function ScrollStrip({ children, bg = 'var(--text)' }) {
 
   useEffect(() => {
     checkScroll();
+    // Recheck after images load
+    const timer = setTimeout(checkScroll, 500);
+    const timer2 = setTimeout(checkScroll, 1500);
     window.addEventListener('resize', checkScroll);
-    return () => window.removeEventListener('resize', checkScroll);
+    // Listen for image loads inside the strip
+    const el = scrollRef.current;
+    if (el) {
+      const imgs = el.querySelectorAll('img');
+      imgs.forEach(img => img.addEventListener('load', checkScroll));
+    }
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(timer2);
+      window.removeEventListener('resize', checkScroll);
+    };
   }, [checkScroll]);
 
   const isDark = bg === 'var(--text)';
@@ -73,6 +86,7 @@ function ScrollStrip({ children, bg = 'var(--text)' }) {
           background: `linear-gradient(to right, transparent, ${isDark ? '#1a1a1a' : '#ffffff'})`,
           pointerEvents: 'none',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
+          zIndex: 2,
         }}>
           <div style={{
             display: 'flex', alignItems: 'center', gap: '4px',
@@ -243,10 +257,49 @@ export default function LLCaseStudy({ project, index }) {
   /* ── Tools ── */
   const toolsBlock = null;
 
-  /* ── Content row — info stacked, metrics full-width below, tools last ── */
+  /* ── Features block ── */
+  const featureCount = caseStudy.features?.length || 0;
+  const featureCols = featureCount <= 4 ? 2 : 3;
+  const featuresBlock = caseStudy.features && featureCount > 0 ? (
+    <div>
+      <span style={{
+        color: 'var(--accent)', fontSize: 'var(--type-label)',
+        fontFamily: 'var(--font-badge)',
+        fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
+        display: 'block', marginBottom: '16px',
+      }}>
+        {caseStudy.featuresLabel || 'WHAT\'S INSIDE'}
+      </span>
+      <div className="features-grid" style={{
+        display: 'grid', gridTemplateColumns: `repeat(${featureCols}, 1fr)`, gap: '12px',
+        alignItems: 'stretch',
+      }}>
+        {caseStudy.features.map((f, i) => (
+          <div key={i} style={{
+            backgroundColor: 'var(--bg)', borderRadius: 'var(--radius)',
+            padding: '16px',
+            display: 'flex', gap: '12px', alignItems: 'flex-start',
+          }}>
+            <i className={f.icon} style={{ fontSize: '16px', color: 'var(--accent)', marginTop: '2px', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', marginBottom: '2px' }}>
+                {f.label}
+              </div>
+              <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)', lineHeight: 'var(--leading-body)' }}>
+                {f.detail}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ) : null;
+
+  /* ── Content row — info stacked, features, metrics, tools ── */
   const contentRow = (
     <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
       {infoBlock}
+      {featuresBlock}
       {metricsBlock}
       {toolsBlock}
     </div>
@@ -266,6 +319,20 @@ export default function LLCaseStudy({ project, index }) {
           filter: visible ? 'blur(0px)' : 'blur(12px)',
         }}
       >
+
+        {/* ── Video ── */}
+        {project.video && (
+          <div style={{ borderBottom: '1px solid var(--border)' }}>
+            <video
+              src={project.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ width: '100%', display: 'block' }}
+            />
+          </div>
+        )}
 
         {/* ── Hero image (scrollable for detailed images like journey maps) ── */}
         {project.heroImage && (
@@ -470,6 +537,7 @@ export default function LLCaseStudy({ project, index }) {
 
         {/* ── Content ── */}
         {contentRow}
+
 
         {/* ── Flow: vertical sequence (below content) ── */}
         {isFlow && (

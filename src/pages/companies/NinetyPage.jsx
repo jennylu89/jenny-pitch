@@ -15,7 +15,7 @@ export default function NinetyPage() {
       <LLSummary heading={ninety.summaryHeading} rows={ninety.summaryRows} />
       <LLHowIWork howIWork={ninety.howIWork} />
       <AIProjects />
-      <LLSelectedProjects projectIds={['roadrunner', 'arenalabs', 'navigation', 'myperks']} />
+      <LLSelectedProjects projectIds={['designhub', 'roadrunner', 'arenalabs', 'navigation', 'myperks']} />
       <LLCloseCta closeText={ninety.close} from="ninety" />
     </div>
   );

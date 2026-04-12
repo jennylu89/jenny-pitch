@@ -388,4 +388,9 @@
     width: 100%;
     justify-content: center;
   }
+
+  /* Features grid */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

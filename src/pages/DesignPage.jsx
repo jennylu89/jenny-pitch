@@ -244,7 +244,7 @@ weights: 400 (normal), 500 (medium), 600 (semibold)`}</CodeBlock>
 
           <SectionWrapper id="primitives-gradient-icon" title="Gradient Icon Box">
             <div style={{ display: 'flex', gap: '16px' }}>
-              {['fa-solid fa-wand-magic-sparkles', 'fa-solid fa-arrows-spin', 'fa-solid fa-universal-access', 'fa-solid fa-people-group'].map(icon => (
+              {['fa-light fa-wand-magic-sparkles', 'fa-light fa-arrows-spin', 'fa-light fa-universal-access', 'fa-light fa-people-group'].map(icon => (
                 <div key={icon} style={{
                   background: 'linear-gradient(180deg, #a89fef 0%, #cfc9f5 65%, #eae8fb 100%)',
                   borderRadius: 'var(--radius)', padding: '5px', width: '48px', height: '48px', flexShrink: 0,
@@ -420,7 +420,7 @@ padding: '32px',
   eyebrow: "What I bring",
   heading: "What sets me apart",
   tiles: [
-    { icon: "fa-solid fa-wand-magic-sparkles", heading: "...", body: "..." },
+    { icon: "fa-light fa-wand-magic-sparkles", heading: "...", body: "..." },
   ],
 }} />`}</CodeBlock>
           </SectionWrapper>
