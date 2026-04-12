@@ -8,7 +8,7 @@ export const ninety = {
   summaryRows: [
     {
       ask: "End-to-end design — research through production-ready comps",
-      proof: "At Roadrunner, research expanded a 1-page fix into a 4-workstream overhaul. I defined the scope, prioritized the workstreams, designed the system, and stayed involved through launch.",
+      proof: "At Roadrunner, research expanded a 1-page fix into a 4-workstream overhaul — I used data to deprioritize what stakeholders assumed was the problem and refocus on the root cause.",
     },
     {
       ask: "Web + mobile web + mobile native",
@@ -55,7 +55,7 @@ export const ninety = {
       {
         icon: "fa-solid fa-people-group",
         heading: "Pod-ready IC",
-        body: "Managed 5+ designers at Giant Eagle while still shipping. Just as comfortable as a co-equal IC alongside another designer — I collaborate, not just lead.",
+        body: "Worked in cross-functional pods at Giant Eagle — GetGo pod, Scan Pay & Go pod — partnering directly with PMs and engineers. Also managed 5+ designers. Comfortable leading or collaborating as an equal.",
       },
     ],
   },
