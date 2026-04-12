@@ -123,10 +123,10 @@ export default function AIProjects() {
                 </span>
                 <div className="ai-workflow-steps" style={{
                   display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
-                  gap: '8px', flexWrap: 'wrap',
+                  gap: '8px',
                 }}>
                   {processSteps.map((step, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', flex: '1 1 0' }}>
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', flex: '1 1 0', minWidth: '100px' }}>
                       <div style={{
                         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
                         flex: 1,

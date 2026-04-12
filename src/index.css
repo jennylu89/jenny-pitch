@@ -415,14 +415,10 @@
     border-bottom: none;
   }
 
-  /* AI workflow steps */
+  /* AI workflow steps — horizontal scroll on mobile */
   .ai-workflow-steps {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 16px !important;
-  }
-  .ai-workflow-steps > div {
-    flex-direction: row !important;
-    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap !important;
   }
 }
