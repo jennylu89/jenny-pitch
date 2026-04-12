@@ -38,7 +38,7 @@ export const mmc = {
     subheading: "",
     tiles: [
       {
-        icon: "fa-light fa-wand-magic-sparkles",
+        icon: "fa-light fa-robot",
         heading: "Figma MCP + Claude Code",
         body: "My daily workflow. Extract tokens from Figma, generate production React components, ship faster than traditional handoff.",
       },
