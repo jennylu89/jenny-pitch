@@ -74,8 +74,12 @@ export default function NinetyPage() {
             transition: 'opacity 0.7s ease, filter 0.7s ease',
           }}>
             <div style={{
-              fontSize: 'var(--type-lead)', fontFamily: 'var(--font-sans)', fontWeight: 'var(--weight-medium)',
-              letterSpacing: 'var(--tracking-h4)', color: 'var(--text)',
+              fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', fontWeight: 'var(--weight-medium)',
+              letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase', color: 'var(--text)',
+              backgroundColor: 'var(--glass-bg)', backdropFilter: 'blur(var(--glass-blur))',
+              WebkitBackdropFilter: 'blur(var(--glass-blur))',
+              border: '1px solid var(--glass-stroke)', borderRadius: '100px',
+              padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
             }}>Jenny Lu × {ninety.name}</div>
             <h1 style={{
               fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h1)', fontWeight: 'var(--weight-medium)',
