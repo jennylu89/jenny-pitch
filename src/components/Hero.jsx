@@ -95,15 +95,15 @@ export default function Hero() {
           filter: visible ? 'blur(0px)' : 'blur(12px)',
         }}>
           {/* Eyebrow */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-12)' }}>
-            <span style={{
-              color: 'var(--text)', fontSize: 'var(--type-small)',
-              fontFamily: 'var(--font-badge)',
-              fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
-              textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
-            }}>
-              Freelance Product Designer
-            </span>
+          <div style={{
+            fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', fontWeight: 'var(--weight-medium)',
+            letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase', color: 'var(--text)',
+            backgroundColor: 'var(--glass-bg)', backdropFilter: 'blur(var(--glass-blur))',
+            WebkitBackdropFilter: 'blur(var(--glass-blur))',
+            border: '1px solid var(--glass-stroke)', borderRadius: '100px',
+            padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
+          }}>
+            Freelance Product Designer
           </div>
 
           {/* Headline */}

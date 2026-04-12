@@ -162,18 +162,17 @@ export default function MmcPage() {
           }}>
             <div style={{
               fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', fontWeight: 'var(--weight-medium)',
-              letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase', color: 'var(--muted)',
+              letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase', color: 'var(--text)',
+              backgroundColor: 'var(--glass-bg)', backdropFilter: 'blur(var(--glass-blur))',
+              WebkitBackdropFilter: 'blur(var(--glass-blur))',
+              border: '1px solid var(--glass-stroke)', borderRadius: '100px',
+              padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
             }}>Jenny Lu × {mmc.name}</div>
             <h1 style={{
               fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h1)', fontWeight: 'var(--weight-medium)',
               lineHeight: 'var(--leading-h1)', letterSpacing: 'var(--tracking-h1)',
               color: 'var(--text)', margin: 0, textAlign: 'center',
-            }}>{jenny.name}</h1>
-            <p style={{
-              fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h4)', fontWeight: 'var(--weight-medium)',
-              lineHeight: 'var(--leading-h4)', letterSpacing: 'var(--tracking-h4)',
-              color: 'var(--text)', margin: 0, textAlign: 'center',
-            }}>{mmc.role}</p>
+            }}>{mmc.role}</h1>
             <p style={{
               fontFamily: 'var(--font-sans)', fontSize: 'var(--type-lead)', fontWeight: 'var(--weight-medium)',
               lineHeight: 'var(--leading-body)', color: 'var(--muted)',
