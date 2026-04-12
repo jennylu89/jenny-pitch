@@ -22,6 +22,9 @@ const sections = [
   { id: 'primitives-cta', label: 'CtaButton', group: 'Primitives' },
   { id: 'primitives-noise', label: 'NoiseOverlay', group: 'Primitives' },
   { id: 'primitives-gradient-icon', label: 'Gradient Icon Box', group: 'Primitives' },
+  { id: 'patterns-bg', label: 'Background Patterns', group: 'Patterns' },
+  { id: 'patterns-scroll', label: 'ScrollStrip', group: 'Patterns' },
+  { id: 'patterns-glass', label: 'Glass Card', group: 'Patterns' },
   { id: 'sections-hero', label: 'LLPageHero', group: 'Sections' },
   { id: 'sections-summary', label: 'LLSummary', group: 'Sections' },
   { id: 'sections-howiwork', label: 'LLHowIWork', group: 'Sections' },
@@ -262,6 +265,126 @@ weights: 400 (normal), 500 (medium), 600 (semibold)`}</CodeBlock>
 // Glass inner: rgba(255,255,255,0.75) + blur(3px)
 // Icon: #6b55e8, font-awesome solid
 // Sizes: 72px (ProcessSection), 48px (tiles)`}</CodeBlock>
+          </SectionWrapper>
+
+          {/* ── PATTERNS ── */}
+
+          <SectionWrapper id="patterns-bg" title="Background Patterns">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 24px' }}>
+              Three background patterns used across the site. Applied to sections, not individual components.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {/* Light gradient */}
+              <div style={{
+                height: '100px', borderRadius: '8px', position: 'relative', overflow: 'hidden',
+                background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
+              }}>
+                <NoiseOverlay light />
+                <span style={{ position: 'relative', zIndex: 1, padding: '16px', display: 'block', fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', color: 'var(--text)' }}>
+                  HERO GRADIENT — purple gradient + noise (light). Used on hero and close CTA.
+                </span>
+              </div>
+              {/* Subtle gradient */}
+              <div style={{
+                height: '100px', borderRadius: '8px',
+                background: 'linear-gradient(180deg, var(--bg) 0%, rgba(139,120,255,0.06) 50%, var(--bg) 100%)',
+              }}>
+                <span style={{ padding: '16px', display: 'block', fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', color: 'var(--text)' }}>
+                  SUBTLE GRADIENT — used on Differentiators, LLHowIWork, AIProjects sections.
+                </span>
+              </div>
+              {/* Dark */}
+              <div style={{
+                height: '100px', borderRadius: '8px', position: 'relative', overflow: 'hidden',
+                backgroundColor: 'var(--dark-bg)',
+              }}>
+                <NoiseOverlay />
+                <span style={{ position: 'relative', zIndex: 1, padding: '16px', display: 'block', fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', color: 'var(--dark-text)' }}>
+                  DARK — used on JD sections (alternating), experience timeline, screenshot strips.
+                </span>
+              </div>
+            </div>
+            <CodeBlock>{`// Hero/Close: linear-gradient(180deg, rgba(139,120,255,0.35) 0%, ... var(--bg) 90%)
+// Subtle: linear-gradient(180deg, var(--bg) 0%, rgba(139,120,255,0.06) 50%, var(--bg) 100%)
+// Dark: backgroundColor: var(--dark-bg)
+// All dark sections get <NoiseOverlay /> (soft-light)
+// All light gradients get <NoiseOverlay light /> (multiply)`}</CodeBlock>
+          </SectionWrapper>
+
+          <SectionWrapper id="patterns-scroll" title="ScrollStrip">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              Horizontal scroll container with fade gradient + "Scroll →" pill indicator. Used for screenshot galleries and before/after comparisons.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', color: 'var(--muted)' }}>TYPES:</span>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <div style={{ backgroundColor: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', padding: '16px' }}>
+                  <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', marginBottom: '4px' }}>screensType: 'app'</div>
+                  <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)' }}>Dark bg, mobile phone screenshots, 450px height, centered</div>
+                </div>
+                <div style={{ backgroundColor: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', padding: '16px' }}>
+                  <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', marginBottom: '4px' }}>screensType: 'flow'</div>
+                  <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)' }}>Light bg, vertical stack with captions, full-width images</div>
+                </div>
+                <div style={{ backgroundColor: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', padding: '16px' }}>
+                  <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', marginBottom: '4px' }}>screensType: 'before-after'</div>
+                  <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)' }}>Dark bg, before screen → arrow → after screens, horizontal scroll</div>
+                </div>
+                <div style={{ backgroundColor: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', padding: '16px' }}>
+                  <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', marginBottom: '4px' }}>screensType: 'gallery'</div>
+                  <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)' }}>Light bg, 500px wide cards, horizontal scroll with Scroll → indicator</div>
+                </div>
+              </div>
+              <div style={{ backgroundColor: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', padding: '16px', marginTop: '4px' }}>
+                <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', marginBottom: '4px' }}>compareScreens</div>
+                <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)' }}>Dark bg, side-by-side comparison images, 700px each, horizontal scroll</div>
+              </div>
+              <div style={{ backgroundColor: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', padding: '16px' }}>
+                <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', marginBottom: '4px' }}>heroImage</div>
+                <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)' }}>Dark bg, oversized image (200% width) for journey maps, horizontal scroll</div>
+              </div>
+            </div>
+            <CodeBlock>{`// ScrollStrip component wraps scrollable content
+// Shows fade gradient + "Scroll →" pill when content overflows
+// Detects overflow via IntersectionObserver, hides when scrolled to end
+
+// In jenny.js data:
+caseStudy: {
+  screens: [{ src, alt, caption }],
+  screensType: 'app' | 'flow' | 'before-after' | 'gallery',
+  beforeScreen: { src, alt, caption },  // for before-after
+  compareScreens: [{ src, alt, caption }],  // side-by-side
+}
+heroImage: '/path.png'  // scrollable journey maps`}</CodeBlock>
+          </SectionWrapper>
+
+          <SectionWrapper id="patterns-glass" title="Glass Card">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              The default card pattern. Used everywhere — summary rows, differentiators, How I Work tiles, contact cards.
+            </p>
+            <div style={{
+              backgroundColor: 'var(--glass-bg)',
+              backdropFilter: 'blur(var(--glass-blur))',
+              WebkitBackdropFilter: 'blur(var(--glass-blur))',
+              border: '1px solid var(--glass-stroke)',
+              borderRadius: 'var(--radius)',
+              boxShadow: 'var(--shadow-glass)',
+              padding: '32px',
+            }}>
+              <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)' }}>Glass Card</div>
+              <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)', marginTop: '4px' }}>This is the standard card pattern.</div>
+            </div>
+            <CodeBlock>{`backgroundColor: 'var(--glass-bg)',        // rgba(255,255,255,0.7)
+backdropFilter: 'blur(var(--glass-blur))',  // 6px
+border: '1px solid var(--glass-stroke)',    // #FFFFFF
+borderRadius: 'var(--radius)',              // 12px
+boxShadow: 'var(--shadow-glass)',           // 0 4px 12px rgba(0,0,0,0.1)
+padding: '32px',
+
+// NEVER use var(--radius-card) — use var(--radius) for consistency
+// ALWAYS include backdropFilter + boxShadow — don't skip them`}</CodeBlock>
           </SectionWrapper>
 
           {/* ── SECTIONS ── */}
