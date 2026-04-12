@@ -7,32 +7,28 @@ export const mmc = {
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
-      ask: "Founding-level design seat — primary or sole designer",
-      proof: "Sole designer at Arena Labs. First UX hire at Giant Eagle. Built the practice, design system, and product at the same time — startup pace, no playbook.",
+      ask: "Founding-level design seat — sole designer",
+      proof: "Sole designer at Arena Labs — shipped onboarding, design system, and research hub on limited hours. First UX hire at Giant Eagle — built the practice while shipping a loyalty redesign that lifted spend 384%.",
     },
     {
-      ask: "Design + code hybrid — write production React/CSS",
-      proof: "Built a full design hub, this portfolio, and component libraries in React. Design and code in the same hands — no handoff gap.",
+      ask: "Design + code hybrid — production React",
+      proof: "I don't hand off to engineering — I ship production React with Claude Code. At Arena Labs, engineers copy components directly from the design hub I built. No handoff doc, no waiting.",
     },
     {
-      ask: "Design system in Figma — scalable component library + prototyping",
-      proof: "50+ component Figma library with tokens, prototyping, and documentation at Roadrunner. Consolidated 4 systems into 1 React-based Design Hub at Arena Labs.",
+      ask: "Mobile UX — designing for reps in the field",
+      proof: "Giant Eagle Scan Pay & Go: users scanning groceries while walking — every tap had to be instant. Arena Strive: clinicians on 12-hour shifts, zero patience for browsing. Both shipped across mobile, web, and in-store.",
     },
     {
-      ask: "Mobile UX — iOS & Android native patterns",
-      proof: "Giant Eagle Scan Pay & Go across mobile, web, and in-store. Arena Labs Strive — mobile-first for clinicians on 12-hour shifts.",
+      ask: "B2B SaaS — multi-step workflow redesign",
+      proof: "Roadrunner: billing reps bounced between 4 apps, 28 clicks per invoice, 75% were redundant re-entry. Unified the workflow — entry time dropped from ~6 min to 1 min, dev cycles 3x faster after.",
     },
     {
-      ask: "User research — field / B2B SaaS context",
-      proof: "Qualtrics surveys, usability testing (UserTesting), mixed-method studies at Giant Eagle. Usability study at Roadrunner expanded scope from 1 page to full overhaul.",
+      ask: "User research that changes product direction",
+      proof: "At Roadrunner, my research proved the brief was wrong — expanded a 1-page fix into a 4-workstream overhaul. At Giant Eagle, mixed-method research shaped pricing strategy, not just UI.",
     },
     {
-      ask: "B2B SaaS / enterprise tools",
-      proof: "Roadrunner billing platform — enterprise ops teams bouncing between 4 apps. 28 clicks → 3. Built for reps in the field, not managers at a desk.",
-    },
-    {
-      ask: "8+ years product design",
-      proof: "10+ years. Arena Labs, MegPrime, Roadrunner (startups), Giant Eagle, Highmark Health (enterprise).",
+      ask: "Design systems that accelerate engineering",
+      proof: "50+ component Figma library at Roadrunner — 3x faster dev cycles. At Arena Labs, consolidated 4 scattered systems into one living hub where engineers copy code directly.",
     },
   ],
 
