@@ -124,22 +124,26 @@ export const talkiatry = {
 
   howIWork: {
     eyebrow: "What I bring",
-    heading: "Beyond the case studies",
+    heading: "What sets me apart",
     subheading: "",
     tiles: [
       {
+        icon: "fa-solid fa-rocket",
         heading: "0→1 experience",
         body: "First designer at Giant Eagle, sole designer at Arena Labs. Built the practice, the system, and the product at the same time.",
       },
       {
+        icon: "fa-solid fa-arrows-spin",
         heading: "Research → design → ship",
         body: "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
       },
       {
+        icon: "fa-solid fa-chart-line",
         heading: "Business-first design",
         body: "Every design decision tied to conversion, retention, or revenue. The 384% lift at Giant Eagle started with a question about perceived value, not a redesign brief.",
       },
       {
+        icon: "fa-solid fa-wand-magic-sparkles",
         heading: "Vibe coding",
         body: "I build production React with Claude Code. Design and implementation in the same hands — no dev handoff.",
       },

@@ -4,6 +4,7 @@ import { talkiatry } from './talkiatry';
 import { jenny } from '../../data/jenny';
 import LLCaseStudy from '../../components/ll/LLCaseStudy';
 import LLHowIWork from '../../components/ll/LLHowIWork';
+import AIProjects from '../../components/AIProjects';
 
 /* ── Noise overlay SVG (shared) ── */
 const NOISE_SVG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`;
@@ -249,17 +250,17 @@ export default function TalkiatryPageV2() {
           }}>
             {/* Eyebrow */}
             <div style={{
-              fontSize: 'var(--type-small)',
-              fontFamily: 'var(--font-badge)',
-              fontWeight: 'var(--weight-medium)',
-              letterSpacing: 'var(--tracking-badge)',
-              textTransform: 'uppercase',
-              color: 'var(--muted)',
+              fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', fontWeight: 'var(--weight-medium)',
+              letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase', color: 'var(--text)',
+              backgroundColor: 'var(--glass-bg)', backdropFilter: 'blur(var(--glass-blur))',
+              WebkitBackdropFilter: 'blur(var(--glass-blur))',
+              border: '1px solid var(--glass-stroke)', borderRadius: '100px',
+              padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
             }}>
               Jenny Lu × {talkiatry.name}
             </div>
 
-            {/* Name */}
+            {/* Role as headline */}
             <h1 style={{
               fontFamily: 'var(--font-sans)',
               fontSize: 'var(--type-h1)',
@@ -270,22 +271,8 @@ export default function TalkiatryPageV2() {
               margin: 0,
               textAlign: 'center',
             }}>
-              {jenny.name}
-            </h1>
-
-            {/* Role */}
-            <p style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'var(--type-h4)',
-              fontWeight: 'var(--weight-medium)',
-              lineHeight: 'var(--leading-h4)',
-              letterSpacing: 'var(--tracking-h4)',
-              color: 'var(--text)',
-              margin: 0,
-              textAlign: 'center',
-            }}>
               {talkiatry.role}
-            </p>
+            </h1>
 
             {/* One-liner */}
             <p style={{
@@ -351,8 +338,11 @@ export default function TalkiatryPageV2() {
                 gridTemplateColumns: '1fr 1.4fr',
                 gap: 'var(--space-24)',
                 backgroundColor: 'var(--glass-bg)',
+                backdropFilter: 'blur(var(--glass-blur))',
+                WebkitBackdropFilter: 'blur(var(--glass-blur))',
                 border: '1px solid var(--glass-stroke)',
-                borderRadius: 'var(--radius-card)',
+                borderRadius: 'var(--radius)',
+                boxShadow: 'var(--shadow-glass)',
                 padding: 'var(--space-24)',
               }}>
                 <div>
@@ -388,7 +378,7 @@ export default function TalkiatryPageV2() {
                     display: 'block',
                     marginBottom: 'var(--space-6)',
                   }}>
-                    Why I qualify
+                    My proof
                   </span>
                   <span style={{
                     fontSize: 'var(--type-body)',
@@ -404,8 +394,14 @@ export default function TalkiatryPageV2() {
         </div>
       </section>
 
+      {/* ═══ WHAT I BRING ═══ */}
+      <LLHowIWork howIWork={talkiatry.howIWork} />
+
+      {/* ═══ AI PROJECTS ═══ */}
+      <AIProjects />
+
       {/* ═══ SELECTED PROJECTS ═══ */}
-      <section style={{ padding: 'var(--space-96) 0 var(--space-80)', borderTop: '1px solid var(--border)' }}>
+      <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
         <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
           <Eyebrow>
             <span style={{ color: 'var(--muted)', textAlign: 'center', display: 'block' }}>Selected work</span>
@@ -432,9 +428,6 @@ export default function TalkiatryPageV2() {
           </div>
         </div>
       </section>
-
-      {/* ═══ HOW I WORK ═══ */}
-      <LLHowIWork howIWork={talkiatry.howIWork} />
 
       {/* ═══ CLOSE CTA ═══ */}
       <div style={{
