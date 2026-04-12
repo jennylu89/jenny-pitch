@@ -74,8 +74,8 @@ export default function NinetyPage() {
             transition: 'opacity 0.7s ease, filter 0.7s ease',
           }}>
             <div style={{
-              fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', fontWeight: 'var(--weight-medium)',
-              letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase', color: 'var(--muted)',
+              fontSize: 'var(--type-lead)', fontFamily: 'var(--font-sans)', fontWeight: 'var(--weight-medium)',
+              letterSpacing: 'var(--tracking-h4)', color: 'var(--text)',
             }}>Jenny Lu × {ninety.name}</div>
             <h1 style={{
               fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h1)', fontWeight: 'var(--weight-medium)',
