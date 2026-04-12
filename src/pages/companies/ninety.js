@@ -8,7 +8,7 @@ export const ninety = {
   summaryRows: [
     {
       ask: "End-to-end design — research through production-ready comps",
-      proof: "Every project: research, wireframes, prototypes, shipped product. I stay involved through launch and iteration.",
+      proof: "At Roadrunner, research expanded a 1-page fix into a 4-workstream overhaul. I defined the scope, prioritized the workstreams, designed the system, and stayed involved through launch.",
     },
     {
       ask: "Web + mobile web + mobile native",
@@ -20,7 +20,7 @@ export const ninety = {
     },
     {
       ask: "Figma + AI tooling — Figma MCP, Claude Code, Pencil.dev",
-      proof: "50+ component Figma library at Roadrunner. Use Figma MCP + Claude Code daily. Arena Strive: 3 contextual states surfacing AI-driven recommendations.",
+      proof: "50+ component Figma library at Roadrunner. Use Figma MCP to extract tokens, Claude Code to generate production components, Pencil.dev for rapid concept validation.",
     },
     {
       ask: "Design systems",
@@ -61,5 +61,5 @@ export const ninety = {
   },
 
   close:
-    "Research foundation. Design systems. Production code. Figma MCP + Claude Code. Ready to own a pod at Ninety.",
+    "I'd love to talk about what I can bring to a pod at Ninety.",
 };
