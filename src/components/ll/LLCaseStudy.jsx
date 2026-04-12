@@ -37,25 +37,40 @@ function ScrollStrip({ children, bg = 'var(--text)' }) {
     return () => window.removeEventListener('resize', checkScroll);
   }, [checkScroll]);
 
+  const isDark = bg === 'var(--text)';
+
   return (
-    <div style={{ position: 'relative', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+    <div style={{ position: 'relative', borderTop: isDark ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>
       <div
         ref={scrollRef}
         onScroll={checkScroll}
         style={{
-          backgroundColor: bg,
+          background: isDark
+            ? 'linear-gradient(180deg, #272727 0%, #1a1a1a 100%)'
+            : bg,
           overflowX: 'auto',
           scrollSnapType: 'x mandatory',
           WebkitOverflowScrolling: 'touch',
+          position: 'relative',
         }}
       >
-        {children}
+        {isDark && (
+          <div style={{
+            position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none',
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'repeat', backgroundSize: '200px 200px',
+            opacity: 0.12, mixBlendMode: 'plus-lighter',
+          }} />
+        )}
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          {children}
+        </div>
       </div>
       {/* Right fade + scroll hint */}
       {canScroll && !atEnd && (
         <div style={{
           position: 'absolute', right: 0, top: 0, bottom: 0, width: '100px',
-          background: `linear-gradient(to right, transparent, ${bg === 'var(--text)' ? '#272727' : '#ffffff'})`,
+          background: `linear-gradient(to right, transparent, ${isDark ? '#1a1a1a' : '#ffffff'})`,
           pointerEvents: 'none',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
@@ -238,7 +253,7 @@ export default function LLCaseStudy({ project, index }) {
   );
 
   return (
-    <article style={{ marginBottom: '32px' }}>
+    <article style={{ marginBottom: '48px' }}>
       <div
         ref={cardRef}
         style={{
@@ -251,9 +266,6 @@ export default function LLCaseStudy({ project, index }) {
           filter: visible ? 'blur(0px)' : 'blur(12px)',
         }}
       >
-
-        {/* ── Content always on top ── */}
-        {contentRow}
 
         {/* ── Hero image (scrollable for detailed images like journey maps) ── */}
         {project.heroImage && (
@@ -331,27 +343,6 @@ export default function LLCaseStudy({ project, index }) {
                 </span>
               </div>
             )}
-          </div>
-        )}
-
-        {/* ── Flow: numbered vertical sequence ── */}
-        {isFlow && (
-          <div style={{ padding: '40px', borderTop: '1px solid var(--border)' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              {screens.map((screen, i) => (
-                <div key={i}>
-                  {screen.caption && (
-                    <p style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)', lineHeight: 'var(--leading-body)', margin: '0 0 8px', textAlign: 'center' }}>
-                      {screen.caption}
-                    </p>
-                  )}
-                  <div style={{ border: '1px solid var(--border)', borderRadius: '10px', overflow: 'hidden', backgroundColor: 'var(--bg)' }}>
-                    <img src={screen.src} alt={screen.alt || ''} loading="lazy"
-                      style={{ width: '100%', display: 'block' }} />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         )}
 
@@ -450,7 +441,7 @@ export default function LLCaseStudy({ project, index }) {
           </ScrollStrip>
         )}
 
-        {/* ── Compare: full-width scrollable images ── */}
+        {/* ── Compare: full-width scrollable images (above content) ── */}
         {compareScreens.length > 0 && (
           <ScrollStrip bg="var(--text)">
             <div style={{
@@ -459,9 +450,9 @@ export default function LLCaseStudy({ project, index }) {
             }}>
               {compareScreens.map((screen, i) => (
                 <div key={i} style={{ width: '700px', flexShrink: 0 }}>
-                  <div style={{ overflow: 'hidden', borderRadius: '12px' }}>
+                  <div style={{ overflow: 'hidden', borderRadius: '12px', height: '450px' }}>
                     <img src={screen.src} alt={screen.alt || ''} loading="lazy"
-                      style={{ width: '100%', display: 'block' }} />
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
                   </div>
                   {screen.caption && (
                     <p style={{
@@ -475,6 +466,30 @@ export default function LLCaseStudy({ project, index }) {
               ))}
             </div>
           </ScrollStrip>
+        )}
+
+        {/* ── Content ── */}
+        {contentRow}
+
+        {/* ── Flow: vertical sequence (below content) ── */}
+        {isFlow && (
+          <div style={{ padding: '40px', borderTop: '1px solid var(--border)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {screens.map((screen, i) => (
+                <div key={i}>
+                  {screen.caption && (
+                    <p style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)', lineHeight: 'var(--leading-body)', margin: '0 0 8px', textAlign: 'center' }}>
+                      {screen.caption}
+                    </p>
+                  )}
+                  <div style={{ border: '1px solid var(--border)', borderRadius: '10px', overflow: 'hidden', backgroundColor: 'var(--bg)' }}>
+                    <img src={screen.src} alt={screen.alt || ''} loading="lazy"
+                      style={{ width: '100%', display: 'block' }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         )}
 
       </div>

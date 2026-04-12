@@ -55,7 +55,7 @@ export default function Hero() {
         background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
         paddingTop: 'calc(56px + 80px)',
         paddingBottom: '80px',
-        minHeight: '90vh',
+        minHeight: '100vh',
         overflow: 'hidden',
         position: 'relative',
       }}
@@ -210,6 +210,18 @@ export default function Hero() {
               {name}
             </span>
           ))}
+        </div>
+
+        {/* Scroll chevron */}
+        <div style={{
+          position: 'absolute', bottom: '24px', left: '50%',
+          transform: 'translateX(-50%)',
+          transition: 'opacity 0.7s ease 0.5s',
+          opacity: visible ? 1 : 0,
+        }}>
+          <svg className="scroll-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
         </div>
 
       </div>

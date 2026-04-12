@@ -71,6 +71,7 @@ export const jenny = {
           "Giant Eagle's myPerks loyalty program was technically generous — but customers couldn't feel it. They'd do the math wrong and assume it wasn't worth it, even when it was. The problem wasn't the reward structure. It was perceived value.",
           "Ran usability research across the 4M member base to understand where the disconnect happened. Customers weren't tracking their progress toward rewards. The milestones felt too far away. The math was invisible.",
           "Redesigned around one question: what does someone need to see — and when — to feel like they're winning? Surfaced rewards at every touchpoint. Broke large redemptions into smaller visible milestones. Made the math disappear — customers see progress, not percentages.",
+          "What I'd do differently: I'd A/B test the milestone thresholds earlier. We picked breakpoints based on research, but real usage data would have told us faster which milestones actually motivated behavior change.",
         ],
         screens: [],
       },
@@ -98,6 +99,7 @@ export const jenny = {
           "I started with research, not design. Platform-wide usability study. Stakeholder interviews. Competitor benchmarking against Bill.com and Stripe. End-to-end process mapping across every department that touched billing.",
           "What I found went beyond one page. A single bill required jumping between four applications and 28+ clicks of manual re-entry. 75% of those bills were identical to the previous month — yet every one was entered from scratch. The platform went down 1–2 times per week, and the people who relied on it most understood it least. This wasn't a billing page problem. It was a system problem.",
           "I mapped the full workflow and brought it to leadership. Four workstreams: automate billing by pre-populating from contract terms and previous cycles, redesign navigation around user workflows, standardize patterns with plain-language UI, and build a 50+ component library alongside engineering.",
+          "What I'd do differently: I'd run a lightweight pilot with one team before the full overhaul. We had the data to justify the scope, but rolling out to all teams at once created change management friction we could have avoided.",
         ],
         screens: [
           { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow — before", caption: "Before — 28 clicks across 4 fragmented tools per invoice" },

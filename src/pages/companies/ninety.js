@@ -2,33 +2,33 @@ export const ninety = {
   name: "Ninety",
   role: "AI-first product designer",
 
-  oneLiner: "10+ years shipping across B2B SaaS, healthcare, and consumer. Research, design systems, and production code.",
+  oneLiner: "10+ years shipping B2B SaaS, healthcare, and consumer products. I move from problem to shipped product — fast.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
-      ask: "End-to-end design — research through production-ready comps",
-      proof: "At Roadrunner, my research proved the brief was wrong — stakeholders wanted a page fix, the data showed a system problem. Expanded scope to a 4-workstream overhaul.",
+      ask: "End-to-end ownership — problem definition through launch",
+      proof: "At Roadrunner, my research proved the brief was wrong. Stakeholders wanted a page fix — the data showed 75% of bills were redundant re-entry. Redefined scope, shipped a 4-workstream overhaul. 28 clicks → 3.",
     },
     {
       ask: "Web + mobile web + mobile native",
-      proof: "Giant Eagle Scan Pay & Go across mobile apps, web, and in-store devices. Arena Labs Strive — mobile-first for clinicians on 12-hour shifts.",
+      proof: "Giant Eagle: Scan Pay & Go shipped across mobile, web, and in-store devices — one codebase. Arena Labs: mobile-first app for clinicians where every tap had to earn its place during a 12-hour shift.",
     },
     {
       ask: "B2B SaaS — multi-step workflow design",
-      proof: "Roadrunner: unified 4 fragmented apps into one billing workflow (28 clicks → 3). Giant Eagle: restructured navigation IA so it matched how customers actually shop, not how the org was structured.",
+      proof: "Roadrunner: billing reps bounced between 4 apps per invoice. Unified into one workflow — entry time dropped from ~6 min to 1 min. Giant Eagle: restructured navigation so it matched how customers shop, not how the org was structured.",
     },
     {
-      ask: "Figma + AI tooling — Figma MCP, Claude Code, Pencil.dev",
-      proof: "50+ component Figma library at Roadrunner. Daily workflow: Figma MCP extracts tokens, Claude Code generates production React, Pencil.dev validates concepts — what used to take weeks takes days.",
+      ask: "Figma + AI tooling",
+      proof: "50+ component Figma library at Roadrunner. Now I ship 10x faster — Figma MCP extracts tokens, Claude Code generates production React, Pencil.dev validates concepts before I open Figma.",
     },
     {
-      ask: "Design systems",
-      proof: "Built and maintained design systems at Roadrunner and Arena Labs. At Arena, consolidated Figma, Notion, Storybook, and PDFs into one living design hub.",
+      ask: "Design systems that accelerate engineering",
+      proof: "At Arena Labs, design was scattered across 4 tools. Consolidated into one living hub — engineers copy code directly, stakeholders tap through prototypes on their phone. 3x faster dev cycles at Roadrunner after the system shipped.",
     },
     {
-      ask: "User research — evidence-based decisions",
-      proof: "Led mixed-method research at Giant Eagle — Qualtrics surveys, UserTesting, analytics — that shaped product strategy and business decisions, not just screens.",
+      ask: "User research that changes product direction",
+      proof: "At Giant Eagle, mixed-method research (Qualtrics, UserTesting, analytics) shaped pricing strategy and product roadmap — not just UI. At Roadrunner, one usability study expanded a 1-page brief into a platform overhaul.",
     },
   ],
 
@@ -39,13 +39,13 @@ export const ninety = {
     tiles: [
       {
         icon: "fa-solid fa-wand-magic-sparkles",
-        heading: "Figma MCP + Claude Code",
-        body: "My daily workflow. Extract tokens from Figma, generate production React components, and ship — no traditional handoff pipeline.",
+        heading: "AI-first workflow",
+        body: "Every project starts in Claude. I shipped a full design hub, onboarding flow, and design system for Arena Labs — as the sole designer on limited hours. AI made that possible.",
       },
       {
         icon: "fa-solid fa-arrows-spin",
         heading: "Research → design → ship",
-        body: "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
+        body: "One person, no handoff gaps. I run my own studies, build the system, and ship production code. The cycle that takes most teams a sprint takes me days.",
       },
       {
         icon: "fa-solid fa-universal-access",

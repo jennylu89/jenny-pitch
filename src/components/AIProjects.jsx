@@ -113,7 +113,7 @@ export default function AIProjects() {
                 letterSpacing: 'var(--tracking-h4)',
                 margin: 0,
               }}>
-                I stopped using Figma for prototyping. Here's what I do instead.
+                One designer shipped a full product in 2 months. Here's how.
               </h3>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
@@ -142,13 +142,13 @@ export default function AIProjects() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '640px' }}>
                 <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                  Every project starts in Claude — clarifying requirements, surfacing edge cases, drafting the approach before I touch a screen. I sketch in Pencil.dev, then Claude Code generates production React components mapped to the design system. The prototype is functional code from day one.
+                  At Arena Labs, I was the sole designer with limited hours. The traditional pipeline — Figma prototypes, handoff docs, Storybook, Notion specs — couldn't keep up. So I replaced it.
                 </p>
                 <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0 }}>
-                  Figma comes in for systems and polish — not prototyping. Stakeholders tap through functional prototypes on their phone. Engineers hover over components and copy code directly. No handoff doc. No waiting.
+                  I shipped a full onboarding flow, daily check-in experience, design system, and research hub — all from one URL. Stakeholders tap through functional prototypes on their phone. Engineers hover and copy code. No handoff doc.
                 </p>
                 <p style={{ color: 'var(--text)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', margin: 0, fontWeight: 'var(--weight-medium)' }}>
-                  At Arena Labs, this workflow replaced four separate systems (Figma, Notion, Storybook, PDFs) with one URL. What used to take weeks takes days. I've shipped every project this way since.
+                  The tools that made this possible: Claude Code for components, Pencil.dev for rapid sketching, Figma MCP for token extraction. What used to take weeks takes days.
                 </p>
               </div>
             </div>

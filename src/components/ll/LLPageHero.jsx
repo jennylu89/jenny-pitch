@@ -15,7 +15,7 @@ export default function LLPageHero({ companyName, role, oneLiner }) {
       <div className="resume-hero-inner" style={{
         maxWidth: '1000px', margin: '0 auto',
         padding: 'var(--space-144) var(--space-48) var(--space-96)',
-        minHeight: '90vh',
+        minHeight: '100vh',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         position: 'relative', zIndex: 1,
       }}>
@@ -57,6 +57,13 @@ export default function LLPageHero({ companyName, role, oneLiner }) {
           {/* CTA */}
           <div style={{ marginTop: 'var(--space-12)' }}>
             <CtaButton />
+          </div>
+
+          {/* Scroll chevron */}
+          <div style={{ marginTop: 'var(--space-48)' }}>
+            <svg className="scroll-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
           </div>
         </div>
       </div>
