@@ -1,972 +1,361 @@
-const colors = [
-  { token: '--bg', value: '#F5F4F2', label: 'Warm Neutral', usage: 'Page background' },
-  { token: '--surface', value: '#FFFFFF', label: 'Surface', usage: 'Cards, elevated surfaces' },
-  { token: '--border', value: '#E2E0DC', label: 'Neutral Grey', usage: 'Dividers' },
-  { token: '--text', value: '#2D3142', label: 'Jet Black', usage: 'Primary body text' },
-  { token: '--muted', value: '#ADACB5', label: 'Pale Slate', usage: 'Secondary text' },
-  { token: '--accent', value: '#8B78FF', label: 'Purple', usage: 'Primary action / CTA' },
-  { token: '--accent-fg', value: '#FFFFFF', label: 'Accent FG', usage: 'White text on purple' },
-  { token: '--accent-subtle', value: '#EAE8FF', label: 'Accent Subtle', usage: 'Light lavender tint' },
-];
-
-const elevations = [
-  { token: '--shadow-sm', label: 'sm', usage: 'Resting card, chip', value: '0 1px 2px … 0 1px 4px' },
-  { token: '--shadow-md', label: 'md', usage: 'Hover card, dropdown', value: '0 2px 8px … 0 4px 16px' },
-  { token: '--shadow-lg', label: 'lg', usage: 'Sticky header, sheet', value: '0 4px 16px … 0 8px 32px' },
-  { token: '--shadow-xl', label: 'xl', usage: 'Modal, overlay', value: '0 8px 24px … 0 16px 48px' },
-];
-
-const typeHierarchy = [
-  {
-    label: 'Display',
-    token: '--type-display',
-    weight: '--weight-black',
-    weightVal: 800,
-    sample: 'Hello, I\'m Jenny.',
-    role: 'Hero — page entry point. Max visual weight.',
-  },
-  {
-    label: 'Belief / H1',
-    token: '--type-belief',
-    weight: '--weight-black',
-    weightVal: 800,
-    sample: 'One conversation. Thirty minutes.',
-    role: 'Section statement. Heavy weight, carries tone not just info.',
-  },
-  {
-    label: 'Heading / H2',
-    token: '--type-heading',
-    weight: '--weight-bold',
-    weightVal: 700,
-    sample: 'Why I\'d be a good fit',
-    role: 'Section titles. Clear but not screaming.',
-  },
-  {
-    label: 'Subhead / H3',
-    token: '--type-subhead',
-    weight: '--weight-semibold',
-    weightVal: 600,
-    sample: 'Patient & Consumer Flows',
-    role: 'Card titles, sub-sections. Scannable hierarchy.',
-  },
-  {
-    label: 'Body',
-    token: '--type-body',
-    weight: '--weight-normal',
-    weightVal: 400,
-    sample: 'Own end-to-end design for patient booking flows and consumer-facing experiences from problem framing through shipped product.',
-    role: 'Default reading text. 16px minimum for readability.',
-  },
-  {
-    label: 'Small',
-    token: '--type-small',
-    weight: '--weight-medium',
-    weightVal: 500,
-    sample: 'Senior Design Manager · Pittsburgh, PA',
-    role: 'Nav, meta, tags. Supporting info.',
-  },
-  {
-    label: 'Label',
-    token: '--type-label',
-    weight: '--weight-semibold',
-    weightVal: 600,
-    sample: 'WHY I\'D BE A GOOD FIT',
-    role: 'SMALL-CAPS eyebrow labels. letter-spacing 0.12em.',
-    uppercase: true,
-    tracking: '0.12em',
-  },
-];
-
-const weights = [
-  { token: '--weight-normal', value: '400', label: 'Normal' },
-  { token: '--weight-medium', value: '500', label: 'Medium' },
-  { token: '--weight-semibold', value: '600', label: 'Semibold' },
-  { token: '--weight-bold', value: '700', label: 'Bold' },
-  { token: '--weight-black', value: '800', label: 'Black' },
-];
-
+import { useState } from 'react';
+import Nav from '../components/Nav';
 import Badge from '../components/Badge';
+import NoiseOverlay from '../components/ll/NoiseOverlay';
+import Eyebrow from '../components/ll/Eyebrow';
+import MetricCard from '../components/ll/MetricCard';
+import CtaButton from '../components/ll/CtaButton';
+import LLPageHero from '../components/ll/LLPageHero';
+import LLSummary from '../components/ll/LLSummary';
+import LLHowIWork from '../components/ll/LLHowIWork';
+import LLCloseCta from '../components/ll/LLCloseCta';
+import LLSelectedProjects from '../components/ll/LLSelectedProjects';
+import AIProjects from '../components/AIProjects';
 
-const Section = ({ title, children }) => (
-  <div style={{ marginBottom: '80px' }}>
-    <p style={{
-      color: 'var(--accent)',
-      fontSize: '12px',
-      fontFamily: "'Google Sans Code', monospace",
-      fontWeight: '500',
-      letterSpacing: '0.08em',
-      textTransform: 'uppercase',
-      marginBottom: '24px',
-    }}>
-      {title}
-    </p>
-    {children}
-  </div>
-);
+const sections = [
+  { id: 'tokens-colors', label: 'Colors', group: 'Tokens' },
+  { id: 'tokens-typography', label: 'Typography', group: 'Tokens' },
+  { id: 'tokens-spacing', label: 'Spacing', group: 'Tokens' },
+  { id: 'primitives-badge', label: 'Badge', group: 'Primitives' },
+  { id: 'primitives-eyebrow', label: 'Eyebrow', group: 'Primitives' },
+  { id: 'primitives-metric', label: 'MetricCard', group: 'Primitives' },
+  { id: 'primitives-cta', label: 'CtaButton', group: 'Primitives' },
+  { id: 'primitives-noise', label: 'NoiseOverlay', group: 'Primitives' },
+  { id: 'primitives-gradient-icon', label: 'Gradient Icon Box', group: 'Primitives' },
+  { id: 'sections-hero', label: 'LLPageHero', group: 'Sections' },
+  { id: 'sections-summary', label: 'LLSummary', group: 'Sections' },
+  { id: 'sections-howiwork', label: 'LLHowIWork', group: 'Sections' },
+  { id: 'sections-projects', label: 'LLSelectedProjects', group: 'Sections' },
+  { id: 'sections-close', label: 'LLCloseCta', group: 'Sections' },
+  { id: 'sections-ai', label: 'AIProjects', group: 'Sections' },
+];
 
-const Token = ({ label }) => (
-  <code style={{
-    backgroundColor: '#F0EFF0',
-    color: 'var(--muted)',
-    fontSize: '11px',
-    padding: '2px 6px',
-    borderRadius: '3px',
-    fontFamily: 'monospace',
-  }}>
-    {label}
-  </code>
-);
+const colors = [
+  { token: '--bg', value: '#F5F4F1', label: 'Background' },
+  { token: '--surface', value: '#FFFFFF', label: 'Surface' },
+  { token: '--text', value: '#272727', label: 'Text' },
+  { token: '--muted', value: 'rgba(39,39,39,0.5)', label: 'Muted' },
+  { token: '--border', value: 'rgba(39,39,39,0.1)', label: 'Border' },
+  { token: '--accent', value: '#8B78FF', label: 'Accent' },
+  { token: '--accent-fg', value: '#FFFFFF', label: 'Accent FG' },
+  { token: '--accent-subtle', value: '#EAE8FF', label: 'Accent Subtle' },
+  { token: '--dark-bg', value: '#272727', label: 'Dark BG' },
+  { token: '--dark-text', value: '#FFFFFF', label: 'Dark Text' },
+  { token: '--glass-bg', value: 'rgba(255,255,255,0.7)', label: 'Glass BG' },
+];
 
-const Divider = () => (
-  <div style={{ height: '1px', backgroundColor: 'var(--border)', margin: '72px 0' }} />
-);
+const typography = [
+  { token: '--type-h1', size: 'clamp(36px, 4.5vw, 56px)', label: 'H1', sample: 'Hero headline' },
+  { token: '--type-h2', size: 'clamp(28px, 3.5vw, 44px)', label: 'H2', sample: 'Section heading' },
+  { token: '--type-h3', size: 'clamp(24px, 2.8vw, 35px)', label: 'H3', sample: 'Card title' },
+  { token: '--type-h4', size: 'clamp(20px, 2.2vw, 28px)', label: 'H4', sample: 'Subheading' },
+  { token: '--type-h5', size: '22px', label: 'H5', sample: 'Tile heading' },
+  { token: '--type-lead', size: '18px', label: 'Lead', sample: 'Intro text' },
+  { token: '--type-body', size: '14px', label: 'Body', sample: 'Body copy' },
+  { token: '--type-small', size: '12px', label: 'Small', sample: 'Captions & labels' },
+];
+
+function SectionWrapper({ id, title, children }) {
+  return (
+    <div id={id} style={{ marginBottom: '80px', scrollMarginTop: '80px' }}>
+      <h3 style={{
+        fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h4)', fontWeight: 'var(--weight-medium)',
+        color: 'var(--text)', margin: '0 0 24px',
+        paddingBottom: '12px', borderBottom: '1px solid var(--border)',
+      }}>{title}</h3>
+      {children}
+    </div>
+  );
+}
+
+function CodeBlock({ children }) {
+  return (
+    <pre style={{
+      backgroundColor: 'var(--dark-bg)', color: 'var(--dark-text)',
+      padding: '16px', borderRadius: '8px', fontSize: '12px',
+      fontFamily: 'var(--font-badge)', overflow: 'auto', margin: '16px 0 0',
+    }}>{children}</pre>
+  );
+}
 
 export default function DesignPage() {
+  const [activeSection, setActiveSection] = useState('');
+
+  const groups = [...new Set(sections.map(s => s.group))];
+
   return (
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '100px 48px' }}>
+      <Nav />
+      <div style={{ display: 'flex', maxWidth: '1200px', margin: '0 auto', paddingTop: '80px' }}>
 
-        <p style={{
-          color: 'var(--accent)',
-          fontSize: '12px',
-          fontFamily: "'Google Sans Code', monospace",
-          fontWeight: '500',
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase',
-          marginBottom: '16px',
+        {/* Left Nav */}
+        <nav style={{
+          width: '220px', flexShrink: 0, position: 'sticky', top: '80px',
+          height: 'calc(100vh - 80px)', overflowY: 'auto',
+          padding: '24px 16px', borderRight: '1px solid var(--border)',
         }}>
-          Design System
-        </p>
-        <h1 style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: 'var(--type-display)',
-          fontWeight: 'var(--weight-black)',
-          letterSpacing: 'var(--tracking-tight)',
-          color: 'var(--text)',
-          marginBottom: '8px',
-        }}>
-          Tokens
-        </h1>
-        <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', marginBottom: '80px' }}>
-          Based on Practical UI — contrast, elevation, and hierarchy principles.
-        </p>
-
-        {/* ── Color ── */}
-        <Section title="Color">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '12px' }}>
-            {colors.slice(0, 4).map((c) => (
-              <div key={c.token}>
-                <div style={{
-                  backgroundColor: c.value,
-                  height: '80px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--border)',
-                  marginBottom: '10px',
-                }} />
-                <div style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)', marginBottom: '2px' }}>{c.label}</div>
-                <Token label={c.token} />
-                <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '4px' }}>{c.value}</div>
-                <div style={{ color: 'var(--muted)', fontSize: '11px' }}>{c.usage}</div>
-              </div>
-            ))}
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
-            {colors.slice(4).map((c) => (
-              <div key={c.token}>
-                <div style={{
-                  backgroundColor: c.value,
-                  height: '80px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--border)',
-                  marginBottom: '10px',
-                }} />
-                <div style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)', marginBottom: '2px' }}>{c.label}</div>
-                <Token label={c.token} />
-                <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '4px' }}>{c.value}</div>
-                <div style={{ color: 'var(--muted)', fontSize: '11px' }}>{c.usage}</div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* ── Elevation ── */}
-        <Section title="Elevation">
-          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', marginBottom: '32px', marginTop: '-8px' }}>
-            Shadows use the text color (#2D3142) at low opacity — warm-tinted to feel grounded on neutral bg. Four levels cover all surface needs.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
-            {elevations.map((e) => (
-              <div key={e.token}>
-                <div style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '12px',
-                  padding: '24px',
-                  boxShadow: `var(${e.token})`,
-                  marginBottom: '16px',
-                  minHeight: '100px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                  <span style={{ fontWeight: 'var(--weight-bold)', fontSize: 'var(--type-subhead)', color: 'var(--text)' }}>
-                    {e.label}
-                  </span>
-                </div>
-                <Token label={e.token} />
-                <div style={{ color: 'var(--text)', fontSize: 'var(--type-small)', fontWeight: 'var(--weight-medium)', marginTop: '8px' }}>{e.usage}</div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* ── Typography Hierarchy ── */}
-        <Section title="Typography Hierarchy">
-          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', marginBottom: '40px', marginTop: '-8px' }}>
-            Hierarchy is set through size + weight together — never size alone. Each level has a clear role so copy writes itself into the right slot.
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            {typeHierarchy.map((t, i) => (
-              <div
-                key={t.token}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '160px 1fr',
-                  gap: '32px',
-                  alignItems: 'start',
-                  padding: '28px 0',
-                  borderBottom: i < typeHierarchy.length - 1 ? '1px solid var(--border)' : 'none',
-                }}
-              >
-                {/* Meta */}
-                <div>
-                  <div style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)', marginBottom: '6px' }}>{t.label}</div>
-                  <Token label={t.token} />
-                  <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '4px' }}>weight {t.weightVal}</div>
-                  <div style={{ color: 'var(--muted)', fontSize: '11px', lineHeight: 1.4, marginTop: '6px' }}>{t.role}</div>
-                </div>
-                {/* Sample */}
-                <div style={{
-                  fontSize: `var(${t.token})`,
-                  fontWeight: t.weightVal,
-                  color: 'var(--text)',
-                  lineHeight: t.weightVal >= 700 ? 1.1 : 'var(--leading-body)',
-                  letterSpacing: t.tracking || (t.weightVal >= 700 ? 'var(--tracking-tight)' : 'var(--tracking-normal)'),
-                  textTransform: t.uppercase ? 'uppercase' : 'none',
-                }}>
-                  {t.sample}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* ── Buttons ── */}
-        <Section title="Buttons">
-          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', marginBottom: '40px', marginTop: '-8px' }}>
-            3 variants × 3 sizes. Primary uses --accent purple. Secondary is outlined. Ghost is text-only. Border radius uses --radius-btn (8px) — tighter than cards.
-          </p>
-
-          {/* Variants */}
-          <div style={{ marginBottom: '40px' }}>
-            <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Variants</div>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
-              {/* Primary */}
-              <button style={{
-                backgroundColor: 'var(--btn-primary-bg)',
-                color: 'var(--btn-primary-fg)',
-                border: 'none',
-                borderRadius: 'var(--radius-btn)',
-                padding: '14px 24px',
-                fontSize: 'var(--type-small)',
-                fontWeight: 'var(--weight-bold)',
-                letterSpacing: 'var(--tracking-wide)',
-                cursor: 'default',
-                fontFamily: 'var(--font-sans)',
-              }}>
-                Primary
-              </button>
-              {/* Secondary */}
-              <button style={{
-                backgroundColor: 'var(--btn-secondary-bg)',
-                color: 'var(--btn-secondary-fg)',
-                border: '1.5px solid var(--btn-secondary-border)',
-                borderRadius: 'var(--radius-btn)',
-                padding: '14px 24px',
-                fontSize: 'var(--type-small)',
-                fontWeight: 'var(--weight-semibold)',
-                letterSpacing: 'var(--tracking-wide)',
-                cursor: 'default',
-                fontFamily: 'var(--font-sans)',
-              }}>
-                Secondary
-              </button>
-              {/* Ghost */}
-              <button style={{
-                backgroundColor: 'transparent',
-                color: 'var(--btn-ghost-fg)',
-                border: 'none',
-                borderRadius: 'var(--radius-btn)',
-                padding: '14px 24px',
-                fontSize: 'var(--type-small)',
-                fontWeight: 'var(--weight-semibold)',
-                letterSpacing: 'var(--tracking-wide)',
-                cursor: 'default',
-                fontFamily: 'var(--font-sans)',
-                textDecoration: 'underline',
-                textDecorationColor: '#E2E0DC',
-                textUnderlineOffset: '3px',
-              }}>
-                Ghost
-              </button>
-              {/* Disabled */}
-              <button style={{
-                backgroundColor: '#E2E0DC',
-                color: '#ADACB5',
-                border: 'none',
-                borderRadius: 'var(--radius-btn)',
-                padding: '14px 24px',
-                fontSize: 'var(--type-small)',
-                fontWeight: 'var(--weight-semibold)',
-                cursor: 'not-allowed',
-                fontFamily: 'var(--font-sans)',
-              }}>
-                Disabled
-              </button>
-            </div>
-          </div>
-
-          {/* Sizes */}
-          <div>
-            <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Sizes</div>
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-                <button style={{ backgroundColor: 'var(--btn-primary-bg)', color: '#fff', border: 'none', borderRadius: 'var(--radius-btn)', padding: '8px 14px', fontSize: '11px', fontWeight: 700, cursor: 'default', fontFamily: 'var(--font-sans)' }}>
-                  Small
-                </button>
-                <span style={{ fontSize: '11px', color: 'var(--muted)' }}>h 32px</span>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-                <button style={{ backgroundColor: 'var(--btn-primary-bg)', color: '#fff', border: 'none', borderRadius: 'var(--radius-btn)', padding: '12px 20px', fontSize: '13px', fontWeight: 700, cursor: 'default', fontFamily: 'var(--font-sans)' }}>
-                  Medium
-                </button>
-                <span style={{ fontSize: '11px', color: 'var(--muted)' }}>h 40px</span>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-                <button style={{ backgroundColor: 'var(--btn-primary-bg)', color: '#fff', border: 'none', borderRadius: 'var(--radius-btn)', padding: '16px 28px', fontSize: '15px', fontWeight: 700, cursor: 'default', fontFamily: 'var(--font-sans)' }}>
-                  Large
-                </button>
-                <span style={{ fontSize: '11px', color: 'var(--muted)' }}>h 48px</span>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* ── Cards ── */}
-        <Section title="Cards">
-          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', marginBottom: '40px', marginTop: '-8px' }}>
-            All cards use --radius (16px) and --surface. Differentiate by shadow level and border treatment — not color.
-          </p>
-
-          {/* Variants */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Variants</div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '48px', backgroundColor: 'var(--bg)', borderRadius: '16px', padding: '32px' }}>
-
-            {/* Default */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{
-                backgroundColor: 'var(--surface)',
-                borderRadius: 'var(--radius)',
-                padding: '24px',
-                boxShadow: 'var(--shadow-sm)',
-                display: 'flex', flexDirection: 'column', gap: '8px',
-              }}>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Label</span>
-                <div style={{ fontWeight: 600, fontSize: '15px', color: 'var(--text)', lineHeight: 1.3 }}>Default card</div>
-                <div style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.5 }}>Resting state. shadow-sm, no border.</div>
-              </div>
-              <div style={{ fontSize: '11px', color: 'var(--muted)' }}>shadow-sm · no border</div>
-            </div>
-
-            {/* Hover */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{
-                backgroundColor: 'var(--surface)',
-                borderRadius: 'var(--radius)',
-                padding: '24px',
-                boxShadow: 'var(--shadow-md)',
-                transform: 'translateY(-4px)',
-                display: 'flex', flexDirection: 'column', gap: '8px',
-              }}>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Label</span>
-                <div style={{ fontWeight: 600, fontSize: '15px', color: 'var(--text)', lineHeight: 1.3 }}>Hover state</div>
-                <div style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.5 }}>Lifted -4px, shadow-md.</div>
-              </div>
-              <div style={{ fontSize: '11px', color: 'var(--muted)' }}>shadow-md · lift -4px</div>
-            </div>
-
-            {/* Outlined */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{
-                backgroundColor: 'var(--surface)',
-                borderRadius: 'var(--radius)',
-                padding: '24px',
-                border: '1px solid var(--border)',
-                display: 'flex', flexDirection: 'column', gap: '8px',
-              }}>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Label</span>
-                <div style={{ fontWeight: 600, fontSize: '15px', color: 'var(--text)', lineHeight: 1.3 }}>Outlined</div>
-                <div style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.5 }}>Flat, bordered. For dense lists.</div>
-              </div>
-              <div style={{ fontSize: '11px', color: 'var(--muted)' }}>no shadow · 1px border</div>
-            </div>
-          </div>
-
-          {/* Padding scale */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Padding Scale</div>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            {[
-              { label: 'Compact', padding: '16px', note: '16px — chips, tags, dense grids' },
-              { label: 'Default', padding: '24px', note: '24px — standard cards' },
-              { label: 'Spacious', padding: '32px', note: '32px — featured, bento tiles' },
-              { label: 'Open', padding: '40px', note: '40px — hero tiles, contact' },
-            ].map((s) => (
-              <div key={s.label} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div style={{
-                  backgroundColor: 'var(--surface)',
-                  borderRadius: 'var(--radius)',
-                  padding: s.padding,
-                  boxShadow: 'var(--shadow-sm)',
-                  minWidth: '140px',
-                }}>
-                  <div style={{ fontWeight: 600, fontSize: '13px', color: 'var(--text)' }}>{s.label}</div>
-                  <div style={{ fontSize: '11px', color: 'var(--muted)', marginTop: '4px' }}>p: {s.padding}</div>
-                </div>
-                <div style={{ fontSize: '11px', color: 'var(--muted)', maxWidth: '140px', lineHeight: 1.4 }}>{s.note}</div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* ── Typeface ── */}
-        <Section title="Typeface">
-          <div style={{ backgroundColor: 'var(--surface)', borderRadius: '12px', padding: '48px', border: '1px solid #E2E0DC' }}>
-            <Token label="--font-sans / --font-serif" />
-            <div style={{ fontFamily: 'var(--font-sans)', fontSize: '48px', fontWeight: 800, color: 'var(--text)', marginTop: '20px', lineHeight: 1 }}>
-              BDO Grotesk
-            </div>
-            <div style={{ fontFamily: 'var(--font-sans)', fontSize: 'var(--type-body)', color: 'var(--muted)', marginTop: '20px', lineHeight: 'var(--leading-body)' }}>
-              ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
-              abcdefghijklmnopqrstuvwxyz<br />
-              0123456789 &amp; ! ? . , —
-            </div>
-            <div style={{ display: 'flex', gap: '24px', marginTop: '24px', flexWrap: 'wrap' }}>
-              {[400, 500, 600, 700, 800].map(w => (
-                <span key={w} style={{ fontFamily: 'var(--font-sans)', fontSize: '22px', fontWeight: w, color: 'var(--text)' }}>
-                  {w}
-                </span>
+          {groups.map(group => (
+            <div key={group} style={{ marginBottom: '24px' }}>
+              <span style={{
+                fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)',
+                fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
+                textTransform: 'uppercase', color: 'var(--muted)',
+                display: 'block', marginBottom: '8px',
+              }}>{group}</span>
+              {sections.filter(s => s.group === group).map(s => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  onClick={() => setActiveSection(s.id)}
+                  style={{
+                    display: 'block', padding: '4px 8px', borderRadius: '4px',
+                    fontSize: 'var(--type-body)', color: 'var(--text)',
+                    textDecoration: 'none', marginBottom: '2px',
+                    backgroundColor: activeSection === s.id ? 'var(--accent-subtle)' : 'transparent',
+                  }}
+                >{s.label}</a>
               ))}
             </div>
-          </div>
-        </Section>
+          ))}
+        </nav>
 
-        <Divider />
-
-        {/* ── Badges & Tags ── */}
-        <Section title="Badges & Tags">
-          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', marginBottom: '40px', marginTop: '-8px' }}>
-            4 variants × 3 sizes. All use 24px border-radius (pill). Optional dot or icon prefix.
+        {/* Content */}
+        <main style={{ flex: 1, padding: '24px 48px' }}>
+          <h1 style={{
+            fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h1)', fontWeight: 'var(--weight-medium)',
+            color: 'var(--text)', margin: '0 0 8px',
+          }}>Design System</h1>
+          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-lead)', margin: '0 0 48px' }}>
+            Components and tokens used across jenny-port.
           </p>
 
-          {/* Variants */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Variants</div>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '40px' }}>
-            <Badge variant="outline">Outline</Badge>
-            <Badge variant="filled">Filled</Badge>
-            <Badge variant="subtle">Subtle</Badge>
-            <Badge variant="solid">Solid</Badge>
-            <Badge variant="outline" dot>With dot</Badge>
-            <Badge variant="subtle" icon="fa-solid fa-bolt">With icon</Badge>
-          </div>
+          {/* ── TOKENS ── */}
 
-          {/* Sizes */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Sizes</div>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '40px' }}>
-            <Badge size="sm" variant="outline">Small</Badge>
-            <Badge size="md" variant="outline">Medium</Badge>
-            <Badge size="lg" variant="outline">Large</Badge>
-          </div>
-
-          {/* In context */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>In context</div>
-          <div style={{ backgroundColor: 'var(--bg)', borderRadius: 'var(--radius)', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              <Badge variant="outline">Patient & Consumer Flows</Badge>
-              <Badge variant="outline">Compliance Made Invisible</Badge>
-              <Badge variant="outline">Systems & Velocity</Badge>
-            </div>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              <Badge variant="subtle" dot>Healthcare UX</Badge>
-              <Badge variant="subtle" dot>Design Systems</Badge>
-              <Badge variant="subtle" dot>AI Prototyping</Badge>
-              <Badge variant="subtle" dot>React</Badge>
-            </div>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              <Badge variant="subtle" icon="fa-solid fa-check">Shipped</Badge>
-              <Badge variant="solid" icon="fa-solid fa-bolt">New</Badge>
-            </div>
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* ── Layout Sections ── */}
-        <Section title="Layout Sections">
-          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', marginBottom: '40px', marginTop: '-8px' }}>
-            Four reusable section layouts. Each has a defined content role, spacing rhythm, and animation pattern.
-          </p>
-
-          {/* Hero Bento */}
-          <div style={{ marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>Hero Bento</span>
-              <Token label="Hero.jsx" />
-            </div>
-            <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '16px', lineHeight: 1.5 }}>
-              Centered label pill + H1 + 2 CTAs · blur-in · 2-col asymmetric grid (0.72fr / 1fr) with 2×2 sub-grid right
-            </div>
-            <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '20px', border: '1px solid var(--border)' }}>
-              {/* Headline block */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', marginBottom: '16px' }}>
-                <div style={{ width: '120px', height: '14px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                <div style={{ width: '80%', height: '20px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                <div style={{ width: '60%', height: '20px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                <div style={{ width: '60%', height: '12px', backgroundColor: '#F0EFF0', borderRadius: '4px', marginTop: '2px' }} />
-                <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
-                  <div style={{ width: '90px', height: '28px', backgroundColor: 'var(--accent)', borderRadius: '6px' }} />
-                  <div style={{ width: '90px', height: '28px', backgroundColor: 'transparent', border: '1px solid var(--border)', borderRadius: '6px' }} />
-                </div>
-              </div>
-              {/* Bento grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: '0.72fr 1fr', gap: '8px' }}>
-                <div style={{ height: '120px', backgroundColor: 'var(--border)', borderRadius: '10px', position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', bottom: '8px', left: '8px', width: '80px', height: '14px', backgroundColor: 'rgba(255,255,255,0.7)', borderRadius: '24px' }} />
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '8px' }}>
-                  <div style={{ backgroundColor: 'var(--accent-subtle)', borderRadius: '10px', padding: '8px', display: 'flex', flexWrap: 'wrap', gap: '3px', alignContent: 'flex-start' }}>
-                    {[40, 50, 36, 44, 30].map((w, i) => <div key={i} style={{ width: `${w}px`, height: '8px', backgroundColor: 'rgba(139,120,255,0.3)', borderRadius: '24px' }} />)}
-                  </div>
-                  <div style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '10px', padding: '8px', display: 'flex', flexDirection: 'column', gap: '4px', justifyContent: 'space-around' }}>
-                    {['384%', '4M', '20 yrs'].map(v => <div key={v} style={{ width: '40px', height: '10px', backgroundColor: 'var(--accent-subtle)', borderRadius: '3px' }} />)}
-                  </div>
-                  <div style={{ gridColumn: '1/-1', backgroundColor: 'var(--text)', borderRadius: '10px', padding: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                    <div style={{ width: '60px', height: '7px', backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '3px' }} />
-                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                      {[50, 40, 48, 36].map((w, i) => <div key={i} style={{ width: `${w}px`, height: '9px', backgroundColor: 'rgba(255,255,255,0.15)', borderRadius: '3px' }} />)}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Split Section */}
-          <div style={{ marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>Split Section</span>
-              <Token label="LLSplitSection.jsx" />
-            </div>
-            <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '16px', lineHeight: 1.5 }}>
-              2-col (1fr/1fr) · content left + parallax image right · flip prop alternates per section · label badge + heading + body + 2 metric cards · fade-up on scroll
-            </div>
-            <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '20px', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {[false, true].map(flip => (
-                <div key={String(flip)} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  {/* Content col */}
-                  <div style={{ order: flip ? 2 : 1, display: 'flex', flexDirection: 'column', gap: '6px', padding: '12px' }}>
-                    <div style={{ width: '80px', height: '12px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                    <div style={{ width: '90%', height: '14px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                    <div style={{ width: '70%', height: '14px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                    <div style={{ width: '100%', height: '8px', backgroundColor: '#F0EFF0', borderRadius: '3px', marginTop: '2px' }} />
-                    <div style={{ width: '85%', height: '8px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
-                    <div style={{ display: 'flex', gap: '6px', marginTop: '4px' }}>
-                      {[0, 1].map(j => (
-                        <div key={j} style={{ flex: 1, backgroundColor: 'var(--bg)', borderRadius: '8px', padding: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                          <div style={{ width: '16px', height: '16px', backgroundColor: 'var(--accent-subtle)', borderRadius: '4px' }} />
-                          <div style={{ width: '32px', height: '10px', backgroundColor: 'var(--border)', borderRadius: '3px' }} />
-                          <div style={{ width: '48px', height: '8px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  {/* Image col */}
-                  <div style={{ order: flip ? 1 : 2, height: '100px', backgroundColor: 'var(--border)', borderRadius: '10px', overflow: 'hidden' }}>
-                    <div style={{ width: '100%', height: '120%', backgroundColor: 'var(--border)', backgroundImage: 'linear-gradient(135deg, #E2E0DC 0%, #D4D2CE 100%)' }} />
+          <SectionWrapper id="tokens-colors" title="Colors">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px' }}>
+              {colors.map(c => (
+                <div key={c.token} style={{
+                  backgroundColor: 'var(--surface)', borderRadius: '8px',
+                  border: '1px solid var(--border)', overflow: 'hidden',
+                }}>
+                  <div style={{
+                    height: '48px',
+                    backgroundColor: c.value,
+                    borderBottom: '1px solid var(--border)',
+                  }} />
+                  <div style={{ padding: '8px 12px' }}>
+                    <div style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)' }}>{c.label}</div>
+                    <div style={{ fontSize: 'var(--type-small)', color: 'var(--muted)', fontFamily: 'var(--font-badge)' }}>{c.token}</div>
                   </div>
                 </div>
               ))}
-              <div style={{ fontSize: '10px', color: 'var(--muted)', textAlign: 'center', paddingTop: '4px' }}>flip=false (content left) · flip=true (image left)</div>
             </div>
-          </div>
+          </SectionWrapper>
 
-          {/* Process Section */}
-          <div style={{ marginBottom: '48px' }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>Process Section</span>
-              <Token label="ProcessSection.jsx" />
-            </div>
-            <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '16px', lineHeight: 1.5 }}>
-              Centered label + belief heading · 4-col grid of large numbers · dot connector line · text descriptions below · fade-up on scroll
-            </div>
-            <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '20px', border: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', marginBottom: '16px' }}>
-                <div style={{ width: '60px', height: '10px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                <div style={{ width: '200px', height: '16px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginBottom: '6px' }}>
-                {['01', '02', '03', '04'].map(n => (
-                  <div key={n} style={{ textAlign: 'center', fontWeight: 800, fontSize: '28px', color: 'var(--accent)', lineHeight: 1 }}>{n}</div>
-                ))}
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', position: 'relative', margin: '4px 0 12px' }}>
-                <div style={{ position: 'absolute', height: '1px', backgroundColor: 'var(--border)', width: '74%', left: '13%' }} />
-                {[0,1,2,3].map(i => <div key={i} style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--accent)', border: '2px solid var(--surface)', zIndex: 1, position: 'relative' }} />)}
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
-                {['Research first', 'Frame the right problem', 'Design in code', 'Ship and measure'].map(t => (
-                  <div key={t} style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center', textAlign: 'center', padding: '0 4px' }}>
-                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--text)', lineHeight: 1.3 }}>{t}</div>
-                    <div style={{ width: '90%', height: '6px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
-                    <div style={{ width: '70%', height: '6px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Section */}
-          <div style={{ marginBottom: '0' }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '8px' }}>
-              <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>Contact Section</span>
-              <Token label="ContactSection.jsx" />
-            </div>
-            <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '16px', lineHeight: 1.5 }}>
-              Centered label pill + belief heading + body + availability badge · 3-col dark card grid · company marquee strip · blur-in on scroll
-            </div>
-            <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '20px', border: '1px solid var(--border)' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', marginBottom: '16px' }}>
-                <div style={{ width: '70px', height: '12px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                <div style={{ width: '70%', height: '18px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                <div style={{ width: '50%', height: '18px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                <div style={{ width: '120px', height: '14px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
-                <div style={{ width: '140px', height: '20px', border: '1px solid var(--border)', borderRadius: '24px', marginTop: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#22c55e' }} />
-                  <div style={{ width: '80px', height: '7px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
+          <SectionWrapper id="tokens-typography" title="Typography">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {typography.map(t => (
+                <div key={t.token} style={{
+                  display: 'flex', alignItems: 'baseline', gap: '24px',
+                  paddingBottom: '16px', borderBottom: '1px solid var(--border)',
+                }}>
+                  <span style={{ width: '60px', flexShrink: 0, fontSize: 'var(--type-small)', color: 'var(--muted)', fontFamily: 'var(--font-badge)' }}>{t.label}</span>
+                  <span style={{ fontSize: `var(${t.token})`, fontWeight: 'var(--weight-medium)', color: 'var(--text)', flex: 1 }}>{t.sample}</span>
+                  <span style={{ fontSize: 'var(--type-small)', color: 'var(--muted)', fontFamily: 'var(--font-badge)', flexShrink: 0 }}>{t.size}</span>
                 </div>
+              ))}
+            </div>
+            <CodeBlock>{`font-family: var(--font-sans)  // BDO Grotesk
+font-family: var(--font-badge) // Google Sans Code
+weights: 400 (normal), 500 (medium), 600 (semibold)`}</CodeBlock>
+          </SectionWrapper>
+
+          <SectionWrapper id="tokens-spacing" title="Spacing">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'flex-end' }}>
+              {[3, 6, 12, 18, 24, 36, 48, 72, 96, 144].map(s => (
+                <div key={s} style={{ textAlign: 'center' }}>
+                  <div style={{ width: `${Math.min(s, 48)}px`, height: `${s}px`, backgroundColor: 'var(--accent-subtle)', borderRadius: '4px', border: '1px solid var(--accent)' }} />
+                  <span style={{ fontSize: '10px', fontFamily: 'var(--font-badge)', color: 'var(--muted)', marginTop: '4px', display: 'block' }}>{s}px</span>
+                </div>
+              ))}
+            </div>
+          </SectionWrapper>
+
+          {/* ── PRIMITIVES ── */}
+
+          <SectionWrapper id="primitives-badge" title="Badge">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
+              <Badge variant="outline" size="sm">Outline SM</Badge>
+              <Badge variant="filled" size="md">Filled MD</Badge>
+              <Badge variant="subtle" size="md">Subtle</Badge>
+              <Badge variant="solid" size="md">Solid</Badge>
+              <Badge variant="glass" size="md">Glass</Badge>
+              <Badge variant="outline" size="sm" dot>With Dot</Badge>
+            </div>
+            <CodeBlock>{`<Badge variant="outline" size="sm">Text</Badge>
+// variants: outline | filled | subtle | solid | glass
+// sizes: sm | md | lg
+// props: dot, icon`}</CodeBlock>
+          </SectionWrapper>
+
+          <SectionWrapper id="primitives-eyebrow" title="Eyebrow">
+            <Eyebrow><span style={{ color: 'var(--muted)' }}>Section label</span></Eyebrow>
+            <CodeBlock>{`<Eyebrow>
+  <span style={{ color: 'var(--muted)' }}>Section label</span>
+</Eyebrow>`}</CodeBlock>
+          </SectionWrapper>
+
+          <SectionWrapper id="primitives-metric" title="MetricCard">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', maxWidth: '480px' }}>
+              <MetricCard metric={{ value: '384%', label: 'Spend lift' }} />
+              <MetricCard metric={{ value: '28→3', label: 'Clicks' }} />
+              <MetricCard metric={{ value: '50+', label: 'Components' }} />
+            </div>
+            <CodeBlock>{`<MetricCard metric={{ value: '384%', label: 'Spend lift' }} />
+<MetricCard metric={m} dark={true} /> // dark variant`}</CodeBlock>
+          </SectionWrapper>
+
+          <SectionWrapper id="primitives-cta" title="CtaButton">
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+              <CtaButton />
+              <CtaButton variant="outline" from="design" />
+            </div>
+            <CodeBlock>{`<CtaButton />  // primary: avatar + Schedule a call → cal.com
+<CtaButton variant="outline" from="ninety" />  // outline: View resume`}</CodeBlock>
+          </SectionWrapper>
+
+          <SectionWrapper id="primitives-noise" title="NoiseOverlay">
+            <div style={{ position: 'relative', height: '120px', borderRadius: '8px', overflow: 'hidden', display: 'flex', gap: '12px' }}>
+              <div style={{ flex: 1, backgroundColor: 'var(--accent)', position: 'relative', borderRadius: '8px' }}>
+                <NoiseOverlay light />
+                <span style={{ position: 'relative', zIndex: 1, padding: '16px', display: 'block', color: 'white', fontSize: 'var(--type-small)' }}>light</span>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', marginBottom: '12px' }}>
-                {[0, 1, 2].map(i => (
-                  <div key={i} style={{ backgroundColor: 'var(--text)', borderRadius: '10px', padding: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <div style={{ width: '20px', height: '20px', backgroundColor: 'rgba(234,232,255,0.15)', borderRadius: '4px' }} />
-                    <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.08)' }} />
-                    <div style={{ width: '80%', height: '8px', backgroundColor: 'rgba(234,232,255,0.2)', borderRadius: '3px' }} />
-                    <div style={{ width: '90%', height: '6px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '3px' }} />
-                    <div style={{ width: '60%', height: '6px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '3px' }} />
-                  </div>
-                ))}
-              </div>
-              <div style={{ borderTop: '1px solid var(--border)', paddingTop: '10px', display: 'flex', gap: '20px', justifyContent: 'center', overflow: 'hidden' }}>
-                {['Giant Eagle', 'Roadrunner', 'Talkiatry', 'Arena Labs', 'MegPrime'].map(n => (
-                  <span key={n} style={{ fontSize: '10px', color: 'var(--muted)', whiteSpace: 'nowrap', opacity: 0.6, fontWeight: 500 }}>{n}</span>
-                ))}
+              <div style={{ flex: 1, backgroundColor: 'var(--dark-bg)', position: 'relative', borderRadius: '8px' }}>
+                <NoiseOverlay />
+                <span style={{ position: 'relative', zIndex: 1, padding: '16px', display: 'block', color: 'white', fontSize: 'var(--type-small)' }}>dark</span>
               </div>
             </div>
-          </div>
-        {/* ── Project Variants ── */}
-          <div style={{ borderTop: '1px solid var(--border)', paddingTop: '40px', marginTop: '40px' }}>
-            <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '4px' }}>Project Variants</div>
-            <p style={{ color: 'var(--muted)', fontSize: '11px', lineHeight: 1.5, marginBottom: '32px' }}>
-              LLCaseStudy.jsx — auto-selects layout via <code>caseStudy.screensType</code>. Set on each project in jenny.js.
+            <CodeBlock>{`<NoiseOverlay light />  // for light sections
+<NoiseOverlay />       // for dark sections`}</CodeBlock>
+          </SectionWrapper>
+
+          <SectionWrapper id="primitives-gradient-icon" title="Gradient Icon Box">
+            <div style={{ display: 'flex', gap: '16px' }}>
+              {['fa-solid fa-wand-magic-sparkles', 'fa-solid fa-arrows-spin', 'fa-solid fa-universal-access', 'fa-solid fa-people-group'].map(icon => (
+                <div key={icon} style={{
+                  background: 'linear-gradient(180deg, #a89fef 0%, #cfc9f5 65%, #eae8fb 100%)',
+                  borderRadius: 'var(--radius)', padding: '5px', width: '48px', height: '48px', flexShrink: 0,
+                }}>
+                  <div style={{
+                    backdropFilter: 'blur(3px)', WebkitBackdropFilter: 'blur(3px)',
+                    background: 'rgba(255,255,255,0.75)', border: '1px solid var(--glass-stroke)',
+                    borderRadius: '8px', boxShadow: 'var(--shadow-glass)',
+                    width: '100%', height: '100%',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6b55e8',
+                  }}>
+                    <i className={icon} style={{ fontSize: '18px' }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <CodeBlock>{`// Gradient outer: #a89fef → #cfc9f5 → #eae8fb
+// Glass inner: rgba(255,255,255,0.75) + blur(3px)
+// Icon: #6b55e8, font-awesome solid
+// Sizes: 72px (ProcessSection), 48px (tiles)`}</CodeBlock>
+          </SectionWrapper>
+
+          {/* ── SECTIONS ── */}
+
+          <SectionWrapper id="sections-hero" title="LLPageHero">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              Glass pill badge → H1 role → subtitle → Schedule a call CTA. Used on all company pages.
             </p>
+            <CodeBlock>{`<LLPageHero
+  companyName="Ninety"
+  role="AI-first product designer"
+  oneLiner="10+ years shipping across B2B SaaS..."
+/>`}</CodeBlock>
+          </SectionWrapper>
 
-            {/* Image Right */}
-            <div style={{ marginBottom: '40px' }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '6px' }}>
-                <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>Image Right</span>
-                <Token label="default" />
-              </div>
-              <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '12px', lineHeight: 1.5 }}>
-                2-col split · index → title → company pill + tags → role → headline → insight → metrics · alternates flip on odd index · placeholder when no image
-              </div>
-              <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '16px', border: '1px solid var(--border)' }}>
-                {[false, true].map(flip => (
-                  <div key={String(flip)} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: flip ? 0 : '8px' }}>
-                    <div style={{ order: flip ? 2 : 1, display: 'flex', flexDirection: 'column', gap: '5px', padding: '10px' }}>
-                      <div style={{ width: '16px', height: '7px', backgroundColor: 'var(--accent-subtle)', borderRadius: '3px' }} />
-                      <div style={{ width: '90%', height: '13px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                      <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
-                        <div style={{ width: '52px', height: '9px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                        <div style={{ width: '36px', height: '9px', border: '1px solid var(--border)', borderRadius: '24px' }} />
-                      </div>
-                      <div style={{ width: '100%', height: '7px', backgroundColor: '#F0EFF0', borderRadius: '3px', marginTop: '2px' }} />
-                      <div style={{ width: '80%', height: '7px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
-                      <div style={{ width: '60%', height: '8px', borderLeft: '2px solid var(--accent)', paddingLeft: '4px', backgroundColor: '#F0EFF0', borderRadius: '3px', marginTop: '2px' }} />
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3px', marginTop: '4px' }}>
-                        {[0,1,2,3].map(i => <div key={i} style={{ height: '20px', backgroundColor: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px' }} />)}
-                      </div>
-                    </div>
-                    <div style={{ order: flip ? 1 : 2, height: '90px', backgroundColor: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-                      </svg>
-                    </div>
-                  </div>
-                ))}
-                <div style={{ fontSize: '10px', color: 'var(--muted)', textAlign: 'center', paddingTop: '8px' }}>flip=false · flip=true (odd index)</div>
-              </div>
-            </div>
+          <SectionWrapper id="sections-summary" title="LLSummary">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              "Why me" grid — ask/proof rows in glass cards. Consistent labels: "Your ask" / "My proof".
+            </p>
+            <CodeBlock>{`<LLSummary
+  heading="What you need. What I've done."
+  rows={[
+    { ask: "End-to-end design", proof: "Research through shipped product..." },
+  ]}
+/>`}</CodeBlock>
+          </SectionWrapper>
 
-            {/* App Screenshots */}
-            <div style={{ marginBottom: '40px' }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '6px' }}>
-                <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>App Screenshots</span>
-                <Token label="screensType: 'app'" />
-              </div>
-              <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '12px', lineHeight: 1.5 }}>
-                Dark strip with mobile screens side-by-side + caption · 2-col below: info left · metrics right · used for mobile/app projects (MegPrime, Arena Labs)
-              </div>
-              <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '16px', border: '1px solid var(--border)' }}>
-                <div style={{ backgroundColor: 'var(--text)', borderRadius: '10px', padding: '12px', display: 'flex', gap: '8px', marginBottom: '10px' }}>
-                  {[0,1,2].map(i => (
-                    <div key={i} style={{ flex: '1 1 0', borderRadius: '6px', backgroundColor: 'rgba(255,255,255,0.08)', height: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '6px' }}>
-                      <div style={{ width: '70%', height: '5px', backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '3px' }} />
-                    </div>
-                  ))}
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', padding: '4px' }}>
-                    <div style={{ width: '16px', height: '7px', backgroundColor: 'var(--accent-subtle)', borderRadius: '3px' }} />
-                    <div style={{ width: '85%', height: '12px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                    <div style={{ width: '52px', height: '9px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                    <div style={{ width: '90%', height: '7px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3px' }}>
-                    {[0,1,2,3].map(i => <div key={i} style={{ height: '22px', backgroundColor: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px' }} />)}
-                  </div>
-                </div>
-              </div>
-            </div>
+          <SectionWrapper id="sections-howiwork" title="LLHowIWork">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              "What sets me apart" — 2-column glass card grid with gradient icon boxes. Subtle purple gradient bg.
+            </p>
+            <CodeBlock>{`<LLHowIWork howIWork={{
+  eyebrow: "What I bring",
+  heading: "What sets me apart",
+  tiles: [
+    { icon: "fa-solid fa-wand-magic-sparkles", heading: "...", body: "..." },
+  ],
+}} />`}</CodeBlock>
+          </SectionWrapper>
 
-            {/* Dashboard */}
-            <div style={{ marginBottom: '40px' }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '6px' }}>
-                <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>Dashboard</span>
-                <Token label="screensType: 'dashboard'" />
-              </div>
-              <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '12px', lineHeight: 1.5 }}>
-                Full-width bordered frame showing web/desktop UI · 2-col below: info left · metrics right · used for platform and SaaS projects (Roadrunner)
-              </div>
-              <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '16px', border: '1px solid var(--border)' }}>
-                <div style={{ border: '1px solid var(--border)', borderRadius: '10px', height: '72px', marginBottom: '10px', backgroundColor: 'var(--bg)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ height: '16px', backgroundColor: 'var(--border)', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', padding: '0 8px', gap: '4px' }}>
-                    {[0,1,2].map(i => <div key={i} style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,0.1)' }} />)}
-                  </div>
-                  <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '40px 1fr', gap: '6px', padding: '6px 8px' }}>
-                    <div style={{ backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                      <div style={{ width: '60%', height: '8px', backgroundColor: 'var(--border)', borderRadius: '3px' }} />
-                      <div style={{ width: '40%', height: '6px', backgroundColor: '#F0EFF0', borderRadius: '3px' }} />
-                    </div>
-                  </div>
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', padding: '4px' }}>
-                    <div style={{ width: '16px', height: '7px', backgroundColor: 'var(--accent-subtle)', borderRadius: '3px' }} />
-                    <div style={{ width: '85%', height: '12px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                    <div style={{ width: '52px', height: '9px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3px' }}>
-                    {[0,1,2,3].map(i => <div key={i} style={{ height: '22px', backgroundColor: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px' }} />)}
-                  </div>
-                </div>
-              </div>
-            </div>
+          <SectionWrapper id="sections-projects" title="LLSelectedProjects">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              Renders filtered + sorted case study cards from jenny.js. Pass project IDs in display order.
+            </p>
+            <CodeBlock>{`<LLSelectedProjects projectIds={['roadrunner', 'arenalabs', 'navigation', 'myperks']} />`}</CodeBlock>
+          </SectionWrapper>
 
-            {/* Full Width */}
-            <div style={{ marginBottom: '40px' }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '6px' }}>
-                <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>Full Width</span>
-                <Token label="screensType: 'full'" />
-              </div>
-              <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '12px', lineHeight: 1.5 }}>
-                16:7 hero image spanning full width · 2-col below: info left · metrics right · used for single strong hero shot
-              </div>
-              <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '16px', border: '1px solid var(--border)' }}>
-                <div style={{ borderRadius: '10px', aspectRatio: '16/7', backgroundColor: 'var(--border)', marginBottom: '10px', backgroundImage: 'linear-gradient(135deg, #E2E0DC 0%, #D0CECC 100%)' }} />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', padding: '4px' }}>
-                    <div style={{ width: '16px', height: '7px', backgroundColor: 'var(--accent-subtle)', borderRadius: '3px' }} />
-                    <div style={{ width: '85%', height: '12px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                    <div style={{ width: '52px', height: '9px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3px' }}>
-                    {[0,1,2,3].map(i => <div key={i} style={{ height: '22px', backgroundColor: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px' }} />)}
-                  </div>
-                </div>
-              </div>
-            </div>
+          <SectionWrapper id="sections-close" title="LLCloseCta">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              Bottom CTA with gradient bg + noise. Schedule a call + View resume buttons.
+            </p>
+            <CodeBlock>{`<LLCloseCta closeText="I'd love to talk about owning a pod at Ninety." from="ninety" />`}</CodeBlock>
+          </SectionWrapper>
 
-            {/* Flow */}
-            <div style={{ marginBottom: '0' }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '6px' }}>
-                <span style={{ fontWeight: 'var(--weight-semibold)', fontSize: 'var(--type-small)', color: 'var(--text)' }}>Flow</span>
-                <Token label="screensType: 'flow'" />
-              </div>
-              <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '12px', lineHeight: 1.5 }}>
-                Numbered screens with connector line · sequential step-by-step view · 2-col below: info left · metrics right · used for multi-screen flows (onboarding, KYC)
-              </div>
-              <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '16px', border: '1px solid var(--border)' }}>
-                <div style={{ display: 'flex', gap: '0', alignItems: 'flex-start', marginBottom: '10px' }}>
-                  {[1,2,3,4].map((n, i, arr) => (
-                    <div key={n} style={{ display: 'flex', alignItems: 'flex-start', flex: '1 1 0' }}>
-                      <div style={{ flex: 1 }}>
-                        <div style={{ width: '16px', height: '16px', borderRadius: '50%', backgroundColor: 'var(--accent)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', fontWeight: 700, marginBottom: '6px' }}>{n}</div>
-                        <div style={{ border: '1px solid var(--border)', borderRadius: '6px', height: '48px', backgroundColor: 'var(--bg)' }} />
-                      </div>
-                      {i < arr.length - 1 && <div style={{ width: '16px', height: '1px', backgroundColor: 'var(--border)', flexShrink: 0, margin: '8px 2px 0' }} />}
-                    </div>
-                  ))}
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', padding: '4px' }}>
-                    <div style={{ width: '16px', height: '7px', backgroundColor: 'var(--accent-subtle)', borderRadius: '3px' }} />
-                    <div style={{ width: '85%', height: '12px', backgroundColor: 'var(--border)', borderRadius: '4px' }} />
-                    <div style={{ width: '52px', height: '9px', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px' }} />
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3px' }}>
-                    {[0,1,2,3].map(i => <div key={i} style={{ height: '22px', backgroundColor: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '4px' }} />)}
-                  </div>
-                </div>
-              </div>
-            </div>
+          <SectionWrapper id="sections-ai" title="AIProjects">
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              AI-first design process section. Self-contained — no props needed. Includes video, workflow steps, tool badges.
+            </p>
+            <CodeBlock>{`<AIProjects />`}</CodeBlock>
+          </SectionWrapper>
+
+          {/* Page composition example */}
+          <div style={{ marginTop: '48px', padding: '32px', backgroundColor: 'var(--surface)', borderRadius: '12px', border: '1px solid var(--border)' }}>
+            <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h4)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', margin: '0 0 16px' }}>
+              Page Composition
+            </h3>
+            <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', margin: '0 0 16px' }}>
+              A new company page is ~15 lines:
+            </p>
+            <CodeBlock>{`import Nav from '../../components/Nav';
+import { company } from './company';
+import LLPageHero from '../../components/ll/LLPageHero';
+import LLSummary from '../../components/ll/LLSummary';
+import LLHowIWork from '../../components/ll/LLHowIWork';
+import AIProjects from '../../components/AIProjects';
+import LLSelectedProjects from '../../components/ll/LLSelectedProjects';
+import LLCloseCta from '../../components/ll/LLCloseCta';
+
+export default function CompanyPage() {
+  return (
+    <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
+      <Nav from="company" />
+      <LLPageHero companyName={company.name} role={company.role} oneLiner={company.oneLiner} />
+      <LLSummary heading={company.summaryHeading} rows={company.summaryRows} />
+      <LLHowIWork howIWork={company.howIWork} />
+      <AIProjects />
+      <LLSelectedProjects projectIds={['roadrunner', 'arenalabs']} />
+      <LLCloseCta closeText={company.close} from="company" />
+    </div>
+  );
+}`}</CodeBlock>
           </div>
 
-        </Section>
-
-        <Divider />
-
-        {/* ── Patterns ── */}
-        <Section title="Patterns">
-          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)', marginBottom: '40px', marginTop: '-8px' }}>
-            Reusable UI patterns used across sections — label pills, availability badge, dark card, blur-in animation.
-          </p>
-
-          {/* Label pill */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Label Pill</div>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '32px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px', padding: '4px 12px' }}>
-              <span style={{ color: 'var(--accent)', fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                Fractional design partner
-              </span>
-            </div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: 'var(--accent-subtle)', borderRadius: '24px', padding: '4px 12px' }}>
-              <span style={{ color: 'var(--accent)', fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                Let's talk
-              </span>
-            </div>
-            <div style={{ border: '1px solid var(--border)', borderRadius: '24px', padding: '4px 12px', display: 'inline-flex' }}>
-              <span style={{ color: 'var(--muted)', fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                Patient & Consumer Flows
-              </span>
-            </div>
-          </div>
-
-          {/* Availability badge */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Availability Badge</div>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '32px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', border: '1px solid var(--border)', borderRadius: '24px', padding: '6px 16px' }}>
-              <span style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: '#22c55e', display: 'inline-block', flexShrink: 0 }} />
-              <span style={{ color: 'var(--muted)', fontSize: 'var(--type-small)' }}>Available for Q2 2026 · 1–2 clients</span>
-            </div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'rgba(245,244,242,0.88)', backdropFilter: 'blur(12px)', borderRadius: '24px', padding: '6px 14px', border: '1px solid rgba(255,255,255,0.5)' }}>
-              <span style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: '#22c55e', display: 'inline-block', flexShrink: 0 }} />
-              <span style={{ color: 'var(--text)', fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Available Q2 2026</span>
-            </div>
-          </div>
-
-          {/* Dark card */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Dark Card</div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '32px' }}>
-            {['Book a 30-min call', 'Connect on LinkedIn', 'View resume'].map((label, i) => (
-              <div key={label} style={{
-                backgroundColor: 'var(--text)',
-                borderRadius: 'var(--radius)',
-                padding: '28px 24px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                border: '1px solid rgba(255,255,255,0.06)',
-              }}>
-                <div style={{ color: 'var(--accent-subtle)', fontSize: '20px' }}>
-                  <i className={['fa-regular fa-calendar', 'fa-brands fa-linkedin', 'fa-regular fa-file'][i]} />
-                </div>
-                <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(255,255,255,0.08)' }} />
-                <div>
-                  <div style={{ color: 'var(--accent-subtle)', fontSize: 'var(--type-small)', fontWeight: 'var(--weight-semibold)', marginBottom: '6px' }}>{label}</div>
-                  <div style={{ color: 'rgba(245,244,242,0.5)', fontSize: '11px', lineHeight: 'var(--leading-body)' }}>Action card — dark bg, accent icon, subtle body.</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Blur-in animation */}
-          <div style={{ fontSize: '12px', fontFamily: "'Google Sans Code', monospace", fontWeight: '500', color: 'var(--muted)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Entrance Animation</div>
-          <div style={{ backgroundColor: 'var(--surface)', borderRadius: 'var(--radius)', padding: '28px', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-              <div>
-                <Token label="blur-in" />
-                <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '4px', lineHeight: 1.5 }}>opacity:0 + blur(12px) → opacity:1 + blur(0)<br />Trigger: IntersectionObserver threshold:0.1<br />Duration: 0.7s ease</div>
-              </div>
-              <div>
-                <Token label="fade-up" />
-                <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '4px', lineHeight: 1.5 }}>opacity:0 + translateY(24px) → opacity:1 + translateY(0)<br />Trigger: IntersectionObserver threshold:0.1<br />Duration: 0.7s ease</div>
-              </div>
-              <div>
-                <Token label="stagger" />
-                <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '4px', lineHeight: 1.5 }}>Per-item delay: i × 80–100ms<br />Used on: cards, list items, grid cells</div>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Divider />
-
-        {/* ── Font Weights ── */}
-        <Section title="Font Weights">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {weights.map((w) => (
-              <div key={w.token} style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-                <div style={{ minWidth: '140px', flexShrink: 0 }}>
-                  <Token label={w.token} />
-                  <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '4px' }}>{w.value}</div>
-                </div>
-                <div style={{ fontFamily: 'var(--font-sans)', fontSize: '28px', fontWeight: w.value, color: 'var(--text)', lineHeight: 1 }}>
-                  {w.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
+        </main>
       </div>
     </div>
   );
