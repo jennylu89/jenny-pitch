@@ -8,7 +8,6 @@ import TalkiatryPage from './pages/companies/TalkiatryPage';
 import GcaiPage from './pages/companies/GcaiPage';
 import MmcPage from './pages/companies/MmcPage';
 import NinetyPage from './pages/companies/NinetyPage';
-import RampPage from './pages/companies/RampPage';
 import DesignPage from './pages/DesignPage';
 import ResumePage from './pages/ResumePage';
 
@@ -25,7 +24,6 @@ export default function App() {
         <Route path="/gcai" element={<GcaiPage />} />
         <Route path="/mmc" element={<MmcPage />} />
         <Route path="/ninety" element={<NinetyPage />} />
-        <Route path="/ramp" element={<RampPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
