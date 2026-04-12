@@ -15,7 +15,7 @@ export default function MmcPage() {
       <LLSummary heading={mmc.summaryHeading} rows={mmc.summaryRows} />
       <LLHowIWork howIWork={mmc.howIWork} />
       <AIProjects />
-      <LLSelectedProjects projectIds={['roadrunner', 'arenalabs', 'navigation', 'myperks']} />
+      <LLSelectedProjects projectIds={['designhub', 'roadrunner', 'arenalabs', 'navigation', 'myperks']} />
       <LLCloseCta closeText={mmc.close} from="mmc" />
     </div>
   );
