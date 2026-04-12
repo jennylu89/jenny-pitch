@@ -113,7 +113,7 @@ export default function AIProjects() {
                 letterSpacing: 'var(--tracking-h4)',
                 margin: 0,
               }}>
-                One designer shipped a full product in 2 months. Here's how.
+                How I replaced the traditional design pipeline
               </h3>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
