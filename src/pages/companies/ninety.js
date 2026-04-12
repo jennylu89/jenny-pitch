@@ -2,13 +2,13 @@ export const ninety = {
   name: "Ninety",
   role: "Product Designer",
 
-  oneLiner: "10+ years across B2B SaaS, healthcare, and consumer. Research, design systems, and production code — with Figma MCP + Claude Code in my daily workflow.",
+  oneLiner: "AI-first product designer. 10+ years shipping across B2B SaaS, healthcare, and consumer.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
       ask: "End-to-end design — research through production-ready comps",
-      proof: "At Roadrunner, research expanded a 1-page fix into a 4-workstream overhaul — I used data to deprioritize what stakeholders assumed was the problem and refocus on the root cause.",
+      proof: "At Roadrunner, my research proved the brief was wrong — stakeholders wanted a page fix, the data showed a system problem. Expanded scope to a 4-workstream overhaul.",
     },
     {
       ask: "Web + mobile web + mobile native",
@@ -16,19 +16,19 @@ export const ninety = {
     },
     {
       ask: "B2B SaaS — multi-step workflow design",
-      proof: "Roadrunner billing: 4 apps → unified workflow (28 clicks → 3). Giant Eagle nav: restructured IA across two codebases into one.",
+      proof: "Roadrunner: unified 4 fragmented apps into one billing workflow (28 clicks → 3). Giant Eagle: restructured navigation IA so it matched how customers actually shop, not how the org was structured.",
     },
     {
       ask: "Figma + AI tooling — Figma MCP, Claude Code, Pencil.dev",
-      proof: "50+ component Figma library at Roadrunner. Use Figma MCP to extract tokens, Claude Code to generate production components, Pencil.dev for rapid concept validation.",
+      proof: "50+ component Figma library at Roadrunner. Daily workflow: Figma MCP extracts tokens, Claude Code generates production React, Pencil.dev validates concepts — what used to take weeks takes days.",
     },
     {
       ask: "Design systems",
-      proof: "50+ components at Roadrunner. Consolidated 4 systems into 1 React-based Design Hub at Arena Labs.",
+      proof: "Built and maintained design systems at Roadrunner and Arena Labs. At Arena, consolidated Figma, Notion, Storybook, and PDFs into one living design hub.",
     },
     {
       ask: "User research — evidence-based decisions",
-      proof: "Qualtrics, UserTesting, mixed-method studies at Giant Eagle. Led research that shaped product strategy, not just UI.",
+      proof: "Led mixed-method research at Giant Eagle — Qualtrics surveys, UserTesting, analytics — that shaped product strategy and business decisions, not just screens.",
     },
   ],
 
@@ -40,7 +40,7 @@ export const ninety = {
       {
         icon: "fa-solid fa-wand-magic-sparkles",
         heading: "Figma MCP + Claude Code",
-        body: "Not a nice-to-have for me — it's my daily workflow. Extract tokens from Figma, generate production React components, ship faster than traditional handoff.",
+        body: "My daily workflow. Extract tokens from Figma, generate production React components, and ship — no traditional handoff pipeline.",
       },
       {
         icon: "fa-solid fa-arrows-spin",
@@ -55,11 +55,11 @@ export const ninety = {
       {
         icon: "fa-solid fa-people-group",
         heading: "Pod-ready IC",
-        body: "Worked in cross-functional pods at Giant Eagle — GetGo pod, Scan Pay & Go pod — partnering directly with PMs and engineers. Also managed 5+ designers. Comfortable leading or collaborating as an equal.",
+        body: "Worked in cross-functional pods at Giant Eagle — GetGo, Scan Pay & Go — partnering with PMs and engineers daily. Also managed 5+ designers.",
       },
     ],
   },
 
   close:
-    "I'd love to talk about what I can bring to a pod at Ninety.",
+    "I'd love to talk about owning a pod at Ninety.",
 };
