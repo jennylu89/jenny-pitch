@@ -55,6 +55,7 @@ export default function Hero() {
         background: 'linear-gradient(180deg, rgba(139,120,255,0.35) 0%, rgba(139,120,255,0.18) 40%, rgba(139,120,255,0.06) 65%, var(--bg) 90%)',
         paddingTop: 'calc(56px + 80px)',
         paddingBottom: '80px',
+        minHeight: '90vh',
         overflow: 'hidden',
         position: 'relative',
       }}

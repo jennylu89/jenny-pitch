@@ -15,6 +15,8 @@ export default function LLPageHero({ companyName, role, oneLiner }) {
       <div className="resume-hero-inner" style={{
         maxWidth: '1000px', margin: '0 auto',
         padding: 'var(--space-144) var(--space-48) var(--space-96)',
+        minHeight: '90vh',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
         position: 'relative', zIndex: 1,
       }}>
         <div style={{
