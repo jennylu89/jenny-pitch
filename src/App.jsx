@@ -9,6 +9,7 @@ import GcaiPage from './pages/companies/GcaiPage';
 import MmcPage from './pages/companies/MmcPage';
 import NinetyPage from './pages/companies/NinetyPage';
 import KovoPage from './pages/companies/KovoPage';
+import ContraPage from './pages/companies/ContraPage';
 import DesignPage from './pages/DesignPage';
 import ResumePage from './pages/ResumePage';
 
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/mmc" element={<MmcPage />} />
         <Route path="/ninety" element={<NinetyPage />} />
         <Route path="/kovo" element={<KovoPage />} />
+        <Route path="/contra" element={<ContraPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
