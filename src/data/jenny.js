@@ -302,7 +302,7 @@ export const jenny = {
     {
       id: "hema",
       company: "Hema Designs",
-      role: "Founder · Senior Product Designer",
+      role: "Fractional Product Designer",
       type: "Freelance",
       period: "2023–Present",
       location: "Pittsburgh, PA",
