@@ -2,7 +2,7 @@ export const companycam = {
   name: "CompanyCam",
   role: "Senior Product Designer — Camera Team",
 
-  oneLiner: "Mobile + hardware + field. 10+ years designing hardware-integrated mobile — Scan Pay & Go (phone + web + in-store scanners) at Giant Eagle, Strive (clinicians in 12-hr shifts) at Arena Labs. AI-native workflow.",
+  oneLiner: "Mobile + hardware + field. Shipped Scan Pay & Go at Giant Eagle across phone, web, and in-store scanner hardware. Built Arena Labs Strive for clinicians mid-shift. 10+ years in product design, AI-native workflow.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
