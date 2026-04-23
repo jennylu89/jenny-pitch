@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import PitchPage from './pages/template/PitchPage';
 import TaxbitPage from './pages/companies/TaxbitPage';
 import RakutenPage from './pages/companies/RakutenPage';
@@ -9,6 +11,7 @@ import GcaiPage from './pages/companies/GcaiPage';
 import MmcPage from './pages/companies/MmcPage';
 import NinetyPage from './pages/companies/NinetyPage';
 import CarefeedPage from './pages/companies/CarefeedPage';
+import CompanyCamPage from './pages/companies/CompanyCamPage';
 import KovoPage from './pages/companies/KovoPage';
 import ContraPage from './pages/companies/ContraPage';
 import DesignPage from './pages/DesignPage';
@@ -28,11 +31,14 @@ export default function App() {
         <Route path="/mmc" element={<MmcPage />} />
         <Route path="/ninety" element={<NinetyPage />} />
         <Route path="/carefeed" element={<CarefeedPage />} />
+        <Route path="/companycam" element={<CompanyCamPage />} />
         <Route path="/kovo" element={<KovoPage />} />
         <Route path="/contra" element={<ContraPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
+      <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
