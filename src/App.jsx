@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import PitchPage from './pages/template/PitchPage';
 import TaxbitPage from './pages/companies/TaxbitPage';
+import TaxwirePage from './pages/companies/TaxwirePage';
 import RakutenPage from './pages/companies/RakutenPage';
 import RyuPage from './pages/companies/RyuPage';
 import StudioPage from './pages/companies/StudioPage';
@@ -23,6 +24,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<PitchPage />} />
         <Route path="/taxbit" element={<TaxbitPage />} />
+        <Route path="/taxwire" element={<TaxwirePage />} />
         <Route path="/rakuten" element={<RakutenPage />} />
         <Route path="/ryu" element={<RyuPage />} />
         <Route path="/studio" element={<StudioPage />} />

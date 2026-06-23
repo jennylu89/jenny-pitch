@@ -4,9 +4,9 @@
     {
       "name": "jenny-pitch",
       "runtimeExecutable": "/opt/homebrew/bin/npx",
-      "runtimeArgs": ["vite", "--port", "5173"],
-      "cwd": "/Users/jenny/Documents/Claude/jenny/jenny-pitch",
-      "port": 5173
+      "runtimeArgs": ["vite", "--port", "5184"],
+      "cwd": "/Users/jenny/Documents/Claude/personal/jenny-pitch",
+      "port": 5184
     }
   ]
 }
