@@ -104,7 +104,7 @@ export default function Hero() {
             border: '1px solid var(--glass-stroke)', borderRadius: '100px',
             padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
           }}>
-            Freelance Product Designer
+            Founding Product Designer
           </div>
 
           {/* Headline */}
@@ -117,7 +117,7 @@ export default function Hero() {
             color: 'var(--text)',
             margin: 0,
           }}>
-            Research to design to code. One person, no handoff.
+            I turn complex, regulated workflows into software people trust.
           </h1>
 
           {/* Subtitle */}
@@ -125,7 +125,7 @@ export default function Hero() {
             color: 'var(--muted)', fontSize: 'var(--type-lead)',
             lineHeight: 'var(--leading-body)', margin: 0, maxWidth: '480px',
           }}>
-            AI-first design process. I run my own studies, own the design system, and ship production React with Claude Code.
+            Research to production React, one person, no handoff. Twice the first or only designer in the building, where I ran the studies, owned the system, and wrote the PRDs.
           </p>
 
           {/* CTA */}

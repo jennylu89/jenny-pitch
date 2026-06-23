@@ -6,7 +6,7 @@ const cards = [
     href: 'https://cal.com/jennylu98/30',
     external: true,
     label: 'Book a 30-min call',
-    body: "Come with questions — I'll come with answers. No prep needed.",
+    body: "Come with questions. I'll come with answers. No prep needed.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2"/>
