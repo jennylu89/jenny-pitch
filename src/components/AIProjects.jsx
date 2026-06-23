@@ -9,11 +9,11 @@ const processSteps = [
 ];
 
 const shifts = [
-  { num: '01', label: 'More time thinking, less time pushing pixels', detail: 'I iterate on solutions, not fidelity. The system handles the polish — I focus on whether I\'m solving the right problem.' },
-  { num: '02', label: 'Research synthesis in hours, not days', detail: 'Survey data, interview transcripts, analytics — synthesized in Claude. More time finding insights, less time formatting.' },
+  { num: '01', label: 'More time thinking, less time pushing pixels', detail: 'I iterate on solutions, not fidelity. The system handles the polish, I focus on whether I\'m solving the right problem.' },
+  { num: '02', label: 'Research synthesis in hours, not days', detail: 'Survey data, interview transcripts, analytics, synthesized in Claude. More time finding insights, less time formatting.' },
   { num: '03', label: 'Stakeholders react to real products', detail: 'Functional prototypes, not static screens. Feedback shifts from "move this left" to "does this actually work?"' },
   { num: '04', label: 'Engineers copy code, not interpret specs', detail: 'Tokens go from Figma MCP to production. The conversation shifts to "does this interaction solve the problem."' },
-  { num: '05', label: 'Holistic decisions from one source of truth', detail: 'Research, prototype, design system, usability issues — all in one place. I see patterns I\'d miss across 4 separate tools.' },
+  { num: '05', label: 'Holistic decisions from one source of truth', detail: 'Research, prototype, design system, usability issues, all in one place. I see patterns I\'d miss across 4 separate tools.' },
 ];
 
 export default function AIProjects() {
