@@ -35,7 +35,7 @@ export const taxwire = {
     {
       ask: "A deep sense of ownership: proactive, biased toward action, don't need to be told what to do",
       proof:
-        "Twice I've been the only designer in the building. First hire at Giant Eagle, sole designer at Arena Labs. When Roadrunner handed me a one-page brief, I didn't just fill it: I made the case for the bigger bet and got leadership to fund it. I don't wait to be told what the work is.",
+        "Twice the only designer in the building (first hire at Giant Eagle, sole designer at Arena Labs), and a design manager at Giant Eagle and Roadrunner where I wrote PRDs, shaped product strategy, and owned roadmap calls. When Roadrunner handed me a one-page brief, I made the case for the bigger bet and got leadership to fund it. I don't wait to be told what the work is.",
     },
     {
       ask: "Bonus: experience designing for regulated or trust-critical domains (finance, healthcare, tax)",
@@ -72,7 +72,7 @@ export const taxwire = {
       {
         icon: "fa-light fa-flag-pennant",
         heading: "Founding-mode ownership",
-        body: "First designer at Giant Eagle, sole designer at Arena Labs. Blank canvas, no playbook. Proactive across product, brand, and research. I build the playbook instead of waiting for one.",
+        body: "First designer at Giant Eagle, sole designer at Arena Labs, and a design manager at both Giant Eagle and Roadrunner. Blank canvas, no playbook. I own product strategy, PRDs, research, design system, brand, and the production code. I build the playbook instead of waiting for one.",
       },
     ],
   },
