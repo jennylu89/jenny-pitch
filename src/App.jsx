@@ -15,6 +15,8 @@ import CarefeedPage from './pages/companies/CarefeedPage';
 import CompanyCamPage from './pages/companies/CompanyCamPage';
 import KovoPage from './pages/companies/KovoPage';
 import ContraPage from './pages/companies/ContraPage';
+import GlacianPage from './pages/companies/GlacianPage';
+import PhilipsPage from './pages/companies/PhilipsPage';
 import DesignPage from './pages/DesignPage';
 import ResumePage from './pages/ResumePage';
 
@@ -36,6 +38,8 @@ export default function App() {
         <Route path="/companycam" element={<CompanyCamPage />} />
         <Route path="/kovo" element={<KovoPage />} />
         <Route path="/contra" element={<ContraPage />} />
+        <Route path="/glacian" element={<GlacianPage />} />
+        <Route path="/philips" element={<PhilipsPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
