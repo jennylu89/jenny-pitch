@@ -3,19 +3,19 @@ export const philips = {
   role: "UX Designer, Sleep and Respiratory Care Experience Design",
 
   oneLiner:
-    "Sleep and Respiratory Care is medical software that patients and clinicians have to trust, and it has to be designed fast. That is the work I did at Arena Labs: a healthcare app for surgeons, ER nurses, and trauma teams, prototyped with AI coding tools for roughly 10x faster iteration. 10+ years in product design, Pittsburgh-based, on-site ready.",
+    "Sleep and Respiratory Care is medical software clinicians and patients have to trust, and it has to ship fast. That is the work I did at Arena Labs: a hospital app for surgeons, ER nurses, and trauma teams, where I took research to a testable React build in days, not a sprint, using AI coding tools. 10+ years in product design, Pittsburgh-based, a short drive from Murrysville and ready to be on-site.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
       ask: "AI and prototyping fluency, building functional prototypes with AI coding tools rapidly",
       proof:
-        "I build functional React prototypes with Claude Code and Figma MCP instead of static mocks. At Arena Labs I turned research into testable prototypes roughly 10x faster, and built the team's entire design hub this way. The AI tools most teams are just adopting, I already work in every day.",
+        "I build functional React prototypes with Claude Code and Figma's AI tooling. At Arena Labs that turned research into a testable build in days instead of a sprint, and I built the team's entire design hub the same way. The AI prototyping tools most teams are just adopting, I already work in daily.",
     },
     {
       ask: "Healthcare and clinical experience design",
       proof:
-        "Arena Labs Strive, a B2B2C healthcare app sold to hospitals for surgeons, ER nurses, and trauma teams. Earlier, member-facing UI for regulated health insurance at Highmark. I design for clinical settings where trust and clarity are not optional.",
+        "Arena Labs Strive is a clinician wellbeing app sold to hospitals, used by surgeons, ER nurses, and trauma teams under real cognitive load. Earlier, member-facing UI for regulated health insurance at Highmark. The transferable hard part is trustworthy data UIs for high-stakes clinical users, where clarity is not optional.",
     },
     {
       ask: "Connected device and multi-surface experiences",
@@ -30,7 +30,12 @@ export const philips = {
     {
       ask: "Research and usability testing",
       proof:
-        "I run studies end to end. At Arena I logged 97 usability issues and turned them into a redesigned, time-aware home. At Giant Eagle I ran one of the company's first UserTesting studies, lifting curbside conversion 15%.",
+        "I run usability studies end to end. At Arena I ran a structured evaluation, logged 97 use issues prioritized by severity, and turned them into a redesigned home screen built around the clinician's critical tasks. At Giant Eagle I ran one of the company's first UserTesting studies, lifting curbside conversion 15%.",
+    },
+    {
+      ask: "Regulated, safety-critical medical-device context",
+      proof:
+        "An honest gap and how I close it: I have not yet worked inside FDA Class II or IEC 62366 formal process, but I design with the discipline behind it. Risk-aware usability, a focus on critical tasks, and the unhappy path: alarm states, error prevention, and degraded connectivity, tested with clinicians before anything ships.",
     },
     {
       ask: "Prototype and ship with engineers",
@@ -40,7 +45,7 @@ export const philips = {
     {
       ask: "Ownership and product judgment at a senior level",
       proof:
-        "Two-time design manager (Giant Eagle Sr. Manager, Roadrunner Sr. Product Design Manager). I write PRDs, own roadmap calls, and reframe briefs. At Roadrunner I turned a one-page request into a 4-workstream platform overhaul and won leadership buy-in.",
+        "Two-time design manager (Giant Eagle Sr. Manager, Roadrunner Sr. Product Design Manager). I write PRDs, own roadmap calls, and reshape briefs. At Roadrunner I turned a one-page request into a 4-workstream platform overhaul and won leadership buy-in.",
     },
   ],
 
@@ -57,7 +62,7 @@ export const philips = {
       {
         icon: "fa-light fa-robot",
         heading: "AI-native prototyping",
-        body: "Claude Code and Figma MCP. Functional React prototypes instead of static mocks. The cycle that takes most teams a sprint takes me days.",
+        body: "Claude Code and Figma's AI tooling. Functional React prototypes instead of static mocks, built fast so we can test with clinicians early. Speed serves validation, it does not replace it.",
       },
       {
         icon: "fa-light fa-microscope",
@@ -67,11 +72,11 @@ export const philips = {
       {
         icon: "fa-light fa-location-dot",
         heading: "Local and on-site ready",
-        body: "Pittsburgh-based and ready to be on-site in Murrysville. No relocation, no remote-coordination friction, in the room with the Sleep and Respiratory Care team.",
+        body: "Pittsburgh-based and a short drive from Murrysville. No relocation, no remote-coordination friction, in the room with the Sleep and Respiratory Care team.",
       },
     ],
   },
 
   close:
-    "Sleep and Respiratory Care is exactly the work I want to do: medical software people trust, designed and prototyped fast. I am local and ready to be on-site. I would love to talk.",
+    "This is the job I want: medical software people rely on, shipped at the speed the team needs, by someone already fluent in the AI prototyping tools the role asks for. I am a short drive from Murrysville and ready on day one. I would love to talk.",
 };
