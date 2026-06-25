@@ -3,49 +3,49 @@ export const philips = {
   role: "UX Designer, Sleep and Respiratory Care Experience Design",
 
   oneLiner:
-    "Sleep and Respiratory Care is medical software clinicians and patients have to trust, and it has to ship fast. That is the work I did at Arena Labs: a hospital app for surgeons, ER nurses, and trauma teams, where I took research to a testable React build in days, not a sprint, using AI coding tools. 10+ years in product design, Pittsburgh-based, a short drive from Murrysville and ready to be on-site.",
+    "Medical software people have to trust, shipped fast. I did exactly that at Arena Labs, a hospital app for surgeons, ER nurses, and trauma teams, built in functional React with AI coding tools. A short drive from Murrysville, ready to be on-site.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
-      ask: "AI and prototyping fluency, building functional prototypes with AI coding tools rapidly",
+      ask: "AI and prototyping fluency (vibe coding), with AI coding tools as a natural part of your workflow",
       proof:
-        "I build functional React prototypes with Claude Code and Figma's AI tooling. At Arena Labs that turned research into a testable build in days instead of a sprint, and I built the team's entire design hub the same way. The AI prototyping tools most teams are just adopting, I already work in daily.",
+        "Vibe coding is how I work, daily. I move from concept to a working React prototype in hours and days, not weeks, with Claude Code and Figma, and I built Arena Labs' entire design hub this way. The AI tools most teams are just adopting, I already build in.",
     },
     {
-      ask: "Healthcare and clinical experience design",
+      ask: "You build, not just spec. You translate designs into functional prototypes",
       proof:
-        "Arena Labs Strive is a clinician wellbeing app sold to hospitals, used by surgeons, ER nurses, and trauma teams under real cognitive load. Earlier, member-facing UI for regulated health insurance at Highmark. The transferable hard part is trustworthy data UIs for high-stakes clinical users, where clarity is not optional.",
+        "I started as a front-end developer and still write the React that ships. Engineers get working components, not redlines, so what I design is technically feasible from day one. Production React with Claude Code, Tailwind, and Vite.",
     },
     {
-      ask: "Connected device and multi-surface experiences",
+      ask: "Customer and patient experience in healthcare",
       proof:
-        "Scan Pay and Go at Giant Eagle coordinated the phone, in-store POS, and inventory into one experience across mobile, web, and in-store hardware. Arena Strive pairs an app with real-time wearable signals. I design the handoffs between device, app, and data, not just screens.",
+        "Arena Labs Strive is a clinician wellbeing app used by surgeons, ER nurses, and trauma teams. At Highmark I designed patient-facing UI for regulated health insurance, used by members making real health decisions. I design for both sides of care.",
     },
     {
-      ask: "Design systems and high craft",
+      ask: "Systems thinking, holding the full product architecture in your head",
       proof:
-        "Built a 50+ component design system with engineering at Roadrunner, and set WCAG accessibility standards adopted org-wide at Giant Eagle. Medical UI lives and dies on consistency and accessibility.",
+        "Built a 50+ component design system with engineering at Roadrunner, and unified two Giant Eagle codebases into one task-based information architecture. I define the role of each product within the broader ecosystem, and set WCAG standards adopted org-wide.",
     },
     {
-      ask: "Research and usability testing",
+      ask: "Enterprise software and mobile devices (4+ years)",
       proof:
-        "I run usability studies end to end. At Arena I ran a structured evaluation, logged 97 use issues prioritized by severity, and turned them into a redesigned home screen built around the clinician's critical tasks. At Giant Eagle I ran one of the company's first UserTesting studies, lifting curbside conversion 15%.",
+        "10+ years across enterprise platforms (Roadrunner billing, Highmark insurance, Giant Eagle internal tools) and mobile (Scan Pay and Go, myPerks for 4M members). Arena Strive pairs an app with real-time wearable signals across device, app, and data.",
     },
     {
-      ask: "Regulated, safety-critical medical-device context",
+      ask: "Analysis of user needs and storytelling to stakeholders and senior management",
       proof:
-        "An honest gap and how I close it: I have not yet worked inside FDA Class II or IEC 62366 formal process, but I design with the discipline behind it. Risk-aware usability, a focus on critical tasks, and the unhappy path: alarm states, error prevention, and degraded connectivity, tested with clinicians before anything ships.",
+        "I lead user-needs analysis and run studies end to end. At Arena I logged 97 use issues, prioritized by severity, and redesigned the home around the clinician's critical tasks. At Roadrunner I told the story that won senior leadership buy-in to expand a one-page brief into a 4-workstream overhaul.",
     },
     {
-      ask: "Prototype and ship with engineers",
+      ask: "Safe, intuitive user experiences, working with R&D in agile teams",
       proof:
-        "I started as a front-end developer and still write the React that ships. Engineers get working components, not redlines. Production React with Claude Code, Tailwind, and Vite.",
+        "I work in agile cycles with R&D and engineers, and I design for the unhappy path, not just the happy one: alarm states, error prevention, and degraded connectivity, tested with the people who use it before it ships. New to formal FDA Class II process, fluent in the discipline behind it.",
     },
     {
-      ask: "Ownership and product judgment at a senior level",
+      ask: "Cross-functional partnership, including Marketing, and a consistent brand experience",
       proof:
-        "Two-time design manager (Giant Eagle Sr. Manager, Roadrunner Sr. Product Design Manager). I write PRDs, own roadmap calls, and reshape briefs. At Roadrunner I turned a one-page request into a 4-workstream platform overhaul and won leadership buy-in.",
+        "At Jointley I partner with marketing and founders on brand and go-to-market, not just product UI. I move fast inside cross-functional teams and design to a shared language, which is exactly how a consistent Philips Design experience gets defined, built, and verified.",
     },
   ],
 
@@ -55,14 +55,14 @@ export const philips = {
     subheading: "",
     tiles: [
       {
-        icon: "fa-light fa-heart-pulse",
-        heading: "Built for clinical trust",
-        body: "I design medical and regulated experiences where a wrong tap has real consequences. Clarity, accessibility, and trust come first, for clinicians mid-shift and patients at home.",
+        icon: "fa-light fa-robot",
+        heading: "Vibe coding, daily",
+        body: "Claude Code and Figma. Functional React prototypes instead of static mocks, concept to working build in hours and days. Speed serves validation, it does not replace it.",
       },
       {
-        icon: "fa-light fa-robot",
-        heading: "AI-native prototyping",
-        body: "Claude Code and Figma's AI tooling. Functional React prototypes instead of static mocks, built fast so we can test with clinicians early. Speed serves validation, it does not replace it.",
+        icon: "fa-light fa-heart-pulse",
+        heading: "Built for clinical trust",
+        body: "I design medical experiences where a wrong tap has real consequences. Clarity, accessibility, and safety come first, for clinicians mid-shift and patients at home.",
       },
       {
         icon: "fa-light fa-microscope",
@@ -78,5 +78,5 @@ export const philips = {
   },
 
   close:
-    "This is the job I want: medical software people rely on, shipped at the speed the team needs, by someone already fluent in the AI prototyping tools the role asks for. I am a short drive from Murrysville and ready on day one. I would love to talk.",
+    "This is the job I want: medical software people rely on, shipped at the speed the team needs, by someone already fluent in the AI prototyping tools the role calls for. A short drive from Murrysville, ready on day one. I would love to talk.",
 };
