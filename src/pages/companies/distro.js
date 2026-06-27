@@ -3,7 +3,7 @@ export const distro = {
   role: "Product UX Lead",
 
   oneLiner:
-    "I turn a business idea into requirements, prototype it in React with AI, validate it with users, and ship. Solo, embedded with seed and Series A founders, since before AI-built production code was common. Part-time isn't a compromise here: owning the whole loop is how I work best.",
+    "I turn an idea into a validated, shipped product, mostly solo and with AI. That loop is your whole job description, and it's how I've worked for two years.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
