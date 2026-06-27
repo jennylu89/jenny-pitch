@@ -10,7 +10,7 @@ export const distro = {
     {
       ask: "5+ years in product management, design, or UX, working independently with minimal direction",
       proof:
-        "10+ years across B2B SaaS, fintech, internal tools, and consumer at scale, twice the first or only designer in the building. As a fractional partner to Seed and Series A founders I own the whole loop solo: research, design, and production code, no one assigning me tasks. Minimal direction is the only way I have worked for the last two years.",
+        "10+ years across B2B SaaS, fintech, internal tools, and consumer at scale, twice the first or only designer in the building. As a fractional partner to Seed and Series A founders, I own the whole loop solo, research to production code, with no one assigning me tasks.",
     },
     {
       ask: "Convert business ideas into product requirements and execution roadmaps",
@@ -25,7 +25,7 @@ export const distro = {
     {
       ask: "Prototype via AI platforms and craft effective prompts across ChatGPT, Claude, Gemini, and Cursor",
       proof:
-        "This is home turf. I have shipped AI-generated production React for 2+ years, before it was common. At Arena Labs I built a Claude Code prototyping workflow for 10x faster iteration, and an AI Design Hub that took screens from 4 hours to 20 minutes. I build my own AI tooling, not just consume it. This page is React I wrote and deployed myself.",
+        "Home turf. At Arena Labs my Claude Code workflow took a screen from 4 hours to 20 minutes, and I have shipped AI-generated production React for 2+ years, before it was common. I prompt across Claude, ChatGPT, Gemini, and Cursor, and build my own tooling, not just consume it. This page is React I wrote and deployed myself.",
     },
     {
       ask: "Validate product assumptions through user research",
@@ -66,8 +66,8 @@ export const distro = {
       },
       {
         icon: "fa-light fa-bolt",
-        heading: "Built for fractional",
-        body: "I thrive embedded part-time with founders who need senior judgment, not a full-time hire. Minimal direction, high output, and a clear paper trail so the team always knows why each call was made.",
+        heading: "Embedded, not outsourced",
+        body: "I work like a teammate, not a vendor: protected weekly hours, founder-direct, context held across the whole product. You get senior judgment and fast output without the six-month search or full-time comp.",
       },
     ],
   },
