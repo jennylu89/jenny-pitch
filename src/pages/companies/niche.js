@@ -2,13 +2,13 @@ export const niche = {
   name: "Niche",
   role: "Sr. Product Designer",
 
-  oneLiner: "Niche's next chapter is AI-generated, personalized messaging that schools and families trust. That is the exact work I do: I prototype AI-native product in Claude Code, and I make data-heavy, multi-audience experiences feel simple.",
+  oneLiner: "Niche's next chapter is AI-generated messaging that schools and families actually trust. That is the work I do now: I prototype AI-native products in Claude Code, and I make data-heavy, multi-audience experiences feel simple.",
 
   summaryHeading: "What you're looking for, and where I've done it",
   summaryRows: [
     {
       ask: "Prototype with Claude Code and design-to-code tools like Paper.design",
-      proof: "At Arena Labs Strive I built an AI prototyping workflow in Claude Code, functional React instead of static mocks, and cut iteration from weeks to days (10x faster). It is my daily workflow, not a tool I would be learning on your time.",
+      proof: "At Arena Labs Strive I built an AI prototyping workflow in Claude Code, functional React instead of static mocks, and cut iteration from weeks to days (10x faster). Claude Code is my daily tool today, and I move into design-to-code tools like Paper.design fast.",
     },
     {
       ask: "Design AI-generated, personalized messaging across web and mobile",
@@ -16,7 +16,7 @@ export const niche = {
     },
     {
       ask: "Synthesize data, research insights, business goals, and technical constraints",
-      proof: "I led the myPerks loyalty redesign for 4M members off usability research and analytics (384% spend per member), and reframed a one-page Roadrunner brief into a 4-workstream platform overhaul after a platform-wide study.",
+      proof: "I led the myPerks loyalty redesign for 4M members off usability research and analytics (384% spend per member), balancing two audiences, the members and the business, and reframed a one-page Roadrunner brief into a 4-workstream platform overhaul after a platform-wide study.",
     },
     {
       ask: "Raise design quality through systems thinking and information architecture",
@@ -29,6 +29,10 @@ export const niche = {
     {
       ask: "Ship features for mobile and desktop, fast, with stakeholder feedback",
       proof: "Ex-front-end developer: engineers get working React prototypes, not redlines. I iterate quickly and communicate decisions persuasively to stakeholders.",
+    },
+    {
+      ask: "Cross-functional, agile, and comfortable with ambiguity",
+      proof: "Twice the first or only designer in the building (Giant Eagle, Arena Labs), I built the design function from zero and shipped through real ambiguity, partnering daily across product, engineering, and stakeholders.",
     },
   ],
 
@@ -55,11 +59,11 @@ export const niche = {
       {
         icon: "fa-light fa-location-dot",
         heading: "Local to Pittsburgh",
-        body: "I am in your backyard. Remote-fluent, and able to be in the home office when it matters.",
+        body: "I am already in Pittsburgh: remote-fluent, and able to be in the home office when it matters.",
       },
     ],
   },
 
   close:
-    "Niche helps millions of people find the school that is right for them. I would love to help your team ship the AI-generated, personalized experiences that make that feel effortless. I am local, I prototype in Claude Code today, and I make data-heavy products feel simple. Let's talk.",
+    "Niche helps millions of families find the school that fits. I would love to help your team ship the AI-generated experiences that make that search feel effortless. I prototype in Claude Code today, I work from data, and I am right here in Pittsburgh. Let's talk.",
 };
