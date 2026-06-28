@@ -3,39 +3,39 @@ export const distro = {
   role: "Product UX Lead",
 
   oneLiner:
-    "Distro only works if an employer trusts a shortlist they didn't build. Making complex, AI-driven decisions feel simple enough to act on is the exact work I do, and I prototype it in Claude Code, the way your team already builds.",
+    "Trust in an AI shortlist is a design problem. I specialize in that layer, and I prototype it in Claude Code, the way your team already builds.",
 
   summaryHeading: "What the role needs, and where I've done it",
   summaryRows: [
     {
       ask: "Use AI to rapidly prototype features, workflows, and product concepts",
       proof:
-        "I build functional React prototypes in Claude Code, not static mocks. At Arena Labs I made it my workflow and cut iteration from weeks to days. I would prototype Distro features as testable builds, fast.",
+        "I build functional React prototypes in Claude Code, not static mocks. At Arena Labs, this cut iteration from weeks to days.",
     },
     {
       ask: "Convert business concepts into product requirements and execution",
       proof:
-        "I am a two-time design manager who writes PRDs and owns roadmap. At Roadrunner I reframed a one-page brief into a 4-workstream platform overhaul after the research, and wrote the specs that won leadership buy-in.",
+        "At Roadrunner, I reframed a one-page brief into a 4-workstream platform overhaul, wrote the PRDs, and won leadership buy-in. Two-time design manager who owns roadmap, not just mocks.",
     },
     {
       ask: "Design for a two-sided marketplace (employers and candidates)",
       proof:
-        "I make multi-audience, trust-critical products feel simple: MegPrime Pay, where mainstream renters trusted a flow with KYC and SEC disclosures underneath, and myPerks loyalty for 4M members. Two-sided trust is the work.",
+        "MegPrime Pay: mainstream renters trusted a flow with KYC and SEC disclosures underneath. myPerks: loyalty for 4M members. Both meant making a complex, multi-audience system feel frictionless.",
     },
     {
       ask: "Make the AI's decisions trustworthy enough to act on",
       proof:
-        "Your shortlist is only worth what an employer trusts. I would design the explainable layer: why each candidate ranks where they do, the evidence behind the score, the risks flagged. Trust is a design problem, and it is mine.",
+        "I would design the explainability layer: why each candidate ranks where they do, the evidence behind the score, the risks flagged. That is what makes an employer act on a shortlist they didn't build.",
     },
     {
       ask: "AI-assisted development and basic front-end",
       proof:
-        "Ex-front-end developer who still ships production React. Engineers get working prototypes, not redlines. AI-assisted building is already how I work.",
+        "Ex-front-end developer who still ships production React. Engineers get working prototypes, not redlines.",
     },
     {
       ask: "Build product processes, documentation, and foundational practices",
       proof:
-        "Twice the first or only designer in the building, I built the research practice, design system, and docs from zero. A fractional lead does this solo, and I have.",
+        "Twice the first designer in a company, I built the research practice, design system, and docs from zero.",
     },
   ],
 
