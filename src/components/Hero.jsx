@@ -117,7 +117,7 @@ export default function Hero() {
             color: 'var(--text)',
             margin: 0,
           }}>
-            I design it and write the React that ships it.
+            One bill used to take 28 clicks across 4 apps. I got it to 3.
           </h1>
 
           {/* Subtitle */}
@@ -125,7 +125,7 @@ export default function Hero() {
             color: 'var(--muted)', fontSize: 'var(--type-lead)',
             lineHeight: 'var(--leading-body)', margin: 0, maxWidth: '480px',
           }}>
-            Most designers hand engineers a Figma file and a pile of redlines. I hand them a working build. One person, from research to production code, so nothing waits on a handoff.
+            At Roadrunner the brief was one billing page. The research found the real mess. I redesigned the workflow and built the component library with engineering.
           </p>
 
           {/* CTA */}
