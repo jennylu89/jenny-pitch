@@ -3,44 +3,39 @@ export const distro = {
   role: "Product UX Lead",
 
   oneLiner:
-    "I turn an idea into a validated, shipped product, mostly solo and with AI. That loop is your whole job description, and it's how I've worked for two years.",
+    "Distro only works if an employer trusts a shortlist they didn't build. Making complex, AI-driven decisions feel simple enough to act on is the exact work I do, and I prototype it in Claude Code, the way your team already builds.",
 
-  summaryHeading: "What you need. What I've done.",
+  summaryHeading: "What the role needs, and where I've done it",
   summaryRows: [
     {
-      ask: "5+ years in product management, design, or UX, working independently with minimal direction",
+      ask: "Use AI to rapidly prototype features, workflows, and product concepts",
       proof:
-        "10+ years across B2B SaaS, fintech, internal tools, and consumer at scale, twice the first or only designer in the building. As a fractional partner to Seed and Series A founders, I own the whole loop solo, research to production code, with no one assigning me tasks.",
+        "I build functional React prototypes in Claude Code, not static mocks. At Arena Labs I made it my workflow and cut iteration from weeks to days. I would prototype Distro features as testable builds, fast.",
     },
     {
-      ask: "Convert business ideas into product requirements and execution roadmaps",
+      ask: "Convert business concepts into product requirements and execution",
       proof:
-        "At Roadrunner the brief was one billing page. My research found 28 clicks across 4 apps per bill and 75% duplicate re-entry, so I reframed the scope, wrote the PRDs, and brought leadership two options with data. They chose the 4-workstream overhaul. I was a design manager twice over: I shape product strategy and own the roadmap, not just the pixels.",
+        "I am a two-time design manager who writes PRDs and owns roadmap. At Roadrunner I reframed a one-page brief into a 4-workstream platform overhaul after the research, and wrote the specs that won leadership buy-in.",
     },
     {
-      ask: "Design user flows, wireframes, and interfaces with user-centered design",
+      ask: "Design for a two-sided marketplace (employers and candidates)",
       proof:
-        "MegPrime Pay: mainstream renters earning rewards on rent with USDC, KYC, and SEC disclosures underneath. I designed the flow around what the user actually needed to see, a value calculator before signup, and made the technical complexity disappear. Clean flows from messy domains is the muscle I use most.",
+        "I make multi-audience, trust-critical products feel simple: MegPrime Pay, where mainstream renters trusted a flow with KYC and SEC disclosures underneath, and myPerks loyalty for 4M members. Two-sided trust is the work.",
     },
     {
-      ask: "Prototype via AI platforms and craft effective prompts across ChatGPT, Claude, Gemini, and Cursor",
+      ask: "Make the AI's decisions trustworthy enough to act on",
       proof:
-        "Home turf. At Arena Labs my Claude Code workflow took a screen from 4 hours to 20 minutes, and I have shipped AI-generated production React for 2+ years, before it was common. I prompt across Claude, ChatGPT, Gemini, and Cursor, and build my own tooling, not just consume it. This page is React I wrote and deployed myself.",
+        "Your shortlist is only worth what an employer trusts. I would design the explainable layer: why each candidate ranks where they do, the evidence behind the score, the risks flagged. Trust is a design problem, and it is mine.",
     },
     {
-      ask: "Validate product assumptions through user research",
+      ask: "AI-assisted development and basic front-end",
       proof:
-        "I run my own studies. One of Giant Eagle's first UserTesting studies lifted Curbside conversion 15.27%. At Arena I logged 97 usability issues that reframed the roadmap. At Roadrunner a platform-wide usability study is what turned one page into the right scope. I find what teams are too close to see.",
+        "Ex-front-end developer who still ships production React. Engineers get working prototypes, not redlines. AI-assisted building is already how I work.",
     },
     {
-      ask: "Establish product processes, documentation standards, and bring strong organization",
+      ask: "Build product processes, documentation, and foundational practices",
       proof:
-        "I built the UX practice at Giant Eagle from zero as the first hire: research process, a 50+ component design system, and WCAG standards adopted org-wide. Setting up the process, the documentation, and the system at the same time as the product is the job I have done twice.",
-    },
-    {
-      ask: "Bonus: AI-assisted product dev, startup background, no-code/low-code, basic front-end, SaaS or marketplace launch",
-      proof:
-        "Ex-front-end developer who still ships production React, Tailwind, and Vite, so engineers get working prototypes, not redlines. My whole recent practice is embedded 0-to-1 work with Seed and Series A startups. A developer marketplace is a new domain for me, but a two-sided market lives or dies on trust and matching between both sides, and that is the exact problem I solved at MegPrime Pay: two parties, regulated money movement, and a flow each side had to trust on the first try.",
+        "Twice the first or only designer in the building, I built the research practice, design system, and docs from zero. A fractional lead does this solo, and I have.",
     },
   ],
 
@@ -51,27 +46,27 @@ export const distro = {
     tiles: [
       {
         icon: "fa-light fa-robot",
-        heading: "AI-native, quality first",
-        body: "Claude Code, Cursor, functional React prototypes instead of static mocks. The hard part of AI isn't speed, it's output quality, so I pair velocity with taste.",
+        heading: "Trust is the product",
+        body: "Distro hinges on people acting on an AI decision. I design the explainability that makes that feel safe.",
       },
       {
         icon: "fa-light fa-compass",
-        heading: "Owns the whole loop",
-        body: "First or only designer twice over. I run the research, write the PRDs, design the flows, and ship the UI. Early framing through polished outcome, in one set of hands, no handoff gaps.",
+        heading: "AI-native, with judgment",
+        body: "I prototype in Claude Code to move fast, then bring research and taste so speed never costs quality.",
       },
       {
         icon: "fa-light fa-layer-group",
-        heading: "Complexity made simple",
-        body: "My career is taking something genuinely complex (crypto compliance, four-app billing, insurance) and making it feel obvious, without dumbing it down for the people who know the details.",
+        heading: "I design to the number",
+        body: "Research to shipped, tied to time-to-hire, activation, and hours saved. Not aesthetics for their own sake.",
       },
       {
         icon: "fa-light fa-bolt",
-        heading: "Embedded, not outsourced",
-        body: "I work like a teammate, not a vendor: protected weekly hours, founder-direct, context held across the whole product. You get senior judgment and fast output without the six-month search or full-time comp.",
+        heading: "Fractional, scoped to ROI",
+        body: "Senior, AI-native firepower without full-time overhead, focused on what moves the marketplace.",
       },
     ],
   },
 
   close:
-    "You need one person who can take an idea from a sentence to a shipped product without much hand-holding. I have done exactly that as the first or only designer, twice over. I'd love to talk about being your first design hire.",
+    "Distro's bet is that employers will trust an AI shortlist enough to hire from it, at scale, across Vensure's customers. That trust is a design problem, and it is the one I am best at. I would love to build it with you, and I will bring a prototype to the conversation.",
 };

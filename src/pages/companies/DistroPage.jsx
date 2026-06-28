@@ -15,7 +15,7 @@ export default function DistroPage() {
       <LLSummary heading={distro.summaryHeading} rows={distro.summaryRows} />
       <LLHowIWork howIWork={distro.howIWork} />
       <AIProjects />
-      <LLSelectedProjects projectIds={['designhub', 'arenalabs', 'roadrunner', 'megprime']} />
+      <LLSelectedProjects projectIds={['megprime', 'arenalabs', 'designhub', 'myperks']} />
       <LLCloseCta closeText={distro.close} from="distro" />
     </div>
   );
