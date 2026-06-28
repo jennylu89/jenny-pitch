@@ -60,7 +60,7 @@ export default function Hero() {
         position: 'relative',
       }}
     >
-      {/* GSAP spotlight — follows mouse */}
+      {/* GSAP spotlight, follows mouse */}
       <div ref={spotlightRef} style={{
         position: 'absolute', zIndex: 0, pointerEvents: 'none',
         width: '900px', height: '900px',
@@ -117,7 +117,7 @@ export default function Hero() {
             color: 'var(--text)',
             margin: 0,
           }}>
-            I turn complex, regulated workflows into software people trust.
+            I design it and write the React that ships it.
           </h1>
 
           {/* Subtitle */}
@@ -125,7 +125,7 @@ export default function Hero() {
             color: 'var(--muted)', fontSize: 'var(--type-lead)',
             lineHeight: 'var(--leading-body)', margin: 0, maxWidth: '480px',
           }}>
-            Research to production React, one person, no handoff. Twice the first or only designer in the building, where I ran the studies, owned the system, and wrote the PRDs.
+            Most designers hand engineers a Figma file and a pile of redlines. I hand them a working build. One person, from research to production code, so nothing waits on a handoff.
           </p>
 
           {/* CTA */}

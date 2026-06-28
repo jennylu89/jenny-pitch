@@ -1,61 +1,12 @@
 import { useRef, useState, useEffect } from 'react';
 import { jenny } from '../data/jenny';
 
-const cards = [
-  {
-    href: 'https://cal.com/jennylu98/30',
-    external: true,
-    label: 'Book a 30-min call',
-    body: "Come with questions. I'll come with answers. No prep needed.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2"/>
-        <line x1="16" y1="2" x2="16" y2="6"/>
-        <line x1="8" y1="2" x2="8" y2="6"/>
-        <line x1="3" y1="10" x2="21" y2="10"/>
-      </svg>
-    ),
-  },
-  {
-    href: `https://${jenny.contact.linkedin}`,
-    external: true,
-    label: 'Connect on LinkedIn',
-    body: "Full work history, endorsements, and recommendations from people I've shipped with.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-        <rect x="2" y="9" width="4" height="12"/>
-        <circle cx="4" cy="4" r="2"/>
-      </svg>
-    ),
-  },
-  {
-    href: '/resume',
-    external: false,
-    label: 'View resume',
-    body: 'Case studies, experience, skills, and the tools I actually use every day.',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="16" y1="13" x2="8" y2="13"/>
-        <line x1="16" y1="17" x2="8" y2="17"/>
-        <polyline points="10 9 9 9 8 9"/>
-      </svg>
-    ),
-  },
-];
-
-
 export default function ContactSection() {
   const headlineRef = useRef(null);
   const [headlineVisible, setHeadlineVisible] = useState(false);
 
-  const cardRefs = useRef([]);
-  const [cardsVisible, setCardsVisible] = useState([false, false, false]);
-
-  const logosRef = useRef(null);
-  const [logosVisible, setLogosVisible] = useState(false);
+  const ctaRef = useRef(null);
+  const [ctaVisible, setCtaVisible] = useState(false);
 
   useEffect(() => {
     const makeObserver = (ref, setter) => {
@@ -71,23 +22,8 @@ export default function ContactSection() {
 
     const cleanups = [
       makeObserver(headlineRef, setHeadlineVisible),
-      makeObserver(logosRef, setLogosVisible),
+      makeObserver(ctaRef, setCtaVisible),
     ];
-
-    cardRefs.current.forEach((el, i) => {
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([e]) => {
-          if (e.isIntersecting) {
-            setCardsVisible(prev => { const next = [...prev]; next[i] = true; return next; });
-            obs.disconnect();
-          }
-        },
-        { threshold: 0.1 }
-      );
-      obs.observe(el);
-      cleanups.push(() => obs.disconnect());
-    });
 
     return () => cleanups.forEach(c => c());
   }, []);
@@ -111,7 +47,7 @@ export default function ContactSection() {
         pointerEvents: 'none',
       }} />
 
-      {/* ── Headline block — sits at top on light-to-mid bg ── */}
+      {/* Headline block: sits at top on light-to-mid bg */}
       <div
         ref={headlineRef}
         className="section-pad"
@@ -128,7 +64,7 @@ export default function ContactSection() {
           filter: headlineVisible ? 'blur(0px)' : 'blur(12px)',
         }}
       >
-        {/* Availability badge — glass style */}
+        {/* Availability badge, glass style */}
         <div style={{
           display: 'inline-flex',
           alignItems: 'center',
@@ -177,65 +113,76 @@ export default function ContactSection() {
         </p>
       </div>
 
-      {/* ── Cards — mid-section, gradient is deepening ── */}
-      <div className="contact-grid section-pad" style={{
-        maxWidth: '1000px',
-        margin: '0 auto',
-        padding: '0 48px',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '16px',
-        marginBottom: '80px',
-        position: 'relative',
-        zIndex: 2,
-      }}>
-        {cards.map((card, i) => (
+      {/* ── Single primary CTA, with demoted text links ── */}
+      <div
+        ref={ctaRef}
+        className="section-pad"
+        style={{
+          maxWidth: '1000px',
+          margin: '0 auto',
+          padding: '0 48px',
+          marginBottom: '80px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px',
+          position: 'relative',
+          zIndex: 2,
+          transition: 'opacity 0.7s ease',
+          opacity: ctaVisible ? 1 : 0,
+        }}
+      >
+        {/* Primary */}
+        <a
+          className="btn-hover"
+          href="https://cal.com/jennylu98/30"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            backgroundColor: 'var(--btn-primary-bg)',
+            color: 'var(--btn-primary-fg)',
+            fontSize: 'var(--type-body)',
+            fontWeight: 'var(--weight-medium)',
+            padding: '0 var(--btn-x-padding)',
+            height: 'var(--btn-height)',
+            borderRadius: 'var(--btn-radius)',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+          Schedule a call
+        </a>
+
+        {/* Demoted text links */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <a
-            className="btn-hover"
-            key={card.label}
-            ref={el => { cardRefs.current[i] = el; }}
-            href={card.href}
-            target={card.external ? '_blank' : undefined}
-            rel={card.external ? 'noopener noreferrer' : undefined}
+            href={`https://${jenny.contact.linkedin}`}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              backgroundColor: 'var(--glass-bg)',
-              backdropFilter: 'blur(var(--glass-blur))',
-              WebkitBackdropFilter: 'blur(var(--glass-blur))',
-              border: '1px solid var(--glass-stroke)',
-              borderRadius: 'var(--radius)',
-              padding: '32px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '24px',
-              textDecoration: 'none',
-              boxShadow: 'var(--shadow-glass)',
-              opacity: cardsVisible[i] ? 1 : 0,
+              color: 'var(--muted)',
+              fontSize: 'var(--type-small)',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
             }}
           >
-            <div style={{ color: 'var(--accent)' }}>
-              {card.icon}
-            </div>
-            <div>
-              <div style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'var(--type-body)',
-                fontWeight: 'var(--weight-semibold)',
-                color: 'var(--text)',
-                marginBottom: '8px',
-                lineHeight: 'var(--leading-snug)',
-              }}>
-                {card.label}
-              </div>
-              <div style={{
-                color: 'var(--muted)',
-                fontSize: 'var(--type-small)',
-                lineHeight: 'var(--leading-body)',
-              }}>
-                {card.body}
-              </div>
-            </div>
+            LinkedIn
           </a>
-        ))}
+          <a
+            href="/resume"
+            style={{
+              color: 'var(--muted)',
+              fontSize: 'var(--type-small)',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+            }}
+          >
+            Resume
+          </a>
+        </div>
       </div>
 
 

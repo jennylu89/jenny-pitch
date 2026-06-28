@@ -156,6 +156,34 @@ export default function Differentiators({ differentiators }) {
           ))}
         </div>
 
+        {/* Workflow caption */}
+        {!isJdMode && (
+          <p style={{
+            color: 'var(--muted)',
+            fontSize: 'var(--type-small)',
+            lineHeight: 'var(--leading-body)',
+            margin: '20px 0 0',
+            maxWidth: '720px',
+          }}>
+            How I work fast: Claude Design to explore, Figma to polish, Claude Code for the production React.
+          </p>
+        )}
+
+        {/* Who for */}
+        {!isJdMode && (
+          <p style={{
+            color: 'var(--text)',
+            fontSize: 'var(--type-body)',
+            lineHeight: 'var(--leading-body)',
+            margin: '36px 0 0',
+            maxWidth: '720px',
+            paddingTop: '28px',
+            borderTop: '1px solid var(--border)',
+          }}>
+            For founders who'd rather hire one designer who ships code than a designer plus a front-end dev plus the lag between them. Not for teams that want a pure visual designer to hand off and walk away.
+          </p>
+        )}
+
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 export const jenny = {
   name: "Jenny Lu",
-  title: "Freelance Product Designer",
+  title: "Founding Product Designer",
   tagline: "Senior design thinking.\nHands on the work.\nNo management layer in between.",
   summary:
     "First UX hire at Giant Eagle. Built the practice, the system, and the product, simultaneously, no playbook. I embed with teams and own the full loop from research to code.",
@@ -11,39 +11,39 @@ export const jenny = {
   },
   differentiators: [
     {
-      id: "zero-to-one",
+      id: "working-code",
       number: "01",
-      title: "0→1 experience",
+      title: "Working code, not redlines",
       description:
-        "First designer at Giant Eagle, sole designer at Arena Labs. Blank canvas to shipped product, no playbook.",
+        "I was a front-end developer first. Engineers get a production React build they can ship, not a spec to rebuild.",
     },
     {
-      id: "research-ship",
+      id: "research-to-ship",
       number: "02",
-      title: "Research → design → ship",
+      title: "One hire covers research to ship",
       description:
-        "One person, no handoff gaps. I run my own studies, own the design system, and ship production code.",
+        "Twice the first or only designer in the building. I ran the research, the design system, and the production UI, no playbook, no handoff.",
     },
     {
-      id: "business-first",
+      id: "ai-speed",
       number: "03",
-      title: "Business-first design",
+      title: "I ship at AI speed",
       description:
-        "Every design decision tied to conversion, retention, or revenue.",
+        "At Arena I built a Claude Code workflow and cut iteration time 10x. Design Hub went from 4 hours a screen to 20 minutes.",
     },
     {
-      id: "vibe-coding",
+      id: "moves-the-number",
       number: "04",
-      title: "Vibe coding",
+      title: "Design that moves the number",
       description:
-        "I build production React with Claude Code. Design and implementation in the same hands.",
+        "myPerks: 384% spend per member across 4M members. Roadrunner: 28 clicks per bill down to 3.",
     },
     {
-      id: "ai-first",
+      id: "regulated-safe",
       number: "05",
-      title: "Figma MCP + Claude Code",
+      title: "I make regulated products feel safe",
       description:
-        "My daily workflow. Extract tokens from Figma, generate production React components, ship faster than traditional handoff.",
+        "For MegPrime I hid the crypto, KYC, and SEC steps behind a flow renters understood. Same for Highmark's insurance UI.",
     },
   ],
   selectedProjects: [
