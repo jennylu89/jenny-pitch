@@ -3,7 +3,7 @@ export const ngrok = {
   role: "Senior Product Designer",
 
   oneLiner:
-    "ngrok collapses a dozen networking tools into one gateway. The design job is making that much power feel simple to developers who forgive nothing. That is the work I have done for 10+ years, and I ship the React myself.",
+    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For ngrok, that means making deep technical complexity feel obvious to developers.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [

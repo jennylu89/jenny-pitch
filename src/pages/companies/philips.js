@@ -3,7 +3,7 @@ export const philips = {
   role: "UX Designer, Sleep and Respiratory Care Experience Design",
 
   oneLiner:
-    "Medical software people have to trust, shipped fast. I did exactly that at Arena Labs, a hospital app for surgeons, ER nurses, and trauma teams, built in functional React with AI coding tools. A short drive from Murrysville, ready to be on-site.",
+    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Philips, that means healthcare UX that clinicians and patients rely on.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [

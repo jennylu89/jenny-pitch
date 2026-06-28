@@ -3,7 +3,7 @@ export const glacian = {
   role: "Founding UX/UI Designer, Physical AI Infrastructure",
 
   oneLiner:
-    "Glacian puts a mission-critical system in front of operators who decide in seconds with real infrastructure on the line. Making a system like that clear enough to trust at the worst moment is my work: I did it at Roadrunner (a 28-click, 4-app operations platform rebuilt to 3) and Arena Labs (reliability-critical device UI for trauma teams). I am a designer who builds, shipping production React with Claude Code, 10+ years in, based in Pittsburgh.",
+    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Glacian, that means making operational complexity feel trustworthy.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [

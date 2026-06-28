@@ -3,7 +3,7 @@ export const distro = {
   role: "Product UX Lead",
 
   oneLiner:
-    "Trust in an AI shortlist is a design problem. I specialize in that layer, and I prototype it in Claude Code, the way your team already builds.",
+    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Distro, that means designing the layer that makes employers trust your AI shortlist enough to hire from it.",
 
   summaryHeading: "What the role needs, and where I've done it",
   summaryRows: [

@@ -3,7 +3,7 @@ export const taxwire = {
   role: "Founding Product Designer",
 
   oneLiner:
-    "Taxwire's whole job is making indirect-tax complexity feel simple. I've spent 10+ years doing exactly that, most recently at MegPrime Pay, where mainstream renters paid with crypto and never once saw the KYC, licensing, or compliance machinery underneath. I turn regulated, high-stakes workflows into software people actually understand, from research to production React.",
+    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Taxwire, that means making indirect-tax complexity feel simple and trustworthy.",
 
   summaryHeading: "What you're looking for. What I've shipped.",
   summaryRows: [

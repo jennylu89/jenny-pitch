@@ -2,7 +2,7 @@ export const niche = {
   name: "Niche",
   role: "Sr. Product Designer",
 
-  oneLiner: "Niche's next chapter is AI-generated messaging that schools and families actually trust. That is the work I do now: I prototype AI-native products in Claude Code, and I make data-heavy, multi-audience experiences feel simple.",
+  oneLiner: "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Niche, that means AI-generated messaging that schools and families actually trust.",
 
   summaryHeading: "What you're looking for, and where I've done it",
   summaryRows: [
