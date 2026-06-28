@@ -3,7 +3,7 @@ export const glacian = {
   role: "Founding UX/UI Designer, Physical AI Infrastructure",
 
   oneLiner:
-    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Glacian, that means making operational complexity feel trustworthy.",
+    "I'm a product designer. I take confusing products and make them simple and easy to trust. I build them in real code, and I use AI to do it fast. For Glacian: I make complex operations feel simple and safe.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [

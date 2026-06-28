@@ -3,7 +3,7 @@ export const philips = {
   role: "UX Designer, Sleep and Respiratory Care Experience Design",
 
   oneLiner:
-    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Philips, that means healthcare UX that clinicians and patients rely on.",
+    "I'm a product designer. I take confusing products and make them simple and easy to trust. I build them in real code, and I use AI to do it fast. For Philips: health apps that nurses and patients can count on.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [

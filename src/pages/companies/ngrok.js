@@ -3,7 +3,7 @@ export const ngrok = {
   role: "Senior Product Designer",
 
   oneLiner:
-    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For ngrok, that means making deep technical complexity feel obvious to developers.",
+    "I'm a product designer. I take confusing products and make them simple and easy to trust. I build them in real code, and I use AI to do it fast. For ngrok: I make hard tech feel easy for developers.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [

@@ -3,7 +3,7 @@ export const taxwire = {
   role: "Founding Product Designer",
 
   oneLiner:
-    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Taxwire, that means making indirect-tax complexity feel simple and trustworthy.",
+    "I'm a product designer. I take confusing products and make them simple and easy to trust. I build them in real code, and I use AI to do it fast. For Taxwire: I make hard tax rules feel simple.",
 
   summaryHeading: "What you're looking for. What I've shipped.",
   summaryRows: [

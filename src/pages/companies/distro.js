@@ -3,39 +3,39 @@ export const distro = {
   role: "Product UX Lead",
 
   oneLiner:
-    "I'm a product designer who turns complex products into something people trust, and I ship the React myself. AI-native, I design with AI and for AI. For Distro, that means designing the layer that makes employers trust your AI shortlist enough to hire from it.",
+    "I'm a product designer. I take confusing products and make them simple and easy to trust. I build them in real code, and I use AI to do it fast. For Distro: I help people trust the AI's picks enough to hire them.",
 
   summaryHeading: "What the role needs, and where I've done it",
   summaryRows: [
     {
       ask: "Use AI to rapidly prototype features, workflows, and product concepts",
       proof:
-        "I build functional React prototypes in Claude Code, not static mocks. At Arena Labs, this cut iteration from weeks to days.",
+        "I build real, working screens in code with Claude Code, not flat mockups. At Arena, that turned weeks into days.",
     },
     {
       ask: "Convert business concepts into product requirements and execution",
       proof:
-        "At Roadrunner, I reframed a one-page brief into a 4-workstream platform overhaul, wrote the PRDs, and won leadership buy-in. Two-time design manager who owns roadmap, not just mocks.",
+        "At Roadrunner I turned a one-page ask into a full plan, wrote the specs, and got the team to back it. I have led design teams twice.",
     },
     {
       ask: "Design for a two-sided marketplace (employers and candidates)",
       proof:
-        "MegPrime Pay: mainstream renters trusted a flow with KYC and SEC disclosures underneath. myPerks: loyalty for 4M members. Both meant making a complex, multi-audience system feel frictionless.",
+        "I make products that two very different groups both trust. MegPrime hid the hard money and legal parts so renters just felt safe. myPerks served 4 million shoppers.",
     },
     {
       ask: "Make the AI's decisions trustworthy enough to act on",
       proof:
-        "I would design the explainability layer: why each candidate ranks where they do, the evidence behind the score, the risks flagged. That is what makes an employer act on a shortlist they didn't build.",
+        "Your list is only worth what an employer trusts. I show them why each person ranked where they did, the proof behind it, and any risks. That is what makes them hit hire.",
     },
     {
       ask: "AI-assisted development and basic front-end",
       proof:
-        "Ex-front-end developer who still ships production React. Engineers get working prototypes, not redlines.",
+        "I used to be a front-end developer, and I still write real React code. Engineers get working screens, not pictures to rebuild.",
     },
     {
       ask: "Build product processes, documentation, and foundational practices",
       proof:
-        "Twice the first designer in a company, I built the research practice, design system, and docs from zero.",
+        "Twice I was the first designer at a company. I set up the research, the design system, and the docs from nothing.",
     },
   ],
 
@@ -46,27 +46,27 @@ export const distro = {
     tiles: [
       {
         icon: "fa-light fa-robot",
-        heading: "Trust is the product",
-        body: "Distro hinges on people acting on an AI decision. I design the explainability that makes that feel safe.",
+        heading: "Make the AI easy to trust",
+        body: "Your product asks people to trust the AI's pick. I design it so they can see why, and feel okay saying yes.",
       },
       {
         icon: "fa-light fa-compass",
-        heading: "AI-native, with judgment",
-        body: "I prototype in Claude Code to move fast, then bring research and taste so speed never costs quality.",
+        heading: "Fast, but careful",
+        body: "I use AI to move fast, then bring research and taste so speed never lowers quality.",
       },
       {
         icon: "fa-light fa-layer-group",
-        heading: "I design to the number",
-        body: "Research to shipped, tied to time-to-hire, activation, and hours saved. Not aesthetics for their own sake.",
+        heading: "I design for the numbers",
+        body: "From idea to shipped, tied to real goals: faster hires, more sign-ups, hours saved. Not just pretty screens.",
       },
       {
         icon: "fa-light fa-bolt",
-        heading: "Fractional, scoped to ROI",
-        body: "Senior, AI-native firepower without full-time overhead, focused on what moves the marketplace.",
+        heading: "Part-time, focused on results",
+        body: "Senior help without a full-time cost, aimed at what actually moves your product.",
       },
     ],
   },
 
   close:
-    "Distro's bet is that employers will trust an AI shortlist enough to hire from it, at scale, across Vensure's customers. That trust is a design problem, and it is the one I am best at. I would love to build it with you, and I will bring a prototype to the conversation.",
+    "Distro is betting that employers will trust an AI list enough to hire from it, across thousands of Vensure's customers. That trust is a design problem, and it is the one I am best at. I will bring a working prototype to our talk.",
 };
