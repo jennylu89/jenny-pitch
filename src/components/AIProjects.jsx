@@ -1,9 +1,8 @@
 import { useRef, useState, useEffect } from 'react';
 
 const processSteps = [
-  { icon: '/tools/figma.svg', label: 'Figma', detail: 'Design system source of truth' },
-  { icon: 'fa-light fa-link', label: 'Figma MCP', detail: 'Extract tokens as structured data', isFA: true },
-  { icon: '/tools/pencil.svg', label: 'Pencil.dev', detail: 'Sketch layouts + talk to Claude' },
+  { icon: 'fa-light fa-wand-magic-sparkles', label: 'Claude Design', detail: 'Ideate fast, explore concepts', isFA: true },
+  { icon: '/tools/figma.svg', label: 'Figma', detail: 'Bring it to visual fidelity' },
   { icon: 'fa-light fa-code', label: 'Claude Code', detail: 'Generate production React', isFA: true },
   { icon: '/tools/react.svg', label: 'React App', detail: 'Ship from one URL' },
 ];
@@ -12,7 +11,7 @@ const shifts = [
   { num: '01', label: 'More time thinking, less time pushing pixels', detail: 'I iterate on solutions, not fidelity. The system handles the polish, I focus on whether I\'m solving the right problem.' },
   { num: '02', label: 'Research synthesis in hours, not days', detail: 'Survey data, interview transcripts, analytics, synthesized in Claude. More time finding insights, less time formatting.' },
   { num: '03', label: 'Stakeholders react to real products', detail: 'Functional prototypes, not static screens. Feedback shifts from "move this left" to "does this actually work?"' },
-  { num: '04', label: 'Engineers copy code, not interpret specs', detail: 'Tokens go from Figma MCP to production. The conversation shifts to "does this interaction solve the problem."' },
+  { num: '04', label: 'Engineers copy code, not interpret specs', detail: 'I hand off working React, not redlines. The conversation shifts to "does this interaction solve the problem."' },
   { num: '05', label: 'Holistic decisions from one source of truth', detail: 'Research, prototype, design system, usability issues, all in one place. I see patterns I\'d miss across 4 separate tools.' },
 ];
 
