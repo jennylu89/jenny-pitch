@@ -68,5 +68,5 @@ export const distro = {
   },
 
   close:
-    "Distro is betting HR people will hire from an AI list across Vensure's 161,000 customers, self-serve, no human babysitting it. That trust is a design problem, and it is the one I am best at. I will bring a working explainable-shortlist prototype to our talk.",
+    "Trust is the hard part here, not the AI. It's the kind of problem I love, and I'd love to help.",
 };
