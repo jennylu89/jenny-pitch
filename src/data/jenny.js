@@ -3,7 +3,7 @@ export const jenny = {
   title: "Founding Product Designer",
   tagline: "Senior design thinking.\nHands on the work.\nNo management layer in between.",
   summary:
-    "First UX hire at Giant Eagle. Built the practice, the system, and the product, simultaneously, no playbook. I embed with teams and own the full loop from research to code.",
+    "I do my best work before the product is figured out. Twice the first designer in the building, where I built the research practice, the design system, and the production UI at once. I was a front-end developer first, so I still ship the React. Research to code, one person, no handoff.",
   contact: {
     email: "jennylu98@gmail.com",
     linkedin: "linkedin.com/in/jennylu89",
@@ -22,7 +22,7 @@ export const jenny = {
       number: "02",
       title: "One hire covers research to ship",
       description:
-        "Twice the first or only designer in the building. I ran the research, the design system, and the production UI, no playbook, no handoff.",
+        "Customer interviews → design → production React. One person. No handoffs. I've twice been the first or only designer in the building, so nothing gets lost between roles.",
     },
     {
       id: "ai-speed",
@@ -402,7 +402,7 @@ export const jenny = {
       company: "Frosty Cone",
       period: "2023–Present",
       location: "Pittsburgh, PA",
-      description: "Co-own and operate an ice cream business, managing operations, hiring, vendor relationships, brand identity, and marketing strategy.",
+      description: "Co-own and run an ice cream shop. I own a real P&L, so I know what one wrong bet costs.",
     },
   ],
 
