@@ -171,17 +171,32 @@ export default function Differentiators({ differentiators }) {
 
         {/* Who for */}
         {!isJdMode && (
-          <p style={{
-            color: 'var(--text)',
-            fontSize: 'var(--type-body)',
-            lineHeight: 'var(--leading-body)',
+          <div style={{
             margin: '36px 0 0',
             maxWidth: '720px',
             paddingTop: '28px',
             borderTop: '1px solid var(--border)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '18px',
           }}>
-            For founders who'd rather hire one designer who ships code than a designer plus a front-end dev plus the lag between them. Not for teams that want a pure visual designer to hand off and walk away.
-          </p>
+            <p style={{
+              color: 'var(--text)',
+              fontSize: 'var(--type-body)',
+              lineHeight: 'var(--leading-body)',
+              margin: 0,
+            }}>
+              The founders I do my best work with have a strong vision but are still searching for product-market fit. They test their assumptions, talk to customers, and treat design as part of product strategy, not decoration.
+            </p>
+            <p style={{
+              color: 'var(--text)',
+              fontSize: 'var(--type-body)',
+              lineHeight: 'var(--leading-body)',
+              margin: 0,
+            }}>
+              For founders who'd rather hire one designer who ships code than a designer plus a front-end dev plus the lag between them. Not for teams that want a pure visual designer to hand off and walk away.
+            </p>
+          </div>
         )}
 
       </div>

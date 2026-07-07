@@ -22,7 +22,7 @@
 
   /* Text */
   --text: #272727;        /* Workhorse dark */
-  --muted: rgba(39,39,39,0.5);  /* Workhorse: dark at 50% */
+  --muted: rgba(39,39,39,0.62);  /* darkened from 0.5 for WCAG AA at body sizes */
 
   /* Accent */
   --accent: #8B78FF;      /* purple — primary action */

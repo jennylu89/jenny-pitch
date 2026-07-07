@@ -86,7 +86,7 @@ export default function ContactSection() {
             display: 'inline-block',
           }} />
           <span style={{ color: 'var(--text)', fontSize: 'var(--type-small)', fontWeight: 'var(--weight-medium)' }}>
-            Available for Q2 2026 · 1–2 clients
+            Open to 1–2 new clients
           </span>
         </div>
 
@@ -109,7 +109,7 @@ export default function ContactSection() {
           maxWidth: '400px',
           margin: '0 auto 0',
         }}>
-          If the work resonates, let's find out if there's a fit. No prep needed.
+          I also run my own business, so I know the P&L pressure you're under. If this looks like your kind of work, let's talk. No prep needed.
         </p>
       </div>
 

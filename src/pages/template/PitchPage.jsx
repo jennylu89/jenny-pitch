@@ -15,9 +15,9 @@ export default function PitchPage() {
       <main>
         <Hero />
         <Differentiators />
+        <AIProjects />
         <Projects />
         <Testimonials />
-        <AIProjects />
         <ContactSection />
       </main>
       <Footer />

@@ -3,11 +3,11 @@ import gsap from 'gsap';
 
 const stats = [
   { value: '384%', label: 'Spend per member lift', source: 'Giant Eagle · myPerks loyalty redesign' },
-  { value: '142', label: 'Person usability study', source: 'Roadrunner · Billing platform overhaul' },
+  { value: '97', label: 'Usability issues found', source: 'Arena Labs · Strive healthcare app' },
   { value: '50+', label: 'Component design system', source: 'Roadrunner + Arena Labs' },
 ];
 
-const companies = ['Giant Eagle', 'Roadrunner', 'Arena Labs', 'MegPrime'];
+const companies = ['Giant Eagle', 'Roadrunner', 'Arena Labs', 'MegPrime', 'Teleskope'];
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -117,7 +117,7 @@ export default function Hero() {
             color: 'var(--text)',
             margin: 0,
           }}>
-            One bill used to take 28 clicks across 4 apps. I got it to 3.
+            I help founders find the real problem before they build the wrong thing.
           </h1>
 
           {/* Subtitle */}
@@ -125,7 +125,7 @@ export default function Hero() {
             color: 'var(--muted)', fontSize: 'var(--type-lead)',
             lineHeight: 'var(--leading-body)', margin: 0, maxWidth: '480px',
           }}>
-            At Roadrunner the brief was one billing page. The research found the real mess. I redesigned the workflow and built the component library with engineering.
+            I run the research, then I ship the production React myself. No handoff. At Roadrunner the brief was one billing page. I found 28 clicks across 4 apps per bill, and we got it down to 3.
           </p>
 
           {/* CTA */}

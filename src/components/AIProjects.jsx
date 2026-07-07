@@ -12,7 +12,7 @@ const shifts = [
   { num: '02', label: 'Research synthesis in hours, not days', detail: 'Survey data, interview transcripts, analytics, synthesized in Claude. More time finding insights, less time formatting.' },
   { num: '03', label: 'Stakeholders react to real products', detail: 'Functional prototypes, not static screens. Feedback shifts from "move this left" to "does this actually work?"' },
   { num: '04', label: 'Engineers copy code, not interpret specs', detail: 'I hand off working React, not redlines. The conversation shifts to "does this interaction solve the problem."' },
-  { num: '05', label: 'Holistic decisions from one source of truth', detail: 'Research, prototype, design system, usability issues, all in one place. I see patterns I\'d miss across 4 separate tools.' },
+  { num: '05', label: 'Better decisions when everything lives in one place', detail: 'Research, prototype, design system, usability issues, all in one place. I see patterns I\'d miss across 4 separate tools.' },
 ];
 
 export default function AIProjects() {
@@ -75,7 +75,7 @@ export default function AIProjects() {
             margin: '0 auto',
             maxWidth: '650px',
           }}>
-            AI changed how I think, not just how fast I move
+            AI didn't just make me faster. It changed how I think.
           </h2>
         </div>
 
@@ -186,7 +186,7 @@ export default function AIProjects() {
                 lineHeight: 'var(--leading-body)', margin: '0 0 24px', maxWidth: '640px',
                 fontWeight: 'var(--weight-medium)',
               }}>
-                Starting in Claude changed how I think. Less time formatting, more time finding insights. Less time on fidelity, more time on whether I'm solving the right problem.
+                Starting in Claude changed how I think. I spend less time formatting slides and more time on whether I'm even solving the right problem.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {shifts.map((step, i) => (

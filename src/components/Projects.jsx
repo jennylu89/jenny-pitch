@@ -3,8 +3,16 @@ import { jenny } from '../data/jenny';
 import LLCaseStudy from './ll/LLCaseStudy';
 import TextReveal from './TextReveal';
 
+// Homepage order: lead with 0-1 / AI-native / find-the-real-problem work; enterprise-scale studies last.
+const HOME_ORDER = ['roadrunner', 'arenalabs', 'megprime', 'designhub', 'myperks', 'navigation', 'curbside'];
+
 export default function Projects({ projects }) {
-  const displayProjects = projects || jenny.selectedProjects;
+  const displayProjects = projects
+    ? projects
+    : [...jenny.selectedProjects].sort((a, b) => {
+        const ia = HOME_ORDER.indexOf(a.id); const ib = HOME_ORDER.indexOf(b.id);
+        return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+      });
 
   const headerRef = useRef(null);
   const [headerVisible, setHeaderVisible] = useState(false);
