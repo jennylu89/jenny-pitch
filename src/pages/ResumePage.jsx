@@ -262,7 +262,7 @@ export default function ResumePage() {
                 textAlign: 'center',
                 maxWidth: '521px',
               }}>
-                Research, design systems, and production code across healthcare, fintech, and consumer.
+                I do my best work before the product is figured out. Research, design, and the production React, one person, no handoff.
               </p>
             </div>
 
