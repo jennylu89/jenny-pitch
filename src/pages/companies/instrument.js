@@ -65,5 +65,5 @@ export const instrument = {
   },
 
   close:
-    "Instrument keeps strategy, design, and engineering in one room. That is already how I work, research through to shipped code with no handoff.",
+    "I do the research and the design, and I write the code that ships it. One person, no handoff.",
 };
