@@ -22,6 +22,7 @@ import NgrokConcept from './pages/companies/NgrokConcept';
 import DistroPage from './pages/companies/DistroPage';
 import NichePage from './pages/companies/NichePage';
 import AdamPage from './pages/companies/AdamPage';
+import InstrumentPage from './pages/companies/InstrumentPage';
 import DesignPage from './pages/DesignPage';
 import ResumePage from './pages/ResumePage';
 
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="/distro" element={<DistroPage />} />
         <Route path="/niche" element={<NichePage />} />
         <Route path="/adam" element={<AdamPage />} />
+        <Route path="/instrument" element={<InstrumentPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
