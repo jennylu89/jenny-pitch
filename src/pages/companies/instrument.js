@@ -65,5 +65,5 @@ export const instrument = {
   },
 
   close:
-    "I do the research and the design, and I write the code that ships it. One person, no handoff.",
+    "This is the work I do best. Let's talk.",
 };
