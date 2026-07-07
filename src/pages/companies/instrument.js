@@ -65,5 +65,5 @@ export const instrument = {
   },
 
   close:
-    "Instrument puts strategy, design, and engineering in one room from day one. That is already how I work: research and design straight through to the code that ships, no handoff. On top of that, I bring 10+ years in product design, plus real experience leading teams and working with clients. I'd like to talk about the role.",
+    "Instrument keeps strategy, design, and engineering in one room. That is already how I work, research through to shipped code with no handoff.",
 };
