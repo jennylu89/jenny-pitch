@@ -23,6 +23,7 @@ import DistroPage from './pages/companies/DistroPage';
 import NichePage from './pages/companies/NichePage';
 import AdamPage from './pages/companies/AdamPage';
 import InstrumentPage from './pages/companies/InstrumentPage';
+import DaltonMillsPage from './pages/companies/DaltonMillsPage';
 import DesignPage from './pages/DesignPage';
 import ResumePage from './pages/ResumePage';
 
@@ -52,6 +53,7 @@ export default function App() {
         <Route path="/niche" element={<NichePage />} />
         <Route path="/adam" element={<AdamPage />} />
         <Route path="/instrument" element={<InstrumentPage />} />
+        <Route path="/daltonmills" element={<DaltonMillsPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
