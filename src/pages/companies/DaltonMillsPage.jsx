@@ -15,7 +15,7 @@ export default function DaltonMillsPage() {
       <LLSummary heading={daltonmills.summaryHeading} rows={daltonmills.summaryRows} />
       <LLHowIWork howIWork={daltonmills.howIWork} />
       <AIProjects />
-      <LLSelectedProjects projectIds={['roadrunner', 'arenalabs', 'designhub', 'megprime']} />
+      <LLSelectedProjects projectIds={['roadrunner', 'arenalabs', 'myperks', 'designhub']} />
       <LLCloseCta closeText={daltonmills.close} from="daltonmills" />
     </div>
   );

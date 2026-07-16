@@ -2,7 +2,7 @@ export const daltonmills = {
   name: "Dalton Mills",
   role: "Founding Product Designer",
 
-  oneLiner: "I build the component library in code and I ship it. No handoff. At Roadrunner I built a 50+ component library alongside engineering, and cut a bill from 28 clicks to 3. One person ran the research and wrote the React that shipped it. I also run an ice cream shop, so I know what it costs when your software can't do the one thing you need.",
+  oneLiner: "I've been the first or only designer twice, and I built the practice from nothing both times. I still write the React myself, with Claude Code.",
 
   summaryHeading: "What you're looking for. What I've done.",
   summaryRows: [
