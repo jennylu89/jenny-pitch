@@ -3,7 +3,7 @@ export const jenny = {
   title: "Founding Product Designer",
   tagline: "Senior design thinking.\nHands on the work.\nNo management layer in between.",
   summary:
-    "I do my best work before the product is figured out. Twice the first designer in the building, where I built the research practice, the design system, and the production UI at once. I was a front-end developer first, so I still ship the React. Research to code, one person, no handoff.",
+    "I do my best work before the product is figured out. Twice the first designer in the building, where I built the research practice, the design system, and the production UI at once. I ship my own React with Claude Code, so the thing I design is the thing that ships. Research to code, one person, no handoff.",
   contact: {
     email: "jennylu98@gmail.com",
     linkedin: "linkedin.com/in/jennylu89",
@@ -15,7 +15,7 @@ export const jenny = {
       number: "01",
       title: "Working code, not redlines",
       description:
-        "I was a front-end developer first. Engineers get a production React build they can ship, not a spec to rebuild.",
+        "I ship my own React with Claude Code. Engineers get a production build they can ship, not a spec to rebuild.",
     },
     {
       id: "research-to-ship",
