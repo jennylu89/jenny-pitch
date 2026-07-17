@@ -126,7 +126,7 @@ export default function LLHero({ company }) {
           opacity: visible ? 1 : 0,
           transform: visible ? 'translateY(0)' : 'translateY(16px)',
         }}>
-          Application — {company.role}
+          Application · {company.role}
         </p>
 
         {/* Flex-wrap word block */}
