@@ -3,7 +3,7 @@ import gsap from 'gsap';
 
 const stats = [
   { value: '384%', label: 'Spend per member lift', source: 'Giant Eagle · myPerks loyalty redesign' },
-  { value: '97', label: 'Usability issues found', source: 'Arena Labs · Strive healthcare app' },
+  { value: '10x', label: 'Faster design iteration', source: 'Arena Labs · Claude Code workflow' },
   { value: '50+', label: 'Component design system', source: 'Roadrunner + Arena Labs' },
 ];
 

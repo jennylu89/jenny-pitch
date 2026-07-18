@@ -2,7 +2,7 @@ export const studio = {
   name: "Creative Studio",
   role: "Lead/Senior Product Designer, Freelance",
 
-  subtitle: "20 years building what doesn't exist yet — across consumer products, loyalty, fintech, and healthcare.",
+  subtitle: "10+ years building what doesn't exist yet, across consumer products, loyalty, fintech, and healthcare.",
 
   tags: ["0→1", "Consumer Products", "Design Systems", "Research", "AI Prototyping", "React"],
 
@@ -105,5 +105,5 @@ export const studio = {
   ],
 
   close:
-    "I've spent 20 years building products from nothing — research, design, systems, code. If you need a senior designer who ships, let's talk.",
+    "I've spent 10+ years building products from nothing: research, design, systems, code. If you need a senior designer who ships, let's talk.",
 };

@@ -2,7 +2,7 @@ export const rakuten = {
   name: "Rakuten Rewards",
   role: "Lead Product Designer, Growth",
 
-  subtitle: "20 years turning complexity into clarity — across loyalty, consumer growth, and regulated platforms.",
+  subtitle: "10+ years turning complexity into clarity, across loyalty, consumer growth, and regulated platforms.",
 
   tags: ["Consumer Growth", "Loyalty", "AI Prototyping", "Research", "Design Systems", "React"],
 
