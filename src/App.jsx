@@ -9,6 +9,8 @@ import RyuPage from './pages/companies/RyuPage';
 import StudioPage from './pages/companies/StudioPage';
 import TalkiatryPage from './pages/companies/TalkiatryPage';
 import GcaiPage from './pages/companies/GcaiPage';
+import LearnLuxPage from './pages/companies/LearnLuxPage';
+import GatherAiPage from './pages/companies/GatherAiPage';
 import MmcPage from './pages/companies/MmcPage';
 import NinetyPage from './pages/companies/NinetyPage';
 import CarefeedPage from './pages/companies/CarefeedPage';
@@ -40,6 +42,8 @@ export default function App() {
         <Route path="/studio" element={<StudioPage />} />
         <Route path="/talkiatry" element={<TalkiatryPage />} />
         <Route path="/gcai" element={<GcaiPage />} />
+        <Route path="/learnlux" element={<LearnLuxPage />} />
+        <Route path="/gatherai" element={<GatherAiPage />} />
         <Route path="/mmc" element={<MmcPage />} />
         <Route path="/ninety" element={<NinetyPage />} />
         <Route path="/carefeed" element={<CarefeedPage />} />
