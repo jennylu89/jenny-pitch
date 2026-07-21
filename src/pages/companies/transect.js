@@ -3,7 +3,7 @@ export const transect = {
   role: "Product Designer",
 
   oneLiner:
-    "You turn months of environmental and regulatory due diligence into hours. Making dense, high-stakes work feel fast and safe to trust is the exact work I do, as a sole, AI-native designer who runs the research, then designs and ships the production React.",
+    "You're hiring one designer to own the whole thing, with no team to lean on. That's the job I have right now: the only designer at a healthtech startup, shipping my own React with AI.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
