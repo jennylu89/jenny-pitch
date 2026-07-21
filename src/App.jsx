@@ -27,6 +27,7 @@ import AdamPage from './pages/companies/AdamPage';
 import InstrumentPage from './pages/companies/InstrumentPage';
 import DaltonMillsPage from './pages/companies/DaltonMillsPage';
 import SyntheticFiPage from './pages/companies/SyntheticFiPage';
+import TransectPage from './pages/companies/TransectPage';
 import DesignPage from './pages/DesignPage';
 import ResumePage from './pages/ResumePage';
 
@@ -60,6 +61,7 @@ export default function App() {
         <Route path="/instrument" element={<InstrumentPage />} />
         <Route path="/daltonmills" element={<DaltonMillsPage />} />
         <Route path="/syntheticfi" element={<SyntheticFiPage />} />
+        <Route path="/transect" element={<TransectPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
