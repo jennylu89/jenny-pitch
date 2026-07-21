@@ -15,7 +15,7 @@ export const transect = {
     {
       ask: "Help weave AI into the product and build a culture of AI curiosity",
       proof:
-        "I've shipped AI-native product surfaces for two years. At Arena I built the trust patterns for a high-stakes app: show an insight, not a verdict; constrained generation; a human gate; a confidence signal. I have a clear point of view on where AI actually helps and where it does not.",
+        "I've shipped AI-native product surfaces for two years. At Arena I built the trust patterns for a high-stakes app: show an insight, not a verdict; constrained generation; a human gate; a confidence signal. I know where AI earns its place in a product, and I'll tell you where it just gets in the way.",
     },
     {
       ask: "Design complex, data-dense B2B: dashboards, multi-step workflows, multiple states",
@@ -35,10 +35,10 @@ export const transect = {
     {
       ask: "Understand technical constraints and solve them with engineers",
       proof:
-        "I ship production React with Claude Code, so engineers get a working thing to react to, not redlines. I ask the right technical questions and design for what is buildable, maintainable, and worth the effort.",
+        "I ship production React with Claude Code, so engineers get a working thing to react to, not redlines. I know which questions to ask early, and I design for what can actually get built and kept alive.",
     },
   ],
 
   close:
-    "Sole designer, AI-native, and at my best on dense, high-stakes workflows where the research still changes the plan. Speeding up renewable energy is worth doing, and it is the work I want to do at Transect.",
+    "I'm the sole designer who does her best work on dense, high-stakes tools where the research still changes the plan. Speeding up clean energy is worth doing, and it's the job I want at Transect.",
 };
