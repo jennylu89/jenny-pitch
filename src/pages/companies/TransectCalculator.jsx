@@ -51,6 +51,7 @@ export default function TransectCalculator() {
   const [prefilled, setPrefilled] = useState(true);
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [step, setStep] = useState(1);
 
   function applyIndustry(next) {
     const p = PROFILES[next];
@@ -102,8 +103,10 @@ export default function TransectCalculator() {
         <p>You're spending more time and money than you realize on early site assessments. Watch it add up as you go.</p>
       </div>
 
-      <div className="tc-grid">
-        {/* INPUTS */}
+      <div className={step === 1 ? 'tc-stage tc-stage1' : 'tc-stage tc-stage2'}>
+        <div className="tc-steptag">Step {step} of 2 · {step === 1 ? 'Your numbers' : 'Your savings'}</div>
+
+        {step === 1 && (
         <div className="tc-inputs">
           <section className="tc-step">
             <div className="tc-stephd"><span>1</span> About you</div>
@@ -147,9 +150,18 @@ export default function TransectCalculator() {
             </label>
           </section>
         </div>
+        )}
 
-        {/* RESULTS */}
+        {step === 1 && (
+          <div className="tc-livebar">
+            <div className="tc-livecost">Your cost so far<b>{usd(m.total)}</b><span>per year</span></div>
+            <button className="tc-cta1" onClick={() => setStep(2)}>See what you could save →</button>
+          </div>
+        )}
+
+        {step === 2 && (
         <div className="tc-results">
+          <button className="tc-back" onClick={() => setStep(1)}>← Adjust my numbers</button>
           <div className="tc-sticky">
             <div className="tc-reslabel">What early site assessment costs you</div>
             <div className="tc-big">{usd(m.total)}<span> / year</span></div>
@@ -206,6 +218,7 @@ export default function TransectCalculator() {
             )}
           </div>
         </div>
+        )}
       </div>
     </div>
   );
@@ -231,6 +244,16 @@ const CSS = `
 .tc-hero h1{font-size:40px;font-weight:800;letter-spacing:-.02em;margin:0 0 10px;color:var(--teal);}
 .tc-hero p{font-size:17px;color:var(--muted);margin:0;max-width:620px;line-height:1.5;}
 .tc-grid{max-width:1080px;margin:0 auto;padding:0 28px 60px;display:grid;grid-template-columns:1.25fr 1fr;gap:22px;align-items:start;}
+.tc-stage{max-width:600px;margin:0 auto;padding:0 24px 80px;}
+.tc-steptag{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;}
+.tc-livebar{position:sticky;bottom:16px;margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--teal);color:#fff;border-radius:14px;padding:13px 18px;box-shadow:0 10px 34px rgba(23,51,46,.28);}
+.tc-livecost{font-size:12.5px;color:#a9c4b8;display:flex;align-items:baseline;gap:9px;}
+.tc-livecost b{font-size:23px;color:#fff;font-weight:800;letter-spacing:-.02em;}
+.tc-cta1{background:var(--orange);color:#fff;border:none;font-family:inherit;font-weight:800;font-size:15px;padding:12px 20px;border-radius:10px;cursor:pointer;white-space:nowrap;}
+.tc-cta1:hover{filter:brightness(1.05);}
+.tc-back{background:none;border:none;color:var(--muted);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:0 0 14px;}
+.tc-back:hover{color:var(--teal);}
+.tc-stage2 .tc-sticky{position:static;}
 .tc-inputs{display:flex;flex-direction:column;gap:14px;}
 .tc-step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
 .tc-stephd{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px;color:var(--teal);margin-bottom:15px;}
