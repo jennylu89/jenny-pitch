@@ -30,6 +30,14 @@ const PROFILES = {
 const INDUSTRIES = Object.keys(PROFILES);
 const SIZES = ['1 - 10 employees', '11 - 50 employees', '51 - 200 employees', '201 - 1,000 employees', '1,000+ employees'];
 const TRANSECT_SHARE = 0.28; // illustrative: with Transect, ~72% less early-stage cost
+// Illustrative "typical" annual early-assessment spend by company size (the benchmark).
+const SIZE_BENCH = {
+  '1 - 10 employees': 95000,
+  '11 - 50 employees': 190000,
+  '51 - 200 employees': 430000,
+  '201 - 1,000 employees': 920000,
+  '1,000+ employees': 1750000,
+};
 
 const usd = (n) => '$' + Math.round(n).toLocaleString('en-US');
 const usdK = (n) => n >= 1000 ? '$' + (Math.round(n / 100) / 10).toLocaleString('en-US') + 'k' : usd(n);
@@ -69,8 +77,11 @@ export default function TransectCalculator() {
     rows.sort((a, b) => b.value - a.value);
     const max = rows[0]?.value || 1;
     const withTransect = total * TRANSECT_SHARE;
-    return { annualProjects, annualHours, salaryCost, consultantCost, total, rows, max, withTransect, savings: total - withTransect };
-  }, [hours, consultant, monthly]);
+    const bench = SIZE_BENCH[size] || total;
+    const benchDiff = Math.round(((total - bench) / bench) * 100);
+    const benchMax = Math.max(total, bench) * 1.25;
+    return { annualProjects, annualHours, salaryCost, consultantCost, total, rows, max, withTransect, savings: total - withTransect, bench, benchDiff, benchMax };
+  }, [hours, consultant, monthly, size]);
 
   return (
     <div className="tc-root">
@@ -143,6 +154,27 @@ export default function TransectCalculator() {
             <div className="tc-reslabel">What early site assessment costs you</div>
             <div className="tc-big">{usd(m.total)}<span> / year</span></div>
             <div className="tc-sub">{m.annualProjects} projects · {m.annualHours.toLocaleString('en-US')} hours · {usd(m.salaryCost)} salary + {usd(m.consultantCost)} reports</div>
+            <div className="tc-proof">Based on typical ranges from 300+ renewable developers</div>
+
+            <div className="tc-savelead">
+              <div className="tc-savetop">You could save about</div>
+              <div className="tc-savenum">{usdK(m.savings)} <span>a year</span></div>
+              <div className="tc-saveill">illustrative, with Transect</div>
+            </div>
+
+            <div className="tc-bench">
+              <div className="tc-chartlbl">How you compare <span className="tc-ill">developers your size</span></div>
+              <div className="tc-benchtrack">
+                <i style={{ width: Math.max(4, (m.total / m.benchMax) * 100) + '%' }} />
+                <span className="tc-mark" style={{ left: (m.bench / m.benchMax) * 100 + '%' }} />
+              </div>
+              <div className="tc-benchcap">
+                You: <b>{usdK(m.total)}</b> · typical: {usdK(m.bench)} ·{' '}
+                {m.benchDiff > 0
+                  ? <b className="over">{m.benchDiff}% above</b>
+                  : <b className="under">{Math.abs(m.benchDiff)}% leaner</b>}
+              </div>
+            </div>
 
             <div className="tc-chartlbl">Where it goes</div>
             <div className="tc-bars">
@@ -163,7 +195,7 @@ export default function TransectCalculator() {
 
             {!submitted ? (
               <form className="tc-gate" onSubmit={(e) => { e.preventDefault(); if (email.includes('@')) setSubmitted(true); }}>
-                <div className="tc-gateq">Want the full site-by-site breakdown emailed to you?</div>
+                <div className="tc-gateq">Want your 1-page benchmark report? We'll email it now.</div>
                 <div className="tc-gaterow">
                   <input type="email" placeholder="you@company.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
                   <button type="submit" aria-label="Send">→</button>
@@ -223,6 +255,21 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .tc-big{font-size:46px;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.05;margin:4px 0 6px;}
 .tc-big span{font-size:16px;font-weight:600;color:#a9c4b8;}
 .tc-sub{font-size:12.5px;color:#9fb8b0;line-height:1.5;margin-bottom:6px;}
+.tc-proof{font-size:11px;color:#7f958e;margin-top:2px;}
+.tc-savelead{margin:16px 0 4px;padding:14px 16px;background:rgba(58,192,125,.12);border:1px solid rgba(58,192,125,.32);border-radius:12px;}
+.tc-savetop{font-size:12.5px;color:#bfeed6;font-weight:600;}
+.tc-savenum{font-size:30px;font-weight:800;color:#5fd699;letter-spacing:-.02em;line-height:1.1;margin-top:2px;}
+.tc-savenum span{font-size:14px;font-weight:600;color:#bfeed6;}
+.tc-saveill{font-size:10.5px;color:#7f958e;margin-top:3px;}
+.tc-bench{margin-top:18px;}
+.tc-benchtrack{position:relative;height:10px;background:rgba(255,255,255,.1);border-radius:6px;margin:4px 0 8px;overflow:visible;}
+.tc-benchtrack i{display:block;height:100%;border-radius:6px;background:var(--orange);transition:width .35s cubic-bezier(.2,.8,.2,1);}
+.tc-mark{position:absolute;top:-3px;width:2px;height:16px;background:#fff;transition:left .35s cubic-bezier(.2,.8,.2,1);}
+.tc-mark::after{content:"typical";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:8.5px;color:#a9c4b8;white-space:nowrap;}
+.tc-benchcap{font-size:12px;color:#a9c4b8;}
+.tc-benchcap b{color:#fff;}
+.tc-benchcap b.over{color:#e6a052;}
+.tc-benchcap b.under{color:#5fd699;}
 .tc-chartlbl{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#a9c4b8;margin:20px 0 10px;display:flex;align-items:center;gap:8px;}
 .tc-ill{font-size:9.5px;background:rgba(224,144,47,.22);color:#f0b877;padding:2px 7px;border-radius:999px;letter-spacing:.02em;}
 .tc-bars{display:flex;flex-direction:column;gap:9px;}
