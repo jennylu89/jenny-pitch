@@ -10,46 +10,46 @@ export const arborxr = {
   summaryHeading: "What the job takes. What I've done.",
   summaryRows: [
     {
-      ask: "Research the messy problem behind the brief",
+      ask: "The messy work where the right question isn't yet clear",
       proof:
         "The part that won the argument wasn't the click count. It was that 74.6% of people were in the platform every day and only 32.2% said they knew it well, and 75% of bills were identical to last month. That is not a page problem. I took it to leadership, wrote the PRDs, and got four workstreams instead of one page. Six minutes to send a bill became one.",
     },
     {
-      ask: "Work with no process and no team around you",
+      ask: "You've been a sole or lead designer at a company before",
       // TODO: Series A to B/C experience is a "strong signal," not a must-have, so
       // silence is fine. Add a line only if it is true.
       proof:
         "10+ years in product design, and twice the first or only designer in the building. Both times I built the research practice and the design system while shipping the product. There was no process to lean on and no one to hand off to.",
     },
     {
-      ask: "Dense screens for people who aren't at a desk",
+      ask: "Data dense, complex interfaces for technical users",
       proof:
         "What I have designed is operational software for people who are not at a desk. Arena Strive gets used by surgeons, ER nurses and trauma teams mid-shift. I logged 97 usability issues against my own work on it before anyone had to point them out. The device would be new to me. The dense screen is not.",
     },
     {
-      ask: "Hold the experience bar on work you don't build",
+      ask: "The experience quality bar across what gets built",
       proof:
         "I have been a design manager twice. I write PRDs, argue for scope, and hold the quality bar on work I did not personally build. The 50+ components at Roadrunner shipped because engineering built them with me. I can read the code and prototype my own. I do not need to be the one who commits it.",
     },
     {
-      ask: "A design system that lives in code, not Figma",
+      ask: "It lives in code, not just Figma",
       proof:
         "At Roadrunner I built a 50+ component library with the engineers, in their codebase, not as a Figma file handed over a wall. Every page after it took a third of the time to build. One of their engineers called me a force multiplier.",
     },
     {
-      ask: "Build and prototype, not hand off a spec",
+      ask: "You build. You ship side projects, you prototype things",
       proof:
         "I ship production React with Claude Code. The AI Design Hub is mine end to end: research, system, strategy and prototypes in one place. A screen that used to take 4 hours takes 20 minutes.",
     },
     {
-      ask: "AI-native workflow, and where it falls short",
+      ask: "Opinions about what these tools are good for and where they fall short",
       // TODO: add the real answer to "where does Claude Code actually fail you". Knowing where
       // your own tools fall short is the same trait this page is built on, aimed inward.
       proof:
         "Claude Code, Figma MCP, React and Vite are my daily tools, not a demo I ran once. I know where they stop being useful, which is most of what having an opinion means.",
     },
     {
-      ask: "Generate customer intelligence and get it used",
+      ask: "Customer intelligence: generating it, distributing it",
       // TODO: confirm whether Genway, Marvin or any AI-moderated research tool has been used.
       // If not, one honest sentence saying so beats silence.
       proof:
@@ -61,14 +61,14 @@ export const arborxr = {
       // "we did that on purpose because." Sourced from their public Insights page and their ROI
       // blog post, NOT from inside the app. Do not add a line implying she saw it in the product
       // until Jenny confirms her trial org includes Insights.
-      ask: "Spot what's missing without being asked",
+      ask: "You spot things that aren't working",
       proof:
         "Insights knows the replay rate and the frame rate, and not what the headset cost. Maybe that's on purpose. I can't tell from outside whether it's a deliberate line or just where the data stopped.",
     },
     {
       // Last thing he reads before the CTA. Same trait as row 1 seen from his side, and naming
       // the cost is what makes row 1 believable.
-      ask: "Push back on scope, early and in writing",
+      ask: "License to surface structural rethinks unsolicited",
       proof:
         "It's the same trait, and it costs something. At Roadrunner it turned a one-page fix into four workstreams, and someone above me had to sign off on that. So I do it early and in writing, with the research attached, and the call stays yours. I've been a design manager twice, so I know what it costs when scope moves on you quietly.",
     },
