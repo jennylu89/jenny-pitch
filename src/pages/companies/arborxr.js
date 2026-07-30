@@ -15,45 +15,14 @@ export const arborxr = {
         "The part that won the argument wasn't the click count. It was that 74.6% of people were in the platform every day and only 32.2% said they knew it well, and 75% of bills were identical to last month. That is not a page problem. I took it to leadership, wrote the PRDs, and got four workstreams instead of one page. Six minutes to send a bill became one.",
     },
     {
-      ask: "You've been a sole or lead designer at a company before",
-      // TODO: Series A to B/C experience is a "strong signal," not a must-have, so
-      // silence is fine. Add a line only if it is true.
-      proof:
-        "10+ years in product design, and twice the first or only designer in the building. Both times I built the research practice and the design system while shipping the product. There was no process to lean on and no one to hand off to.",
-    },
-    {
       ask: "Data dense, complex interfaces for technical users",
       proof:
         "What I have designed is operational software for people who are not at a desk. Arena Strive gets used by surgeons, ER nurses and trauma teams mid-shift. I logged 97 usability issues against my own work on it before anyone had to point them out. The device would be new to me. The dense screen is not.",
     },
     {
-      ask: "The experience quality bar across what gets built",
-      proof:
-        "I have been a design manager twice. I write PRDs, argue for scope, and hold the quality bar on work I did not personally build. The 50+ components at Roadrunner shipped because engineering built them with me. I can read the code and prototype my own. I do not need to be the one who commits it.",
-    },
-    {
       ask: "It lives in code, not just Figma",
       proof:
         "At Roadrunner I built a 50+ component library with the engineers, in their codebase, not as a Figma file handed over a wall. Every page after it took a third of the time to build. One of their engineers called me a force multiplier.",
-    },
-    {
-      ask: "You build. You ship side projects, you prototype things",
-      proof:
-        "I ship production React with Claude Code. The AI Design Hub is mine end to end: research, system, strategy and prototypes in one place. A screen that used to take 4 hours takes 20 minutes.",
-    },
-    {
-      ask: "Opinions about what these tools are good for and where they fall short",
-      // TODO: add the real answer to "where does Claude Code actually fail you". Knowing where
-      // your own tools fall short is the same trait this page is built on, aimed inward.
-      proof:
-        "Claude Code, Figma MCP, React and Vite are my daily tools, not a demo I ran once. I know where they stop being useful, which is most of what having an opinion means.",
-    },
-    {
-      ask: "Customer intelligence: generating it, distributing it",
-      // TODO: confirm whether Genway, Marvin or any AI-moderated research tool has been used.
-      // If not, one honest sentence saying so beats silence.
-      proof:
-        "Giant Eagle had no research function when I got there. I introduced user testing, hired the team, and made the business case that got the company to buy Qualtrics. Then other departments started coming to us before they explored a new venture. That is the version of customer intelligence I know how to build: internal demand, not a report nobody reads. Onsite travel works for me. Going to watch the real work is how I run research anyway.",
     },
     {
       // The ROI observation, moved out of the close where it had no room to be answerable.
