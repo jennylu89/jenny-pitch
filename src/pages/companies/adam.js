@@ -32,7 +32,7 @@ export const adam = {
     },
     {
       ask: "Outcome-driven, and own your work without being managed",
-      proof: "Twice I was the first or only designer in the building and built the practice from nothing. Two-time design manager: I write PRDs, shape strategy, and own the roadmap. I also co-own and run a seasonal business, so I know what owning an outcome actually costs.",
+      proof: "Twice I was the first or only designer in the building and built the practice from nothing. Two-time design manager: I write PRDs, shape strategy, and own the roadmap.",
     },
   ],
 

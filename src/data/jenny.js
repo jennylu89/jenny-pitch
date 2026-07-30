@@ -396,15 +396,9 @@ export const jenny = {
     },
   ],
 
-  leadership: [
-    {
-      role: "CEO & Co-owner",
-      company: "Frosty Cone",
-      period: "2023–Present",
-      location: "Pittsburgh, PA",
-      description: "Co-own and run an ice cream shop. I own a real P&L, so I know what one wrong bet costs.",
-    },
-  ],
+  // Leadership section intentionally empty. ResumePage.jsx guards on `jenny.leadership &&`
+  // so nothing renders and no orphan heading is left behind.
+  leadership: [],
 
   testimonials: [
     {

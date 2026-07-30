@@ -269,8 +269,8 @@ export default function ResumePage() {
             {/* Fun fact cards */}
             <div className="resume-facts-row" style={{ display: 'flex', gap: '12px', position: 'relative' }}>
               {[
-                { icon: '🍦', value: 'Ice cream\nshop owner', label: 'Since 2023', rotate: '-2deg' },
-                { icon: '👩🏻‍💻', value: 'Designer\nwho codes', label: 'Ships production React', rotate: '2deg' },
+                { icon: '👩🏻‍💻', value: 'Designer\nwho codes', label: 'Ships production React', rotate: '-2deg' },
+                { icon: '🔎', value: 'Research\nled', label: 'Finds the real problem', rotate: '2deg' },
               ].map((fact, i) => (
                 <div key={i} className="fun-fact-card" style={{
                   width: '303px',
@@ -660,7 +660,7 @@ export default function ResumePage() {
             </div>
             <div style={{ padding: 'var(--space-24)', position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
               <p style={{ fontSize: 'var(--type-body)', color: 'var(--dark-text-muted)', lineHeight: 'var(--leading-body)', margin: '0 0 var(--space-36)' }}>
-                Education and leadership beyond design.
+                Where the training came from.
               </p>
               {jenny.education.map((ed, i) => (
                 <div key={i} style={{ marginBottom: 'var(--space-24)' }}>

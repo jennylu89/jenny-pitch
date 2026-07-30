@@ -11,6 +11,8 @@ import TalkiatryPage from './pages/companies/TalkiatryPage';
 import GcaiPage from './pages/companies/GcaiPage';
 import LearnLuxPage from './pages/companies/LearnLuxPage';
 import GatherAiPage from './pages/companies/GatherAiPage';
+import FilevinePage from './pages/companies/FilevinePage';
+import AllocatePage from './pages/companies/AllocatePage';
 import MmcPage from './pages/companies/MmcPage';
 import NinetyPage from './pages/companies/NinetyPage';
 import CarefeedPage from './pages/companies/CarefeedPage';
@@ -19,14 +21,17 @@ import KovoPage from './pages/companies/KovoPage';
 import ContraPage from './pages/companies/ContraPage';
 import GlacianPage from './pages/companies/GlacianPage';
 import PhilipsPage from './pages/companies/PhilipsPage';
+import StepPage from './pages/companies/StepPage';
 import NgrokPage from './pages/companies/NgrokPage';
 import NgrokConcept from './pages/companies/NgrokConcept';
 import DistroPage from './pages/companies/DistroPage';
 import NichePage from './pages/companies/NichePage';
+import ArborXRPage from './pages/companies/ArborXRPage';
 import AdamPage from './pages/companies/AdamPage';
 import InstrumentPage from './pages/companies/InstrumentPage';
 import DaltonMillsPage from './pages/companies/DaltonMillsPage';
 import SyntheticFiPage from './pages/companies/SyntheticFiPage';
+import TribeAiPage from './pages/companies/TribeAiPage';
 import TransectPage from './pages/companies/TransectPage';
 import TransectCalculator from './pages/companies/TransectCalculator';
 import DesignPage from './pages/DesignPage';
@@ -46,6 +51,8 @@ export default function App() {
         <Route path="/gcai" element={<GcaiPage />} />
         <Route path="/learnlux" element={<LearnLuxPage />} />
         <Route path="/gatherai" element={<GatherAiPage />} />
+        <Route path="/filevine" element={<FilevinePage />} />
+        <Route path="/allocate" element={<AllocatePage />} />
         <Route path="/mmc" element={<MmcPage />} />
         <Route path="/ninety" element={<NinetyPage />} />
         <Route path="/carefeed" element={<CarefeedPage />} />
@@ -54,14 +61,17 @@ export default function App() {
         <Route path="/contra" element={<ContraPage />} />
         <Route path="/glacian" element={<GlacianPage />} />
         <Route path="/philips" element={<PhilipsPage />} />
+        <Route path="/step" element={<StepPage />} />
         <Route path="/ngrok" element={<NgrokPage />} />
         <Route path="/ngrok-concept" element={<NgrokConcept />} />
         <Route path="/distro" element={<DistroPage />} />
         <Route path="/niche" element={<NichePage />} />
+        <Route path="/arborxr" element={<ArborXRPage />} />
         <Route path="/adam" element={<AdamPage />} />
         <Route path="/instrument" element={<InstrumentPage />} />
         <Route path="/daltonmills" element={<DaltonMillsPage />} />
         <Route path="/syntheticfi" element={<SyntheticFiPage />} />
+        <Route path="/tribeai" element={<TribeAiPage />} />
         <Route path="/transect" element={<TransectPage />} />
         <Route path="/transect-calculator" element={<TransectCalculator />} />
         <Route path="/design" element={<DesignPage />} />

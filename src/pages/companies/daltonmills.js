@@ -32,7 +32,7 @@ export const daltonmills = {
     },
     {
       ask: "Field-services and ops-heavy software",
-      proof: "Roadrunner is field-services ops: dispatch and billing for a waste and recycling operation. That is adjacent to the trades, not the trades. What I do have is a real service business of my own, so I know the operator you are building for from the inside.",
+      proof: "Roadrunner is field-services ops: dispatch and billing for a waste and recycling operation. Dispatch, scheduling, billing, crews in trucks. That is adjacent to the trades, not the trades, and I would rather say that than stretch it.",
     },
     {
       ask: "A high bar and thick skin",
@@ -59,11 +59,6 @@ export const daltonmills = {
         icon: "fa-light fa-diagram-project",
         heading: "Open brief into a system",
         body: "Roadrunner handed me one billing page. My research turned it into a 4-workstream overhaul the team built on. I take a vague ask, find the real problem, and shape the thing others build on top of.",
-      },
-      {
-        icon: "fa-light fa-store",
-        heading: "I'm an operator too",
-        body: "I run an ice cream shop, so I own a real P&L. I know what it feels like when your software can't do the one thing you need, and what feeling heard is worth. That is the operator you are building for.",
       },
     ],
   },
