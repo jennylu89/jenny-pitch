@@ -2,7 +2,13 @@ import { useState, useEffect } from 'react';
 import NoiseOverlay from './NoiseOverlay';
 import CtaButton from './CtaButton';
 
-export default function LLPageHero({ companyName, role, oneLiner }) {
+// `headline` is optional and opt-in. Without it every existing page renders exactly as before,
+// with the role as the h1. Pass it and the role moves into the badge, so the biggest type on the
+// page can be the line that actually pulls instead of a job title the reader already knows.
+// `ctaHref` is optional. Without it CtaButton keeps its cal.com default, so every existing page
+// renders exactly as before. Pass it when the label promises something other than booking a call:
+// a button reading "Email me" that opened a Calendly link was a real bug on the Step page.
+export default function LLPageHero({ companyName, role, oneLiner, headline, ctaLabel, ctaHref }) {
   const [headerVisible, setHeaderVisible] = useState(false);
   useEffect(() => { const t = setTimeout(() => setHeaderVisible(true), 80); return () => clearTimeout(t); }, []);
 
@@ -33,16 +39,16 @@ export default function LLPageHero({ companyName, role, oneLiner }) {
             border: '1px solid var(--glass-stroke)', borderRadius: '100px',
             padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
           }}>
-            Jenny Lu × {companyName}
+            Jenny Lu × {companyName}{headline ? ` · ${role}` : ''}
           </div>
 
-          {/* Role as headline */}
+          {/* Headline: the hook when a page supplies one, otherwise the role */}
           <h1 style={{
             fontFamily: 'var(--font-sans)', fontSize: 'var(--type-h1)', fontWeight: 'var(--weight-medium)',
             lineHeight: 'var(--leading-h1)', letterSpacing: 'var(--tracking-h1)',
             color: 'var(--text)', margin: 0, textAlign: 'center',
           }}>
-            {role}
+            {headline || role}
           </h1>
 
           {/* One-liner */}
@@ -56,7 +62,7 @@ export default function LLPageHero({ companyName, role, oneLiner }) {
 
           {/* CTA */}
           <div style={{ marginTop: 'var(--space-12)' }}>
-            <CtaButton />
+            <CtaButton href={ctaHref}>{ctaLabel}</CtaButton>
           </div>
 
           {/* Scroll chevron */}

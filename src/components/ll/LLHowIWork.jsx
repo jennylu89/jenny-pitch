@@ -45,8 +45,11 @@ export default function LLHowIWork({ howIWork }) {
         }}>
           {howIWork.subheading}
         </p>}
+        {/* `columns` is opt-in. Every existing page omits it and keeps the 2-up grid. Pass 1 for a
+            vertical list, which is what an odd number of tiles wants: 3 tiles in a 2-column grid
+            leaves a hole in the bottom right. */}
         <div className="talkiatry-how-grid" style={{
-          display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
+          display: 'grid', gridTemplateColumns: `repeat(${howIWork.columns || 2}, 1fr)`,
           gap: 'var(--space-12)',
         }}>
           {tiles.map((tile, i) => (

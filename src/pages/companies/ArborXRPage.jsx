@@ -11,7 +11,16 @@ export default function ArborXRPage() {
   return (
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
       <Nav from="arborxr" />
-      <LLPageHero companyName={arborxr.name} role={arborxr.role} oneLiner={arborxr.oneLiner} />
+      <LLPageHero
+        companyName={arborxr.name}
+        role={arborxr.role}
+        oneLiner={arborxr.oneLiner}
+        headline={arborxr.heroHeadline}
+        ctaLabel={arborxr.primaryLabel}
+      />
+      {/* Problem block removed 2026-07-30, Jenny's call, after seeing it rendered. The component
+          and its copy still exist if it comes back. Known consequence: nothing on this page now
+          speaks about Jordan except the close. */}
       <LLSummary heading={arborxr.summaryHeading} rows={arborxr.summaryRows} />
       <LLHowIWork howIWork={arborxr.howIWork} />
       <AIProjects />
@@ -20,7 +29,12 @@ export default function ArborXRPage() {
           because it carries the video and answers "show us the raw stuff and how fast you got
           it polished." Arena and myPerks are cited in the ask/proof rows instead. */}
       <LLSelectedProjects projectIds={['roadrunner', 'designhub']} />
-      <LLCloseCta closeText={arborxr.close} from="arborxr" />
+      <LLCloseCta
+        closeText={arborxr.close}
+        from="arborxr"
+        primaryLabel={arborxr.primaryLabel}
+        secondaryLabel={arborxr.secondaryLabel}
+      />
     </div>
   );
 }
