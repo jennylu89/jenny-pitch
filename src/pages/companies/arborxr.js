@@ -40,6 +40,20 @@
 //   · CTA. NOT APPLIED, and not re-asked. Katelyn wants "Put me on a call with your design
 //     engineer." Jenny picked "Book 30 minutes" because it is what the button actually does.
 //
+// ⛔ TWO CONTRACT LINES CLOSED AS "SHIP AS IS", Jenny's call 2026-07-31. Both were graded MISS by
+// the fresh-eyes review. Neither is an oversight now, so do not "fix" either one unprompted.
+//
+//   R10, no work visible until roughly 2,700px down, against his second must-have that talent be
+//   "immediately obvious". Two fixes were offered and both declined: putting one of the three
+//   UNUSED Roadrunner screens (public/roadrunner-screen-1..3.png, referenced nowhere in src/,
+//   verified 2026-07-31) under the hero, and dropping LLPageHero's minHeight below 100vh. She
+//   chose to send tonight rather than iterate again. The assets are still there if this reopens.
+//
+//   R17, the AI-moderated research gap. He names Genway and Marvin twice (jd.md:52, :61). Jenny
+//   has not used them and chose silence over adding a line. It is a "strong signal", not a
+//   must-have, so silence is survivable. Logged because the review's real finding was not the
+//   silence itself, it was that this was the ONE cut on the page carrying no recorded reason.
+//
 // ⚠️ ONE OPEN FACT, AND IT IS NOT LOCAL TO THIS PAGE: the years number. jenny.js contains no
 // "20+ years" string and ResumePage.jsx states no year count at all, so this page says only what
 // the source backs: design since 2016, front end from 2013. But `jenny-offer-site/index.html:503`,
@@ -107,7 +121,7 @@ export const arborxr = {
       ask: "Build and run the research program, so PMs can reach a customer today",
       proof: [
         "I build the research function from zero. Giant Eagle had none when I got there.",
-        "I introduced testing, hired the researchers, and won the Qualtrics budget at a company that had never funded one. They made me Sr. Manager of Customer Research and Experience Design.",
+        "I introduced testing, hired the researchers, and won the Qualtrics budget at a company that had never funded one. They made me Sr. Manager, Customer Research & Experience Design.",
         "One of the first studies was the Curbside page the team had polished for months. They knew it too well to see it. Same-day results: first-timers didn't know whether you paid online or at pickup.",
         "We answered their questions on the page. Conversion up 15.27%. Total events went from 36.5% to 49.7%.",
         "That only worked because we watched real first-timers. I'll fly to your customers for the same reason.",
