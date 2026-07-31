@@ -2,7 +2,12 @@ import { jenny } from '../../data/jenny';
 import LLCaseStudy from './LLCaseStudy';
 import Eyebrow from './Eyebrow';
 
-export default function LLSelectedProjects({ projectIds }) {
+// `hideCompare` is optional and opt-in. Every existing page omits it and keeps its compare strip
+// exactly as before. Pass it when a page has already shown those same before/after images higher
+// up, which is the case on /arborxr: the images were lifted into the hero area so work is visible
+// before 1,500 words of argument, and rendering them again 900px later on a page whose whole
+// argument is craft reads as an accident.
+export default function LLSelectedProjects({ projectIds, hideCompare = false }) {
   const projects = jenny.selectedProjects
     .filter(p => projectIds.includes(p.id))
     .sort((a, b) => projectIds.indexOf(a.id) - projectIds.indexOf(b.id));
@@ -22,7 +27,7 @@ export default function LLSelectedProjects({ projectIds }) {
         </h2>
         <div>
           {projects.map((project, i) => (
-            <LLCaseStudy key={project.id} project={project} index={i} />
+            <LLCaseStudy key={project.id} project={project} index={i} hideCompare={hideCompare} />
           ))}
         </div>
       </div>

@@ -8,7 +8,7 @@ import CtaButton from './CtaButton';
 // `ctaHref` is optional. Without it CtaButton keeps its cal.com default, so every existing page
 // renders exactly as before. Pass it when the label promises something other than booking a call:
 // a button reading "Email me" that opened a Calendly link was a real bug on the Step page.
-export default function LLPageHero({ companyName, role, oneLiner, headline, ctaLabel, ctaHref }) {
+export default function LLPageHero({ companyName, role, oneLiner, headline, ctaLabel, ctaHref, body }) {
   const [headerVisible, setHeaderVisible] = useState(false);
   useEffect(() => { const t = setTimeout(() => setHeaderVisible(true), 80); return () => clearTimeout(t); }, []);
 
@@ -51,14 +51,42 @@ export default function LLPageHero({ companyName, role, oneLiner, headline, ctaL
             {headline || role}
           </h1>
 
-          {/* One-liner */}
-          <p style={{
-            fontFamily: 'var(--font-sans)', fontSize: 'var(--type-lead)', fontWeight: 'var(--weight-medium)',
-            lineHeight: 'var(--leading-body)', color: 'var(--muted)',
-            margin: 0, textAlign: 'center', maxWidth: '600px',
-          }}>
-            {oneLiner}
-          </p>
+          {/* One-liner. Guarded so a page can omit it and run the `body` block alone, which is
+              what Step does: Jenny wanted the hook and the letter reading as one paragraph, not
+              a centered lead sitting above a left-aligned block. */}
+          {oneLiner && (
+            <p style={{
+              fontFamily: 'var(--font-sans)', fontSize: 'var(--type-lead)', fontWeight: 'var(--weight-medium)',
+              lineHeight: 'var(--leading-body)', color: 'var(--muted)',
+              margin: 0, textAlign: 'center', maxWidth: '600px',
+            }}>
+              {oneLiner}
+            </p>
+          )}
+
+          {/* Optional letter paragraphs, rendered under the one-liner and above the CTA.
+              Omit the prop and every existing page renders exactly as before. Added for Step,
+              where the hero had a large empty band under the button and the letter was sitting
+              in its own section below the fold. */}
+          {body && body.length > 0 && (
+            <div style={{
+              display: 'flex', flexDirection: 'column', gap: 'var(--space-18)',
+              maxWidth: '620px', marginTop: 'var(--space-12)', textAlign: 'center',
+            }}>
+              {/* --text, not --muted. This block is the page's primary copy, so it takes
+                  full-strength ink and reads as a step above the one-liner. Not a contrast
+                  workaround: --muted was raised to 0.74 in index.css on 2026-07-30 and now
+                  clears AA on its own. This is a hierarchy choice. */}
+              {body.map((p, i) => (
+                <p key={i} style={{
+                  fontSize: 'var(--type-body)', lineHeight: 'var(--leading-body)',
+                  color: 'var(--text)', margin: 0,
+                }}>
+                  {p}
+                </p>
+              ))}
+            </div>
+          )}
 
           {/* CTA */}
           <div style={{ marginTop: 'var(--space-12)' }}>

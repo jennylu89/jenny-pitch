@@ -22,7 +22,12 @@
 
   /* Text */
   --text: #272727;        /* Workhorse dark */
-  --muted: rgba(39,39,39,0.62);  /* darkened from 0.5 for WCAG AA at body sizes */
+  /* 0.62 was tuned against the flat --bg only, where it measures 4.20:1, already under the
+     4.5:1 AA floor. On the hero gradient (rgba(139,120,255,0.35) over --bg) it drops to 3.62:1.
+     0.72 is the minimum alpha that clears 4.5:1 in BOTH contexts; 0.74 is that plus headroom,
+     since the gradient has several stops and only the worst was measured.
+     Verified 2026-07-30: 6.05:1 on --bg, 4.93:1 on the gradient. */
+  --muted: rgba(39,39,39,0.74);
 
   /* Accent */
   --accent: #8B78FF;      /* purple — primary action */
@@ -108,7 +113,12 @@
   --dark-bg:          #272727;
   --dark-bg-deep:     #1a1a1a;
   --dark-text:        #ffffff;
-  --dark-text-muted:  rgba(255,255,255,0.5);
+  /* Same exercise as --muted, same day. 0.5 passes on flat --dark-bg (4.86:1) but fails on the
+     dark MetricCard surface, rgba(255,255,255,0.08) over --dark-bg, where it measures 4.23:1.
+     That surface is live: LLJdSection alternates dark rows and renders MetricCard dark, so
+     Talkiatry was shipping sub-AA metric labels. 0.55 is the floor; 0.58 adds headroom.
+     Verified 2026-07-30: 6.01:1 on --dark-bg, 5.12:1 on the card. */
+  --dark-text-muted:  rgba(255,255,255,0.58);
   --dark-text-faint:  rgba(255,255,255,0.35);
   --dark-border:      rgba(255,255,255,0.15);
   --dark-dot-inactive: rgba(255,255,255,0.08);

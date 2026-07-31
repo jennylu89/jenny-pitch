@@ -347,6 +347,9 @@ export const jenny = {
       period: "2017–2022",
       location: "Pittsburgh, PA",
       highlights: [
+        // Confirmed by Jenny 2026-07-31. Previously this only lived in profile.md, so pages that
+        // wanted it had to claim something the source file could not back.
+        "Built the user research practice from zero: introduced testing, hired the researchers, and won the Qualtrics budget at a company that had never funded one",
         "Promoted to Sr. Manager leading a distributed design team across the US and India",
         "Redesigned myPerks loyalty for 4M members: 384% spend per member, 212% visit frequency, 53K new households",
         "Directed Scan Pay & Go redesign across mobile apps, websites, and in-store devices",

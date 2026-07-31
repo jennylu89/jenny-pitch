@@ -42,9 +42,27 @@ export default function LLSummary({ heading, rows }) {
                   letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase',
                   color: 'var(--accent)', display: 'block', marginBottom: 'var(--space-6)',
                 }}>My proof</span>
-                <span style={{ fontSize: 'var(--type-body)', color: 'var(--muted)', lineHeight: 'var(--leading-body)' }}>
-                  {row.proof}
-                </span>
+                {/* `proof` accepts a string or an array. A string renders exactly as it always has,
+                    so the other 26 pages are untouched. An array renders one short line per item,
+                    which is the fix for proofs that had grown into 4 and 5 sentence paragraphs with
+                    the numbers buried inside them. Same words, scannable shape. */}
+                {Array.isArray(row.proof) ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
+                    {row.proof.map((line, j) => (
+                      <span key={j} style={{
+                        fontSize: 'var(--type-body)',
+                        color: j === 0 ? 'var(--text)' : 'var(--muted)',
+                        lineHeight: 'var(--leading-body)',
+                      }}>
+                        {line}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <span style={{ fontSize: 'var(--type-body)', color: 'var(--muted)', lineHeight: 'var(--leading-body)' }}>
+                    {row.proof}
+                  </span>
+                )}
               </div>
             </div>
           ))}
