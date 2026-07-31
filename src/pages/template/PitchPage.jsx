@@ -1,5 +1,6 @@
 import Nav from '../../components/Nav';
 import Hero from '../../components/Hero';
+import WhoFor from '../../components/WhoFor';
 import Differentiators from '../../components/Differentiators';
 import Testimonials from '../../components/Testimonials';
 import Projects from '../../components/Projects';
@@ -14,6 +15,7 @@ export default function PitchPage() {
       <Nav />
       <main>
         <Hero />
+        <WhoFor />
         <Differentiators />
         <AIProjects />
         <Projects />

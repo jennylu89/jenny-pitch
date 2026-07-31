@@ -255,7 +255,11 @@ export const arborxr = {
   // closing line of every portfolio page on the internet. This keeps her word and her warmth,
   // makes the match HER assessment, then invites the pushback his own JD says he wants
   // ("knowing when to push back", jd.md:26). 10 words. Asks for nothing. No question mark.
-  close: "Sounds like a match. I'd like to hear where I'm wrong.",
+  // 2026-07-31, Jenny's direct instruction, replacing "Sounds like a match. I'd like to hear where
+  // I'm wrong." Two things were raised once and she chose this anyway, so do not revert it:
+  // "I'd love" is on the Copy Canon kill list, and "if" hands the verdict back to him where the
+  // previous line held it. She wanted the warmer register. Her page, her voice, her call.
+  close: "If it's a match, I'd love to chat.",
 
   primaryLabel: "Book 30 minutes",
   secondaryLabel: "View resume",
