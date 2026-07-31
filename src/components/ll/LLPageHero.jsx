@@ -8,7 +8,12 @@ import CtaButton from './CtaButton';
 // `ctaHref` is optional. Without it CtaButton keeps its cal.com default, so every existing page
 // renders exactly as before. Pass it when the label promises something other than booking a call:
 // a button reading "Email me" that opened a Calendly link was a real bug on the Step page.
-export default function LLPageHero({ companyName, role, oneLiner, headline, ctaLabel, ctaHref, body }) {
+// `hideName` is optional and opt-in, so all 26 other pages keep "Jenny Lu × Company" untouched.
+// Pass it when the nav already carries her name close enough to read as a repeat. Jenny caught
+// this on /arborxr 2026-07-31: the nav says "Jenny Lu" with her avatar, and the badge said it
+// again about 200px below. Known tradeoff she accepted: "Jenny Lu × ArborXR" was doing one job
+// the nav does not, signalling a page built for them rather than a portfolio they landed on.
+export default function LLPageHero({ companyName, role, oneLiner, headline, ctaLabel, ctaHref, body, hideName = false }) {
   const [headerVisible, setHeaderVisible] = useState(false);
   useEffect(() => { const t = setTimeout(() => setHeaderVisible(true), 80); return () => clearTimeout(t); }, []);
 
@@ -39,7 +44,7 @@ export default function LLPageHero({ companyName, role, oneLiner, headline, ctaL
             border: '1px solid var(--glass-stroke)', borderRadius: '100px',
             padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
           }}>
-            Jenny Lu × {companyName}{headline ? ` · ${role}` : ''}
+            {hideName ? '' : 'Jenny Lu × '}{companyName}{headline ? ` · ${role}` : ''}
           </div>
 
           {/* Headline: the hook when a page supplies one, otherwise the role */}

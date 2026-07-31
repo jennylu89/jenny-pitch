@@ -108,9 +108,7 @@ function ScrollStrip({ children, bg = 'var(--text)' }) {
   );
 }
 
-// `hideCompare` is optional, default false, so every existing page renders exactly as before.
-// See LLSelectedProjects for why /arborxr passes it.
-export default function LLCaseStudy({ project, index, hideCompare = false }) {
+export default function LLCaseStudy({ project, index }) {
   const { caseStudy } = project;
   const screens = caseStudy.screens || [];
   const hasScreens = screens.length > 0;
@@ -511,7 +509,7 @@ export default function LLCaseStudy({ project, index, hideCompare = false }) {
         )}
 
         {/* ── Compare: full-width scrollable images (above content) ── */}
-        {!hideCompare && compareScreens.length > 0 && (
+        {compareScreens.length > 0 && (
           <ScrollStrip bg="var(--text)">
             <div style={{
               display: 'flex', gap: '16px', padding: '40px',

@@ -57,7 +57,8 @@ export const arborxr = {
   // largest type on the page is now a claim instead of a job title he already knows.
   // This overturns her 2026-07-30 side-by-side pick. She saw this exact line and chose it, so it
   // is not a silent reversal. The five rows below now read as evidence for ONE claim.
-  // The close bookends it deliberately: "You want it caught before you ask."
+  // The close no longer bookends this line. It used to carry it, and the promotion is why. See
+  // the note on `close` below for what the close does instead now.
   heroHeadline: "I find the problem behind the ask.",
 
   // Hero paragraph under the h1. Answers the ask that repeats most in his JD: "You spot things that
@@ -219,10 +220,28 @@ export const arborxr = {
     ],
   },
 
-  // Bookends the h1. Asks for nothing, so the button carries the ask. 12 words.
-  // Note: the Why We Buy read says this sentence is the ownable claim of the whole page and wants
-  // it in the h1 instead. That is Jenny's open call, logged at the top of this file.
-  close: "You want it caught before you ask. That's the job I want.",
+  // ⭐ REWRITTEN 2026-07-31, Jenny's pick, after she rejected 24 candidates across 9 angles.
+  // Read the diagnosis before writing a 25th, because the 24 all failed the same way.
+  //
+  // WHY THEY FAILED (Why We Buy read): every one was written for a reader still deciding whether
+  // Jenny is good. By the close he decided that 1,300 words ago. The only question left in front
+  // of the button is what the 30 minutes is for, and not one of the 24 answered it. That is an
+  // awareness-stage mismatch: product-aware copy sitting in the one most-aware slot on the page.
+  //
+  // WHY THE CLOSE EVEN HAS A JOB NOW: the old comment here said it "bookends the h1." It did,
+  // until the h1 absorbed that exact sentence ("You want it caught before you ask" is now
+  // "I find the problem behind the ask"). After that the close was running on a stale brief,
+  // bookending nothing. Its job today is the one the button gave up: "Book 30 minutes" names a
+  // mechanism, not an outcome, which was Jenny's deliberate call, so the outcome has to live here.
+  //
+  // WHY THIS LINE: it is Jenny's own register. Her instinct, and it was right, was that all 24
+  // were straining and hers was not. Her draft was "Think it's a match? Let's talk," which had two
+  // problems: the question hands him the verdict at the exact moment she wants to hold it, and
+  // "let's talk" is the generic CTA the corpus names as the anti-pattern, on top of being the
+  // closing line of every portfolio page on the internet. This keeps her word and her warmth,
+  // makes the match HER assessment, then invites the pushback his own JD says he wants
+  // ("knowing when to push back", jd.md:26). 10 words. Asks for nothing. No question mark.
+  close: "Sounds like a match. I'd like to hear where I'm wrong.",
 
   primaryLabel: "Book 30 minutes",
   secondaryLabel: "View resume",

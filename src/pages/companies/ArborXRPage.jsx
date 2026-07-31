@@ -16,53 +16,19 @@ export default function ArborXRPage() {
         oneLiner={arborxr.oneLiner}
         headline={arborxr.heroHeadline}
         ctaLabel={arborxr.primaryLabel}
+        hideName
       />
       {/* Problem block removed 2026-07-30, Jenny's call, after seeing it rendered. The component
           and its copy still exist if it comes back. Known consequence: nothing on this page now
           speaks about Jordan except the close. */}
 
-      {/* ⭐ ADDED 2026-07-30 on Jenny's "do all". Both reviewers, independently, flagged that ~1,500
-          words of argument run before any work is visible, against his second must-have: "A
-          portfolio that makes it immediately obvious you're talented... Taste, craft, product
-          thinking that speaks for itself."
-          This is the ONE structural addition to a structure Jenny locked twice, and it is here
-          rather than anywhere else because it is the hero's own story: the hero says 28 clicks
-          became 3, and this is that, shown. Bill entry, not the dashboard, for the same reason.
-          Caption is verbatim from jenny.js roadrunner compareScreens. Do not add a second image. */}
-      <section style={{ padding: 'var(--space-48) 0 0' }}>
-        <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
-          <div className="arborxr-compare" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 'var(--space-18)',
-          }}>
-            {[
-              { src: '/RR-Before-After-Bill-entry.png', caption: 'Before & After: Bill Entry',
-                alt: 'Roadrunner bill entry, before and after: 28 clicks across four apps becomes 3 clicks in one platform' },
-              { src: '/RR-Before-after-dashboard.png', caption: 'Before & After: Dashboard',
-                alt: 'Roadrunner dashboard, before and after the platform overhaul' },
-            ].map((img) => (
-              <figure key={img.src} style={{ margin: 0 }}>
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  style={{
-                    width: '100%', height: 'auto', display: 'block',
-                    borderRadius: 'var(--radius)',
-                    border: '1px solid var(--glass-stroke)',
-                    boxShadow: 'var(--shadow-glass)',
-                  }}
-                />
-                <figcaption style={{
-                  fontSize: 'var(--type-small)', color: 'var(--muted)',
-                  lineHeight: 'var(--leading-body)', margin: 'var(--space-12) 0 0', textAlign: 'center',
-                }}>
-                  {img.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* The two Roadrunner before/afters were lifted up here on 2026-07-30 and moved BACK on
+          2026-07-31, Jenny's call after seeing them rendered above the rows. They live in the
+          Roadrunner walkthrough at the bottom, where they always were.
+          Keeping the reason so it is not re-argued: both reviewers flagged that ~1,300 words run
+          before any work is visible, against his must-have "a portfolio that makes it immediately
+          obvious you're talented." That is still true and still unanswered. If it gets solved, it
+          does not get solved by duplicating the case study's own images at the top. */}
       <LLSummary heading={arborxr.summaryHeading} rows={arborxr.summaryRows} />
       <LLHowIWork howIWork={arborxr.howIWork} />
       {/* ⛔ AIProjects CUT from this page 2026-07-30, Jenny's call, and it must not come back.
@@ -80,10 +46,7 @@ export default function ArborXRPage() {
           see one project walked through deeply than ten listed shallowly." Design Hub stays
           because it carries the video and answers "show us the raw stuff and how fast you got
           it polished." Arena and myPerks are cited in the ask/proof rows instead. */}
-      {/* hideCompare: both Roadrunner before/after images now render above the ask rows. Without
-          this the exact same two images appeared twice on one page, ~900px apart. Caught in the
-          DOM, not in the code. Opt-in prop, so the other 26 company pages are untouched. */}
-      <LLSelectedProjects projectIds={['roadrunner', 'designhub']} hideCompare />
+      <LLSelectedProjects projectIds={['roadrunner', 'designhub']} />
       <LLCloseCta
         closeText={arborxr.close}
         from="arborxr"
