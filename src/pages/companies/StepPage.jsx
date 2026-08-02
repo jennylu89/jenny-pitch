@@ -1,63 +1,39 @@
 import Nav from '../../components/Nav';
 import { step } from './step';
-import { jenny } from '../../data/jenny';
 import LLPageHero from '../../components/ll/LLPageHero';
-import LLJdSection from '../../components/ll/LLJdSection';
+import LLSummary from '../../components/ll/LLSummary';
+import LLHowIWork from '../../components/ll/LLHowIWork';
 import AIProjects from '../../components/AIProjects';
 import LLSelectedProjects from '../../components/ll/LLSelectedProjects';
 import LLCloseCta from '../../components/ll/LLCloseCta';
-import Eyebrow from '../../components/ll/Eyebrow';
 
+// Rebuilt 2026-07-30 to match ArborXRPage. Was LLJdSection narrative sections, ~1,165 words.
+// Jenny: "This entire page is too long. I like my previous format from ArborX."
 export default function StepPage() {
   return (
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
       <Nav from="step" />
-      <LLPageHero companyName={step.name} role={step.role} oneLiner={step.oneLiner} />
-
-      {/* The opening: addressed to Greg Hill, Head of Design. No ask/proof table or
-          "how I work" tiles below, copy.md doesn't include that content for Step. */}
-      <section style={{ padding: 'var(--space-96) 0 var(--space-48)' }}>
-        <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
-          <Eyebrow>
-            <span style={{ color: 'var(--muted)', textAlign: 'center', display: 'block' }}>The opening</span>
-          </Eyebrow>
-          <div style={{
-            display: 'flex', flexDirection: 'column', gap: 'var(--space-18)',
-            maxWidth: '640px', margin: '0 auto',
-          }}>
-            {step.opening.map((p, i) => (
-              <p key={i} style={{
-                fontSize: 'var(--type-body)',
-                lineHeight: 'var(--leading-body)',
-                color: 'var(--muted)',
-                margin: 0,
-              }}>
-                {p}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* JD-mapped sections (copy.md Sections 1-5) */}
-      {step.sections.map((section, i) => (
-        <LLJdSection key={section.id} section={section} index={i} />
-      ))}
-
-      {/* copy.md Section 6. Sits directly after Section 5 on purpose: Section 5
-          raises "can you do this," this answers "do you want this," and the two
-          only work as a pair when they are adjacent. */}
-      <LLJdSection section={step.whyStep} index={step.sections.length} />
-
+      <LLPageHero
+        companyName={step.name}
+        role={step.role}
+        oneLiner={step.oneLiner}
+        body={step.letter}
+        ctaLabel={step.primaryLabel}
+      />
+      <LLSummary heading={step.summaryHeading} rows={step.summaryRows} />
+      {/* Re-weighted 2026-08-01: the mobile-screen band moves ABOVE How-I-work so consumer
+          mobile craft (Step's real hiring risk) is proven with pictures early, right after the
+          rewards-led proof rows. Order leads with megprime (consumer money, 3 mobile screens),
+          then myperks (rewards, hero image), then arenalabs (mobile app, 3 time-aware screens).
+          All three have real assets in /public. */}
+      <LLSelectedProjects projectIds={['megprime', 'myperks', 'arenalabs']} />
+      <LLHowIWork howIWork={step.howIWork} />
       <AIProjects />
-      <LLSelectedProjects projectIds={['myperks', 'megprime', 'designhub']} />
-
       <LLCloseCta
         closeText={step.close}
         from="step"
-        primaryHref={`mailto:${jenny.contact.email}`}
-        primaryLabel={`Email me: ${jenny.contact.email}`}
-        secondaryLabel="Resume and full portfolio"
+        primaryLabel={step.primaryLabel}
+        secondaryLabel={step.secondaryLabel}
       />
     </div>
   );

@@ -1,112 +1,114 @@
+// Re-weighted 2026-08-01 after a hiring-manager critique (via ChatGPT). The prior version led
+// with strategy/research (Roadrunner first) and under-proved consumer MOBILE CRAFT, which is
+// Step's actual hiring risk. Fix: consumer money + rewards + mobile lead; strategy is the
+// multiplier below. Craft is answered with pictures too (StepPage surfaces the MegPrime + Arena
+// mobile screens high, via LLSelectedProjects moved above How-I-work).
+//
+// Locked rules that survive every rewrite:
+//   - No `heroHeadline`. The role title is the h1 (Jenny 2026-07-30).
+//   - `oneLiner` empty: the hook is letter[0], one paragraph, not a centered lead.
+//   - ArborXR ask/proof shape. The gap clauses (native-app craft, growth-as-discipline) live
+//     INSIDE proof rows, never re-stacked into their own section. Three reviewers flagged that.
+//   - Voice: plain, blunt, fact-backed, NO em-dashes.
+//
+// [CONFIRM with Jenny before sending] — new/loosened facts flagged in the 2026-08-01 pass:
+//   1. Row 2 shared marketing/DS library: exact scope.
+//   2. Row 4 raise-the-craft line: review criteria / direction / reusable patterns wording.
+//   3. Row 1 attribution: "I owned the value story, not every lever behind those numbers."
+//   4. Close: reworked Beast-reach line (below) vs the prior "Pick the area you check most."
+
 export const step = {
   name: "Step",
-  role: "Hand me one area. Stop checking it.",
+  role: "Lead Product Designer, Growth",
 
-  oneLiner:
-    "Jenny Lu. Product designer, 10+ years, twice the first or only designer in the building. Written for Step's Lead Product Designer, Growth.",
+  oneLiner: "",
 
-  opening: [
-    "Greg, you were Step's first designer. Around employee ten, by your own case study.",
-    "You built the first app, the first design system, and hired the designer after you. Seven years later, 7 million people use Step.",
-    "This post reads like you wrote it, not a recruiter. Six things the role does, then nine things you hope the person brings. I'm applying for number six on that second list.",
+  // Para 1 keeps the teenager open and now lands on a product insight. Para 2 keeps her real
+  // track record but no longer diagnoses Step as greenfield (the JD names other designers + an
+  // existing design system). Para 3 reframes to the Beast-reach challenge instead of telling
+  // Greg his product is untuned.
+  letter: [
+    "Greg, I have a teenager at home. Step is where a lot of kids that age will form their first idea of how money works. A first money app teaches a young person what money is for, and whether managing it feels like something they can do or something to be scared of. I've spent years making billing, rewards and payments make sense to adults. I'd rather spend the next stretch doing it for them.",
+    "I've been the first or only designer in a building twice. Both times I built the design practice and shipped the product at once, because there was nobody to hand either one to. I've also led designers and worked inside a system I didn't own, so I can move either way.",
+    "The hard part I see is turning Beast and MrBeast reach into a signup, onboarding and rewards experience young people understand, trust, and keep using. That's the work I've done for adults, and the numbers are attached below.",
   ],
 
-  // JD-mapped sections. Stat lines from copy.md's bulleted lists are kept as their
-  // own short paragraphs, in original order, rather than converted into the
-  // value/label metric-card format elsewhere on the site, so no wording changes.
-  sections: [
+  summaryHeading: "What the job takes. What I've done.",
+  summaryRows: [
     {
-      id: "billing-overhaul",
-      tocLabel: "Billing Overhaul, Roadrunner",
-      title: "They asked me to fix one billing page. I came back with a four-part overhaul, and leadership said yes.",
-      story: [
-        "Roadrunner Recycling handed me a one-page brief. Improve the billing screen.",
-        "I ran the research before I drew anything. Platform-wide usability study. Stakeholder interviews. A process map across every department that touched a bill.",
-        "Here's what was actually happening. One bill took 28 clicks across 4 separate apps. 75% of bills were identical to last month's and got retyped from scratch anyway. 74.6% of people used the platform every day. Only 32.2% said they knew it well.",
-        "So I stopped designing the page. I wrote the case for four workstreams, took it to leadership with the data, and got the green light for the bigger scope.",
-        "28 clicks per bill became 3.",
-        "Six minutes per bill became one.",
-        "50+ component library, built with engineering. Every page after that took a third of the time.",
-        "Your post asks for someone who thinks about \"what we should build,\" not just \"how it should look.\" That's 28 clicks to 3.",
+      // ROW 1 — LEAD. Consumer money, mobile, rewards. Closest to Step. Native-app craft
+      // boundary rides as the last clause (ArborXR's "the headset would be new to me" move).
+      ask: "Own the rewards loop end to end",
+      proof: [
+        "myPerks, 4 million members. I ran the research across them and redesigned how the program showed its worth.",
+        "Customers were doing the math and deciding rewards weren't worth chasing. So I surfaced them at every touchpoint, broke big redemptions into small visible milestones, and made the math disappear. People saw progress, not percentages.",
+        "The results that followed: spend per member up 384%, visits up 212%, 53,000 new households, and it ran 30% cheaper. I owned the value story, not every lever behind those numbers.",
+        "My deepest shipped work is responsive consumer and mobile fintech, not owning a native banking app end to end. That native ownership is my growth edge. The consumer money, the rewards, the complex flows and the close work with engineers come with me.",
+        "Then MegPrime Pay, a consumer money app on mobile, where USDC, KYC and state-by-state licensing all sit under a screen that just shows a renter what they'd earn.",
       ],
-      testimonial: {
-        quote: "Jenny pioneered a design system library that gave our web pages a unified look and feel. She is a force multiplier and could be an asset to any organization.",
-        name: "Michael Quintero",
-        title: "Software Engineer · Roadrunner Recycling",
+    },
+    {
+      // ROW 2 — NEW. Shared Marketing + Design System library. Answers the JD's range,
+      // Marketing collaboration, and design-system asks. Brand-forward gap becomes a strength.
+      ask: "Move between systemized UI and brand-forward",
+      proof: [
+        "At Giant Eagle, Product Design and Marketing were building related customer experiences on separate systems.",
+        "I built a shared component and brand library so both teams worked off one foundation, while product UI and campaign needs each kept the room they needed.",
+        "So I've shipped both ends: the tight, systemized product screen, and the brand-forward moment a campaign lives on. I move between them.",
+        "That range is what a design system and marketing collaboration both call for.",
+      ],
+    },
+    {
+      // ROW 3 — the strategy multiplier, now third (was first). "PRD" reworded so it doesn't
+      // read as PM. Growth-as-discipline gap rides as the last clause.
+      ask: "Decide what to build, not just how it looks",
+      proof: [
+        "One billing page in. Four projects out. 28 clicks became 3.",
+        "Roadrunner scoped me one screen. The research said 28 clicks across four apps to enter a single bill, and 75% of bills identical to last month, retyped from scratch anyway.",
+        "74.6% used the platform daily. Only 32.2% said they knew it well. That's a system problem, not a page problem, so I took it to leadership, turned the research into a four-part product direction, and partnered with Product to define the requirements.",
+        "I haven't run growth as a live-experiment discipline, and nothing I've shipped had MrBeast pointed at the front door. The number above came from deciding what got built.",
+      ],
+    },
+    {
+      // ROW 4 — direction that raises craft, not just headcount. Inscho quote verbatim.
+      ask: "Direct designers and raise the craft bar",
+      proof: [
+        "Giant Eagle had no user research until I built it. I introduced testing, hired the researchers, and won the first Qualtrics budget the company ever funded.",
+        "I was promoted to Sr. Manager, leading 5+ designers across the US and India.",
+        "I raise craft by making it repeatable. I set the review criteria, gave designers direction on interaction and visual hierarchy, and built reusable patterns so a fix survived past a single critique.",
+        "Jeffrey Inscho, a Senior PM there: “Jenny deeply understands how research and design influence product strategy.”",
+      ],
+    },
+  ],
+
+  howIWork: {
+    eyebrow: "How I work",
+    heading: "Judgment first, then screens",
+    subheading: "",
+    columns: 1,
+    tiles: [
+      {
+        icon: "fa-light fa-code",
+        heading: "I shorten the distance between design and production",
+        body: "At Arena the Figma-to-handoff pipeline was too slow for the work in front of it. I replaced it with working React prototypes in Claude Code. Rebuilding a standard product screen from approved components went from about four hours in Figma to about twenty minutes in the prototype, roughly 10x on that task. I also ran an audit that surfaced 97 usability issues across the core flows, then shipped the fixes as a build engineers could run.",
       },
-    },
-    {
-      id: "leadership-research",
-      tocLabel: "Leadership & Research",
-      title: "You asked for someone who directs other designers. I've been the one other teams started routing to.",
-      story: [
-        "Your post asks for delegating work and giving direction to other designers.",
-        "Giant Eagle had no user research when I arrived. Not a small team. None.",
-        "I introduced user testing. I hired the researchers. I made the business case and won the budget for Qualtrics at a company that had never funded a research platform before, and I changed how the team got used: design stopped being a pixel service and started getting pulled in upstream.",
-        "Other departments started coming to my team for research when they were scoping new ventures. Nobody assigned that. They came because the answers were good.",
-        "That's what I was promoted on: Sr. Manager, Customer Research and Experience Design, leading 5+ designers across the US and India, setting the WCAG standards the org adopted. At Roadrunner I was Sr. Product Design Manager and wrote the PRDs.",
-        "Most teams hiring a designer want a doer, so the manager history usually stays off my front page. You asked for both.",
-      ],
-    },
-    {
-      id: "rewards-design",
-      tocLabel: "Rewards Design",
-      title: "I've designed a rewards program twice. The first one had 4 million members.",
-      story: [
-        "myPerks at Giant Eagle was generous and nobody could feel it. Members did the math wrong, decided it wasn't worth it, and stopped paying attention. The rewards were real. The feeling of winning wasn't.",
-        "I redesigned around one question: what does a person need to see, and when, to feel like they're winning?",
-        "Rewards surfaced at every touchpoint, in the app, in store, and on the web. Big redemptions broken into small visible milestones. The math deleted. Members see progress, not percentages.",
-        "384% spend per member",
-        "212% visit frequency",
-        "53,000 new households",
-        "30% lower cost to run",
-        "What I'd do differently: I'd have A/B tested the milestone thresholds instead of setting them from research alone. Real usage data would have told us faster which milestone actually moved someone.",
-        "Then I did it again in fintech. MegPrime Pay pays renters rewards on their rent. Underneath it there's USDC, KYC, SEC disclosures, and state-by-state licensing. I hid all of it. The first screen a renter sees is a calculator showing what they'd earn versus their bank this month, this year, and over five years, before they sign up for anything.",
-        "Signup, onboarding, rewards, and gamification are the scope in your post. I've built the rewards half twice, once at 4 million members and once with a compliance stack under it.",
-      ],
-    },
-    {
-      id: "ai-native-building",
-      tocLabel: "Building With AI",
-      title: "I use Claude Code to build the thing, not to mock it.",
-      story: [
-        "At Arena Labs the design process was the bottleneck. One designer, limited hours, and a Figma-to-handoff pipeline that couldn't keep up with 97 logged usability issues.",
-        "I replaced the pipeline with working React prototypes built in Claude Code. Iteration got about 10x faster. Work that took weeks took days. With that speed I rebuilt the home screen into three time-aware states, each surfacing one recommendation from Whoop biometric data.",
-        "Then I built a design hub that put the research, the system, the prototype, and the specs in one URL. A screen went from 4 hours to 20 minutes. Four separate systems became one.",
-        "I ship my own React with Claude Code. Engineers get a build they can run, not a redline to interpret.",
-      ],
-    },
-    {
-      id: "what-id-cost-you",
-      tocLabel: "What I'd Cost You",
-      title: "Here's what I'd cost you.",
-      // copy.md uses **bold** to lead each paragraph (e.g. "**I will question the brief.**").
-      // LLJdSection renders story entries as plain text, so the markdown asterisks are
-      // stripped here; the words themselves are unchanged. Flagged in the build report.
-      story: [
-        "I will question the brief. That's the same trait that produced the Roadrunner number, and it has a price. If you hand me \"redesign signup,\" there's a real chance I come back in two weeks saying signup isn't where the drop is. The first six weeks with me are noisier than with a designer who takes the ticket and returns the screens.",
-        "I have not run growth as a discipline. My numbers are real and they're mid-size: 15.27% conversion on a Curbside landing page after one of Giant Eagle's first UserTesting studies, 278% more cake-ordering clicks after an IA rebuild, the myPerks numbers above. I've never run an experiment backlog on a consumer app with your traffic. Your post asks for growth initiatives led at scale, and mine were led at Giant Eagle scale, not at 7 million users with MrBeast pointed at the front door.",
-        "Most of what I've shipped to production is web and systems. The mobile work I've led is MegPrime Pay, Arena Strive, and Scan Pay and Go at Giant Eagle across mobile apps, web, and in-store devices. Native iOS and Android at your level of polish is the curve I'd be climbing fastest in month one. I'd rather say that now than in week three.",
-        "My portfolio reads systemized. Design systems, regulated fintech, B2B workflows, healthcare. You asked for range between systemized UI and expressive, brand-forward moments. The closest evidence I have is myPerks, where the entire job was making a reward feel like a win, and the numbers say it worked.",
-        "That's the whole list. The rest of your post, I've done.",
-      ],
-    },
-  ],
-
-  // copy.md Section 6. Deliberately NOT in the sections array: the page renders
-  // AIProjects and LLSelectedProjects after the JD sections, and both are generic
-  // across every company page. Putting this inside the array buried the one
-  // Step-specific closing beat under boilerplate. It renders last instead, so the
-  // final voice before the ask is hers.
-  whyStep: {
-    id: "why-step",
-    tocLabel: "Why Step",
-    title: "Why Step.",
-    story: [
-      "I have a teenager at home. Step is going to be where a lot of kids that age form their first idea of how money works. I've spent years making billing, rewards, and payments make sense to adults, and I'd rather spend the next stretch doing it for them.",
+      {
+        icon: "fa-light fa-magnifying-glass",
+        heading: "AI widens the options, the judgment stays mine",
+        body: "AI lets me put more ideas, at higher fidelity, in front of a real test before I commit. The decisions stay mine. On Giant Eagle's Curbside onboarding, one of the company's first unmoderated studies, I had same-day results, answered every gap a first-timer hit, and shipped 15.27% more signups.",
+      },
+      {
+        icon: "fa-light fa-comments",
+        heading: "The team doesn't wait on me to unblock them",
+        body: "I make the design call, show the reasoning, and Product, engineering and marketing keep moving. When someone pushes back, they argue with the logic, not with my taste. It's how you take the bottleneck off one person's desk.",
+      },
     ],
   },
 
-  close:
-    "I'm in Pittsburgh, I work remote, and I'm glad to come out to San Mateo for offsites. Name a Step surface, signup, onboarding, or the rewards loop, and I'll show you what I'd do with it before you spend an interview slot on me.",
+  // Reworked 2026-08-01 to carry the re-weight (retention as the real Step problem). Prior line
+  // "Pick the area you check most. That's the one I want." kept in git if Jenny prefers it.
+  close: "Beast reach gets them to sign up once. Keeping them is the job I want.",
+
+  primaryLabel: "Book 30 minutes",
+  secondaryLabel: "View resume",
 };
