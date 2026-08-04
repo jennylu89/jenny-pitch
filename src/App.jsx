@@ -21,6 +21,7 @@ import KovoPage from './pages/companies/KovoPage';
 import ContraPage from './pages/companies/ContraPage';
 import GlacianPage from './pages/companies/GlacianPage';
 import PhilipsPage from './pages/companies/PhilipsPage';
+import MarriottPage from './pages/companies/MarriottPage';
 import StepPage from './pages/companies/StepPage';
 import NgrokPage from './pages/companies/NgrokPage';
 import NgrokConcept from './pages/companies/NgrokConcept';
@@ -61,6 +62,7 @@ export default function App() {
         <Route path="/contra" element={<ContraPage />} />
         <Route path="/glacian" element={<GlacianPage />} />
         <Route path="/philips" element={<PhilipsPage />} />
+        <Route path="/marriott" element={<MarriottPage />} />
         <Route path="/step" element={<StepPage />} />
         <Route path="/ngrok" element={<NgrokPage />} />
         <Route path="/ngrok-concept" element={<NgrokConcept />} />
