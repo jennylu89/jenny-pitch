@@ -5,30 +5,20 @@ export const marriott = {
   oneLiner:
     "You need loyalty and commerce that get millions of people to come back and spend. I helped lead a rewards redesign for 4 million members, where spend per member grew 384%.",
 
-  summaryHeading: "What you need. What I've done.",
+  summaryHeading: "Bonvoy's job is getting millions to come back and spend. I've done that at 4-million-member scale, and I build it AI-native.",
   summaryRows: [
     {
-      ask: "Design loyalty, membership, and commerce experiences",
+      ask: "I've moved loyalty behavior at scale before.",
       proof:
-        "I helped lead the myPerks rewards redesign for 4 million members. Spend per member grew 384%, visits grew 212%, and the program added 53,000 households.",
+        "I helped lead the myPerks rewards redesign for 4 million members. Under that program, spend per member grew 384%, visits grew 212%, and it added 53,000 households.",
     },
     {
-      ask: "Own end-to-end mobile design and think in systems, not just screens",
+      ask: "I build enterprise systems and lead the teams that ship them.",
       proof:
-        "At Roadrunner I won leadership's buy-in to turn a one-page billing brief into a 4-part overhaul, then cut a bill from 28 clicks to 3. I wrote the PRDs and shaped the scope.",
+        "I was the first UX hire at Giant Eagle. I built the research function from zero, set the WCAG standards the org adopted, and built a 50+ component system with engineering while leading a distributed team. At Roadrunner I won leadership's buy-in to turn a one-page brief into a 4-part overhaul, cut a bill from 28 clicks to 3, and wrote the PRDs.",
     },
     {
-      ask: "Use research and experimentation to decide what to build",
-      proof:
-        "I built the research function from zero at Giant Eagle and ran one of its first usability studies. On Curbside, the redesign moved conversion up 15.27%.",
-    },
-    {
-      ask: "Apply and grow an accessible design system",
-      proof:
-        "I built a 50+ component library with engineering, and set the WCAG standards the whole org adopted.",
-    },
-    {
-      ask: "Use AI tools without lowering quality or trust",
+      ask: "I build with AI without dropping the quality bar.",
       proof:
         "At Arena I ran an AI prototyping workflow in Claude Code, and still logged 97 usability issues before that health app shipped to hospitals.",
     },
@@ -40,24 +30,24 @@ export const marriott = {
     subheading: "",
     tiles: [
       {
-        icon: "fa-light fa-medal",
-        heading: "Loyalty at scale",
-        body: "Loyalty isn't a points screen. It's a behavior system: what makes someone come back and buy again. I've designed that at 4-million-member scale, and I measured whether people actually returned, not just whether they liked the screens.",
+        icon: "fa-light fa-magnifying-glass",
+        heading: "Find the real problem",
+        body: "I use research to find where the written brief is wrong before the team builds the wrong thing. At Roadrunner the brief said one page. The real problem was bigger, so we fixed that instead.",
       },
       {
-        icon: "fa-light fa-sitemap",
-        heading: "Systems that hold",
-        body: "I came up in enterprise. First UX hire at Giant Eagle, built the research practice from zero, set WCAG org-wide, led a team across the US and India.",
+        icon: "fa-light fa-arrows-rotate",
+        heading: "Loyalty is behavior",
+        body: "Loyalty isn't a points screen. It's a behavior system: what makes someone come back and spend again. I design for the return, not for whether people liked the screen.",
       },
       {
-        icon: "fa-light fa-shield-check",
-        heading: "AI, held to a bar",
-        body: "At Arena I logged 97 usability issues on a health app before it shipped to surgeons and ER nurses. AI made me faster. It didn't make me careless.",
+        icon: "fa-light fa-scale-balanced",
+        heading: "AI speeds, I judge",
+        body: "AI makes the work faster. It doesn't decide what good means. I do. It writes a draft in minutes, then I hold it to the same bar I always have.",
       },
       {
         icon: "fa-light fa-code",
-        heading: "Research to shipped",
-        body: "I stay close to the work from research through production. I can prototype in React with Claude Code, so engineers get something that runs, not a redline to interpret. I speak their language, and I don't treat handoff as the end of design.",
+        heading: "Close to production",
+        body: "I stay close to production so what I design can actually ship. I prototype in React, so engineers get something that runs, not a redline to read. Handoff isn't the end of design.",
       },
     ],
   },
