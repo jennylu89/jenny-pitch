@@ -1,6 +1,6 @@
 import Eyebrow from './Eyebrow';
 
-export default function LLSummary({ heading, rows }) {
+export default function LLSummary({ heading, rows, askLabel = 'Your ask', proofLabel = 'My proof' }) {
   return (
     <section style={{ padding: 'var(--space-96) 0 var(--space-80)' }}>
       <div className="section-pad" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-48)' }}>
@@ -31,7 +31,7 @@ export default function LLSummary({ heading, rows }) {
                   fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', fontWeight: 'var(--weight-medium)',
                   letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase',
                   color: 'var(--accent)', display: 'block', marginBottom: 'var(--space-6)',
-                }}>Your ask</span>
+                }}>{askLabel}</span>
                 <span style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', lineHeight: 'var(--leading-body)' }}>
                   {row.ask}
                 </span>
@@ -41,7 +41,7 @@ export default function LLSummary({ heading, rows }) {
                   fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', fontWeight: 'var(--weight-medium)',
                   letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase',
                   color: 'var(--accent)', display: 'block', marginBottom: 'var(--space-6)',
-                }}>My proof</span>
+                }}>{proofLabel}</span>
                 {/* `proof` accepts a string or an array. A string renders exactly as it always has,
                     so the other 26 pages are untouched. An array renders one short line per item,
                     which is the fix for proofs that had grown into 4 and 5 sentence paragraphs with
