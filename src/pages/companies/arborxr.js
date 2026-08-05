@@ -101,9 +101,11 @@ export const arborxr = {
     ],
   },
 
-  // Locked 2026-07-31, Jenny's direct call. GPT flagged it generic 2026-08-05; left as-is per the
-  // lock unless Jenny reopens it. Her voice, her warmth, makes the match HER assessment.
-  close: "If it's a match, I'd love to chat.",
+  // Reworked 2026-08-05, Jenny's call, replacing "If it's a match, I'd love to chat." (GPT flagged
+  // it generic). This option (jenny-copywriter, ranked #1 by ChatGPT) turns the page thesis into a
+  // confident promise at the button: names the system-behind-the-screen value, no question that
+  // hands the reader the verdict.
+  close: "Bring me your messiest product. I'll find the system underneath.",
 
   primaryLabel: "Book 30 minutes",
   secondaryLabel: "View resume",
