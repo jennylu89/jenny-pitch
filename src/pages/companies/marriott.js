@@ -3,49 +3,34 @@ export const marriott = {
   role: "Senior Product Designer, User Experience & Design – Commerce (Bonvoy App)",
 
   oneLiner:
-    "You're designing Commerce for the Bonvoy app: get members to book direct and keep choosing Marriott over an OTA. I've done that at scale, redesigning a rewards app for 4 million members where spend per member grew 384%.",
+    "You need loyalty and commerce that get millions of people to come back and spend. I led a rewards redesign for 4 million members, where spend per member grew 384%.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
       ask: "Design loyalty, membership, and commerce experiences",
       proof:
-        "I redesigned the myPerks rewards app for 4 million members. Spend per member up 384%, visits up 212%, and 53,000 new households.",
+        "I led the myPerks rewards redesign for 4 million members. Spend per member grew 384%, visits grew 212%, and the program added 53,000 households.",
     },
     {
-      ask: "Lead end-to-end mobile design, from framing to production",
+      ask: "Own end-to-end mobile design and think in systems, not just screens",
       proof:
-        "At Roadrunner I turned a one-page brief into a 4-part overhaul and cut a bill from 28 clicks to 3.",
+        "At Roadrunner I won leadership's buy-in to turn a one-page billing brief into a 4-part overhaul, then cut a bill from 28 clicks to 3. I wrote the PRDs and shaped the scope.",
     },
     {
-      ask: "Think in systems, journeys, and behaviors, not just screens",
+      ask: "Use research and experimentation to decide what to build",
       proof:
-        "I merged two codebases into one consumer app and rebuilt the navigation around tasks. Cake-ordering clicks went up 278%.",
+        "I built the research function from zero at Giant Eagle and ran one of its first usability studies. On Curbside, the redesign moved conversion up 15.27%.",
     },
     {
-      ask: "Apply and contribute to the design system",
+      ask: "Apply and grow an accessible design system",
       proof:
-        "I built a 50+ component library with engineering, and set WCAG standards the whole org adopted.",
-    },
-    {
-      ask: "Use research, analytics, and experimentation to decide",
-      proof:
-        "I built the research function from zero at Giant Eagle and ran one of its first usability studies. Curbside conversion up 15.27%.",
-    },
-    {
-      ask: "Present rationale to senior stakeholders",
-      proof:
-        "I was a design manager twice. I wrote the PRDs and won leadership buy-in to expand Roadrunner's scope.",
+        "I built a 50+ component library with engineering, and set the WCAG standards the whole org adopted.",
     },
     {
       ask: "Use AI tools without lowering quality or trust",
       proof:
-        "At Arena I ran an AI prototyping workflow in Claude Code and still logged 97 usability issues on a health app we shipped to hospitals.",
-    },
-    {
-      ask: "Mentor designers, with potential people leadership",
-      proof:
-        "I led 5+ designers across the US and India as a senior manager.",
+        "At Arena I ran an AI prototyping workflow in Claude Code, and still logged 97 usability issues before that health app shipped to hospitals.",
     },
   ],
 
@@ -57,7 +42,7 @@ export const marriott = {
       {
         icon: "fa-light fa-medal",
         heading: "Loyalty at scale",
-        body: "I redesigned a grocery rewards app for 4 million members. Spend per member went up 384% and visits went up 212%. That is the Bonvoy job: come back and stay.",
+        body: "Loyalty isn't a points screen. It's a behavior system: what makes someone come back and buy again. I've designed that at 4-million-member scale, and I measured whether people actually returned, not just whether they liked the screens.",
       },
       {
         icon: "fa-light fa-sitemap",
@@ -66,17 +51,17 @@ export const marriott = {
       },
       {
         icon: "fa-light fa-shield-check",
-        heading: "AI without slop",
-        body: "At Arena I built an AI prototyping workflow in Claude Code, then logged 97 usability issues on a health app shipped to surgeons and ER nurses. AI helped me move, and the quality bar held.",
+        heading: "AI, held to a bar",
+        body: "At Arena I logged 97 usability issues on a health app before it shipped to surgeons and ER nurses. AI made me faster. It didn't make me careless.",
       },
       {
         icon: "fa-light fa-code",
         heading: "Research to shipped",
-        body: "I do the research, the design, and the production React myself. No handoff gap. At Roadrunner that took a one-page brief to a full overhaul, 28 clicks down to 3.",
+        body: "I stay close to the work from research through production. I can prototype in React with Claude Code, so engineers get something that runs, not a redline to interpret. I speak their language, and I don't treat handoff as the end of design.",
       },
     ],
   },
 
   close:
-    "I'm the designer who moves loyalty behavior at consumer scale. I want Bonvoy now because Ask Bonvoy just put AI on your most-used screen, and I want to be the person who keeps it trustworthy.",
+    "I get people to come back and buy. Let's talk about Bonvoy.",
 };
