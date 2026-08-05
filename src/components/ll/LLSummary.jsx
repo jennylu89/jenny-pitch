@@ -31,7 +31,8 @@ export default function LLSummary({ heading, rows, askLabel = 'Your ask', proofL
                   fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)', fontWeight: 'var(--weight-medium)',
                   letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase',
                   color: 'var(--accent)', display: 'block', marginBottom: 'var(--space-6)',
-                }}>{askLabel}</span>
+                  visibility: askLabel ? 'visible' : 'hidden',
+                }}>{askLabel || ' '}</span>
                 <span style={{ fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)', color: 'var(--text)', lineHeight: 'var(--leading-body)' }}>
                   {row.ask}
                 </span>

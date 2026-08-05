@@ -12,7 +12,7 @@ export default function MarriottPage() {
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
       <Nav from="marriott" />
       <LLPageHero companyName={marriott.name} role={marriott.role} oneLiner={marriott.oneLiner} />
-      <LLSummary heading={marriott.summaryHeading} rows={marriott.summaryRows} askLabel="The claim" proofLabel="The proof" />
+      <LLSummary heading={marriott.summaryHeading} rows={marriott.summaryRows} askLabel="" proofLabel="The proof" />
       <LLHowIWork howIWork={marriott.howIWork} />
       <AIProjects />
       <LLSelectedProjects projectIds={['myperks', 'navigation', 'arenalabs', 'designhub']} />
