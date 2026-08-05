@@ -3,14 +3,14 @@ export const marriott = {
   role: "Senior Product Designer, User Experience & Design – Commerce (Bonvoy App)",
 
   oneLiner:
-    "You need loyalty and commerce that get millions of people to come back and spend. I led a rewards redesign for 4 million members, where spend per member grew 384%.",
+    "You need loyalty and commerce that get millions of people to come back and spend. I helped lead a rewards redesign for 4 million members, where spend per member grew 384%.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
       ask: "Design loyalty, membership, and commerce experiences",
       proof:
-        "I led the myPerks rewards redesign for 4 million members. Spend per member grew 384%, visits grew 212%, and the program added 53,000 households.",
+        "I helped lead the myPerks rewards redesign for 4 million members. Spend per member grew 384%, visits grew 212%, and the program added 53,000 households.",
     },
     {
       ask: "Own end-to-end mobile design and think in systems, not just screens",
