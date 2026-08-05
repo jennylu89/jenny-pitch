@@ -29,7 +29,7 @@ export default function ArborXRPage() {
           before any work is visible, against his must-have "a portfolio that makes it immediately
           obvious you're talented." That is still true and still unanswered. If it gets solved, it
           does not get solved by duplicating the case study's own images at the top. */}
-      <LLSummary heading={arborxr.summaryHeading} rows={arborxr.summaryRows} />
+      <LLSummary heading={arborxr.summaryHeading} intro={arborxr.domainGap} rows={arborxr.summaryRows} askLabel="" proofLabel="The proof" />
       <LLHowIWork howIWork={arborxr.howIWork} />
       {/* ⛔ AIProjects CUT from this page 2026-07-30, Jenny's call, and it must not come back.
           It is a shared, untailored section and its shift 04 reads "Engineers copy code, not
