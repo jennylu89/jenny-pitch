@@ -1,71 +1,53 @@
-// ⭐ CONVERTED TO 3-PILLAR STRATEGY-OBJECT STRUCTURE 2026-08-05, Jenny's call, overriding the 7/30
-// 5-row lock on purpose. GPT verdict (pasted by Jenny) + our new format: organize around ONE thesis,
-// not a row per JD area. Thesis: "Jenny sees the system behind the screen." Strategy object at
-// applications/arborxr/strategy.md. 5-row snapshot at applications/arborxr/arborxr.js.bak-5row-20260805.
+// ⭐ REBUILT 2026-08-05 from Jenny's pasted GPT-hybrid copy + the section-by-section spec she pasted.
+// Candidate thesis (WHY ME): "I find what matters, simplify complex systems, and make good judgment
+// reusable." Hero keeps "problem behind the ask" (spec: "problem" > "system", do not abstract it).
+// The company's product challenge lives in the CLOSE, not WHY ME. XR-gap line dropped on purpose
+// (spec: WHY ME is one sentence, no explanatory paragraph, do not foreground a weakness the JD
+// doesn't require). All em-dashes from the pasted copy stripped per Jenny's hard rule.
 //
-// ⛔ HONESTY LINES, still binding, do not soften or "improve":
-//   1. Components are NOT an npm package and NOT a Claude skill (both Arena repos private, unpackaged,
-//      verified 2026-07-31). He uses those exact words in his JD. Do not borrow them.
-//   2. No XR/VR/AR domain claim. She has none. The gap is named ONCE, without apology (domainGap).
-//   3. No Series A -> B/C GROWTH claim. Series A/Seed STAGE is fine.
-//   4. The design engineer owns the build. Her coding is CREDIBILITY, never the pitch. She never
-//      pitches replacing him.
+// ⛔ HONESTY LINES, still binding: (1) components are NOT an npm package or Claude skill; (2) no
+// XR/VR/AR domain claim; (3) no Series A -> B/C growth claim; (4) the design engineer owns the build,
+// her coding is credibility not the pitch, she never pitches replacing him.
 //
-// myPerks CUT from the argument 2026-08-05: loud numbers (384%, 4M) but consumer-loyalty, the least
-// relevant evidence to complex enterprise ownership. Dropping impressive-but-off-thesis evidence is
-// the strategy-object discipline. It survives only as one clause in a tile.
+// ⚠️ OPEN (needs Jenny's screens): the spec's visual requirement is that the Roadrunner case study
+// VISIBLY prove data-dense interface design (a dashboard/tables/statuses at readable scale). That is
+// the case-study images in jenny.js (roadrunner-flow/screen PNGs), which cannot be judged from here.
 export const arborxr = {
   name: "ArborXR",
   role: "Principal Product Designer",
 
-  // Locked 2026-07-30, Jenny's pick after both reviewers named the old h1 the top conversion risk.
-  // The five sections below now read as evidence for this ONE claim.
   heroHeadline: "I find the problem behind the ask.",
 
-  // Hero paragraph. Answers his most-repeated ask ("you spot things that aren't working and push to
-  // fix them without being asked" + "surface structural rethinks unsolicited"). Facts from jenny.js.
   oneLiner:
     "Roadrunner asked me to fix one billing page. I mapped the workflow instead: 28 clicks across four apps to enter one bill, and 75% of the bills identical to last month. Nobody asked for the rest. It shipped at 3 clicks a bill.",
 
-  // "Why this candidate for THIS problem." Replaces the old "Five of the things you'd have me own"
-  // heading, which announced a requirements-matching exercise (the thing the new format kills).
-  summaryHeading: "Your product is complex and getting more so. You need one person who can walk in, find what matters, make it simple, and leave the judgment behind so it holds after I move on. Three things I do:",
+  // WHY ME = the candidate thesis, one sentence, no explanatory paragraph. It previews the 3 pillars:
+  // find what matters, simplify complexity, make judgment reusable.
+  summaryHeading: "I find what matters, simplify complex systems, and make good judgment reusable.",
 
-  // The domain gap, named once, no apology. Renders as the intro paragraph under the heading.
-  domainGap: "I'm new to XR. I'm not new to walking into a technical field where the real work is invisible from a desk. Freight billing. Clinician recovery mid-shift. I learn the work from the people doing it, then turn it into product structure.",
-
-  // THREE PILLARS (was five JD-keyed rows). Each ask is a claim in her voice, not a JD quote.
-  // proof is an array: line 1 renders full-strength, the rest muted. The left "ask" label is hidden
-  // on this page (ArborXRPage passes askLabel="") because these are claims, not his asks.
-  //   Pillar 1: Roadrunner workflow + GE research-from-zero
-  //   Pillar 2: GE IA (the "picture of the company" line stays verbatim)
-  //   Pillar 3: Arena 97-issue audit + written bar (verbatim) + Claude Code result
   summaryRows: [
     {
-      ask: "I uncover the real workflow, not the screen you asked for",
+      ask: "I find the real work, not just the requested screen.",
       proof: [
-        "Give me one screen to fix, and I map the whole job before I touch it.",
-        "Roadrunner handed me one billing page. I ran a platform-wide study and mapped the process across every department: 28 clicks across four apps to enter one bill, 75% of them duplicates of last month. We rebuilt the whole thing, down to 3 clicks.",
-        "At Giant Eagle there was no research at all. I built the function from zero, introduced testing, hired the researchers, and won the Qualtrics budget at a company that had never funded one.",
-        "One of the first studies was the Curbside page the team had polished for months. Same day, first-timers couldn't tell if you paid online or at pickup. We answered it on the page and conversion went up 15.27%.",
+        "Giant Eagle had never run user research. I started it: ran the first tests, hired the researchers, and won the budget at a company that had never funded one.",
+        "One of our first studies examined a curbside page the team had polished for months. First-time customers couldn't tell whether they paid online or at pickup.",
+        "We answered those questions on the page. Conversion increased 15.27%.",
       ],
     },
     {
-      ask: "I make complex systems make sense",
+      ask: "I make complex systems easier to run without taking away control.",
       proof: [
-        "Most navigation is a picture of the company that built it.",
-        "Giant Eagle's nav was sorted by department, two codebases behind it. People came for the weekly ad and cake orders, and both were buried.",
-        "I rebuilt it as one flyout from one codebase, sorted by what people came to do.",
-        "Cake-ordering clicks went up 278%, grocery 41%, shopping history 21%. One system to maintain instead of two.",
+        "At Roadrunner, billing crossed work management, payments, contracts, and hauler data. 74.6% used it every day. Only 32.2% said they knew it well.",
+        "I mapped how it all connected and treated billing as one workflow across the whole company. We pre-filled the repeated parts from contract terms and past cycles, cutting bill entry from about six minutes to one and manual errors by 40%.",
+        "Operators kept what they needed to verify. The system stopped asking them to rebuild information it already knew.",
       ],
     },
     {
-      ask: "I make good judgment reusable, so it holds when I'm not in the room",
+      ask: "I make the quality bar usable by the whole team.",
       proof: [
-        "A bar nobody writes down is just my taste. Written down, it holds when someone else owns the build.",
-        "I found 97 usability issues in an app already sold to hospitals and used by surgeons, ER nurses and trauma teams mid-shift. Nobody had audited it. I wrote every one down.",
-        "Then I rebuilt the home screen from a feature dump into 3 time-aware states, one recommendation each: pre-shift, mid-shift, post-shift.",
-        "I rebuilt Arena's process around Claude Code and functional React, put 7 layers of that thinking at one URL, and retired 4 systems.",
+        "I went through an app hospitals had already bought, one that surgeons, ER nurses, and trauma teams were using mid-shift. I found 97 places where it broke down for them.",
+        "The biggest one was structural: the home screen showed a pile of features when clinicians just needed to know what to do next. I reframed it around three time-aware states, pre-shift, mid-shift, and post-shift, with one recommendation in each.",
+        "Then I put the research, decisions, tokens, components, and working prototypes in one React hub. AI got the first drafts done faster. And because the thinking was right there on the screen, the good calls were easy to repeat.",
       ],
     },
   ],
@@ -74,38 +56,32 @@ export const arborxr = {
     eyebrow: "How I work",
     heading: "Four things the case studies don't tell you",
     subheading: "",
+    columns: 2,
     tiles: [
       {
         icon: "fa-light fa-user",
-        heading: "I managed twice. Now the work.",
-        body: "I ran design teams at Giant Eagle and Roadrunner. Since 2023 I've been the only designer at Arena Labs and MegPrime Pay, for Seed and Series A founders. Nobody to hand the work to. That's the part I wanted.",
+        heading: "I managed twice. Now I want the work.",
+        body: "I ran design teams at Giant Eagle and Roadrunner. Since 2023, I've worked directly on the product as the designer at Arena Labs and MegPrime Pay, partnering with Seed and Series A founders. I know what a team gives you. I also know how to move without one. I wanted my hands back on the work.",
       },
       {
-        // Confident partnership, replacing the old "I read code and I stay out of the way" (weak,
-        // deferential). She owns the bar and the framing; the design engineer owns production.
-        // Force-multiplier quote is verbatim (Michael Quintero, SWE, Roadrunner), the one third-party proof.
         icon: "fa-light fa-code",
-        heading: "I prototype to decide",
-        body: "At Roadrunner I built the 50+ component library with engineering, and an engineer there called me a force multiplier. I prototype to settle hard questions early, not to own production. The build stays with your design engineer. I set the bar and the framing above it.",
+        heading: "I prototype to decide.",
+        body: "I started in front-end development and later built Roadrunner's 50+ component library alongside engineering. I prototype far enough to settle the hard questions before production, not to replace engineering. Then I partner with design engineering to carry the direction into a coherent product.",
       },
       {
         icon: "fa-light fa-wand-magic-sparkles",
         heading: "AI drafts. I decide.",
-        body: "Claude Code hands you 80% in minutes, then keeps going past where the work gets worse. I ship my own React with it, so ideas reach real users, not just a mock. Knowing when to stop is still my job.",
+        body: "Claude Code can produce a working first draft in minutes, and continue generating past the point where the product gets worse. I use AI to make ideas concrete and testable early. Knowing what to build, what to question, and when to stop is still my job.",
       },
       {
-        icon: "fa-light fa-list-check",
-        heading: "I make the bar observable",
-        body: "Routine calls shouldn't wait on a designer. So I make the bar something you can see: a written audit, the principles, the components. When the judgment is on the page, the team keeps moving without me in the room.",
+        icon: "fa-light fa-chart-line",
+        heading: "I measure the behavior, not the deliverable.",
+        body: "Giant Eagle's myPerks didn't need better rewards. Members needed to understand the value already there. Making that value visible, without changing the rewards program, helped increase spend per member by 384% and visits by 212%. A shipped screen is not the outcome. Changed behavior is.",
       },
     ],
   },
 
-  // Reworked 2026-08-05, Jenny's call, replacing "If it's a match, I'd love to chat." (GPT flagged
-  // it generic). This option (jenny-copywriter, ranked #1 by ChatGPT) turns the page thesis into a
-  // confident promise at the button: names the system-behind-the-screen value, no question that
-  // hands the reader the verdict.
-  close: "Bring me your messiest product. I'll find the system underneath.",
+  close: "Keeping ArborXR simple as you add new devices, in-headset, and an AI layer. That's the job I want.",
 
   primaryLabel: "Book 30 minutes",
   secondaryLabel: "View resume",
