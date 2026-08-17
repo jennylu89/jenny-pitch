@@ -120,11 +120,12 @@ export const jenny = {
         // Jenny's spec copy, 2026-08-16, used verbatim. ⛔ Do not rewrite.
         // The last beat is the closing callout from the spec: the design move was changing the
         // unit of the problem, not making a nicer screen. It stays last.
-        // 5 beats became 2. "The request" repeated the headline. "The design move" repeated
-        // "The decision". "What changed" repeated the metrics row.
+        // One unlabeled paragraph. The finding and the decision are cause and effect, and the
+        // labels made the reader do a join the sentence should do for them. The labels earned
+        // their place when this was five beats; at 55 words they were furniture.
+        // ⛔ Do not re-add "What I found" / "The decision" labels here.
         beats: [
-          { label: "What I found", text: "Operators re-entered and re-checked the same information across all of them. Most bills matched the previous month, and every one still started from scratch." },
-          { label: "The decision", text: "I brought leadership two scopes with the evidence behind each. They chose the broader overhaul, which changed the unit of work from a screen to the whole billing workflow." },
+          { label: "", text: "Operators re-entered and re-checked the same information in each one. 75% of bills matched the previous month, and every one still started from scratch. I brought leadership two scopes with the evidence behind each. They chose the broader overhaul, which changed the unit of the problem from a screen to a workflow." },
         ],
         screens: [
           { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow, before", caption: "Before, 28 clicks across 4 fragmented tools per invoice" },
@@ -275,12 +276,14 @@ export const jenny = {
         // Jenny's spec copy, 2026-08-16, used verbatim. ⛔ Do not rewrite.
         // The four questions are the centerpiece and are written out in full inside the beat so
         // they read as the product model, not as a footnote.
-        // 6 beats became 3. ⛔ Avoid the phrase "not an adoption win": the boundary is kept, but
-        // that wording made the reader dwell on the missing result and read as defensive.
+        // Two unlabeled paragraphs, collapsed the same way as Roadrunner. The finding and the
+        // model belong together (the model is the answer to the finding), and building it is the
+        // second move. The four questions read better as a colon list than as four fragments.
+        // ⛔ Avoid the phrase "not an adoption win": the boundary is kept, but that wording made
+        // the reader dwell on the missing result and read as defensive.
         beats: [
-          { label: "What I found", text: "The home screen behaved like a feature library. Mid-shift clinicians did not need more things to browse. They needed to know what mattered now." },
-          { label: "The product model", text: "I gave the experience one order. What am I trying to achieve. How am I doing. What should I do today. What should I learn next." },
-          { label: "Make it real", text: "I built it in React with Claude Code so the team could use the model instead of looking at it, and pick a direction before engineering committed. It is still in development." },
+          { label: "", text: "The home screen behaved like a feature library. Mid-shift clinicians did not need more things to browse, they needed to know what mattered now. So I put the product in one order: what am I trying to achieve, how am I doing, what should I do today, what should I learn next." },
+          { label: "", text: "I built it in React with Claude Code so the team could use the model instead of looking at it, and pick a direction before engineering committed. It is still in development." },
         ],
         beforeScreen: { src: "/arena-screen-before.png", alt: "Arena Strive V1, feature library", caption: "Before, V1 feature library" },
         screens: [
