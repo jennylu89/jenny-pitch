@@ -302,41 +302,54 @@ export const jenny = {
       tags: ["Product Development", "Design System", "Prototyping", "React"],
       tools: ["Claude Code", "React", "Vite", "Figma MCP", "Pencil.dev"],
       video: "/ai-hub-video.mp4",
+      // ⭐ THIS PROJECT HAS A DIFFERENT JOB FROM THE OTHER TWO. Jenny's rule, 2026-08-16:
+      //   Roadrunner  = "I changed the scope from a screen problem to a workflow problem."
+      //   Arena       = "I created a product model when many features lacked structure."
+      //   Design Hub  = "I connected the reasoning between research, design, prototype, and
+      //                  implementation."
+      // This is design operations and technical fluency, NOT another product strategy case study.
+      // ⛔ Do not let this copy drift back into "I find the real problem", "I connect decisions",
+      // "I prototype", or "I work across systems". Roadrunner and Arena already prove all four,
+      // and repeating them here is what made this section feel redundant.
       headline:
-        "Research lived in Notion, design in Figma, components in Storybook, and specs in PDFs. I built one working hub so evidence, decisions, components, and functional prototypes stayed connected instead of becoming separate artifacts.",
+        "Product decisions were getting fragmented across tools. Research lived in Notion, design in Figma, components in Storybook, and specs in PDFs.",
       outcome:
-        "Built one working environment where research, decisions, components, and functional prototypes stay connected.",
-      // ⛔ "4 hrs → 20 min" was removed per Jenny's spec 2026-08-16. The hiring story here is
-      // decision quality, not speed. Do not put it back.
+        "Built a connected workflow where evidence, decisions, components, and functional prototypes stay linked from problem framing through implementation.",
+      // ⛔ "4 hrs → 20 min" is gone and stays gone. This project is not positioned around speed.
+      // The value is better decisions, not faster output.
       metrics: [
-        { value: "4 → 1", label: "Tools connected into one working environment" },
-        { value: "Functional React", label: "Not just static prototype screens" },
-        { value: "Evidence → decision → prototype", label: "Kept in one place" },
+        { value: "4 → 1", label: "Design artifacts connected into one workflow" },
+        { value: "Research → Decision → Prototype", label: "A traceable product reasoning loop" },
+        { value: "Functional React", label: "A working experience, not only a static mockup" },
       ],
       caseStudy: {
         insight: "The problem was never a shortage of artifacts. It was that the reasoning connecting them disappeared.",
         // ⛔ This is NOT a story about building an AI tool, and the title must never say so.
         // It is a product-development problem: the reasoning between artifacts kept disappearing.
         // Runs third and lighter on job pages so it supports Roadrunner and Arena, not competes.
-        // Jenny's spec copy, 2026-08-16. Four connections, not seven document tiles.
+        // Unlabeled beats, so the intro reads as continuous prose rather than a methodology slide.
+        // ⛔ The old four-part "What's inside" list was deleted on purpose: it read as a process
+        // diagram and repeated the portfolio's own narrative. Do not replace it with another
+        // four-card section.
+        // ⛔ "In retrospect" was also deleted. It made this read as a tooling experiment.
         beats: [
-          { label: "Research → decision", text: "Every major design decision can trace back to the evidence that caused it." },
-          { label: "Design system → prototype", text: "Tokens and components stay connected to the working experience." },
-          { label: "Prototype → discussion", text: "The team reacts to product behavior instead of debating a picture." },
-          { label: "Prototype → implementation", text: "States, constraints, and edge cases become visible earlier." },
-          { label: "In retrospect", text: "I'd formalize the token extraction pipeline earlier. I worked out the Figma MCP to Claude Code to React flow by trial and error, and a documented pipeline from day one would have saved the first week." },
+          { label: "", text: "The problem wasn't missing artifacts. It was losing the reasoning that connected them." },
+          { label: "", text: "I built a connected workflow where evidence, decisions, components, and functional prototypes stayed linked from problem framing through implementation." },
         ],
-        // Reduced from seven tiles to four, 2026-08-16. Seven made the hub read as a pile of
-        // documents rather than a connected way of working.
-        // ⛔ Do not re-add Segmentation & Personas, Gamification Strategy, or Industry Best
-        // Practices as separate tiles here.
-        featuresLabel: "WHAT'S INSIDE",
+        // Three outcome cards. ⛔ Exactly three. Do not add a fourth.
+        // Seven tiles became four, then four became these three on 2026-08-16, because the
+        // four-card version still read as a methodology slide rather than a result.
+        featuresLabel: 'WHAT CHANGED',
         features: [
-          { icon: 'fa-light fa-magnifying-glass-chart', label: 'Research → decision', detail: 'Every major design decision can trace back to the evidence that caused it' },
-          { icon: 'fa-light fa-palette', label: 'Design system → prototype', detail: 'Tokens and components stay connected to the working experience' },
-          { icon: 'fa-light fa-hand-pointer', label: 'Prototype → discussion', detail: 'The team reacts to product behavior instead of debating a picture' },
-          { icon: 'fa-light fa-code', label: 'Prototype → implementation', detail: 'States, constraints, and edge cases become visible earlier' },
+          { icon: 'fa-light fa-magnifying-glass-chart', label: 'Evidence → Decision', detail: 'Research findings stay connected to the product decisions they create.' },
+          { icon: 'fa-light fa-palette', label: 'Design → Prototype', detail: 'Components and tokens stay connected to a working experience, not only static screens.' },
+          { icon: 'fa-light fa-hand-pointer', label: 'Prototype → Alignment', detail: 'Teams discuss product behavior instead of debating a picture.' },
         ],
+        // Lands after the cards and the metrics, which is why it uses `closing` rather than a beat.
+        closing: {
+          label: 'The impact',
+          text: 'The value was not creating another design tool. It was keeping product reasoning attached to the artifacts teams use to build.',
+        },
         screens: [],
       },
     },

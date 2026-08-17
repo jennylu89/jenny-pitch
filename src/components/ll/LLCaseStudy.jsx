@@ -323,12 +323,39 @@ export default function LLCaseStudy({ project, index }) {
     </div>
   ) : null;
 
-  /* ── Content row — info stacked, features, metrics, tools ── */
+  /* `closing` is optional and opt-in: a labeled paragraph that lands AFTER the cards and metrics,
+     which is the one thing the beats can't do since they render above them. Added 2026-08-16 for
+     the Design Hub, where the closing thought has to follow the outcomes it is commenting on.
+     Same type styling as a beat, so nothing about the visual system changes. Omit it and every
+     other project renders exactly as before. */
+  const closingBlock = caseStudy.closing ? (
+    <div>
+      {caseStudy.closing.label && (
+        <div style={{
+          fontFamily: 'var(--font-badge)', fontSize: 'var(--type-small)',
+          letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase',
+          color: 'var(--accent-text, #6d5bd0)', fontWeight: 'var(--weight-medium)',
+          marginBottom: '6px',
+        }}>
+          {caseStudy.closing.label}
+        </div>
+      )}
+      <p style={{
+        color: 'var(--muted)', fontSize: 'var(--type-body)',
+        fontWeight: 'var(--weight-normal)', lineHeight: 'var(--leading-body)', margin: 0,
+      }}>
+        {caseStudy.closing.text}
+      </p>
+    </div>
+  ) : null;
+
+  /* ── Content row — info stacked, features, metrics, closing, tools ── */
   const contentRow = (
     <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
       {infoBlock}
       {featuresBlock}
       {metricsBlock}
+      {closingBlock}
       {toolsBlock}
     </div>
   );
