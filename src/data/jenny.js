@@ -93,8 +93,16 @@ export const jenny = {
       // Tightened 2026-08-16. The senior moment here is bringing leadership evidence that changed
       // the problem definition, so that beat gets its own paragraph. Research process is compressed
       // to the finding, not the method list. Do not re-expand it.
+      // ⭐ ONE JOB PER LAYER, set 2026-08-16 after the case studies went redundant.
+      //   headline = the reframe, said once
+      //   beats    = the story and the judgment, no figures the metrics row already carries
+      //   features = the method, and the only place the research figures appear
+      //   metrics  = the results
+      // A fact appears in exactly ONE of those. "four applications" lives in the headline only.
+      // 75% and the 74.6/32.2 split live in the feature cards only. Before this rule, Roadrunner
+      // was 244 words and said "four apps" 4 times, "28 clicks" 4 times, "workflow" 5 times.
       headline:
-        "I was asked to improve one billing screen. Research showed billing was actually one workflow fragmented across four applications.",
+        "I was asked to improve one billing screen. The problem turned out to be the workflow around it, split across four applications.",
       outcome:
         "1 billing page → 4-workstream platform overhaul.",
       // Three metrics, per Jenny's spec 2026-08-16. The old fourth, "3× faster to build every page
@@ -112,24 +120,24 @@ export const jenny = {
         // Jenny's spec copy, 2026-08-16, used verbatim. ⛔ Do not rewrite.
         // The last beat is the closing callout from the spec: the design move was changing the
         // unit of the problem, not making a nicer screen. It stays last.
+        // 5 beats became 2. "The request" repeated the headline. "The design move" repeated
+        // "The decision". "What changed" repeated the metrics row.
         beats: [
-          { label: "The request", text: "Improve one billing screen." },
-          { label: "What I found", text: "A single bill crossed four applications and 28+ clicks. 75% of bills were identical to the previous month, yet operators repeatedly re-entered and verified the same information." },
-          { label: "The decision", text: "I reframed the work from a page redesign to one billing workflow. I brought leadership two scoped options with the evidence behind each. They chose the broader overhaul." },
-          { label: "What changed", text: "One workflow instead of four tools. Repeat information pre-filled. Previous and current bill visible together, on shared status and interaction patterns." },
-          { label: "The design move", text: "It was not making a better billing screen. It was changing the unit of the problem from a page to a workflow." },
+          { label: "What I found", text: "Operators re-entered and re-checked the same information across all of them. Most bills matched the previous month, and every one still started from scratch." },
+          { label: "The decision", text: "I brought leadership two scopes with the evidence behind each. They chose the broader overhaul, which changed the unit of work from a screen to the whole billing workflow." },
         ],
         screens: [
           { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow, before", caption: "Before, 28 clicks across 4 fragmented tools per invoice" },
           { src: "/roadrunner-flow2.png", alt: "Roadrunner billing flow, after", caption: "After: unified billing in 3 clicks, one platform" },
         ],
         screensType: 'flow',
+        // The ONLY place the research figures appear. ⛔ Do not repeat 28 clicks here, the metrics
+        // row owns that. ⛔ Do not re-add a "Stakeholder Alignment" card, the decision beat owns it.
         featuresLabel: 'WHAT I INVESTIGATED',
         features: [
-          { icon: 'fa-light fa-clipboard-check', label: 'Usability Study', detail: '74.6% used the platform daily, only 32.2% knew it well' },
-          { icon: 'fa-light fa-route', label: 'Workflow Mapping', detail: '4 apps, 28 clicks, 75% redundant re-entry, the friction was systemic' },
-          { icon: 'fa-light fa-scale-balanced', label: 'Competitor Benchmarking', detail: 'Bill.com and Stripe: what good looks like in billing UX' },
-          { icon: 'fa-light fa-code-branch', label: 'Stakeholder Alignment', detail: 'Two options with data. Leadership chose the full overhaul.' },
+          { icon: 'fa-light fa-clipboard-check', label: 'Usability Study', detail: '74.6% used the platform daily. Only 32.2% said they knew it well.' },
+          { icon: 'fa-light fa-route', label: 'Workflow Mapping', detail: 'I traced every handoff across the departments that touched a bill.' },
+          { icon: 'fa-light fa-scale-balanced', label: 'Competitor Benchmarking', detail: 'Bill.com and Stripe, for what good looks like in billing.' },
         ],
         compareScreens: [
           { src: "/RR-Before-after-dashboard.png", alt: "Roadrunner dashboard, before and after", caption: "Before & After: Dashboard" },
@@ -244,16 +252,19 @@ export const jenny = {
       // screen assignment. This one leads with the complexity and the judgment call, because Arena
       // is her strongest proof of working across many users, workflows, and data at once.
       // ⛔ The direction is NOT adopted by the client. Never write this as an adoption win.
+      // Same one-job-per-layer rule as Roadrunner. 97 lives in the metrics row only. The four
+      // questions live in the beats only. The time-of-day examples live in the cards only.
       headline:
-        "I was asked to improve engagement and the home experience. The audit logged 97 usability issues, but the deeper problem was structural: coaching, wearable data, daily practices, and content had no organizing model.",
+        "Coaching, wearable data, daily practices, and content all existed. They did not yet add up to one experience.",
       outcome:
         "Found the organizing model the product was missing, then built it as working software so the team could decide before engineering committed.",
       // ⛔ 97 is supporting evidence and must not lead. The four-question model is the story, so it
       // sits first. ⛔ The "4 hrs → 20 min" metric was removed from Arena per Jenny's spec: the
       // hiring story here is the product model, not speed.
       metrics: [
+        // "3 time-aware home states" was dropped: the three cards below ARE those states, so the
+        // metric was counting something the reader is already looking at.
         { value: "4", label: "Questions the product answers in order" },
-        { value: "3", label: "Time-aware home states" },
         { value: "97", label: "Usability issues logged" },
       ],
       caseStudy: {
@@ -264,13 +275,12 @@ export const jenny = {
         // Jenny's spec copy, 2026-08-16, used verbatim. ⛔ Do not rewrite.
         // The four questions are the centerpiece and are written out in full inside the beat so
         // they read as the product model, not as a footnote.
+        // 6 beats became 3. ⛔ Avoid the phrase "not an adoption win": the boundary is kept, but
+        // that wording made the reader dwell on the missing result and read as defensive.
         beats: [
-          { label: "The request", text: "Improve the home experience and engagement." },
-          { label: "What I found", text: "The home screen behaved like a feature library. Mid-shift clinicians did not need more things to browse. They needed the product to help them understand what mattered now." },
-          { label: "The product model", text: "I reorganized the experience around four questions. What am I trying to achieve. How am I doing. What should I do today. What should I learn next." },
-          { label: "Make it real", text: "I built the model as functional React prototypes with Claude Code so the team could evaluate the behavior as a working experience before engineering committed." },
-          { label: "What changed", text: "The team could compare competing product concepts against something real instead of debating static mocks. The direction is still in development, so I treat this as decision evidence, not an adoption win." },
-          { label: "In retrospect", text: "I would test the four-question model with clinicians as a standalone concept before building the interface." },
+          { label: "What I found", text: "The home screen behaved like a feature library. Mid-shift clinicians did not need more things to browse. They needed to know what mattered now." },
+          { label: "The product model", text: "I gave the experience one order. What am I trying to achieve. How am I doing. What should I do today. What should I learn next." },
+          { label: "Make it real", text: "I built it in React with Claude Code so the team could use the model instead of looking at it, and pick a direction before engineering committed. It is still in development." },
         ],
         beforeScreen: { src: "/arena-screen-before.png", alt: "Arena Strive V1, feature library", caption: "Before, V1 feature library" },
         screens: [
@@ -283,10 +293,13 @@ export const jenny = {
         features: [
           // Retuned with the story rewrite. 'B2B2C Strategy' was cut with the sales-cycle thread,
           // and 'AI Prototyping' no longer carries the unmeasured 10x claim.
-          { icon: 'fa-light fa-diagram-project', label: 'Behavioral Model', detail: 'Four questions in order: what am I after, how am I doing, what today, what next.' },
-          { icon: 'fa-light fa-clock', label: 'Time-Aware States', detail: 'When does a clinician actually need this? Pre-shift, mid-shift, post-shift.' },
-          { icon: 'fa-light fa-heart-pulse', label: 'Biometric Integration', detail: 'Recommendations tied to Whoop data, not generic advice.' },
-          { icon: 'fa-light fa-bolt', label: 'Prototype as Argument', detail: 'Working React, so competing concepts get tested instead of debated.' },
+          // ⭐ The time-of-day examples live HERE and nowhere else. Jenny asked that they be kept
+          // because they make the model concrete. ⛔ Do not restate the four questions in these
+          // cards, the beats own them.
+          { icon: 'fa-light fa-sun', label: 'Pre-shift', detail: '6:47am. Focus priming before a surgeon starts.' },
+          { icon: 'fa-light fa-heart-pulse', label: 'Mid-shift', detail: '1:15pm. An elevated heart rate gets a 90-second reset.' },
+          { icon: 'fa-light fa-moon', label: 'Post-shift', detail: '11:30pm. One question: how did today feel.' },
+          { icon: 'fa-light fa-flask', label: 'What I would test next', detail: 'That sequence, put to clinicians on its own, before building more interface.' },
         ],
       },
     },
@@ -312,7 +325,7 @@ export const jenny = {
       // "I prototype", or "I work across systems". Roadrunner and Arena already prove all four,
       // and repeating them here is what made this section feel redundant.
       headline:
-        "Product decisions were getting fragmented across tools. Research lived in Notion, design in Figma, components in Storybook, and specs in PDFs.",
+        "Product decisions were getting fragmented across tools. The files were all there. The reasoning between them kept getting lost.",
       outcome:
         "Built a connected workflow where evidence, decisions, components, and functional prototypes stay linked from problem framing through implementation.",
       // ⛔ "4 hrs → 20 min" is gone and stays gone. This project is not positioned around speed.
@@ -333,8 +346,8 @@ export const jenny = {
         // four-card section.
         // ⛔ "In retrospect" was also deleted. It made this read as a tooling experiment.
         beats: [
-          { label: "", text: "The problem wasn't missing artifacts. It was losing the reasoning that connected them." },
-          { label: "", text: "I built a connected workflow where evidence, decisions, components, and functional prototypes stayed linked from problem framing through implementation." },
+          { label: "The gap", text: "Research lived in Notion, design in Figma, components in Storybook, and specs in PDFs. The tools held the parts, but not the links between them." },
+          { label: "What I built", text: "One connected workflow, where evidence, decisions, components, and functional prototypes stay linked from problem framing through implementation." },
         ],
         // Three outcome cards. ⛔ Exactly three. Do not add a fourth.
         // Seven tiles became four, then four became these three on 2026-08-16, because the
