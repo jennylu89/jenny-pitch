@@ -172,6 +172,7 @@ export default function LLCaseStudy({ project, index }) {
 
   /* ── Info block — 2 styles only: black title, regular everything else ── */
   const story = caseStudy.story || [];
+  const beats = caseStudy.beats || [];
   const infoBlock = (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
 
@@ -240,14 +241,41 @@ export default function LLCaseStudy({ project, index }) {
             {project.headline}
           </p>
         )}
-        {story.map((para, i) => (
-          <p key={i} style={{
-            color: 'var(--muted)', fontSize: 'var(--type-body)',
-            fontWeight: 'var(--weight-normal)', lineHeight: 'var(--leading-body)', margin: 0,
-          }}>
-            {para}
-          </p>
-        ))}
+        {/* `beats` is optional and opt-in. A project can supply [{label, text}] instead of a flat
+            `story` array, and the narrative logic becomes visible: THE ASK, WHAT I FOUND, THE
+            PRODUCT DECISION, HOW I MADE IT REAL, WHAT CHANGED, IN RETROSPECT. Added 2026-08-16 so
+            the major case studies read in a consistent order without every project needing the
+            same visual treatment. A project with no `beats` renders from `story` exactly as before,
+            so the other projects are untouched. */}
+        {beats.length > 0
+          ? beats.map((b, i) => (
+              <div key={i} style={{ marginTop: i === 0 ? 0 : 'var(--space-12)' }}>
+                {b.label && (
+                  <div style={{
+                    fontFamily: 'var(--font-badge)', fontSize: 'var(--type-small)',
+                    letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase',
+                    color: 'var(--accent-text, #6d5bd0)', fontWeight: 'var(--weight-medium)',
+                    marginBottom: '6px',
+                  }}>
+                    {b.label}
+                  </div>
+                )}
+                <p style={{
+                  color: 'var(--muted)', fontSize: 'var(--type-body)',
+                  fontWeight: 'var(--weight-normal)', lineHeight: 'var(--leading-body)', margin: 0,
+                }}>
+                  {b.text}
+                </p>
+              </div>
+            ))
+          : story.map((para, i) => (
+              <p key={i} style={{
+                color: 'var(--muted)', fontSize: 'var(--type-body)',
+                fontWeight: 'var(--weight-normal)', lineHeight: 'var(--leading-body)', margin: 0,
+              }}>
+                {para}
+              </p>
+            ))}
       </div>
 
 

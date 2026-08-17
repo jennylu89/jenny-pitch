@@ -1,4 +1,7 @@
-export default function CtaButton({ href, variant = 'primary', children, from }) {
+// `hideAvatar` is optional and opt-in. The avatar reads as "you are about to talk to Jenny", which
+// is right for Schedule a call and wrong for an in-page jump like "View selected work". Omit it and
+// every existing button renders exactly as before.
+export default function CtaButton({ href, variant = 'primary', children, from, hideAvatar = false }) {
   if (variant === 'primary') {
     return (
       <a
@@ -14,7 +17,9 @@ export default function CtaButton({ href, variant = 'primary', children, from })
           textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px',
         }}
       >
-        <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+        {!hideAvatar && (
+          <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+        )}
         {children || 'Schedule a call'}
       </a>
     );

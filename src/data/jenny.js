@@ -90,23 +90,34 @@ export const jenny = {
       role: "Sr. Product Design Manager",
       tags: ["B2B SaaS", "Internal Tools", "Design System", "Operations"],
       tools: ["Figma", "Maze", "Dovetail", "React", "Storybook"],
+      // Tightened 2026-08-16. The senior moment here is bringing leadership evidence that changed
+      // the problem definition, so that beat gets its own paragraph. Research process is compressed
+      // to the finding, not the method list. Do not re-expand it.
       headline:
-        "Tasked to improve one billing page. Audited the full workflow. Pitched leadership on a platform overhaul, and got the green light.",
+        "I was asked to improve one billing screen. Research showed billing was actually one workflow fragmented across four applications.",
       outcome:
         "1 billing page → 4-workstream platform overhaul.",
+      // Three metrics, per Jenny's spec 2026-08-16. The old fourth, "3× faster to build every page
+      // after", was dropped: it was never measured.
       metrics: [
-        { value: "28→3", label: "Clicks per bill" },
-        { value: "~6→1", label: "Minutes per bill entry" },
+        { value: "28+ → 3", label: "Clicks per bill" },
+        { value: "~6 → ~1 min", label: "Per bill entry" },
         { value: "50+", label: "Reusable components" },
-        { value: "3×", label: "Faster to build every page after" },
       ],
       caseStudy: {
         insight: "74.6% used the platform daily, only 32.2% knew it well.",
-        story: [
-          "I started with research, not design. Platform-wide usability study. Stakeholder interviews. Competitor benchmarking against Bill.com and Stripe. End-to-end process mapping across every department that touched billing.",
-          "What I found went beyond one page. A single bill required jumping between four applications and 28+ clicks of manual re-entry. 75% of those bills were identical to the previous month, yet every one was entered from scratch. The platform went down 1–2 times per week, and the people who relied on it most understood it least. This wasn't a billing page problem. It was a system problem.",
-          "I mapped the full workflow and brought it to leadership. Four workstreams: automate billing by pre-populating from contract terms and previous cycles, redesign navigation around user workflows, standardize patterns with plain-language UI, and build a 50+ component library alongside engineering.",
-          "What I'd do differently: I'd run a lightweight pilot with one team before the full overhaul. We had the data to justify the scope, but rolling out to all teams at once created change management friction we could have avoided.",
+        // The senior-design moment here is NOT "I redesigned billing." It is that she changed the
+        // team's understanding of which problem needed solving. THE PRODUCT DECISION beat carries
+        // that, so keep it. ⛔ Do not drown this in process documentation.
+        // Jenny's spec copy, 2026-08-16, used verbatim. ⛔ Do not rewrite.
+        // The last beat is the closing callout from the spec: the design move was changing the
+        // unit of the problem, not making a nicer screen. It stays last.
+        beats: [
+          { label: "The request", text: "Improve one billing screen." },
+          { label: "What I found", text: "A single bill crossed four applications and 28+ clicks. 75% of bills were identical to the previous month, yet operators repeatedly re-entered and verified the same information." },
+          { label: "The decision", text: "I reframed the work from a page redesign to one billing workflow. I brought leadership two scoped options with the evidence behind each. They chose the broader overhaul." },
+          { label: "What changed", text: "One workflow instead of four tools. Repeat information pre-filled. Previous and current bill visible together, on shared status and interaction patterns." },
+          { label: "The design move", text: "It was not making a better billing screen. It was changing the unit of the problem from a page to a workflow." },
         ],
         screens: [
           { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow, before", caption: "Before, 28 clicks across 4 fragmented tools per invoice" },
@@ -228,22 +239,38 @@ export const jenny = {
       role: "UX Designer",
       tags: ["Healthcare", "Mobile", "B2B SaaS", "Design System"],
       tools: ["Claude Code", "Figma", "React", "Pencil.dev", "Whoop API", "Typeform"],
+      // Rewritten 2026-08-16 to the ambiguity → insight → product decision → prototype → outcome
+      // pattern Jenny set. The old version opened on "redesigned the homepage," which reads as a
+      // screen assignment. This one leads with the complexity and the judgment call, because Arena
+      // is her strongest proof of working across many users, workflows, and data at once.
+      // ⛔ The direction is NOT adopted by the client. Never write this as an adoption win.
       headline:
-        "Healthcare app with 97 usability issues, a slow sales cycle, and a design process that couldn't keep up. Built an AI prototyping workflow to move 10x faster.",
+        "I was asked to improve engagement and the home experience. The audit logged 97 usability issues, but the deeper problem was structural: coaching, wearable data, daily practices, and content had no organizing model.",
       outcome:
-        "Identified 97 usability issues. Rebuilt the design process with AI. Redesigned the homepage from a feature library to a personalized system.",
+        "Found the organizing model the product was missing, then built it as working software so the team could decide before engineering committed.",
+      // ⛔ 97 is supporting evidence and must not lead. The four-question model is the story, so it
+      // sits first. ⛔ The "4 hrs → 20 min" metric was removed from Arena per Jenny's spec: the
+      // hiring story here is the product model, not speed.
       metrics: [
-        { value: "97", label: "Usability issues identified" },
-        { value: "3", label: "Time-aware homepage states" },
-        { value: "10×", label: "Faster design iteration" },
+        { value: "4", label: "Questions the product answers in order" },
+        { value: "3", label: "Time-aware home states" },
+        { value: "97", label: "Usability issues logged" },
       ],
       caseStudy: {
-        insight: "The app had bad usability, the sales cycle was slow, and users weren't seeing value. The design process was too slow to fix any of it.",
-        story: [
-          "Arena Strive is a B2B2C healthcare app, sold to hospitals, used by surgeons, ER nurses, and trauma teams. The problem wasn't one thing. Usability was poor (97 issues logged). The sales cycle was slow because hospitals couldn't see ROI. Users weren't sticking because the app felt generic, not personal.",
-          "The design process was the bottleneck. One designer, limited hours, and the traditional Figma → handoff pipeline couldn't keep up. I built an AI-powered prototyping workflow with Claude Code, functional React prototypes instead of static mocks. What used to take weeks took days.",
-          "With the speed unlocked, I redesigned the homepage around three time-aware states (pre-shift, mid-shift, post-shift), each surfacing one recommendation based on Whoop biometric data. A surgeon at 6:47am gets focus priming. At 1:15pm with elevated heart rate, a 90-second reset. At 11:30pm, one question: how did today feel?",
-          "Currently exploring the B2B2C layer: a hospital-facing dashboard that surfaces team engagement data, proving ROI to the buyer before the contract closes. On the clinician side, gamification to drive daily usage. The hypothesis: if the hospital can see their team improving, the sales cycle shortens.",
+        insight: "The 97 usability issues were real. Fixing them one at a time still would not have made a product.",
+        // ⛔ The 97 usability issues are SUPPORTING EVIDENCE, not the story. The story is that the
+        // product had no organizing model for what someone should do next.
+        // ⛔ Not adopted by the client. Never write this as an adoption win.
+        // Jenny's spec copy, 2026-08-16, used verbatim. ⛔ Do not rewrite.
+        // The four questions are the centerpiece and are written out in full inside the beat so
+        // they read as the product model, not as a footnote.
+        beats: [
+          { label: "The request", text: "Improve the home experience and engagement." },
+          { label: "What I found", text: "The home screen behaved like a feature library. Mid-shift clinicians did not need more things to browse. They needed the product to help them understand what mattered now." },
+          { label: "The product model", text: "I reorganized the experience around four questions. What am I trying to achieve. How am I doing. What should I do today. What should I learn next." },
+          { label: "Make it real", text: "I built the model as functional React prototypes with Claude Code so the team could evaluate the behavior as a working experience before engineering committed." },
+          { label: "What changed", text: "The team could compare competing product concepts against something real instead of debating static mocks. The direction is still in development, so I treat this as decision evidence, not an adoption win." },
+          { label: "In retrospect", text: "I would test the four-question model with clinicians as a standalone concept before building the interface." },
         ],
         beforeScreen: { src: "/arena-screen-before.png", alt: "Arena Strive V1, feature library", caption: "Before, V1 feature library" },
         screens: [
@@ -254,45 +281,61 @@ export const jenny = {
         screensType: 'before-after',
         featuresLabel: 'DESIGN DECISIONS',
         features: [
-          { icon: 'fa-light fa-clock', label: 'Time-Aware States', detail: 'When does a clinician need this app? Pre-shift, mid-shift, post-shift.' },
-          { icon: 'fa-light fa-heart-pulse', label: 'Biometric Integration', detail: 'How do we make recommendations feel personal, not generic?' },
-          { icon: 'fa-light fa-building', label: 'B2B2C Strategy', detail: 'How do we prove ROI to the hospital while serving the clinician?' },
-          { icon: 'fa-light fa-bolt', label: 'AI Prototyping', detail: 'How do we move 10x faster with one designer on limited hours?' },
+          // Retuned with the story rewrite. 'B2B2C Strategy' was cut with the sales-cycle thread,
+          // and 'AI Prototyping' no longer carries the unmeasured 10x claim.
+          { icon: 'fa-light fa-diagram-project', label: 'Behavioral Model', detail: 'Four questions in order: what am I after, how am I doing, what today, what next.' },
+          { icon: 'fa-light fa-clock', label: 'Time-Aware States', detail: 'When does a clinician actually need this? Pre-shift, mid-shift, post-shift.' },
+          { icon: 'fa-light fa-heart-pulse', label: 'Biometric Integration', detail: 'Recommendations tied to Whoop data, not generic advice.' },
+          { icon: 'fa-light fa-bolt', label: 'Prototype as Argument', detail: 'Working React, so competing concepts get tested instead of debated.' },
         ],
       },
     },
     {
       id: "designhub",
       company: "Arena Labs / Jointley",
-      title: "AI-Powered Design Hub",
-      role: "Designer + Builder · Claude Code",
-      tags: ["AI", "Claude Code", "React", "Design System"],
+      // Retitled 2026-08-16. The old name, "AI-Powered Design Hub", made this read like a
+      // prompt-engineering project. It is a product-development problem: the reasoning between
+      // artifacts kept disappearing. Claude Code, React, and MCP stay visible as implementation,
+      // never as the headline.
+      title: "From research to working prototype, without losing the decisions in between",
+      role: "Designer + Builder",
+      tags: ["Product Development", "Design System", "Prototyping", "React"],
       tools: ["Claude Code", "React", "Vite", "Figma MCP", "Pencil.dev"],
       video: "/ai-hub-video.mp4",
       headline:
-        "A product succeeds when all the thinking layers connect. Most teams scatter them across 4 tools and lose the connections.",
+        "Research lived in Notion, design in Figma, components in Storybook, and specs in PDFs. I built one working hub so evidence, decisions, components, and functional prototypes stayed connected instead of becoming separate artifacts.",
       outcome:
-        "I put them in one place. 4 hours per screen became 20 minutes.",
+        "Built one working environment where research, decisions, components, and functional prototypes stay connected.",
+      // ⛔ "4 hrs → 20 min" was removed per Jenny's spec 2026-08-16. The hiring story here is
+      // decision quality, not speed. Do not put it back.
       metrics: [
-        { value: "4 hrs → 20 min", label: "Per screen" },
-        { value: "4→1", label: "Systems replaced" },
-        { value: "7", label: "Thinking layers in one URL" },
+        { value: "4 → 1", label: "Tools connected into one working environment" },
+        { value: "Functional React", label: "Not just static prototype screens" },
+        { value: "Evidence → decision → prototype", label: "Kept in one place" },
       ],
       caseStudy: {
-        insight: "The problem wasn't designing, it was that the thinking was scattered. Research in one tool, system in another, strategy in a third. No one could see how it all connected.",
-        story: [
-          "At Arena Labs, every layer of product thinking lived in a different place: research in Notion, design system in Figma, components in Storybook, specs in PDFs. The problem wasn't the individual deliverables, it was that nobody could see how they connected. A persona insight that should have shaped the onboarding flow was three clicks and two tools away.",
-          "I built one hub to hold all of it. Not just a prototype, a thinking tool. Every design decision traces to a research finding. Every component maps to a token. Every flow connects to a persona. When everything lives together, you stop designing screens and start designing a product.",
-          "What I'd do differently: I'd formalize the token extraction pipeline earlier. I figured out the Figma MCP → Claude Code → React flow through trial and error. A documented pipeline from day one would have saved the first week.",
+        insight: "The problem was never a shortage of artifacts. It was that the reasoning connecting them disappeared.",
+        // ⛔ This is NOT a story about building an AI tool, and the title must never say so.
+        // It is a product-development problem: the reasoning between artifacts kept disappearing.
+        // Runs third and lighter on job pages so it supports Roadrunner and Arena, not competes.
+        // Jenny's spec copy, 2026-08-16. Four connections, not seven document tiles.
+        beats: [
+          { label: "Research → decision", text: "Every major design decision can trace back to the evidence that caused it." },
+          { label: "Design system → prototype", text: "Tokens and components stay connected to the working experience." },
+          { label: "Prototype → discussion", text: "The team reacts to product behavior instead of debating a picture." },
+          { label: "Prototype → implementation", text: "States, constraints, and edge cases become visible earlier." },
+          { label: "In retrospect", text: "I'd formalize the token extraction pipeline earlier. I worked out the Figma MCP to Claude Code to React flow by trial and error, and a documented pipeline from day one would have saved the first week." },
         ],
+        // Reduced from seven tiles to four, 2026-08-16. Seven made the hub read as a pile of
+        // documents rather than a connected way of working.
+        // ⛔ Do not re-add Segmentation & Personas, Gamification Strategy, or Industry Best
+        // Practices as separate tiles here.
+        featuresLabel: "WHAT'S INSIDE",
         features: [
-          { icon: 'fa-light fa-palette', label: 'Design System', detail: 'How do we ship consistently across every screen?' },
-          { icon: 'fa-light fa-hand-pointer', label: 'Functional Prototype', detail: 'How do we validate before engineering invests?' },
-          { icon: 'fa-light fa-code', label: 'Dev Mode', detail: 'How do we eliminate the handoff gap?' },
-          { icon: 'fa-light fa-magnifying-glass-chart', label: 'Research Hub', detail: 'How do we ground every decision in evidence?' },
-          { icon: 'fa-light fa-users', label: 'Segmentation & Personas', detail: 'Who are we actually designing for?' },
-          { icon: 'fa-light fa-trophy', label: 'Gamification Strategy', detail: 'What brings users back on day 22, not just day 1?' },
-          { icon: 'fa-light fa-book-open', label: 'Industry Best Practices', detail: 'What are the constraints we can\'t design around?' },
+          { icon: 'fa-light fa-magnifying-glass-chart', label: 'Research → decision', detail: 'Every major design decision can trace back to the evidence that caused it' },
+          { icon: 'fa-light fa-palette', label: 'Design system → prototype', detail: 'Tokens and components stay connected to the working experience' },
+          { icon: 'fa-light fa-hand-pointer', label: 'Prototype → discussion', detail: 'The team reacts to product behavior instead of debating a picture' },
+          { icon: 'fa-light fa-code', label: 'Prototype → implementation', detail: 'States, constraints, and edge cases become visible earlier' },
         ],
         screens: [],
       },

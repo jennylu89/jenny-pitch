@@ -13,7 +13,20 @@ import CtaButton from './CtaButton';
 // this on /arborxr 2026-07-31: the nav says "Jenny Lu" with her avatar, and the badge said it
 // again about 200px below. Known tradeoff she accepted: "Jenny Lu × ArborXR" was doing one job
 // the nav does not, signalling a page built for them rather than a portfolio they landed on.
-export default function LLPageHero({ companyName, role, oneLiner, headline, ctaLabel, ctaHref, body, hideName = false }) {
+// `eyebrow` is optional and opt-in. Pass it and it REPLACES the whole badge string, so a page can
+// show a positioning lens ("Jenny Lu · Senior Product Designer · Provider Experience") instead of
+// "Jenny Lu × Company". Added 2026-08-16 for the reusable job template, where the company name in
+// the badge was doing nothing the rest of the page didn't already say. Omit it and all 26 other
+// pages render exactly as before.
+// `compact`, `capabilityLine`, `secondaryLabel` and `secondaryFrom` are optional and opt-in, added
+// 2026-08-16 for the job template. `compact` trims the hero about 20% so the work appears sooner.
+// `capabilityLine` is deliberately small and low-contrast: it is metadata under the paragraph, not
+// a second headline. Omit all four and every existing page renders exactly as before.
+export default function LLPageHero({
+  companyName, role, oneLiner, headline, ctaLabel, ctaHref, body, eyebrow,
+  capabilityLine, secondaryLabel, secondaryFrom, hideName = false,
+  compact = false, ctaHideAvatar = false,
+}) {
   const [headerVisible, setHeaderVisible] = useState(false);
   useEffect(() => { const t = setTimeout(() => setHeaderVisible(true), 80); return () => clearTimeout(t); }, []);
 
@@ -25,8 +38,10 @@ export default function LLPageHero({ companyName, role, oneLiner, headline, ctaL
       <NoiseOverlay light />
       <div className="resume-hero-inner" style={{
         maxWidth: '1000px', margin: '0 auto',
-        padding: 'var(--space-144) var(--space-48) var(--space-96)',
-        minHeight: '100vh',
+        padding: compact
+          ? 'var(--space-96) var(--space-48) var(--space-72)'
+          : 'var(--space-144) var(--space-48) var(--space-96)',
+        minHeight: compact ? '78vh' : '100vh',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         position: 'relative', zIndex: 1,
       }}>
@@ -44,7 +59,7 @@ export default function LLPageHero({ companyName, role, oneLiner, headline, ctaL
             border: '1px solid var(--glass-stroke)', borderRadius: '100px',
             padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
           }}>
-            {hideName ? '' : 'Jenny Lu × '}{companyName}{headline ? ` · ${role}` : ''}
+            {eyebrow || `${hideName ? '' : 'Jenny Lu × '}${companyName}${headline ? ` · ${role}` : ''}`}
           </div>
 
           {/* Headline: the hook when a page supplies one, otherwise the role */}
@@ -93,9 +108,28 @@ export default function LLPageHero({ companyName, role, oneLiner, headline, ctaL
             </div>
           )}
 
+          {/* Capability line. Metadata under the paragraph, never a second headline: badge font,
+              small size, muted, wide tracking. If this ever starts reading like a claim, shrink it
+              rather than rewording it. */}
+          {capabilityLine && (
+            <div style={{
+              fontFamily: 'var(--font-badge)', fontSize: 'var(--type-small)',
+              letterSpacing: 'var(--tracking-badge)', color: 'var(--muted)',
+              textAlign: 'center', marginTop: 'var(--space-4, 4px)',
+            }}>
+              {capabilityLine}
+            </div>
+          )}
+
           {/* CTA */}
-          <div style={{ marginTop: 'var(--space-12)' }}>
-            <CtaButton href={ctaHref}>{ctaLabel}</CtaButton>
+          <div className="resume-cta-buttons" style={{
+            marginTop: 'var(--space-12)', display: 'flex', gap: 'var(--space-18)',
+            alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap',
+          }}>
+            <CtaButton href={ctaHref} hideAvatar={ctaHideAvatar}>{ctaLabel}</CtaButton>
+            {secondaryLabel && (
+              <CtaButton variant="outline" from={secondaryFrom}>{secondaryLabel}</CtaButton>
+            )}
           </div>
 
           {/* Scroll chevron */}

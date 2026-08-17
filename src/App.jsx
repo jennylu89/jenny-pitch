@@ -28,6 +28,7 @@ import NgrokConcept from './pages/companies/NgrokConcept';
 import DistroPage from './pages/companies/DistroPage';
 import NichePage from './pages/companies/NichePage';
 import ArborXRPage from './pages/companies/ArborXRPage';
+import APlaceForMomPage from './pages/companies/APlaceForMomPage';
 import AdamPage from './pages/companies/AdamPage';
 import InstrumentPage from './pages/companies/InstrumentPage';
 import DaltonMillsPage from './pages/companies/DaltonMillsPage';
@@ -69,6 +70,7 @@ export default function App() {
         <Route path="/distro" element={<DistroPage />} />
         <Route path="/niche" element={<NichePage />} />
         <Route path="/arborxr" element={<ArborXRPage />} />
+        <Route path="/aplaceformom" element={<APlaceForMomPage />} />
         <Route path="/adam" element={<AdamPage />} />
         <Route path="/instrument" element={<InstrumentPage />} />
         <Route path="/daltonmills" element={<DaltonMillsPage />} />
