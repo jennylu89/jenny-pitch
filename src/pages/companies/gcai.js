@@ -1,42 +1,34 @@
 export const gcai = {
   name: "GC AI",
-  role: "Principal Product Designer",
+  role: "Product Designer",
 
-  oneLiner: "10 years across enterprise, healthcare, and fintech. First designer who builds the practice, the system, and the product at the same time.",
+  oneLiner: "Ten years making complex, regulated workflows something people trust. Research, design, and the production React, one person.",
 
   summaryHeading: "What you need. What I've done.",
   summaryRows: [
     {
-      ask: "First designer — build the design org from scratch",
-      proof: "First UX hire at Giant Eagle. Sole designer at Arena Labs. Built the practice, design system, and product simultaneously — no playbook.",
+      ask: "Design AI-native workflows: prompts, outputs, citations, confidence signals",
+      proof: "At Arena I researched what AI in a high-stakes app should do: give an insight not a verdict, constrain what it can say, keep a human at the gate, and show a confidence signal. Built while prototyping in Claude Code.",
     },
     {
-      ask: "End-to-end ownership — concepts through pixel-perfect execution",
-      proof: "Every project: research, design, system, and production code. Roadrunner: usability study → full platform overhaul. Arena Labs: research → prototype → design hub.",
+      ask: "Translate complex legal workflows into intuitive interfaces",
+      proof: "MegPrime: I hid USDC, KYC, SEC disclosures, and state-by-state licensing behind one flow users understood. Highmark: member-facing insurance under HIPAA-adjacent rules. The closest regulated cousins to legal.",
     },
     {
-      ask: "Design system in Figma — scalable, accelerates engineering",
-      proof: "50+ component Figma library at Roadrunner. Consolidated 4 systems into 1 React-based Design Hub at Arena Labs — engineers copy code directly.",
+      ask: "Ship features weekly; prototype in React",
+      proof: "I ship production React with Claude Code. Engineers get working prototypes, not redlines.",
     },
     {
-      ask: "AI-native product design — agents, chat, trust signals",
-      proof: "Arena Strive: 3 contextual states surfacing AI-driven recommendations. This portfolio: built with Claude Code. Proposed decision queue + confidence threshold UX for AI agents.",
+      ask: "Contribute to and extend the Figma design system",
+      proof: "50+ component library built with engineering at Roadrunner. Consolidated 4 systems into one React Design Hub at Arena.",
     },
     {
-      ask: "User research with enterprise users",
-      proof: "Ran usability studies at Roadrunner (billing ops teams) and Giant Eagle (4M members). Research-first — every design decision traces to evidence.",
+      ask: "User research with in-house teams",
+      proof: "Ran platform-wide usability studies and stakeholder interviews at Roadrunner; research-first, every decision traces to evidence.",
     },
     {
-      ask: "Enterprise / B2B / regulated industries",
-      proof: "Healthcare (Highmark, Arena Labs), fintech (MegPrime — SEC compliance, KYC), B2B SaaS (Roadrunner billing platform).",
-    },
-    {
-      ask: "Code-based prototyping",
-      proof: "I ship production React with Claude Code. The prototype is the product — no handoff gap.",
-    },
-    {
-      ask: "5-10 years product design",
-      proof: "10+ years. Giant Eagle (2013-2022), Highmark Health, Roadrunner, Arena Labs, MegPrime.",
+      ask: "End-to-end ownership, comfort with ambiguity",
+      proof: "Twice the first and only designer. I run the research, design it, and ship it, with no playbook to wait on.",
     },
   ],
 
@@ -152,5 +144,5 @@ export const gcai = {
   },
 
   close:
-    "First designer at Giant Eagle. Sole designer at Arena Labs. I'm ready to build GC AI's design practice from scratch.",
+    "I have spent my career making regulated, high-stakes work feel simple. I would love to bring that to GC AI.",
 };

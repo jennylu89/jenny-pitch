@@ -495,7 +495,7 @@ export const jenny = {
         "Jenny deeply understands how research and design influence product strategy and flow into achieving measurable objectives. Strong UX leadership.",
       name: "Jeffrey Inscho",
       title: "Senior Product Manager · Giant Eagle",
-      avatar: null, // TODO: add LinkedIn avatar
+      avatar: "/avatars/jeffrey.png",
     },
     {
       id: "michael",
@@ -503,15 +503,35 @@ export const jenny = {
         "Jenny pioneered a design system library that gave our web pages a unified look and feel. She is a force multiplier and could be an asset to any organization.",
       name: "Michael Quintero",
       title: "Software Engineer · Roadrunner Recycling",
-      avatar: null, // TODO: add LinkedIn avatar
+      avatar: "/avatars/michael.png",
     },
     {
       id: "jaythan",
       quote:
-        "Jenny doesn't just make things look good. She builds systems, evidence-backed personas, clearly documented UX decisions, and coded components.",
+        "If you're a Seed or Series A founder who needs to validate and ship faster without sacrificing quality, Jenny is exactly who you want in your corner.",
       name: "Jaythan Elam",
-      title: "Founder",
-      avatar: null, // TODO: add LinkedIn avatar
+      title: "Founder · Jointley",
+      avatar: "/avatars/jaythan.png",
+    },
+    {
+      id: "mark",
+      quote:
+        "On more than one occasion Jenny was able to help me revisit a concept, an intended user experience, or a business goal that I may have veered from. She can get down in the weeds and do the tactical stuff, but also lead a group strategically.",
+      name: "Mark Sweeney",
+      title: "Product & Ops · Roadrunner Recycling",
+      avatar: "/avatars/mark.png",
+    },
+    {
+      id: "ron",
+      // Two verbatim sentences from Ron's December 2015 recommendation. They are sentences
+      // two and four of his paragraph, so not contiguous. The opener calling her a
+      // "front-end user experience designer" and the closing line about her personality are
+      // left out, both read junior on a senior page.
+      quote:
+        "She really delves into the creative process to explore ideas and converge upon the best designs. She has a good understanding of the entire user-centered design process, from discovery to prototyping to high-fidelity final designs.",
+      name: "Ron P",
+      title: "Human-Centered Design & Strategy Leader",
+      avatar: "/avatars/ron.png",
     },
     {
       id: "harvey",
@@ -519,7 +539,7 @@ export const jenny = {
         "Hiring Jenny was my best decision of 2025. Building a digital presence is one thing, building one that CONVERTS is a whole different game.",
       name: "Harvey Lee",
       title: "Founder · PMMCA",
-      avatar: null, // TODO: add LinkedIn avatar
+      avatar: "/avatars/harvey.png",
     },
   ],
 };

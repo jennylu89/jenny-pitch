@@ -6,9 +6,17 @@ import TextReveal from './TextReveal';
 // Homepage order: lead with 0-1 / AI-native / find-the-real-problem work; enterprise-scale studies last.
 const HOME_ORDER = ['roadrunner', 'arenalabs', 'megprime', 'designhub', 'myperks', 'navigation', 'curbside'];
 
-export default function Projects({ projects }) {
+// `projectIds`, `eyebrow`, `heading` and `intro` are optional and opt-in, matching
+// what LLSelectedProjects already does on the company pages. Omit them and the
+// homepage renders exactly as before, in HOME_ORDER. Pass `projectIds` and it
+// selects AND orders, same as the company pages, from the same jenny.selectedProjects.
+export default function Projects({ projects, projectIds, eyebrow, heading, intro }) {
   const displayProjects = projects
     ? projects
+    : projectIds
+    ? jenny.selectedProjects
+        .filter(p => projectIds.includes(p.id))
+        .sort((a, b) => projectIds.indexOf(a.id) - projectIds.indexOf(b.id))
     : [...jenny.selectedProjects].sort((a, b) => {
         const ia = HOME_ORDER.indexOf(a.id); const ib = HOME_ORDER.indexOf(b.id);
         return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
@@ -52,7 +60,7 @@ export default function Projects({ projects }) {
             textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
             marginBottom: '24px', display: 'block',
           }}>
-            Selected work
+            {eyebrow || 'Selected work'}
           </span>
           <TextReveal>
             <h2 style={{
@@ -65,11 +73,11 @@ export default function Projects({ projects }) {
               margin: '0 0 12px',
               maxWidth: '560px',
             }}>
-              Full case studies. Every decision explained.
+              {heading || 'Full case studies. Every decision explained.'}
             </h2>
           </TextReveal>
           <p style={{ color: 'var(--muted)', fontSize: 'var(--type-small)' }}>
-            {displayProjects.length} projects
+            {intro || `${displayProjects.length} projects`}
           </p>
         </div>
 

@@ -25,10 +25,19 @@ export default function CtaButton({ href, variant = 'primary', children, from, h
     );
   }
 
+  // `href` on the outline variant is optional and opt-in, added 2026-08-18. Every
+  // existing page omits it and keeps the /resume destination untouched. Pass it
+  // when the secondary label promises somewhere other than the resume, e.g. a
+  // LinkedIn profile. External links get target/rel the same way the primary does.
+  const outlineHref = href || (from ? `/resume?from=${from}` : '/resume');
+  const external = /^https?:/.test(outlineHref);
+
   return (
     <a
       className="btn-hover"
-      href={from ? `/resume?from=${from}` : '/resume'}
+      href={outlineHref}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
       style={{
         color: 'var(--text)',
         fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',

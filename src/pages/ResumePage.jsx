@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { getHomeConfig } from '../data/homeConfigs';
 import Nav from '../components/Nav';
 import Badge from '../components/Badge';
 import { jenny } from '../data/jenny';
@@ -183,8 +184,15 @@ function TimelineEntry({ exp, isLast, index }) {
 export default function ResumePage() {
   const [searchParams] = useSearchParams();
   const from = searchParams.get('from');
+  // `from` is a return path, so it already works as an href for both page generations:
+  // "arborxr" -> /arborxr, "for/datadelivers" -> /for/datadelivers.
   const projectsHref = from ? `/${from}` : '/';
-  const projectsLabel = from ? `Back to ${from.charAt(0).toUpperCase() + from.slice(1)} pitch →` : 'View projects →';
+  const homeVariant = from?.startsWith('for/') ? getHomeConfig(from.slice(4)) : null;
+  const projectsLabel = !from
+    ? 'View projects →'
+    : homeVariant?.name
+    ? `Back to ${homeVariant.name} →`
+    : `Back to ${from.charAt(0).toUpperCase() + from.slice(1)} pitch →`;
 
   const headerRef = useRef(null);
   const timelineRef = useRef(null);

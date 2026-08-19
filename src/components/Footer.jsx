@@ -1,5 +1,10 @@
 import { jenny } from '../data/jenny';
 
+// Restructured 2026-08-19 to the shape Jenny pointed at on jointley.com: meta row on top,
+// left aligned, split into identity on the left and a short statement on the right, a rule
+// under it, then an oversized tonal wordmark that bleeds off the bottom and the right edge.
+// ⛔ Deliberately NOT Jointley's electric blue ground. That is Jaythan's brand, not hers.
+// This keeps her own lavender wash and her own tonal wordmark colour.
 export default function Footer() {
   return (
     <footer style={{
@@ -20,55 +25,91 @@ export default function Footer() {
 
       <div
         className="w-full max-w-5xl mx-auto px-12"
-        style={{ paddingTop: '80px', paddingBottom: '24px', position: 'relative', zIndex: 1 }}
+        style={{ paddingTop: '80px', position: 'relative', zIndex: 1 }}
       >
+        {/* Meta row: identity left, statement right */}
+        <div className="footer-meta" style={{
+          display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-36)',
+          alignItems: 'start',
+        }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <a
+                href={`https://${jenny.contact.linkedin}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                style={{
+                  width: '32px', height: '32px', borderRadius: '50%',
+                  border: '1px solid var(--border)',
+                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  color: 'var(--muted)', textDecoration: 'none', fontSize: '13px',
+                }}
+              >
+                <i className="fa-brands fa-linkedin-in" />
+              </a>
+              <a
+                href={`mailto:${jenny.contact.email}`}
+                aria-label="Email"
+                style={{
+                  width: '32px', height: '32px', borderRadius: '50%',
+                  border: '1px solid var(--border)',
+                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  color: 'var(--muted)', textDecoration: 'none', fontSize: '13px',
+                }}
+              >
+                <i className="fa-light fa-envelope" />
+              </a>
+            </div>
 
-        {/* Wordmark */}
-        <div style={{ paddingTop: '40px' }}>
+            <p style={{
+              fontFamily: 'var(--font-badge)',
+              fontSize: 'var(--type-caption)',
+              letterSpacing: 'var(--tracking-badge)',
+              textTransform: 'uppercase',
+              color: 'var(--muted)',
+              margin: 0,
+            }}>
+              © {new Date().getFullYear()} Jenny Lu · Pittsburgh, PA
+            </p>
+          </div>
+
           <p style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: 'clamp(72px, 12vw, 140px)',
-            fontWeight: 'var(--weight-black)',
-            lineHeight: 'var(--leading-h1)',
-            letterSpacing: 'var(--tracking-tight)',
-            color: 'var(--border)',
+            color: 'var(--muted)',
+            fontSize: 'var(--type-caption)',
+            lineHeight: 'var(--leading-body)',
             margin: 0,
+            maxWidth: '420px',
           }}>
-            Jenny Lu
+            Available for new opportunities. I take on founding and early product design roles,
+            plus a small amount of fractional work. Research through production React, one person,
+            no handoff.
           </p>
         </div>
 
-        {/* Bottom bar */}
-        <div
-          className="flex flex-wrap items-center gap-3"
-          style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid var(--border)' }}
-        >
-          <p style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)', margin: 0 }}>
-            © {new Date().getFullYear()} Jenny Lu · Pittsburgh, PA
-          </p>
+        <div style={{ marginTop: 'var(--space-36)', height: '1px', backgroundColor: 'var(--border)' }} />
+      </div>
 
-          <div style={{
-            width: '3px', height: '3px', borderRadius: '50%',
-            backgroundColor: 'var(--border)', flexShrink: 0,
-          }} />
-
-          <a
-            href={`mailto:${jenny.contact.email}`}
-            style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)', textDecoration: 'underline' }}
-          >
-            {jenny.contact.email}
-          </a>
-
-          <div style={{
-            width: '3px', height: '3px', borderRadius: '50%',
-            backgroundColor: 'var(--border)', flexShrink: 0,
-          }} />
-
-          <span style={{ color: 'var(--muted)', fontSize: 'var(--type-caption)' }}>
-            Available for new opportunities.
-          </span>
-        </div>
-
+      {/* Oversized wordmark, bleeding off the bottom and the right */}
+      <div style={{
+        position: 'relative', zIndex: 1,
+        marginTop: 'var(--space-48)',
+        paddingLeft: '48px',
+        overflow: 'hidden',
+        height: 'clamp(96px, 11vw, 160px)',
+      }}>
+        <p style={{
+          fontFamily: 'var(--font-sans)',
+          fontSize: 'clamp(110px, 19vw, 260px)',
+          fontWeight: 'var(--weight-black)',
+          lineHeight: 0.82,
+          letterSpacing: 'var(--tracking-tight)',
+          color: 'var(--border)',
+          margin: 0,
+          whiteSpace: 'nowrap',
+        }}>
+          Jenny Lu
+        </p>
       </div>
     </footer>
   );

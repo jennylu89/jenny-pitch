@@ -76,7 +76,7 @@ export const arborxr = {
       {
         icon: "fa-light fa-chart-line",
         heading: "I measure the behavior, not the deliverable.",
-        body: "Giant Eagle's myPerks didn't need better rewards. Members needed to understand the value already there. Making that value visible, without changing the rewards program, helped increase spend per member by 384% and visits by 212%. A shipped screen is not the outcome. Changed behavior is.",
+        body: "At Giant Eagle, myPerks did not need better rewards. Members needed to understand the value already there. I made that value easier to see, and the rewards program itself did not change. That work helped raise spend per member by 384% and visits by 212%. A shipped screen is not the outcome. Changed behavior is.",
       },
     ],
   },

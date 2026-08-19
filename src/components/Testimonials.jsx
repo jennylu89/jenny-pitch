@@ -2,8 +2,17 @@ import { useRef, useState, useEffect } from 'react';
 import { jenny } from '../data/jenny';
 import TextReveal from './TextReveal';
 
-export default function Testimonials({ testimonials }) {
-  const items = testimonials || jenny.testimonials;
+// `testimonialIds` is optional and opt-in, matching how projectIds works. It selects AND
+// orders, from the single list in jenny.js, so a variant never duplicates a quote.
+// Omit it and every testimonial renders, which is what the components did before.
+export default function Testimonials({ testimonials, testimonialIds }) {
+  const items = testimonials
+    ? testimonials
+    : testimonialIds
+    ? jenny.testimonials
+        .filter(t => testimonialIds.includes(t.id))
+        .sort((a, b) => testimonialIds.indexOf(a.id) - testimonialIds.indexOf(b.id))
+    : jenny.testimonials;
 
   const headerRef = useRef(null);
   const cardsRef = useRef(null);
@@ -90,7 +99,39 @@ export default function Testimonials({ testimonials }) {
                 gap: '24px',
               }}
             >
-              {/* Avatar — hidden for now */}
+              {/* Avatar. Falls back to an initials monogram when no file exists, so the
+                  card looks deliberate either way and improves as photos are dropped in. */}
+              {(() => {
+                const initials = t.name.split(' ').map(w => w[0]).slice(0, 2).join('');
+                return t.avatar ? (
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    style={{
+                      width: '48px', height: '48px', borderRadius: '50%',
+                      objectFit: 'cover', flexShrink: 0,
+                      border: '1px solid var(--border)',
+                    }}
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      width: '48px', height: '48px', borderRadius: '50%',
+                      flexShrink: 0,
+                      backgroundColor: 'var(--glass-bg)',
+                      border: '1px solid var(--border)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      color: 'var(--muted)',
+                      fontSize: 'var(--type-small)',
+                      fontWeight: 'var(--weight-medium)',
+                      letterSpacing: '0.04em',
+                    }}
+                  >
+                    {initials}
+                  </div>
+                );
+              })()}
 
               {/* Quote */}
               <p style={{

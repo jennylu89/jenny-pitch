@@ -2,7 +2,11 @@ import { useRef, useState, useEffect } from 'react';
 import { jenny } from '../data/jenny';
 import TextReveal from './TextReveal';
 
-export default function Differentiators({ differentiators }) {
+// `eyebrow` and `heading` are optional and opt-in, alongside the `differentiators`
+// override this component already accepted. Omit them and the homepage renders
+// exactly as before. Pass a different number of cards and pass `heading` with it,
+// because the default heading says "Five things".
+export default function Differentiators({ differentiators, eyebrow, heading }) {
   const items = differentiators || jenny.differentiators;
   const isJdMode = items.length > 0 && items[0].requirement;
 
@@ -55,7 +59,7 @@ export default function Differentiators({ differentiators }) {
             textTransform: 'uppercase', lineHeight: 'var(--leading-h5)',
             marginBottom: '24px', display: 'block',
           }}>
-            {isJdMode ? 'Your requirements. My proof.' : 'Why I\'m different'}
+            {eyebrow || (isJdMode ? 'Your requirements. My proof.' : 'Why I\'m different')}
           </span>
           <TextReveal>
             <h2 style={{
@@ -68,9 +72,9 @@ export default function Differentiators({ differentiators }) {
               margin: 0,
               maxWidth: '560px',
             }}>
-              {isJdMode
+              {heading || (isJdMode
                 ? 'Every line from the job description, answered.'
-                : 'Five things that set me apart.'}
+                : 'Five things that set me apart.')}
             </h2>
           </TextReveal>
         </div>
@@ -169,35 +173,6 @@ export default function Differentiators({ differentiators }) {
           </p>
         )}
 
-        {/* Who for */}
-        {!isJdMode && (
-          <div style={{
-            margin: '36px 0 0',
-            maxWidth: '720px',
-            paddingTop: '28px',
-            borderTop: '1px solid var(--border)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '18px',
-          }}>
-            <p style={{
-              color: 'var(--text)',
-              fontSize: 'var(--type-body)',
-              lineHeight: 'var(--leading-body)',
-              margin: 0,
-            }}>
-              The founders I do my best work with have a strong vision but are still searching for product-market fit. They test their assumptions, talk to customers, and treat design as part of product strategy, not decoration.
-            </p>
-            <p style={{
-              color: 'var(--text)',
-              fontSize: 'var(--type-body)',
-              lineHeight: 'var(--leading-body)',
-              margin: 0,
-            }}>
-              For founders who'd rather hire one designer who ships code than a designer plus a front-end dev plus the lag between them. Not for teams that want a pure visual designer to hand off and walk away.
-            </p>
-          </div>
-        )}
 
       </div>
     </section>

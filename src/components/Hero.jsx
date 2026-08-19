@@ -7,9 +7,46 @@ const stats = [
   { value: '50+', label: 'Component design system', source: 'Roadrunner + Arena Labs' },
 ];
 
-const companies = ['Giant Eagle', 'Roadrunner', 'Arena Labs', 'MegPrime', 'Teleskope'];
+// Logo files live in public/logos/. `ratio` is each file's own width/height, so the
+// row can size every mark to one shared height without distorting any of them.
+// They render as CSS masks rather than <img>: the file supplies the shape and
+// --muted supplies the colour, so a white PNG, a black PNG and a two-colour SVG all
+// come out as the same grey, on light or dark.
+// `scale` is the optical correction. Matching pixel heights does not match visual
+// weight: a heavy black wordmark at 20px shouts, and a light stacked lockup at 20px
+// disappears. Each mark is nudged until they all read at the same strength.
+// Order is deliberate. Row one is where Jenny worked, row two is who she worked with.
+const LOGO_HEIGHT = 20;
+const workedAt = [
+  { name: 'Giant Eagle',    file: 'giant-eagle.svg',     ratio: 2.88, scale: 1.10 }, // thin script, needs size
+  { name: 'GetGo',          file: 'getgo.svg',           ratio: 2.27, scale: 1.00 },
+  { name: 'Market District',file: 'market-district.png', ratio: 2.00, scale: 1.60 }, // stacked lockup, tiny type, needs the most
+  { name: 'Roadrunner',     file: 'roadrunner.svg',      ratio: 4.50, scale: 1.00 },
+  { name: 'Arena Labs',     file: 'arena-labs.png',      ratio: 3.75, scale: 1.00 },
+  { name: 'MegPrime',       file: 'megprime.png',        ratio: 5.88, scale: 0.80 }, // very heavy, was dominating
+  { name: 'Highmark Health',file: 'highmark-health.svg', ratio: 3.39, scale: 1.15 },
+  // PPG is the second knockout mark, same as ReposiTrak, so it renders raw too.
+  { name: 'PPG',            file: 'ppg.svg',             ratio: 1.27, scale: 1.55, raw: true },
+];
 
-export default function Hero() {
+const workedWith = [
+  { name: 'Jointley',       file: 'jointley.svg',        ratio: 4.53, scale: 0.80 }, // heavy, was dominating
+  { name: 'Teleskope',      file: 'teleskope.svg',       ratio: 4.94, scale: 0.95 },
+  { name: 'Meatingplace',   file: 'meatingplace.png',    ratio: 4.00, scale: 0.82 }, // heavy black wordmark
+  // ReposiTrak is the one exception. Its wordmark is knocked out of a filled block, so a
+  // CSS mask flattens it into a solid grey slab. `raw` renders it as an <img> with the grey
+  // baked into the file instead. Tradeoff: it does not follow --muted, so it will not
+  // re-colour if the token changes.
+  { name: 'ReposiTrak',     file: 'repositrak.svg',      ratio: 2.97, scale: 1.30, raw: true },
+  { name: 'Connors Group',  file: 'connors-group.png',   ratio: 3.34, scale: 1.40 }, // very light thin caps
+];
+
+// `eyebrow`, `headline`, `body`, `ctaLabel` and `ctaHref` are optional and opt-in.
+// Omit them all and the homepage renders exactly as before. A job variant under
+// /for/<slug> passes them in from src/data/home/<slug>.js.
+export default function Hero({ eyebrow, headline, body, ctaLabel, ctaHref } = {}) {
+  const heroCtaHref = ctaHref || 'https://cal.com/jennylu98/30';
+  const heroCtaExternal = /^https?:/.test(heroCtaHref);
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
   const spotlightRef = useRef(null);
@@ -104,7 +141,7 @@ export default function Hero() {
             border: '1px solid var(--glass-stroke)', borderRadius: '100px',
             padding: '6px 16px', boxShadow: 'var(--shadow-glass)',
           }}>
-            Founding Product Designer
+            {eyebrow || 'Founding Product Designer'}
           </div>
 
           {/* Headline */}
@@ -117,7 +154,7 @@ export default function Hero() {
             color: 'var(--text)',
             margin: 0,
           }}>
-            I help founders find the real problem before they build the wrong thing.
+            {headline || 'I help founders find the real problem before they build the wrong thing.'}
           </h1>
 
           {/* Subtitle */}
@@ -125,15 +162,15 @@ export default function Hero() {
             color: 'var(--muted)', fontSize: 'var(--type-lead)',
             lineHeight: 'var(--leading-body)', margin: 0, maxWidth: '480px',
           }}>
-            I run the research, then I ship the production React myself. No handoff. At Roadrunner the brief was one billing page. I found 28 clicks across 4 apps per bill, and we got it down to 3.
+            {body || 'I run the research, then I ship the production React myself. No handoff. At Roadrunner the brief was one billing page. I found 28 clicks across 4 apps per bill, and we got it down to 3.'}
           </p>
 
           {/* CTA */}
           <a
             className="btn-hover"
-            href="https://cal.com/jennylu98/30"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={heroCtaHref}
+            target={heroCtaExternal ? '_blank' : undefined}
+            rel={heroCtaExternal ? 'noopener noreferrer' : undefined}
             style={{
               backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-fg)',
               fontSize: 'var(--type-body)', fontWeight: 'var(--weight-medium)',
@@ -144,7 +181,7 @@ export default function Hero() {
             }}
           >
             <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
-            Schedule a call
+            {ctaLabel || 'Schedule a call'}
           </a>
         </div>
 
@@ -193,23 +230,63 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Company logos */}
+        {/* Company logos, in two labelled groups. Employers and clients are a different
+            claim, and one unlabelled row read as "I worked at all of these". */}
         <div style={{
-          display: 'flex', justifyContent: 'center', alignItems: 'center',
-          gap: 'var(--space-36)',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px',
+          maxWidth: '700px', margin: '0 auto', paddingBottom: '60px',
           transition: 'opacity 0.7s ease 0.35s',
           opacity: visible ? 1 : 0,
         }}>
-          {companies.map((name) => (
-            <span key={name} style={{
-              fontSize: 'var(--type-body)',
-              fontWeight: 'var(--weight-medium)',
-              color: 'var(--muted)',
-              letterSpacing: 'var(--tracking-h5)',
-            }}>
-              {name}
-            </span>
-          ))}
+          {/* One label, not two. Splitting employers from clients made the reader decode
+              a relationship that does not matter in a four second scan, and it put
+              Jointley, Jenny's own studio, directly above its own clients. */}
+          <span style={{
+            fontSize: 'var(--type-small)', fontFamily: 'var(--font-badge)',
+            fontWeight: 'var(--weight-medium)', letterSpacing: 'var(--tracking-badge)',
+            textTransform: 'uppercase', color: 'var(--muted)', opacity: 0.75,
+          }}>
+            Selected experience
+          </span>
+          <div style={{
+            display: 'flex', justifyContent: 'center', alignItems: 'center',
+            flexWrap: 'wrap', columnGap: '28px', rowGap: '16px',
+          }}>
+            {[...workedAt, ...workedWith].map(({ name, file, ratio, scale, raw }) => raw ? (
+              <img
+                key={name}
+                src={`/logos/${file}`}
+                alt={name}
+                title={name}
+                style={{
+                  display: 'block',
+                  height: `${Math.round(LOGO_HEIGHT * scale)}px`,
+                  width: `${Math.round(LOGO_HEIGHT * scale * ratio)}px`,
+                }}
+              />
+            ) : (
+              <span
+                key={name}
+                role="img"
+                aria-label={name}
+                title={name}
+                style={{
+                  display: 'block',
+                  height: `${Math.round(LOGO_HEIGHT * scale)}px`,
+                  width: `${Math.round(LOGO_HEIGHT * scale * ratio)}px`,
+                  backgroundColor: 'var(--muted)',
+                  WebkitMaskImage: `url(/logos/${file})`,
+                  maskImage: `url(/logos/${file})`,
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                  maskPosition: 'center',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Scroll chevron */}

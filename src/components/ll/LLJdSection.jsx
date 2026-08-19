@@ -31,16 +31,18 @@ export default function LLJdSection({ section, index }) {
           </span>
         </Eyebrow>
 
-        <p style={{
-          fontSize: 'var(--type-body)',
-          color: dark ? 'var(--dark-text-muted)' : 'var(--muted)',
-          lineHeight: 'var(--leading-body)',
-          margin: '0 auto var(--space-18)',
-          maxWidth: '600px',
-          textAlign: 'center',
-        }}>
-          {section.requirement}
-        </p>
+        {section.requirement && (
+          <p style={{
+            fontSize: 'var(--type-body)',
+            color: dark ? 'var(--dark-text-muted)' : 'var(--muted)',
+            lineHeight: 'var(--leading-body)',
+            margin: '0 auto var(--space-18)',
+            maxWidth: '600px',
+            textAlign: 'center',
+          }}>
+            {section.requirement}
+          </p>
+        )}
 
         <h2 style={{
           fontFamily: 'var(--font-sans)',

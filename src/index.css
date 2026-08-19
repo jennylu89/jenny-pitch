@@ -359,6 +359,12 @@
   .differentiators-grid {
     grid-template-columns: 1fr !important;
   }
+  .whofor-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-meta {
+    grid-template-columns: 1fr !important;
+  }
   .process-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
@@ -379,6 +385,27 @@
   }
   .talkiatry-how-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  /* DataDelivers page. The proof bar collapses to two up, and the spine drops
+     its number column and stacks measure over evidence. */
+  .dd-proof-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .dd-proof-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 24px !important;
+  }
+  .dd-spine-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .dd-spine-row > span:first-child {
+    padding-top: 0 !important;
+  }
+  .dd-spine-row > span:nth-child(2) {
+    padding-right: 0 !important;
   }
   .talkiatry-metrics-grid {
     grid-template-columns: 1fr !important;

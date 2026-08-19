@@ -1,7 +1,10 @@
 import { useRef, useState, useEffect } from 'react';
 import { jenny } from '../data/jenny';
 
-export default function ContactSection() {
+// `from` is optional and opt-in. Without it the resume link stays exactly as before.
+// Pass the return path and the resume can send the reader back to the page they came from,
+// same as the nav does.
+export default function ContactSection({ from } = {}) {
   const headlineRef = useRef(null);
   const [headlineVisible, setHeadlineVisible] = useState(false);
 
@@ -172,7 +175,7 @@ export default function ContactSection() {
             LinkedIn
           </a>
           <a
-            href="/resume"
+            href={from ? `/resume?from=${from}` : "/resume"}
             style={{
               color: 'var(--muted)',
               fontSize: 'var(--type-small)',

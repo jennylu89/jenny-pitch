@@ -24,7 +24,7 @@ import CtaButton from './CtaButton';
 // a second headline. Omit all four and every existing page renders exactly as before.
 export default function LLPageHero({
   companyName, role, oneLiner, headline, ctaLabel, ctaHref, body, eyebrow,
-  capabilityLine, secondaryLabel, secondaryFrom, hideName = false,
+  capabilityLine, ctaNote, secondaryLabel, secondaryFrom, secondaryHref, hideName = false,
   compact = false, ctaHideAvatar = false,
 }) {
   const [headerVisible, setHeaderVisible] = useState(false);
@@ -127,10 +127,28 @@ export default function LLPageHero({
             alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap',
           }}>
             <CtaButton href={ctaHref} hideAvatar={ctaHideAvatar}>{ctaLabel}</CtaButton>
+            {/* `secondaryHref` is optional and opt-in, added 2026-08-18. Omit it and
+                the outline button keeps its /resume destination, so all 30+ other
+                pages render exactly as before. */}
             {secondaryLabel && (
-              <CtaButton variant="outline" from={secondaryFrom}>{secondaryLabel}</CtaButton>
+              <CtaButton variant="outline" from={secondaryFrom} href={secondaryHref}>{secondaryLabel}</CtaButton>
             )}
           </div>
+
+          {/* `ctaNote` is optional and opt-in, added 2026-08-18 for the DataDelivers
+              page. Same treatment as capabilityLine, but it sits UNDER the button
+              instead of above it, for a line that qualifies the ask rather than
+              describing the person. Omit it and every other page renders exactly
+              as before. */}
+          {ctaNote && (
+            <div style={{
+              fontFamily: 'var(--font-badge)', fontSize: 'var(--type-small)',
+              letterSpacing: 'var(--tracking-badge)', color: 'var(--muted)',
+              textAlign: 'center', marginTop: 'var(--space-12)',
+            }}>
+              {ctaNote}
+            </div>
+          )}
 
           {/* Scroll chevron */}
           <div style={{ marginTop: 'var(--space-48)' }}>

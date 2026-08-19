@@ -36,6 +36,7 @@ import SyntheticFiPage from './pages/companies/SyntheticFiPage';
 import TribeAiPage from './pages/companies/TribeAiPage';
 import TransectPage from './pages/companies/TransectPage';
 import TransectCalculator from './pages/companies/TransectCalculator';
+import DataDeliversPage from './pages/companies/DataDeliversPage';
 import DesignPage from './pages/DesignPage';
 import ResumePage from './pages/ResumePage';
 
@@ -44,6 +45,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PitchPage />} />
+        {/* Job variants of the homepage. One config file in src/data/home/ = one URL. */}
+        <Route path="/for/:slug" element={<PitchPage />} />
         <Route path="/taxbit" element={<TaxbitPage />} />
         <Route path="/taxwire" element={<TaxwirePage />} />
         <Route path="/rakuten" element={<RakutenPage />} />
@@ -78,6 +81,7 @@ export default function App() {
         <Route path="/tribeai" element={<TribeAiPage />} />
         <Route path="/transect" element={<TransectPage />} />
         <Route path="/transect-calculator" element={<TransectCalculator />} />
+        <Route path="/datadelivers" element={<DataDeliversPage />} />
         <Route path="/design" element={<DesignPage />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
