@@ -19,7 +19,7 @@ export default {
     'I help teams turn complex data and workflows into products people can understand and act on.',
 
   valueCardsEyebrow: 'How I work',
-  valueCardsHeading: 'From the hard question to the shipped feature, in your repo.',
+  valueCardsHeading: 'From the hard question to the shipped feature.',
   valueCards: [
     {
       icon: 'fa-light fa-wand-magic-sparkles',

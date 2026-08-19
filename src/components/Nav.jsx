@@ -91,7 +91,7 @@ export default function Nav({ from } = {}) {
             }}
             className="nav-cta btn-hover"
           >
-            Schedule a call
+            Book 30 minutes
           </a>
         </div>
       </div>

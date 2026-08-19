@@ -73,7 +73,7 @@ export default function Projects({ projects, projectIds, eyebrow, heading, intro
               margin: '0 0 12px',
               maxWidth: '560px',
             }}>
-              {heading || 'Full case studies. Every decision explained.'}
+              {heading || 'Full case studies.'}
             </h2>
           </TextReveal>
           <p style={{ color: 'var(--muted)', fontSize: 'var(--type-small)' }}>

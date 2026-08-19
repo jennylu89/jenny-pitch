@@ -156,7 +156,7 @@ export default function ContactSection({ from } = {}) {
           }}
         >
           <img src="/jenny-avatar.jpg" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
-          Schedule a call
+          Book 30 minutes
         </a>
 
         {/* Demoted text links */}

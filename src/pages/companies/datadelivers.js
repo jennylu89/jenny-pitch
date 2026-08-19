@@ -41,14 +41,14 @@ export const datadelivers = {
   // The availability line is new in v2 and it is deliberate. The role is
   // fractional at 20 hours. v1 never said she was available on those terms, so
   // the reader's biggest unknown survived the whole page.
-  identity: "Jenny Lu · Senior Product Designer",
+  identity: "Jenny Lu · Fractional Product Designer",
   heroHeadline: "I find the decision in the data.",
   heroBody: [
-    "Roadrunner asked me to fix one billing page. I mapped the workflow instead: 28 clicks across four apps to enter one bill, and 75% of bills identical to last month. Nobody asked for the rest. It shipped at 3 clicks a bill.",
+    "Roadrunner asked me to fix one billing page. I found the real problem around it: entering one bill took 28 clicks across four apps, even though 75% repeated last month's data. I redesigned the workflow and cut entry to 3 clicks.",
   ],
   // ⛔ No capability line. It restated the body in arrows and added a fourth
   // type size to a hero that already had three.
-  availability: "Available for fractional work, 20 hours a week.",
+  availability: "Available for fractional product work, up to 20 hours a week.",
   heroPrimaryLabel: "Book 30 minutes",
   heroPrimaryHref: "#work",
   // ⛔ ONE button in the hero. ArborXR ships one and it is the stronger page.
@@ -73,25 +73,28 @@ export const datadelivers = {
     rows: [
       {
         claim: "I find the real work, not just the requested screen.",
+        label: "Roadrunner · Billing",
         proof: [
-          "At Roadrunner, billing crossed work management, payments, contracts, and hauler data. 74.6% used it every day. Only 32.2% said they knew it well.",
-          "I mapped how it all connected and treated billing as one workflow across the whole company. We pre-filled the repeated parts from contract terms and past cycles, cutting bill entry from about six minutes to one and manual errors by 40%.",
+          "At Roadrunner, billing crossed work management, payments, contracts, and hauler data. 74.6% of operators used the platform daily, but only 32.2% felt they knew it well.",
+          "I mapped billing across the company as one workflow. We pre-filled repeated data from contract terms and past cycles, cutting entry time from about 6 minutes to 1 and reducing manual errors by 40%.",
           "Operators kept what they needed to verify. The system stopped asking them to rebuild information it already knew.",
         ],
       },
       {
-        claim: "I turn a screen full of data into one thing to do next.",
+        claim: "I turn dense data into a clear next decision.",
+        label: "Arena Labs · Strive",
         proof: [
-          "I went through an app hospitals had already bought, one that surgeons, ER nurses, and trauma teams were using mid-shift. I found 97 places where it broke down for them.",
-          "Fixing 97 issues one by one still would not make a clear product. The home screen was a list of features. Clinicians needed to know what mattered now. I put the product in one clear order.",
-          "That matches your move from reporting to insight and activation. The key question is what the user should do next.",
+          "I evaluated a healthcare performance app used by surgeons, ER nurses, and trauma teams during live shifts. I logged 97 usability failures across the experience.",
+          "Fixing 97 issues one by one would not have fixed the product. The home screen behaved like a feature library, but clinicians needed to know what mattered now. I reorganized the experience around four questions: What am I trying to do? How am I doing? What should I do now? What should I learn next?",
+          "That is the shift from reporting to action. The hard part is not showing the data. It is helping someone decide what to do next.",
         ],
       },
       {
         claim: "I hand engineering a system, not a pile of screens.",
+        label: "Roadrunner · Design system",
         proof: [
-          "I built Roadrunner's library of more than 50 components with engineering. The rest of the platform used the same system.",
-          "Then I put the research, decisions, tokens, components, and working prototypes in one React hub, so the thinking sat next to the thing being built and the good calls were easy to repeat.",
+          "I built Roadrunner's 50+ component library with the engineers who used it to ship the platform.",
+          "I put the research, decisions, tokens, components, and working prototypes in one React hub. The reasoning stayed beside the work, so teams could reuse decisions instead of reopening them.",
         ],
         quote:
           "Jenny pioneered a design system library that gave our web pages a unified look and feel. She is a force multiplier.",
@@ -103,7 +106,7 @@ export const datadelivers = {
     // called that talking herself out of the job. Name the gap, make the first
     // sprint the test, move on.
     note:
-      "I can prove component coverage and that engineering valued my work. I have not been scored on sprint timing or rework. Judge both on the first sprint.",
+      "What I can prove now: a 50+ component library and an engineer's account of the handoff. What I would measure with your team: cycle time and rework, starting in the first sprint.",
   },
 
   // ── 03. HOW I WORK · four opinions, not five process steps ─────────────────
@@ -114,27 +117,27 @@ export const datadelivers = {
   // answers their AI-native gate in four words and does not need 481px of its own.
   howIWork: {
     eyebrow: "How I work",
-    heading: "Four things the case studies do not tell you",
+    heading: "How I work with your team",
     tiles: [
       {
         icon: "fa-light fa-user",
-        heading: "I managed twice. Now I want the work.",
-        body: "I ran design teams at Giant Eagle and Roadrunner. Since 2023 I have worked directly on the product as the designer at Arena Labs and MegPrime Pay, partnering with Seed and Series A founders. I know what a team gives you. I also know how to move without one. Twenty hours a week with my hands on the work is exactly the shape I want.",
+        heading: "I have managed teams. I still do the work.",
+        body: "I led design teams at Giant Eagle and Roadrunner. Since 2023, I have worked hands-on with Arena Labs, MegPrime Pay, and Seed to Series A founders. I can align a team when one exists and keep moving when it does not. At 20 hours a week, I stay close enough to own the work from problem to shipped scope.",
       },
       {
         icon: "fa-light fa-code",
         heading: "I prototype to decide.",
-        body: "I started in front-end development and later built Roadrunner's 50+ component library alongside engineering. I prototype far enough to settle the hard questions before production, not to replace engineering. That is also why I can work in your repo instead of throwing files over a wall.",
+        body: "I started in front-end development and later built Roadrunner's 50+ component library with engineering. I prototype far enough to settle hard questions before production, not to replace engineering. I work in the codebase, test the behavior, and hand off decisions with the implementation context intact.",
       },
       {
         icon: "fa-light fa-wand-magic-sparkles",
         heading: "AI drafts. I decide.",
-        body: "Claude Code can produce a working first draft in minutes, and keep generating past the point where the product gets worse. I use AI to make ideas concrete and testable early. Knowing what to build, what to question, and when to stop is still my job. This page was built that way.",
+        body: "AI can produce a working first draft in minutes, then keep generating past the point where the product gets worse. I use it to make ideas concrete and testable early. Deciding what to build, what to question, and when to stop is still my job.",
       },
       {
         icon: "fa-light fa-chart-line",
         heading: "I measure the behavior, not the deliverable.",
-        body: "At Giant Eagle, myPerks did not need better rewards. Members needed to understand the value already there. I made that value easier to see, and the rewards program itself did not change. That work helped raise spend per member by 384% and visits by 212%. A shipped screen is not the outcome. Changed behavior is.",
+        body: "Giant Eagle's myPerks did not need richer rewards. Members needed to see the value already available. Making that value clear, without changing the rewards program, contributed to a 384% increase in spend per member and a 212% increase in visits. The screen was the intervention. Changed behavior was the outcome.",
       },
     ],
   },
@@ -151,9 +154,9 @@ export const datadelivers = {
   // in src/data/jenny.js so every page that shows it stays in sync.
   arena: {
     eyebrow: "02 · Arena Labs / Strive",
-    heading: "The design problem was what to do next",
+    heading: "The hard part was turning health data into the next action",
     lead: [
-      "This is the closest case to your product. Coaching, wearable data, daily practices, and content did not add up to one experience. I found the order that told each user what to do next. The key was the order, not a better chart.",
+      "The product already had coaching, wearable data, daily practices, and content. It did not have a clear order. The work was deciding what a clinician needed now, not drawing a better chart.",
     ],
     projectIds: ["arenalabs"],
   },
@@ -163,9 +166,9 @@ export const datadelivers = {
   // its existing copy, so src/data/jenny.js is untouched and no other page moves.
   supporting: {
     eyebrow: "01 · Roadrunner Recycling",
-    heading: "Billing, from 28 clicks to 3",
+    heading: "One billing screen hid a four-app workflow",
     lead: [
-      "You have a working prototype and years of client context. This case shows how I step into a live system, learn the work, and improve the part that matters.",
+      "Roadrunner asked for a better billing screen. Field research showed that the real problem stretched across four apps, five teams, and 28 clicks. I narrowed the intervention to the workflow operators repeated every month, then shipped it without redesigning the whole platform.",
     ],
     projectIds: ["roadrunner"],
   },
@@ -174,36 +177,36 @@ export const datadelivers = {
   // v1 ended on "why this maps," which is a claim. v2 ends on a plan, which is
   // cheaper for them to evaluate and shows the product was actually understood.
   plan: {
-    eyebrow: "If you brought me on",
-    heading: "What I would do in the first 30 days",
+    eyebrow: "The first 30 days",
+    heading: "What I would deliver in the first 30 days",
     tiles: [
       {
         icon: "fa-light fa-magnifying-glass",
-        heading: "Week 1 · Learn the prototype and the data",
-        body: "Go through the prototype with the team that built it. Learn the data model and client history from the data team. My job is to build on what they know.",
+        heading: "Week 1 · Learn the product and its evidence",
+        body: "Walk through the product with the team that built it. Review the data model, research, constraints, and open decisions. My job is to absorb what the team already knows before adding a new point of view.",
       },
       {
         icon: "fa-light fa-diagram-project",
         heading: "Week 2 · Map insight to activation",
-        body: "Trace the path from seeing an insight to choosing an audience to taking action. Mark where it breaks. Use that map to set scope.",
+        body: "Trace the path from seeing an insight to choosing who needs it and acting on it. Mark where the path breaks. Use that map to choose the first scope.",
       },
       {
         icon: "fa-light fa-layer-group",
-        heading: "Week 3 · Audit the component library",
-        body: "List what exists, find patterns used only once, and mark the new components the roadmap needs. You named coverage as a measure, so I would check it early.",
+        heading: "Week 3 · Audit what the team can reuse",
+        body: "Inventory existing patterns, find one-off solutions, and identify the net-new components the roadmap needs. This reveals what can ship quickly and what needs system work first.",
       },
       {
         icon: "fa-light fa-code",
         heading: "Week 4 · Ship one scope end to end",
-        body: "Take one feature from idea to working prototype to a clear handoff, all in one sprint. Then you can judge my delivery, rework, and handoff on real work.",
+        body: "Take one feature from concept to working prototype to an engineer-ready scope in one sprint. You can judge my decisions, pace, and handoff on live work, not a portfolio story."
       },
     ],
   },
 
   // ── 08. CONTACT ────────────────────────────────────────────────────────────
   close: {
-    heading: "Available for fractional work, 20 hours a week",
-    text: "Point me at one product area. In the first week, I will show you what I learned and where I would start.",
+    heading: "Available for fractional product work · up to 20 hours a week",
+    text: "Give me one product area. In the first week, I will show you the decisions it needs next.",
     primaryLabel: "Book 30 minutes",
     secondaryLabel: "View resume",
   },

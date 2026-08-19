@@ -13,6 +13,8 @@
 // right column answered with method instead of story. If a row has no number,
 // it does not belong here. Put it in How I Work instead.
 // ─────────────────────────────────────────────────────────────────────────────
+// `row.label` is optional and opt-in. Without it the row shows the shared proofLabel,
+// exactly as before. With it, each row can name its own source, e.g. "Roadrunner · Billing".
 export default function DDProofRows({ rows, proofLabel = 'The proof' }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-12)' }}>
@@ -46,7 +48,7 @@ export default function DDProofRows({ rows, proofLabel = 'The proof' }) {
               letterSpacing: 'var(--tracking-badge)', textTransform: 'uppercase',
               color: '#6b55e8',
             }}>
-              {proofLabel}
+              {r.label || proofLabel}
             </span>
             {r.proof.map((para, j) => (
               <p key={j} style={{

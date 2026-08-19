@@ -86,10 +86,10 @@ export const jenny = {
     {
       id: "roadrunner",
       company: "Roadrunner Recycling",
-      title: "Billing Platform Overhaul",
+      title: "From 28 clicks across four apps to 3 clicks in one",
       role: "Sr. Product Design Manager",
       tags: ["B2B SaaS", "Internal Tools", "Design System", "Operations"],
-      tools: ["Figma", "Maze", "Dovetail", "React", "Storybook"],
+      tools: ["Research", "Workflow design", "React prototype", "Design system"],
       // Tightened 2026-08-16. The senior moment here is bringing leadership evidence that changed
       // the problem definition, so that beat gets its own paragraph. Research process is compressed
       // to the finding, not the method list. Do not re-expand it.
@@ -108,9 +108,9 @@ export const jenny = {
       // Three metrics, per Jenny's spec 2026-08-16. The old fourth, "3× faster to build every page
       // after", was dropped: it was never measured.
       metrics: [
-        { value: "28+ → 3", label: "Clicks per bill" },
-        { value: "~6 → ~1 min", label: "Per bill entry" },
-        { value: "50+", label: "Reusable components" },
+        { value: "28 → 3", label: "clicks per bill" },
+        { value: "6 → 1 min", label: "per bill" },
+        { value: "50+", label: "reusable components" },
       ],
       caseStudy: {
         insight: "74.6% used the platform daily, only 32.2% knew it well.",
@@ -125,20 +125,20 @@ export const jenny = {
         // their place when this was five beats; at 55 words they were furniture.
         // ⛔ Do not re-add "What I found" / "The decision" labels here.
         beats: [
-          { label: "", text: "Operators re-entered and re-checked the same information in each one. 75% of bills matched the previous month, and every one still started from scratch. I brought leadership two scopes with the evidence behind each. They chose the broader overhaul, which changed the unit of the problem from a screen to a workflow." },
+          { label: "", text: "Operators re-entered and re-checked the same information in every app. Although 75% of bills matched the previous month, each bill still started from scratch. I gave leadership two evidence-backed scopes. They chose the broader overhaul, shifting the work from one screen to the full billing workflow." },
         ],
         screens: [
-          { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow, before", caption: "Before, 28 clicks across 4 fragmented tools per invoice" },
-          { src: "/roadrunner-flow2.png", alt: "Roadrunner billing flow, after", caption: "After: unified billing in 3 clicks, one platform" },
+          { src: "/roadrunner-flow1.png", alt: "Roadrunner billing flow, before", caption: "Before: 28 clicks across 4 tools to enter one bill" },
+          { src: "/roadrunner-flow2.png", alt: "Roadrunner billing flow, after", caption: "After: 3 clicks in one billing workflow" },
         ],
         screensType: 'flow',
         // The ONLY place the research figures appear. ⛔ Do not repeat 28 clicks here, the metrics
         // row owns that. ⛔ Do not re-add a "Stakeholder Alignment" card, the decision beat owns it.
         featuresLabel: 'WHAT I INVESTIGATED',
         features: [
-          { icon: 'fa-light fa-clipboard-check', label: 'Usability Study', detail: '74.6% used the platform daily. Only 32.2% said they knew it well.' },
-          { icon: 'fa-light fa-route', label: 'Workflow Mapping', detail: 'I traced every handoff across the departments that touched a bill.' },
-          { icon: 'fa-light fa-scale-balanced', label: 'Competitor Benchmarking', detail: 'Bill.com and Stripe, for what good looks like in billing.' },
+          { icon: 'fa-light fa-clipboard-check', label: 'How operators used billing', detail: '74.6% of operators used the platform daily. Only 32.2% felt they knew it well.' },
+          { icon: 'fa-light fa-route', label: 'Where the workflow broke', detail: 'I traced every handoff across the departments that touched a bill.' },
+          { icon: 'fa-light fa-scale-balanced', label: 'What good billing tools made easier', detail: 'I compared Bill.com and Stripe to identify useful billing patterns, not copy their products.' },
         ],
         compareScreens: [
           { src: "/RR-Before-after-dashboard.png", alt: "Roadrunner dashboard, before and after", caption: "Before & After: Dashboard" },
@@ -244,10 +244,10 @@ export const jenny = {
     {
       id: "arenalabs",
       company: "Arena Labs",
-      title: "Strive, Healthcare Performance App",
+      title: "Strive: From a feature library to a shift-based guide",
       role: "UX Designer",
       tags: ["Healthcare", "Mobile", "B2B SaaS", "Design System"],
-      tools: ["Claude Code", "Figma", "React", "Pencil.dev", "Whoop API", "Typeform"],
+      tools: ["Clinical workflow", "Wearable data", "React prototype", "Usability audit"],
       // Rewritten 2026-08-16 to the ambiguity → insight → product decision → prototype → outcome
       // pattern Jenny set. The old version opened on "redesigned the homepage," which reads as a
       // screen assignment. This one leads with the complexity and the judgment call, because Arena
@@ -265,8 +265,8 @@ export const jenny = {
       metrics: [
         // "3 time-aware home states" was dropped: the three cards below ARE those states, so the
         // metric was counting something the reader is already looking at.
-        { value: "4", label: "Questions the product answers in order" },
-        { value: "97", label: "Usability issues logged" },
+        { value: "4", label: "questions organize the experience" },
+        { value: "97", label: "usability issues logged" },
       ],
       caseStudy: {
         insight: "The 97 usability issues were real. Fixing them one at a time still would not have made a product.",
@@ -282,8 +282,8 @@ export const jenny = {
         // ⛔ Avoid the phrase "not an adoption win": the boundary is kept, but that wording made
         // the reader dwell on the missing result and read as defensive.
         beats: [
-          { label: "", text: "The home screen behaved like a feature library. Mid-shift clinicians did not need more things to browse, they needed to know what mattered now. So I put the product in one order: what am I trying to achieve, how am I doing, what should I do today, what should I learn next." },
-          { label: "", text: "I built it in React with Claude Code so the team could use the model instead of looking at it, and pick a direction before engineering committed. It is still in development." },
+          { label: "", text: "The home screen behaved like a feature library. Mid-shift clinicians did not need more to browse. They needed to know what mattered now. I reorganized the product around four questions: What am I trying to do? How am I doing? What should I do now? What should I learn next?" },
+          { label: "", text: "I built a working React prototype so the team could test the product model, compare directions, and decide before engineering committed. The product is still in development." },
         ],
         beforeScreen: { src: "/arena-screen-before.png", alt: "Arena Strive V1, feature library", caption: "Before, V1 feature library" },
         screens: [
@@ -299,10 +299,10 @@ export const jenny = {
           // ⭐ The time-of-day examples live HERE and nowhere else. Jenny asked that they be kept
           // because they make the model concrete. ⛔ Do not restate the four questions in these
           // cards, the beats own them.
-          { icon: 'fa-light fa-sun', label: 'Pre-shift', detail: '6:47am. Focus priming before a surgeon starts.' },
-          { icon: 'fa-light fa-heart-pulse', label: 'Mid-shift', detail: '1:15pm. An elevated heart rate gets a 90-second reset.' },
-          { icon: 'fa-light fa-moon', label: 'Post-shift', detail: '11:30pm. One question: how did today feel.' },
-          { icon: 'fa-light fa-flask', label: 'What I would test next', detail: 'That sequence, put to clinicians on its own, before building more interface.' },
+          { icon: 'fa-light fa-sun', label: 'Pre-shift', detail: '6:47 a.m. A short practice to prepare before surgery.' },
+          { icon: 'fa-light fa-heart-pulse', label: 'Mid-shift', detail: '1:15 p.m. An elevated heart-rate signal prompts a 90-second reset.' },
+          { icon: 'fa-light fa-moon', label: 'Post-shift', detail: '11:30 p.m. One reflection: How did today feel?' },
+          { icon: 'fa-light fa-flask', label: 'What I would test next', detail: 'Test the four-question sequence with clinicians before building more interface.' },
         ],
       },
     },
